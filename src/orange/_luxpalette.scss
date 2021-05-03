@@ -1,0 +1,106 @@
+/*
+  Dieses Partial-SCSS dient der Verwaltung der Farb-Paletten für die LUX-Components.
+*/
+
+$lux-palette_primary: (
+        50 : #f9f4e4,
+        100 : #f1e4bc,
+        200 : #e8d290,
+        300 : #dec063,
+        400 : #d7b341,
+        500 : #d0a520,
+        600 : #cb9d1c,
+        700 : #c49318,
+        800 : #be8a13,
+        900 : #b3790b,
+        A100 : #fff3e0,
+        A200 : #ffe0ad,
+        A400 : #ffcc7a,
+        A700 : #ffc260,
+        contrast: (
+                50 : #000000,
+                100 : #000000,
+                200 : #000000,
+                300 : #000000,
+                400 : #000000,
+                500 : #000000,
+                600 : #000000,
+                700 : #000000,
+                800 : #000000,
+                900 : #ffffff,
+                A100 : #000000,
+                A200 : #000000,
+                A400 : #000000,
+                A700 : #000000,
+        )
+);
+
+$lux-palette_accent: (
+        50 : #e8f0f8,
+        100 : #c5daee,
+        200 : #9ec2e3,
+        300 : #77aad7,
+        400 : #5a97cf,
+        500 : #3d85c6,
+        600 : #377dc0,
+        700 : #2f72b9,
+        800 : #2768b1,
+        900 : #1a55a4,
+        A100 : #dae9ff,
+        A200 : #a7caff,
+        A400 : #74abff,
+        A700 : #5b9cff,
+        contrast: (
+                50 : #000000,
+                100 : #000000,
+                200 : #000000,
+                300 : #000000,
+                400 : #000000,
+                500 : #ffffff,
+                600 : #ffffff,
+                700 : #ffffff,
+                800 : #ffffff,
+                900 : #ffffff,
+                A100 : #000000,
+                A200 : #000000,
+                A400 : #000000,
+                A700 : #000000,
+        )
+);
+
+$lux-palette_warn: (
+        50 : #F6E3E2,
+        100 : #e7b8b8,
+        200 : #d88988,
+        300 : #c85958,
+        400 : #bc3635,
+        500 : #b01211,
+        600 : #a9100f,
+        700 : #a00d0c,
+        800 : #970a0a,
+        900 : #870505,
+        A100 : #eccaca,
+        A200 : #ff8181,
+        A400 : #ff4e4e,
+        A700 : #ff3535,
+        contrast: (
+                50 : #000000,
+                100 : #000000,
+                200 : #000000,
+                300 : #ffffff,
+                400 : #ffffff,
+                500 : #ffffff,
+                600 : #ffffff,
+                700 : #ffffff,
+                800 : #ffffff,
+                900 : #ffffff,
+                A100 : #000000,
+                A200 : #000000,
+                A400 : #000000,
+                A700 : #ffffff,
+        )
+);
+
+$lux-primary-color: map-get($lux-palette_primary, 500);
+$lux-accent-color: map-get($lux-palette_accent, 500);
+$lux-warn-color: map-get($lux-palette_warn, 500);

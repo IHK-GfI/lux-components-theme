@@ -1,0 +1,466 @@
+html,
+body,
+.lux-app-container {
+  height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $app-font-family;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-block-start: 1.2em;
+  margin-block-end: 14px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-block-start: 1.2em;
+  margin-block-end: 14px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+  margin-block-start: 1.2em;
+  margin-block-end: 14px;
+}
+
+h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-block-start: 1.2em;
+  margin-block-end: 14px;
+}
+
+h5 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-block-start: 2em;
+  margin-block-end: 14px;
+}
+
+h6 {
+  font-size: 12px;
+  font-weight: 700;
+  margin-block-start: 2em;
+  margin-block-end: 14px;
+}
+
+.lux-app-header-bg {
+  background-color: $app-header-bg;
+}
+
+.lux-app-content-bg {
+  background-color: $app-content-bg;
+}
+
+.lux-app-footer-bg {
+  background-color: $app-footer-bg;
+}
+
+.lux-app-data-bg {
+  background-color: $app-data-bg;
+}
+
+.lux-selected-bg {
+  background-color: $lux-selected-bg-color;
+}
+
+.lux-hover-bg {
+  background-color: $lux-hover-color;
+}
+
+.lux-hover-dark-bg {
+  background-color: $lux-hover-color-for-dark-background;
+}
+
+.lux-color-dark-divider {
+  color: $dark-dividers;
+}
+
+.lux-color-light-divider {
+  color: $light-dividers;
+}
+
+.lux-outline-color-light {
+  color: $outline-color-bright;
+}
+
+.lux-outline-color-dark {
+  color: $outline-color-dark;
+}
+
+.lux-outline-width {
+  outline-width: $outline-width;
+}
+
+.lux-outline-style {
+  outline-style: $outline-style;
+}
+
+.lux-outline-light {
+  color: $outline-color-bright;
+  outline-width: $outline-width;
+  outline-style: $outline-style;
+}
+
+.lux-outline-dark {
+  color: $outline-color-dark;
+  outline-width: $outline-width;
+  outline-style: $outline-style;
+}
+
+.lux-highlight-section {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  padding: 8px;
+  border: 1px solid $dark-dividers;
+  display: flex;
+  margin: 0 0 16px 0;
+  word-break: break-word;
+}
+
+.lux-highlight-section-label {
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.lux-app-container {
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
+div {
+  font-family: $app-font-family;
+}
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  &.lux-file-preview-backdrop {
+    background: #000;
+    opacity: 0.8 !important;
+  }
+}
+
+.mat-dialog-container {
+  background-color: $app-content-bg !important;
+}
+
+lux-card.lux-card-grow {
+  display: flex;
+  flex: 1 1 auto;
+  width: 400px;
+  min-width: 0;
+
+  mat-card {
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  mat-card-content {
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+}
+
+.lux-crop {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.lux-label {
+  color: $dark-secondary-text;
+  font-size: 75%;
+}
+
+.lux-hint {
+  color: $dark-secondary-text;
+  font-size: 12px;
+}
+
+.lux-display-none {
+  display: none;
+}
+
+.lux-hidden {
+  visibility: hidden;
+}
+
+.lux-nowrap {
+  white-space: nowrap;
+}
+
+.lux-cursor {
+  cursor: pointer;
+}
+
+.lux-block-pointer-events {
+  pointer-events: none;
+}
+
+.lux-vertical-align-baseline {
+  vertical-align: baseline !important;
+}
+
+.lux-black-semi-transparent {
+  color: $dark-primary-text;
+}
+
+.lux-semi-transparent {
+  opacity: 0.6;
+}
+
+.lux-overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.lux-overflow-y-auto {
+  overflow-y: auto;
+}
+
+.lux-overflow-wrap-break-word {
+  overflow-wrap: break-word;
+}
+
+.lux-bold {
+  font-weight: bold !important;
+}
+
+.lux-uppercase {
+  text-transform: uppercase !important;
+}
+
+.lux-lowercase {
+  text-transform: lowercase !important;
+}
+
+.lux-hyphenate {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: normal;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+  overflow-x: auto;
+}
+
+/* <MARGINS / PADDINGS> */
+
+.lux-p-footer {
+  padding: 8px;
+}
+
+.lux-p-header {
+  padding: 8px;
+}
+
+.lux-snackbar {
+  top: 68px;
+  right: 8px;
+  position: relative;
+  margin: 0 !important;
+  min-width: unset !important;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+}
+
+.mat-snack-bar-handset .lux-snackbar {
+  left: 8px;
+  width: auto !important;
+}
+
+/*
+  Berechnet das Quadrat einer Zahl und gibt das Ergebnis mit
+  einer Einheit (z.B. px) zurueck.
+*/
+@function pow($number, $exponent, $unit) {
+  $value: 0;
+
+  @if $exponent > 0 {
+    $value: 1;
+    @for $i from 1 through $exponent {
+      $value: ($value * $number);
+    }
+  }
+
+  @return $value + $unit;
+}
+
+/*
+  Zum Anpassen der Schritte einfach pxStep erhoehen oder fuer Weitere CSS-Klassen
+  steps um zusaetzliche Eintraege ergaenzen (z.B. 1,2,4, etc.).
+
+  Generiert fuer Padding: lux-p[t,b,l,r]-xx
+  Generiert fuer Margin: lux-m[t,b,l,r]-xx
+ */
+$directions: "t", "b", "l", "r";
+$directionsLong: "top", "bottom", "left", "right";
+$pxStep: 2;
+$steps: 0, 1, 2, 3, 4;
+
+@for $i from 1 through length($directions) {
+  @each $step in $steps {
+    .lux-m-#{$step} {
+      margin: pow($pxStep, $step, px);
+    }
+    .lux-m#{nth($directions, $i)}-#{$step} {
+      margin-#{nth($directionsLong, $i)}: pow($pxStep, $step, px);
+    }
+    .lux-p-#{$step} {
+      padding: pow($pxStep, $step, px);
+    }
+    .lux-p#{nth($directions, $i)}-#{$step} {
+      padding-#{nth($directionsLong, $i)}: pow($pxStep, $step, px);
+    }
+  }
+}
+
+/*
+  Erstellt die Layout-Gaps (Margin-Abstände für Children von fxLayouts).
+  Um weitere Steps hinzufuegen die Variable gapSteps um die entsprechenden Werte ergaenzen.
+ */
+$gapSteps: 10, 20, 30;
+
+@each $gapStep in $gapSteps {
+  .lux-flex-layout-gap-#{$gapStep}[style*="row"] > *:not(:last-child) {
+    margin-right: #{$gapStep}px;
+  }
+  .lux-flex-layout-gap-#{$gapStep}[style*="column"] > *:not(:last-child) {
+    margin-bottom: #{$gapStep}px;
+  }
+}
+
+/*
+  Erstellt die Z-Indizes.
+  Um weitere Z-Indizes anzulegen, die Variable zindexSteps um die entsprechenden Werte ergaenzen.
+ */
+$zindexSteps: 100, 500, 1000;
+
+@each $zindexStep in $zindexSteps {
+  .lux-z-index-#{$zindexStep} {
+    z-index: #{$zindexStep};
+  }
+}
+
+/*
+  Für die Darstellung von uppercase-Labels wenn die Configuration das erlaubt.
+ */
+.lux-uppercase > lux-button,
+lux-button.lux-uppercase {
+  .lux-button-label {
+    text-transform: uppercase;
+  }
+}
+
+@each $colorName, $colorNameHex in $componentBgColors {
+  .lux-color-#{''+$colorName+''} {
+    color: $colorNameHex;
+  }
+}
+
+@each $colorName, $colorNameHex in $componentBgColors {
+  .lux-bg-color-#{''+$colorName+''} {
+    background: $colorNameHex;
+  }
+}
+
+@each $colorName, $colorNameHex in $componentFontColors {
+  .lux-font-color-#{''+$colorName+''} {
+    color: $colorNameHex;
+  }
+}
+
+$sizes: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A300, A400, A700;
+$paletten: $lux-palette_primary, $lux-palette_accent, $lux-palette_warn;
+$paletteNamen: primary, accent, warn;
+
+@each $size in $sizes {
+  @for $i from 1 through 3 {
+    .lux-color-#{nth($paletteNamen, $i)}-#{$size} {
+      color: map-get(nth($paletten, $i), $size);
+    }
+
+    .lux-color--#{nth($paletteNamen, $i)}-#{$size}-contrast {
+      color: map-get(nth($paletten, $i), contrast, $size);
+    }
+
+    .lux-bg-color-#{nth($paletteNamen, $i)}-#{$size} {
+      background-color: map-get(nth($paletten, $i), $size);
+    }
+
+    .lux-bg-color-#{nth($paletteNamen, $i)}-#{$size}-contrast {
+      color: map-get(nth($paletten, $i), contrast, $size);
+    }
+
+    .lux-border-color-#{nth($paletteNamen, $i)}-#{$size} {
+      border-color: map-get(nth($paletten, $i), $size);
+    }
+
+    .lux-border-color-#{nth($paletteNamen, $i)}-#{$size}-contrast {
+      border-color: map-get(nth($paletten, $i), contrast, $size);
+    }
+
+    .lux-outline-color-#{nth($paletteNamen, $i)}-#{$size} {
+      outline-color: map-get(nth($paletten, $i), $size);
+    }
+
+    .lux-outline-color-#{nth($paletteNamen, $i)}-#{$size}-contrast {
+      outline-color: map-get(nth($paletten, $i), contrast, $size);
+    }
+
+    .lux-text-decoration-#{nth($paletteNamen, $i)}-color-#{$size} {
+      text-decoration-color: map-get(nth($paletten, $i), $size);
+    }
+
+    .lux-text-decoration-#{nth($paletteNamen, $i)}-color-#{$size}-contrast {
+      text-decoration-color: map-get(nth($paletten, $i), contrast, $size);
+    }
+
+    .lux-column-rule-color-#{nth($paletteNamen, $i)}-#{$size} {
+     column-rule-color: map-get(nth($paletten, $i), $size);
+    }
+
+    .lux-column-rule-color-#{nth($paletteNamen, $i)}-#{$size}-contrast {
+      column-rule-color: map-get(nth($paletten, $i), contrast, $size);
+    }
+  }
+}
+
+.lux-badge-notification {
+  &.mat-badge-large {
+    .mat-badge-content {
+      font-size: 15px;
+    }
+  }
+
+  &.mat-badge .mat-badge-content {
+    border: 2px solid white;
+  }
+
+  &.mat-badge.lux-badge-no-border .mat-badge-content {
+    border: 2px solid transparent;
+  }
+
+  &.mat-badge:not(.mat-badge-disabled).mat-badge-accent .mat-badge-content {
+    background-color: map-get($componentBgColors, "green");
+  }
+
+  &.lux-badge-color-default {
+    &.mat-badge:not(.mat-badge-disabled) .mat-badge-content {
+      color: white;
+      background: #595959;
+    }
+  }
+}

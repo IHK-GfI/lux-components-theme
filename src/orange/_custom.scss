@@ -1,0 +1,66 @@
+/*
+ * Theming for LUX-Tile
+ */
+lux-tile {
+  .lux-notification-new {
+    background-color: map-get($lux-palette_accent, 500);
+  }
+
+  .lux-highlight {
+    color: map-get($lux-palette_primary, 800);
+  }
+}
+
+/*
+ * Theming for LUX-App-Header
+ */
+lux-app-header {
+  .lux-header-title {
+    color: white;
+  }
+
+  .lux-side-nav-header, .lux-side-nav-footer {
+    color: map-get($lux-palette_primary, 800);
+  }
+}
+
+
+lux-app-header {
+  .lux-app-header {
+
+    .lux-show-border {
+      border-left: 1px solid $light-dividers;
+    }
+
+    .lux-header-title {
+      color: white;
+    }
+
+    div.lux-header-action {
+      lux-button {
+        button {
+
+          &:not(.mat-accent):not(.mat-warn):not(.mat-primary):not(.mat-button-disabled) {
+            color: white;
+          }
+        }
+      }
+    }
+
+    button:not(.mat-primary):not(.mat-warn):not(.mat-accent):not(.lux-button-rounded) {
+      color: white;
+    }
+
+    .lux-header-user {
+      .lux-header-user-short {
+        > span {
+          background-color:white;
+        }
+      }
+    }
+  }
+
+  .lux-side-nav-header, .lux-side-nav-footer {
+    color: map-get($lux-palette_primary, 800);
+  }
+}

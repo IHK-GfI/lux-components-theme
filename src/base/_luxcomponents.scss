@@ -1,0 +1,746 @@
+/*
+ * Theming for LUX-App-Content
+ */
+lux-app-content {
+  background-color: $app-content-bg;
+}
+
+/*
+ * Theming for LUX-App-Footer
+ */
+lux-app-footer {
+  .lux-app-footer {
+    background-color: $app-footer-bg;
+  }
+
+  .footerFont {
+    font-family: $app-font-family;
+  }
+}
+
+/*
+ * Theming for LUX-App-Header
+ */
+lux-app-header {
+  .lux-app-header {
+    background-color: $app-header-bg;
+
+    .lux-show-border {
+      border-left: 1px solid $light-dividers;
+    }
+
+    .lux-header-title {
+      color: map-get(map-get($lux-palette-primary, contrast), 500);
+    }
+
+    div.lux-header-action {
+      lux-button {
+        button {
+
+          &:not(.mat-accent):not(.mat-warn):not(.mat-primary):not(.mat-button-disabled) {
+            color: map-get(map-get($lux-palette-primary, contrast), 500);
+          }
+
+          &:not(.mat-accent):not(.mat-warn):not(.mat-primary).mat-button-disabled {
+            color: $dark-disabled-text;
+          }
+
+          &.mat-accent:not(.mat-button-disabled) {
+            color: map-get($lux-palette_accent, A100);
+          }
+
+          &.mat-warn:not(.mat-button-disabled) {
+            color: map-get($lux-palette_warn, A100);
+          }
+
+          &.mat-primary:not(.mat-button-disabled) {
+            color: map-get($lux-palette_primary, A100);
+          }
+        }
+      }
+    }
+
+    button:not(.mat-primary):not(.mat-warn):not(.mat-accent):not(.lux-button-rounded) {
+      color: map-get(map-get($lux-palette-primary, contrast), 500);
+    }
+
+    .lux-header-user {
+      .lux-header-user-short {
+        > span {
+          color: map-get($lux-palette_primary, 500);
+          background-color: map-get(map-get($lux-palette-primary, contrast), 500);
+        }
+      }
+    }
+  }
+
+  .lux-side-nav-header, .lux-side-nav-footer {
+    color: map-get($lux-palette_primary, A400);
+  }
+
+  .lux-header-side-nav {
+    .lux-side-nav-trigger-active {
+      background-color: $dark-focused;
+    }
+  }
+
+  .lux-side-nav .lux-side-nav-content {
+    lux-button, .lux-menu-item, .lux-action-nav-menu lux-button {
+      color: map-get($lux-palette_primary, 500);
+    }
+  }
+}
+
+// Menü wird im Cdk-Overlay dargestellt und hängt nicht unter dem LUX-APP-HEADER selbst.
+.lux-right-nav-menu .lux-menu-item {
+  color: map-get($lux-palette_primary, 500);
+}
+
+/*
+ * Theming for LUX-Button
+ */
+lux-button button.lux-button {
+  &.mat-button {
+    height: 45px;
+    margin-left: $outline-width;
+    margin-right: $outline-width;
+  }
+
+  &.mat-button.mat-button-disabled,
+  &.mat-raised-button.mat-button-disabled,
+  &.mat-fab.mat-button-disabled {
+    color: $dark-disabled-text;
+  }
+
+  &.lux-icon-button {
+    height: 45px;
+    padding-top: 4px;
+    padding-bottom: 2px;
+  }
+
+  &.lux-button-rounded {
+    width: 45px;
+  }
+}
+
+/**
+ * Theming für LUX-Checkbox
+ */
+lux-checkbox {
+  .mat-checkbox-disabled label {
+    color: $dark-disabled-text;
+  }
+
+  .mat-checkbox-checked:not(.mat-checkbox-disabled) label span.mat-checkbox-inner-container {
+    background-color: map-get($lux-palette_primary, 500);
+
+    svg {
+      background-color: map-get($lux-palette_primary, 500);
+    }
+  }
+}
+
+/**
+ * Theming für LUX-Card
+ */
+lux-card {
+  .lux-card-content-container mat-tab-group.lux-tab-group .lux-tabs-notification-icon {
+    border-color: $app-data-bg;
+  }
+
+  .lux-highlight {
+    color: $dark-primary-text;
+  }
+
+  .mat-card-subtitle {
+    color: $dark-secondary-text;
+  }
+
+  .lux-card-content-expanded {
+    background: $app-data-bg;
+  }
+}
+
+/**
+ * Theming für LUX-Chips
+ */
+lux-chips {
+  .lux-chips {
+    mat-chip {
+      // Löschicon (luxSelected=true)
+      &.mat-chip-selected .mat-chip-remove {
+        color: $app-data-bg !important;
+        opacity: 1 !important;
+      }
+
+      // Löschicon (luxSelected=false)
+      &:not(.mat-chip-selected) .mat-chip-remove {
+        color: $app-data-bg !important;
+        opacity: 1 !important;
+      }
+
+      &.mat-chip-disabled {
+        background-color: $dark-disabled-text !important;
+        color: $app-data-bg !important;
+        opacity: 1;
+
+        lux-icon {
+          i,
+          mat-icon {
+            color: $app-data-bg;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+ * Theming for LUX-Datepicker
+ */
+lux-datepicker {
+  mat-datepicker-toggle button {
+    &:not(.mat-button-disabled) .mat-button-wrapper > svg {
+      color: map-get($lux-palette_primary, 500);
+    }
+
+    &.mat-button-disabled .mat-button-wrapper > svg {
+      color: $dark-disabled-text;
+    }
+  }
+}
+
+/*
+ * Theming for LUX-Dialog
+ */
+.lux-dialog {
+  .lux-dialog-title {
+    color: $dark-primary-text;
+  }
+}
+
+
+/*
+ * Theming for LUX-Divider
+ */
+lux-divider {
+  .mat-divider {
+    background-color: $dark-dividers;
+  }
+}
+
+/*
+ * Theming for LUX-File-List
+ */
+lux-file-list .lux-file-list {
+  .lux-file-list-entry-label, .lux-file-list-entry-icon {
+    color: $dark-secondary-text;
+  }
+
+  .lux-card-title-container {
+    color: map-get($lux-palette_primary, 500);
+  }
+
+  .lux-file-list-entries {
+    .lux-file-list-entry {
+      .lux-file-list-entry-label:not(.lux-file-list-entry-label-disabled) {
+        color: $dark-secondary-text;
+      }
+    }
+  }
+
+  &.lux-file-list-disabled {
+    mat-card-title *,
+    mat-card-content,
+    span,
+    i {
+      color: $dark-disabled-text;
+    }
+
+    .lux-file-icon-hint {
+      span {
+        text-decoration-color: $dark-disabled-text !important;
+      }
+    }
+  }
+}
+
+/*
+ * Theming for LUX-File-Progress
+ */
+lux-file-progress {
+  .lux-file-overlay {
+    background: $dark-focused;
+
+    mat-spinner,
+    mat-spinner svg {
+      circle {
+        stroke: map-get($lux-palette_primary, 500);
+        background: map-get($lux-palette_primary, 500);
+      }
+    }
+  }
+}
+
+/*
+ * Theming for LUX-Form-Controls
+ */
+.lux-form-control {
+  .lux-form-control-container {
+    &:after {
+      border-bottom: 1px solid $form-border-color;
+    }
+  }
+
+  .lux-label, mat-hint, mat-error {
+    color: $dark-secondary-text;
+  }
+}
+
+.lux-form-control-error {
+  .lux-form-control-label {
+    > * {
+      color: $lux-warn-color !important;
+    }
+  }
+
+  .lux-form-control-container {
+    border-color: $lux-warn-color !important;
+  }
+
+  .lux-form-control-misc {
+    > * {
+      color: $lux-warn-color !important;
+    }
+  }
+}
+
+.lux-form-control-disabled {
+  .lux-form-control-container {
+    color: $dark-disabled-text !important;
+
+    &:after {
+      border-bottom: 1px dashed $dark-disabled-text;
+    }
+  }
+}
+
+/*
+ * Theming for LUX-Layout-Card-Row
+ */
+lux-layout-card-row {
+  .row-title {
+    color: $dark-primary-text;
+  }
+}
+
+/*
+ * Theming for LUX-Layout-Form-Row
+ */
+lux-layout-form-row {
+  .row-title {
+    color: $dark-primary-text;
+  }
+}
+
+/*
+ * Theming for LUX-List
+ */
+lux-list {
+  .lux-list-empty-icon,
+  .lux-list-empty-icon-text {
+    color: $dark-primary-text;
+  }
+}
+
+/*
+ * Theming for LUX-Lookup-Components
+ */
+lux-lookup-combobox {
+  mat-select {
+    &[aria-disabled="true"] .mat-select-arrow {
+      border-width: 7px;
+      margin: 0;
+      color: $dark-disabled-text;
+    }
+
+    &[aria-disabled="false"] .mat-select-arrow {
+      border-width: 7px;
+      margin: 0;
+      color: map-get($lux-palette_primary, 500);
+    }
+  }
+}
+
+// Optionen werden im Cdk-Overlay dargestellt und hängen nicht unter der Component selbst.
+.lux-autocomplete-panel, .lux-select-panel {
+  .mat-option {
+    border-left: 2px solid $app-data-bg;
+
+    &.invalid {
+      border-left: 2px solid $lux-warn-color;
+    }
+  }
+}
+
+/*
+ * Theming for LUX-Master-Detail
+ */
+lux-master-detail {
+  .lux-detail-container {
+    .lux-detail-empty-icon,
+    .lux-detail-empty-icon-text {
+      color: $dark-primary-text;
+    }
+  }
+}
+
+/*
+ * Theming for LUX-Master-Footer
+ */
+lux-master-footer {
+  background-color: $app-data-bg;
+}
+
+/*
+ * Theming for LUX-Master-Header
+ */
+lux-master-header {
+  background-color: $app-data-bg;
+}
+
+/*
+ * Theming for LUX-Message-Box
+ */
+lux-message-box {
+  &.mat-elevation-z4 {
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/*
+ * Theming for LUX-Snackbar
+ */
+@each $colorName, $colorNameHex in $colorsForDarkBg {
+  .lux-snackbar-content .lux-bg-color-#{'' + $colorName + ''} {
+    color: $colorNameHex;
+    background-color: transparent;
+  }
+}
+
+/*
+ * Theming for LUX-Progress
+ */
+lux-progress {
+  .mat-progress-bar-fill:after,
+  .mat-progress-spinner > svg > circle {
+    stroke: map-get($lux-palette_primary, A400);
+    background: map-get($lux-palette_primary, A400);
+  }
+
+  @each $colorName, $colorNameHex in $componentBgColors {
+    .lux-bg-color-#{'' + $colorName + ''} {
+      .mat-progress-bar-primary:after,
+      .mat-progress-bar-secondary:after {
+        background: $colorNameHex;
+      }
+    }
+  }
+
+  @each $colorName, $colorNameHex in $componentBgColors {
+    mat-progress-spinner.lux-bg-color-#{'' + $colorName + ''} {
+      circle {
+        stroke: $colorNameHex;
+      }
+    }
+  }
+}
+
+lux-radio {
+  .mat-radio-checked {
+    label.mat-radio-label .mat-radio-container {
+      span.mat-radio-inner-circle {
+        background-color: map-get($lux-palette_primary, 500);
+      }
+
+      span.mat-radio-outer-circle {
+        border-color: map-get($lux-palette_primary, 500);
+      }
+    }
+
+    &.mat-radio-disabled label .mat-radio-container {
+      span.mat-radio-inner-circle {
+        background-color: $dark-disabled-text;
+      }
+
+      span.mat-radio-outer-circle {
+        border-color: $dark-disabled-text;
+      }
+    }
+  }
+
+  .mat-radio-disabled label.mat-radio-label {
+    .mat-radio-label-content {
+      color: $dark-disabled-text;
+    }
+
+    .mat-radio-container {
+      span.mat-radio-inner-circle {
+        background-color: $dark-disabled-text;
+      }
+
+      span.mat-radio-outer-circle {
+        border-color: $dark-disabled-text;
+      }
+    }
+  }
+}
+
+/*
+ * Theming for LUX-Select
+ */
+lux-select {
+  mat-select {
+    &[aria-disabled="true"] .mat-select-arrow {
+      color: $dark-disabled-text;
+    }
+
+    &[aria-disabled="false"] .mat-select-arrow {
+      color: map-get($lux-palette_primary, 500);
+    }
+  }
+}
+
+// Checkbox wird im Cdk-Overlay dargestellt und hängt nicht unter der Component selbst.
+.lux-select-panel .mat-pseudo-checkbox-checked {
+  background-color: map-get($lux-palette_primary, 500);
+}
+
+/*
+ * Theming for LUX-Side-Nav
+ */
+lux-side-nav {
+  .lux-side-nav {
+    background: $app-data-bg;
+    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
+
+    .lux-side-nav-header {
+      border-bottom: 1px solid $dark-dividers;
+    }
+
+    .lux-side-nav-footer {
+      border-top: 1px solid $dark-dividers;
+    }
+
+    .lux-side-nav-content {
+      .lux-side-nav-item {
+        .lux-side-nav-item-icon {
+          color: map-get($lux-palette_primary, 500);
+
+          &.lux-side-nav-disabled {
+            color: $dark-disabled-text;
+          }
+        }
+
+        .lux-side-nav-item-expansion-icon {
+          color: map-get($lux-palette_primary, 500);
+
+          &.lux-side-nav-disabled {
+            color: $dark-disabled-text;
+          }
+        }
+      }
+    }
+  }
+}
+
+.lux-side-nav-overlay {
+  background-color: $dark-focused;
+}
+
+/*
+ * Theming for LUX-Slider
+ */
+lux-slider {
+  .lux-show-thumb-label-always {
+    &.mat-slider-disabled {
+      .mat-slider-thumb-label {
+        background-color: $dark-disabled-text;
+      }
+    }
+  }
+}
+
+/*
+ * Theming for LUX-Spinner
+ */
+lux-spinner {
+  .mat-progress-spinner > svg > circle {
+    stroke: map-get($lux-palette_primary, A400);
+  }
+}
+
+/*
+ * Theming for LUX-Stepper
+ */
+lux-stepper {
+
+  // luxUseCustomIcons=true
+  .lux-ignore-mat-step-icons {
+
+    mat-step-header {
+      color: $dark-secondary-text;
+
+      &.lux-step-header-touched {
+        .lux-stepper-edited-icon,
+        .lux-stepper-normal-icon {
+          i, mat-icon {
+            color: $app-data-bg;
+            background-color: map-get($lux-palette_primary, 500);
+          }
+        }
+      }
+
+      &:not(.lux-step-header-touched) {
+        .lux-stepper-edited-icon,
+        .lux-stepper-normal-icon {
+          i, mat-icon {
+            color: $app-data-bg;
+            background-color: $dark-secondary-text;
+          }
+        }
+      }
+    }
+  }
+
+  // luxUseCustomIcons=false
+  .mat-step-header {
+
+    lux-step-header {
+      color: $dark-secondary-text;
+    }
+
+    &.lux-step-header-touched {
+      .mat-step-icon {
+        color: $app-data-bg;
+        background-color: map-get($lux-palette_primary, 500);
+      }
+
+      .mat-step-icon-selected {
+        color: $app-data-bg;
+        background-color: map-get($lux-palette_primary, 500);
+      }
+    }
+
+    &:not(.lux-step-header-touched) {
+      .mat-step-icon {
+        color: $app-data-bg;
+        background-color: $dark-secondary-text;
+      }
+
+      .mat-step-icon-selected {
+        color: $app-data-bg;
+        background-color: map-get($lux-palette_primary, 500);
+      }
+    }
+  }
+}
+
+/*
+ * Theming for LUX-Table
+ */
+lux-table {
+  .lux-row-selected {
+    background-color: $lux-selected-bg-color;
+  }
+}
+
+/*
+ * Theming for LUX-Tabs
+ */
+lux-tabs {
+  .mat-tab-nav-bar, .mat-tab-header {
+    border-color: $dark-dividers;
+  }
+
+  mat-tab-group div[role="tab"]:not(.mat-tab-disabled) {
+    color: map-get($lux-palette_primary, 500);
+  }
+
+  .lux-notification-new {
+    background-color: map-get($componentBgColors, "green");
+  }
+
+  .lux-tabs-notification-icon {
+    border: 2px solid red; // $app-content-bg;
+  }
+}
+
+/*
+ * Theming for LUX-Tile
+ */
+lux-tile {
+  .lux-notification-new {
+    background-color: map-get($lux-palette_accent, 500);
+  }
+
+  .lux-highlight {
+    color: map-get($lux-palette_primary, A400);
+  }
+}
+
+/*
+ * Theming for LUX-Toggle
+ */
+lux-toggle {
+
+  .mat-slide-toggle {
+    label {
+      color: $dark-primary-text;
+    }
+
+    &.mat-checked {
+      .mat-slide-toggle-bar {
+        background-color: map-get($lux-palette_primary, 100);
+      }
+
+      .mat-slide-toggle-thumb {
+        background-color: map-get($lux-palette_primary, 500);
+      }
+    }
+
+    &:not(.mat-checked) {
+      .mat-slide-toggle-bar {
+      }
+
+      .mat-slide-toggle-thumb {
+      }
+    }
+
+    &.mat-disabled {
+      label {
+        color: black;
+      }
+
+      &.mat-checked {
+        .mat-slide-toggle-bar {
+          background-color: $dark-disabled-text;
+        }
+
+        .mat-slide-toggle-thumb {
+          background-color: black;
+        }
+      }
+
+      &:not(.mat-checked) {
+        .mat-slide-toggle-bar {
+          background-color: $dark-disabled-text;
+        }
+
+        .mat-slide-toggle-thumb {
+          background-color: black;
+        }
+      }
+    }
+  }
+}

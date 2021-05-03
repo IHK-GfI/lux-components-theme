@@ -1,0 +1,64 @@
+// Allgemein
+$dark-primary-text: rgba(black, 0.87);
+$dark-secondary-text: rgba(black, 0.65);
+$dark-disabled-text: rgba(black, 0.40);
+$dark-dividers: rgba(black, 0.20);
+$dark-focused: rgba(black, 0.12);
+
+$light-primary-text: white;
+$light-secondary-text: rgba(white, 0.7);
+$light-disabled-text: rgba(white, 0.5);
+$light-dividers: rgba(white, 0.20);
+$light-focused: rgba(white, 0.12);
+
+// App
+$app-header-bg: #ffffff;
+$app-content-bg: #ffffff;
+$app-footer-bg: #e3ebf5;
+$app-data-bg: #ffffff;
+
+// Form
+$form-border-color: rgba(0, 0, 0, 0.42);
+
+// Fokus
+$outline-color-bright: #ffffff;
+$outline-color-dark: #000000;
+
+// Hover
+$lux-hover-color: #CCEBD1;
+$lux-hover-color-for-dark-background: #e3ebf5;
+
+// Selektion
+$lux-selected-border-color: #2B9838;
+$lux-selected-bg-color: #f1e4bc;
+
+// Hintergrundfarben (z.B. Badge oder Progress)
+$componentBgColors: (
+  "red": #b01211,
+  "green": #3e8320,
+  "purple": #9900B8,
+  "blue": #00569a,
+  "gray": $dark-secondary-text,
+  "orange": #c75000,
+  "brown": #783f04,
+  "black": $dark-primary-text,
+  "white": #ffffff
+);
+
+// Vordergrundfarben (z.B. Badge)
+$componentFontColors: (
+  black: #000000,
+  white: #ffffff
+);
+
+// Farben für einen dunklen Hintergrund (z.B. Snackbar).
+$colorsForDarkBg: (
+  "red": #f17474,
+  "green": #53b12b,
+  "purple": #e561ff,
+  "blue": #729eca,
+  "gray": #c8c8c8,
+  "orange": #ec9c1b,
+  "brown": #eb7c05,
+  "white": #ffffff
+);
