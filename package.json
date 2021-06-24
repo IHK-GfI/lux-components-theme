@@ -13,9 +13,9 @@
   "author": "Thomas Dickhut",
   "license": "IHK-GfI Open-Source-Lizenz",
   "devDependencies": {
-    "@angular/material": "^11.2.10",
-    "sass": "^1.32.11",
-    "del-cli": "^3.0.1"
+    "@angular/material": "11.2.11",
+    "sass": "1.32.13",
+    "del-cli": "3.0.1"
   },
   "peerDependencies": {},
   "files": [
