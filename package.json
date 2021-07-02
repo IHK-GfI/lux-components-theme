@@ -1,14 +1,14 @@
 {
   "name": "@ihk-gfi/lux-components-theme",
-  "version": "11.0.0",
+  "version": "11.1.0",
   "description": "",
   "private": false,
   "scripts": {
     "build": "npm run clean && npm run build-theme-blue && npm run build-theme-orange && npm run build-theme-green",
     "clean": "del-cli --force ./prebuilt-themes/*.*",
-    "build-theme-green": "sass --style=compressed src/green/luxtheme.scss:prebuilt-themes/luxtheme-green-min.css",
-    "build-theme-blue": "sass --style=compressed src/blue/luxtheme.scss:prebuilt-themes/luxtheme-blue-min.css",
-    "build-theme-orange": "sass --style=compressed src/orange/luxtheme.scss:prebuilt-themes/luxtheme-orange-min.css"
+    "build-theme-green": "sass --style=compressed src/green/luxtheme.scss:prebuilt-themes/luxtheme-green-min.css && sass src/green/luxtheme.scss:prebuilt-themes/luxtheme-green.css",
+    "build-theme-blue": "sass --style=compressed src/blue/luxtheme.scss:prebuilt-themes/luxtheme-blue-min.css && sass src/blue/luxtheme.scss:prebuilt-themes/luxtheme-blue.css",
+    "build-theme-orange": "sass --style=compressed src/orange/luxtheme.scss:prebuilt-themes/luxtheme-orange-min.css && sass src/orange/luxtheme.scss:prebuilt-themes/luxtheme-orange.css"
   },
   "author": "Thomas Dickhut",
   "license": "IHK-GfI Open-Source-Lizenz",

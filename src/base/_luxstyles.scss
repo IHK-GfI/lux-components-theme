@@ -387,57 +387,89 @@ lux-button.lux-uppercase {
   }
 }
 
+.lux-color-dark-primary-text {
+  color: $dark-primary-text;
+}
+
+.lux-color-dark-secondary-text {
+  color: $dark-secondary-text;
+}
+
+.lux-color-dark-disabled-text {
+  color: $dark-disabled-text;
+}
+
+.lux-color-dark-focused {
+  color: $dark-focused;
+}
+
+.lux-color-light-primary-text {
+  color: $light-primary-text;
+}
+
+.lux-color-light-secondary-text {
+  color: $light-secondary-text;
+}
+
+.lux-color-light-disabled-text {
+  color: $light-disabled-text;
+}
+
+.lux-color-light-focused {
+  color: $light-focused;
+}
+
 $sizes: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A300, A400, A700;
 $paletten: $lux-palette_primary, $lux-palette_accent, $lux-palette_warn;
 $paletteNamen: primary, accent, warn;
 
 @each $size in $sizes {
   @for $i from 1 through 3 {
-    .lux-color-#{nth($paletteNamen, $i)}-#{$size} {
+    .lux-color-#{nth($paletteNamen, $i)}-#{to-lower-case("" + $size)} {
       color: map-get(nth($paletten, $i), $size);
     }
 
-    .lux-color--#{nth($paletteNamen, $i)}-#{$size}-contrast {
+    .lux-color-#{nth($paletteNamen, $i)}-#{to-lower-case("" + $size)}-contrast {
       color: map-get(nth($paletten, $i), contrast, $size);
     }
 
-    .lux-bg-color-#{nth($paletteNamen, $i)}-#{$size} {
+    .lux-bg-color-#{nth($paletteNamen, $i)}-#{to-lower-case("" + $size)} {
       background-color: map-get(nth($paletten, $i), $size);
     }
 
-    .lux-bg-color-#{nth($paletteNamen, $i)}-#{$size}-contrast {
-      color: map-get(nth($paletten, $i), contrast, $size);
+    .lux-bg-color-#{nth($paletteNamen, $i)}-#{to-lower-case("" + $size)}-contrast {
+      background-color: map-get(nth($paletten, $i), contrast, $size);
     }
 
-    .lux-border-color-#{nth($paletteNamen, $i)}-#{$size} {
+    .lux-border-color-#{nth($paletteNamen, $i)}-#{to-lower-case("" + $size)} {
       border-color: map-get(nth($paletten, $i), $size);
     }
 
-    .lux-border-color-#{nth($paletteNamen, $i)}-#{$size}-contrast {
+    .lux-border-color-#{nth($paletteNamen, $i)}-#{to-lower-case("" + $size)}-contrast {
       border-color: map-get(nth($paletten, $i), contrast, $size);
     }
 
-    .lux-outline-color-#{nth($paletteNamen, $i)}-#{$size} {
+    .lux-outline-color-#{nth($paletteNamen, $i)}-#{to-lower-case("" + $size)} {
       outline-color: map-get(nth($paletten, $i), $size);
     }
 
-    .lux-outline-color-#{nth($paletteNamen, $i)}-#{$size}-contrast {
+    .lux-outline-color-#{nth($paletteNamen, $i)}-#{to-lower-case("" + $size)}-contrast {
       outline-color: map-get(nth($paletten, $i), contrast, $size);
     }
 
-    .lux-text-decoration-#{nth($paletteNamen, $i)}-color-#{$size} {
+    .lux-text-decoration-#{nth($paletteNamen, $i)}-color-#{to-lower-case("" + $size)} {
       text-decoration-color: map-get(nth($paletten, $i), $size);
     }
 
-    .lux-text-decoration-#{nth($paletteNamen, $i)}-color-#{$size}-contrast {
+    .lux-text-decoration-#{nth($paletteNamen, $i)}-color-#{to-lower-case("" + $size)}-contrast {
       text-decoration-color: map-get(nth($paletten, $i), contrast, $size);
     }
 
-    .lux-column-rule-color-#{nth($paletteNamen, $i)}-#{$size} {
+    .lux-column-rule-color-#{nth($paletteNamen, $i)}-#{to-lower-case("" + $size)} {
      column-rule-color: map-get(nth($paletten, $i), $size);
     }
 
-    .lux-column-rule-color-#{nth($paletteNamen, $i)}-#{$size}-contrast {
+    .lux-column-rule-color-#{nth($paletteNamen, $i)}-#{to-lower-case("" + $size)}-contrast {
       column-rule-color: map-get(nth($paletten, $i), contrast, $size);
     }
   }
