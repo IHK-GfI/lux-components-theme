@@ -744,3 +744,10 @@ lux-toggle {
     }
   }
 }
+
+/*
+ * Theming for LUX-Tooltip
+ */
+mat-tooltip-component .mat-tooltip {
+  font-size: 14px;
+}
