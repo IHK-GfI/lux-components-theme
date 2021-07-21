@@ -1,12 +1,219 @@
+body {
+  color: #003366;
+}
+
+lux-card .mat-card {
+  color: #003366;
+}
+
+lux-panel {
+  & .mat-expansion-panel, .mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+    color: #003366;
+  }
+}
+
+@mixin lux-hovered-mixin-green {
+  background-color: #e3ebf5 !important;
+  border-radius: 4px;
+}
+
+lux-app-header {
+  .lux-app-header {
+    background-color: $app-header-bg;
+
+    .lux-show-border {
+      border-left: 1px solid #003366;
+    }
+
+    .lux-header-title {
+      color: map-get($lux-palette-primary, 500);
+    }
+
+    div.lux-header-action {
+      lux-button {
+        button {
+
+          &:not(.mat-accent):not(.mat-warn):not(.mat-primary):not(.mat-button-disabled) {
+            color: map-get($lux-palette-primary, 500);
+          }
+
+          &:not(.mat-accent):not(.mat-warn):not(.mat-primary).mat-button-disabled {
+            color: $dark-disabled-text;
+          }
+
+          &.mat-accent:not(.mat-button-disabled) {
+            color: map-get($lux-palette_accent, A100);
+          }
+
+          &.mat-warn:not(.mat-button-disabled) {
+            color: map-get($lux-palette_warn, A100);
+          }
+
+          &.mat-primary:not(.mat-button-disabled) {
+            color: map-get($lux-palette_primary, A100);
+          }
+        }
+      }
+    }
+
+    button:not(.mat-primary):not(.mat-warn):not(.mat-accent):not(.lux-button-rounded) {
+      color: map-get($lux-palette-primary, 500);
+    }
+
+    .lux-header-user {
+      .lux-header-user-short {
+        > span {
+          color: map-get($lux-palette_primary, 500);
+          background-color: map-get($lux-palette-primary, 500);
+        }
+      }
+    }
+  }
+
+  .lux-side-nav-header, .lux-side-nav-footer {
+    color: map-get($lux-palette_primary, A400);
+  }
+
+  .lux-header-side-nav {
+    .lux-side-nav-trigger-active {
+      background-color: $dark-focused;
+    }
+  }
+
+  .lux-side-nav .lux-side-nav-content {
+    lux-button, .lux-menu-item, .lux-action-nav-menu lux-button {
+      color: map-get($lux-palette_primary, 500);
+    }
+  }
+}
+
+lux-app-header {
+  .lux-app-header-title-label {
+    &:focus {
+      @include focus-dark-mixin;
+    }
+
+    &:hover {
+      @include lux-hovered-mixin-green;
+      color: #003366 !important;
+    }
+  }
+
+  & .lux-side-nav-trigger button:not([disabled]) {
+    &:focus {
+      @include focus-dark-mixin;
+    }
+
+    &:hover {
+      background-color: $lux-hover-color !important;
+      color: #003366 !important;
+    }
+
+    &:hover lux-icon {
+      background-color: $lux-hover-color;
+      color: #003366 !important;
+    }
+  }
+
+  & .lux-header-action button:not([disabled]) {
+    &:focus {
+      @include focus-dark-mixin;
+    }
+
+    color: #003366 !important;
+
+    &.mat-accent lux-icon {
+      color: map-get($lux-palette_accent, 500) !important;
+    }
+
+    &.mat-warn lux-icon {
+      color: map-get($lux-palette_warn, 500) !important;
+    }
+
+    &.mat-primary lux-icon {
+      color: map-get($lux-palette_primary, 500) !important;
+    }
+
+    &:hover {
+      color: #003366 !important;
+      background-color: $lux-hover-color !important;
+
+      &.mat-accent lux-icon {
+        color: map-get($lux-palette_accent, 500) !important;
+      }
+
+      &.mat-warn lux-icon {
+        color: map-get($lux-palette_warn, 500) !important;
+      }
+
+      &.mat-primary lux-icon {
+        color: map-get($lux-palette_primary, 500) !important;
+      }
+    }
+  }
+
+  & lux-image:focus {
+    @include focus-dark-mixin;
+  }
+
+  & lux-icon:focus {
+    @include focus-dark-mixin;
+  }
+
+  lux-menu-trigger button.lux-right-nav-trigger {
+    &:focus {
+      @include focus-dark-mixin;
+    }
+
+    &:hover {
+      @include lux-hovered-mixin-green;
+
+      & lux-icon, .lux-header-username {
+        color: #003366 !important;
+      }
+    }
+  }
+}
+
 /*
  * Theming for LUX-Tile
  */
 lux-tile {
+
   .lux-notification-new {
     background-color: #56bd66;
   }
 
+  h2 {
+    color: #003366;
+  }
+
   .lux-highlight {
-    color: #56bd66;
+    color: #003366;
+  }
+}
+
+lux-tile {
+
+  .lux-highlight:hover {
+    color: #56BD66;
+  }
+
+  mat-card[class~=lux-cursor] {
+
+    box-shadow: 0px 2px 1px -1px rgb(0 51 102 / 60%), 0px 1px 1px 0px rgb(0 51 102 / 50%), 0px 1px 3px 0px rgb(0 51 102 / 40%) !important;
+
+    &:focus {
+      @include focus-dark-mixin;
+    }
+
+    &:hover {
+      background-color: white !important;
+      box-shadow: 0px 2px 1px -1px rgb(46 133 51 / 60%), 0px 1px 1px 0px rgb(46 133 51 / 50%), 0px 1px 3px 0px rgb(46 133 51 / 40%) !important;
+
+      h2 {
+        color: #56BD66;
+      }
+    }
   }
 }

@@ -1,7 +1,9 @@
 @import "luxpalette";
 @import "../public/global";
+$outline-width: 1px;
 @import "luxcommon";
 @import "../base/luxcomponents";
+$lux-hover-color: #e3ebf5;
 @import "../base/luxfocus";
 @import "../base/luxstyles";
 @import "../base/luxicons";
