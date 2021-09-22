@@ -277,6 +277,52 @@ lux-datepicker {
   }
 }
 
+/** ########## Datetimepicker ########## **/
+lux-datetimepicker {
+  mat-datepicker-toggle {
+    button:focus {
+      @include focus-dark-mixin;
+    }
+
+    .mat-button-focus-overlay {
+      display: none;
+    }
+  }
+}
+
+// Class, welche das aufgeklappte Panel referenziert
+.lux-datetimepicker-overlay {
+  .mat-calendar-header {
+    button {
+      .mat-button-focus-overlay {
+        display: none;
+      }
+
+      &:focus {
+        @include focus-dark-mixin;
+      }
+
+      &:hover {
+        @include lux-hovered-mixin;
+      }
+    }
+  }
+
+  .mat-calendar-content {
+    td.mat-calendar-body-cell {
+      &:hover > div {
+        @include lux-hovered-mixin;
+        border-radius: 999px;
+        color: $dark-primary-text;
+      }
+
+      &.mat-calendar-body-active .mat-calendar-body-cell-content {
+        @include focus-dark-mixin;
+      }
+    }
+  }
+}
+
 /** ########## Table ########## **/
 lux-table {
 

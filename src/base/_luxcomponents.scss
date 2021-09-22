@@ -211,6 +211,21 @@ lux-datepicker {
 }
 
 /*
+ * Theming for LUX-Datetimepicker
+ */
+lux-datetimepicker {
+  mat-datepicker-toggle button {
+    &:not(.mat-button-disabled) .mat-button-wrapper > svg {
+      color: map-get($lux-palette_primary, 500);
+    }
+
+    &.mat-button-disabled .mat-button-wrapper > svg {
+      color: $dark-disabled-text;
+    }
+  }
+}
+
+/*
  * Theming for LUX-Dialog
  */
 .lux-dialog {
