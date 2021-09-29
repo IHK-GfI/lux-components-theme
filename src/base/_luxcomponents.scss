@@ -100,8 +100,10 @@ lux-app-header {
  * Theming for LUX-Button
  */
 lux-button button.lux-button {
-  &.mat-button {
-    height: 45px;
+  font-family: $app-font-family;
+
+  &.mat-button, &.mat-raised-button {
+    height: $button-height;
     margin-left: $outline-width;
     margin-right: $outline-width;
   }
@@ -113,13 +115,14 @@ lux-button button.lux-button {
   }
 
   &.lux-icon-button {
-    height: 45px;
+    height: $button-height;;
     padding-top: 4px;
     padding-bottom: 2px;
   }
 
   &.lux-button-rounded {
-    width: 45px;
+    height: $button-fav-height;
+    width: $button-fav-height;
   }
 }
 
@@ -425,6 +428,18 @@ lux-master-header {
 }
 
 /*
+ * Theming for LUX-Menu
+ */
+.lux-menu-extended {
+  > lux-button {
+    button {
+      padding-left: 8px;
+      padding-right: 8px;
+    }
+  }
+}
+
+/*
  * Theming for LUX-Message-Box
  */
 lux-message-box {
@@ -712,6 +727,7 @@ lux-toggle {
   .mat-slide-toggle {
     label {
       color: $dark-primary-text;
+      font-family: $app-font-family;
     }
 
     &.mat-checked {

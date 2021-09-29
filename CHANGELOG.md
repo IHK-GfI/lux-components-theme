@@ -1,3 +1,7 @@
+# Version 11.5.0
+- **button**: Unterschiedliche Buttonhöhen (mit/ohne Icons) korrigieren [Issue 5](https://github.com/IHK-GfI/lux-components-theme/issues/5)
+- **green**: Die Buttons und Schriften im Theme "green" überarbeiten. [Issue 6](https://github.com/IHK-GfI/lux-components-theme/issues/6)
+
 # Version 11.4.0
 ## New
 - **lux-datetimepicker**: Styles für den neuen Datetimepicker inklusive Uhrzeit bereitstellen. [Issue 4](https://github.com/IHK-GfI/lux-components/issues/4)

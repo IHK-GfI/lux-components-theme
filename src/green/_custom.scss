@@ -1,5 +1,16 @@
+$green-button-font-size: 18px;
+
 body {
   color: #003366;
+  font-family: $app-font-family;
+}
+
+p, div {
+  font-family: $app-font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Korb", $app-font-family;
 }
 
 lux-card .mat-card {
@@ -15,6 +26,23 @@ lux-panel {
 @mixin lux-hovered-mixin-green {
   background-color: #e3ebf5 !important;
   border-radius: 4px;
+}
+
+/*
+ * Theming for LUX-App-Footer
+ */
+lux-app-footer {
+  .lux-app-footer {
+    .lux-menu-extended {
+      > lux-button {
+        button {
+          &.lux-button {
+            font-size: $green-button-font-size;
+          }
+        }
+      }
+    }
+  }
 }
 
 lux-app-header {
@@ -64,7 +92,7 @@ lux-app-header {
       .lux-header-user-short {
         > span {
           color: map-get($lux-palette_primary, 500);
-          background-color: map-get($lux-palette-primary, 500);
+          background-color: map-get(map-get($lux-palette-primary, contrast), 500);
         }
       }
     }
@@ -170,6 +198,75 @@ lux-app-header {
 
       & lux-icon, .lux-header-username {
         color: #003366 !important;
+      }
+    }
+  }
+}
+
+/*
+ * Theming for LUX-Button
+ */
+lux-button button.lux-button {
+
+  font-weight: lighter !important;
+
+  &.mat-button, &.mat-raised-button {
+    border-radius: 18px;
+    height: $button-height;
+    font-size: $green-button-font-size;
+    margin-left: $outline-width;
+    margin-right: $outline-width;
+  }
+
+  &.mat-button.mat-button-disabled,
+  &.mat-raised-button.mat-button-disabled,
+  &.mat-fab.mat-button-disabled {
+    color: $dark-disabled-text;
+  }
+
+  &.mat-raised-button.mat-accent:not(.mat-button-disabled), &.mat-fab.mat-accent:not(.mat-button-disabled) {
+    color: map-get($lux-palette-primary, 500);
+  }
+
+  &.lux-icon-button {
+    border-radius: 18px;
+    height: $button-height;
+    padding-top: 4px;
+    padding-bottom: 2px;
+
+    & lux-icon {
+      i,
+      mat-icon {
+        font-size: 1em;
+      }
+    }
+  }
+
+  &.lux-button-rounded {
+    border-radius: 16px !important;
+    height: $button-fav-height;
+    width: $button-fav-height;
+
+    & lux-icon {
+      i,
+      mat-icon {
+        font-size: 1.5em;
+      }
+    }
+  }
+}
+
+/*
+ * Theming for LUX-Menu
+ */
+.lux-menu-extended {
+  > lux-button {
+    button {
+      padding-left: 16px;
+      padding-right: 16px;
+
+      &.lux-button {
+        font-size: 14px;
       }
     }
   }
