@@ -314,3 +314,15 @@ lux-tile {
     }
   }
 }
+
+
+/* 
+ * Theming for LUX-badge-notification
+ */
+.lux-badge-notification {
+
+  &.mat-badge:not(.mat-badge-diabled).mat-badge-accent .mat-badge-content {
+    background-color: map-get($lux-palette_accent, 500);
+  }
+ 
+}
