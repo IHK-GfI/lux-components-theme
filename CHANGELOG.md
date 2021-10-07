@@ -1,5 +1,6 @@
 # Version 11.6.0
 - **badge-notification**: Accent-Farbe noch ans Theme anpassen [Issue 7](https://github.com/IHK-GfI/lux-components-theme/issues/7)
+- **allgemein**: Themefarben auch als Css-Variablen zur Verfügung stellen [Issue 8](https://github.com/IHK-GfI/lux-components-theme/issues/8)
 
 # Version 11.5.0
 - **button**: Unterschiedliche Buttonhöhen (mit/ohne Icons) korrigieren [Issue 5](https://github.com/IHK-GfI/lux-components-theme/issues/5)

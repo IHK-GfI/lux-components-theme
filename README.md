@@ -1,49 +1,108 @@
-## Theme
-- [Allgemein](#allgemein)
-- [Styles](#styles)
-  - [Allgemeine Style Classes](#allgemeine-style-classes)
-  - [Style Classes aus der Farbpalette](#style-classes-aus-der-farbpalette)
+# Theme
+- [Installation](#installation)
+- [LUX-Theme](#lux-theme)
+  - [Allgemeine Css-Variablen](#allgemeine-css-variablen)  
+  - [Allgemeine Css-Klassen](#allgemeine-css-klassen)
+  - [Beispiele einer Farbpalette](#beispiel-einer-farbpalette)
+    - [Css-Variablen](#css-variablen)
+    - [Css-Klassen](#css-klassen)
+  - [Code-Beispiele](#code-beispiele)
+    - [Css-Variable](#css-variable)
+    - [Css-Klasse](#css-klasse)
 
-### Installation
+## Installation
 ```bash
 npm install @ihk-gfi/lux-components-theme
 ```
 
-### Styles
-#### Allgemeine Style Classes
-- lux-app-header-bg
-- lux-app-content-bg
-- lux-app-footer-bg
-- lux-app-data-bg
-- lux-highlight-section
-- lux-highlight-section-label
-- lux-color-dark-primary-text
-- lux-color-dark-secondary-text
-- lux-color-dark-disabled-text
-- lux-color-dark-focused
-- lux-color-light-primary-text
-- lux-color-light-secondary-text
-- lux-color-light-disabled-text
-- lux-color-light-focused
-- lux-selected-bg
-- lux-hover-bg
-- lux-hover-dark-bg
-- lux-color-dark-divider
-- lux-color-light-divider
-- lux-outline-color-light
-- lux-outline-color-dark
-- lux-outline-width
-- lux-outline-style
-- lux-outline-light
-- lux-outline-dark
+## LUX-Theme
+Ein LUX-Theme besteht immer aus den drei Farbpaletten:
+- `lux-palette_primary`
+- `lux-palette_accent`
+- `lux-palette_warn`
 
-#### Style Classes aus der Farbpalette
-Das LUX-Components-Theme besteht aus den folgenden Farbpaletten:
-- lux-palette_primary
-- lux-palette_accent
-- lux-palette_warn
+Aus den Farbpaletten werden eine Menge von Css-Variablen und Css-Klassen abgeleitet. 
+Zusätzlich gibt es eine Menge von allgemeinen Css-Variablen und Css-Klassen. 
+Alles zusammen bildet die Grundlage für das Theming der eigenen Komponenten auf Basis eines LUX-Themes.
 
-Beispiel der Farbpalette `lux-palette_primary`:
+### Allgemeine Css-Variablen
+
+- `--lux-theme-app-header-bg`
+- `--lux-theme-app-content-bg`
+- `--lux-theme-app-footer-bg`
+- `--lux-theme-app-data-bg`
+- `--lux-theme-dark-primary-text`
+- `--lux-theme-dark-secondary-text`
+- `--lux-theme-dark-disabled-text`
+- `--lux-theme-dark-dividers`
+- `--lux-theme-dark-focused`
+- `--lux-theme-light-primary-text`
+- `--lux-theme-light-secondary-text`
+- `--lux-theme-light-disabled-text`
+- `--lux-theme-light-dividers`
+- `--lux-theme-light-focused`
+- `--lux-theme-form-border-color`
+- `--lux-theme-button-height`
+- `--lux-theme-button-fav-height`
+- `--lux-theme-outline-color-bright`
+- `--lux-theme-outline-color-dark`
+- `--lux-theme-hover-color`
+- `--lux-theme-hover-color-for-dark-background`
+- `--lux-theme-selected-border-color`
+- `--lux-theme-selected-bg-color`
+- `--lux-theme-primary-color`
+- `--lux-theme-accent-color`
+- `--lux-theme-warn-color`
+- `--lux-theme-component-bg-red`
+- `--lux-theme-component-bg-green`
+- `--lux-theme-component-bg-purple`
+- `--lux-theme-component-bg-blue`
+- `--lux-theme-component-bg-gray`
+- `--lux-theme-component-bg-orange`
+- `--lux-theme-component-bg-brown`
+- `--lux-theme-component-bg-black`
+- `--lux-theme-component-bg-white`
+- `--lux-theme-component-bg-dark-red`
+- `--lux-theme-component-bg-dark-green`
+- `--lux-theme-component-bg-dark-purple`
+- `--lux-theme-component-bg-dark-blue`
+- `--lux-theme-component-bg-dark-gray`
+- `--lux-theme-component-bg-dark-orange`
+- `--lux-theme-component-bg-dark-brown`
+- `--lux-theme-component-bg-dark-white`
+- `--lux-theme-component-font-color-black`
+- `--lux-theme-component-font-color-white`
+
+### Allgemeine Css-Klassen
+
+- `lux-app-header-bg`
+- `lux-app-content-bg`
+- `lux-app-footer-bg`
+- `lux-app-data-bg`
+- `lux-highlight-section`
+- `lux-highlight-section-label`
+- `lux-color-dark-primary-text`
+- `lux-color-dark-secondary-text`
+- `lux-color-dark-disabled-text`
+- `lux-color-dark-focused`
+- `lux-color-light-primary-text`
+- `lux-color-light-secondary-text`
+- `lux-color-light-disabled-text`
+- `lux-color-light-focused`
+- `lux-selected-bg`
+- `lux-hover-bg`
+- `lux-hover-dark-bg`
+- `lux-color-dark-divider`
+- `lux-color-light-divider`
+- `lux-outline-color-light`
+- `lux-outline-color-dark`
+- `lux-outline-width`
+- `lux-outline-style`
+- `lux-outline-light`
+- `lux-outline-dark`
+
+### Beispiel einer Farbpalette
+
 ```
 $lux-palette_primary: (
 50 : #e7ebf0,
@@ -79,42 +138,105 @@ A700 : #000000,
 );
 ```
 
-Zu jedem Eintrag (z.B. 50, 100, 200,..., A100, A200,...) aus der Farbpalette gibt es im LUX-Theme entsprechende Style Classes.
+#### Css-Variablen
+- `--lux-theme-primary-50`
+- `--lux-theme-primary-50-contrast`
+- `--lux-theme-primary-100`
+- `--lux-theme-primary-100-contrast`
+- `--lux-theme-primary-200`
+- `--lux-theme-primary-200-contrast`
+- `--lux-theme-primary-300`
+- `--lux-theme-primary-300-contrast`
+- `--lux-theme-primary-400`
+- `--lux-theme-primary-400-contrast`
+- `--lux-theme-primary-500`
+- `--lux-theme-primary-500-contrast`
+- `--lux-theme-primary-600`
+- `--lux-theme-primary-600-contrast`
+- `--lux-theme-primary-700`
+- `--lux-theme-primary-700-contrast`
+- `--lux-theme-primary-800`
+- `--lux-theme-primary-800-contrast`
+- `--lux-theme-primary-900`
+- `--lux-theme-primary-900-contrast`
+- `--lux-theme-primary-a100`
+- `--lux-theme-primary-a100-contrast`
+- `--lux-theme-primary-a200`
+- `--lux-theme-primary-a200-contrast`
+- `--lux-theme-primary-a400`
+- `--lux-theme-primary-a400-contrast`
+- `--lux-theme-primary-a700`
+- `--lux-theme-primary-a700-contrast`
 
-Beispiel der Farbpalette `lux-palette_primary` für den Eintrat `50`:
-- lux-color-primary-50
-- lux-color-primary-50-contrast
-- lux-bg-color-primary-50
-- lux-bg-color-primary-50-contrast
-- lux-border-color-primary-50
-- lux-border-color-primary-50-contrast
-- lux-outline-color-primary-50
-- lux-outline-color-primary-50-contrast
-- lux-text-decoration-primary-color-50
-- lux-text-decoration-primary-color-50-contrast
-- lux-column-rule-color-primary-50
-- lux-column-rule-color-primary-50-contrast
-- lux-color-accent-50
-- lux-color-accent-50-contrast
-- lux-bg-color-accent
-- lux-bg-color-accent-50-contrast
-- lux-border-color-accent-50
-- lux-border-color-accent-50-contrast
-- lux-outline-color-accent-50
-- lux-outline-color-accent-50-contrast
-- lux-text-decoration-accent-color-50
-- lux-text-decoration-accent-color-50-contrast
-- lux-column-rule-color-accent-50
-- lux-column-rule-color-accent-50-contrast
-- lux-color-warn-50
-- lux-color-warn-50-contrast
-- lux-bg-color-warn-50
-- lux-bg-color-warn-50-contrast
-- lux-border-color-warn-50
-- lux-border-color-warn-50-contrast
-- lux-outline-color-warn-50
-- lux-outline-color-warn-50-contrast
-- lux-text-decoration-warn-color-50
-- lux-text-decoration-warn-color-50-contrast
-- lux-column-rule-color-warn-50
-- lux-column-rule-color-warn-50-contrast
+####  Css-Klassen
+
+Zu jedem Eintrag (z.B. 50, 100, 200,..., A100, A200,...) der Farbpalette gibt es im LUX-Theme entsprechende Css-Klassen. 
+Hier im Beispiel werden nur die Css-Klassen des Eintrags 50 aufgeführt. Die Klassen der anderen Einträge 
+(50, 100, 200,...) sind analog aufgebaut.
+
+- `lux-color-primary-50`
+- `lux-color-primary-50-contrast`
+- `lux-bg-color-primary-50`
+- `lux-bg-color-primary-50-contrast`
+- `lux-border-color-primary-50`
+- `lux-border-color-primary-50-contrast`
+- `lux-outline-color-primary-50`
+- `lux-outline-color-primary-50-contrast`
+- `lux-text-decoration-primary-color-50`
+- `lux-text-decoration-primary-color-50-contrast`
+- `lux-column-rule-color-primary-50`
+- `lux-column-rule-color-primary-50-contrast`
+- `lux-color-accent-50`
+- `lux-color-accent-50-contrast`
+- `lux-bg-color-accent`
+- `lux-bg-color-accent-50-contrast`
+- `lux-border-color-accent-50`
+- `lux-border-color-accent-50-contrast`
+- `lux-outline-color-accent-50`
+- `lux-outline-color-accent-50-contrast`
+- `lux-text-decoration-accent-color-50`
+- `lux-text-decoration-accent-color-50-contrast`
+- `lux-column-rule-color-accent-50`
+- `lux-column-rule-color-accent-50-contrast`
+- `lux-color-warn-50`
+- `lux-color-warn-50-contrast`
+- `lux-bg-color-warn-50`
+- `lux-bg-color-warn-50-contrast`
+- `lux-border-color-warn-50`
+- `lux-border-color-warn-50-contrast`
+- `lux-outline-color-warn-50`
+- `lux-outline-color-warn-50-contrast`
+- `lux-text-decoration-warn-color-50`
+- `lux-text-decoration-warn-color-50-contrast`
+- `lux-column-rule-color-warn-50`
+- `lux-column-rule-color-warn-50-contrast`
+
+### Code-Beispiele
+
+#### Css-Variable
+
+Bespiel:
+
+Html-Datei:
+
+```
+<lux-card class="highlight" luxTitle="Lorem ipsum"></lux-card>
+```
+
+Scss-Datei:
+
+```
+lux-card.highlight ::ng-deep .mat-card {
+  color: var(--lux-theme-accent-400-contrast);
+  background-color: var(--lux-theme-accent-400);
+}
+```
+
+#### Css-Klasse
+
+Html-Datei:
+
+```
+<div class="lux-color-accent-500-contrast lux-bg-color-accent-500">Lorem ipsum</div>
+```
+
