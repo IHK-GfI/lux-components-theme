@@ -1,3 +1,72 @@
+$sizes: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700;
+$paletten: $lux-palette_primary, $lux-palette_accent, $lux-palette_warn;
+$paletteNamen: primary, accent, warn;
+
+:root {
+  @for $i from 1 through 3 {
+    @each $size in $sizes {
+      --lux-theme-#{nth($paletteNamen, $i)}-#{to-lower-case("" + $size)}: #{map-get(nth($paletten, $i), $size)};
+      --lux-theme-#{nth($paletteNamen, $i)}-#{to-lower-case("" + $size)}-contrast: #{map-get(nth($paletten, $i), contrast, $size)};
+    }
+  }
+
+  // Allgemein
+  --lux-theme-dark-primary-text: #{$dark-primary-text};
+  --lux-theme-dark-secondary-text: #{$dark-secondary-text};
+  --lux-theme-dark-disabled-text: #{$dark-disabled-text};
+  --lux-theme-dark-dividers: #{$dark-dividers};
+  --lux-theme-dark-focused: #{$dark-focused};
+
+  --lux-theme-light-primary-text: #{$light-primary-text};
+  --lux-theme-light-secondary-text: #{$light-secondary-text};
+  --lux-theme-light-disabled-text: #{$light-disabled-text};
+  --lux-theme-light-dividers: #{$light-dividers};
+  --lux-theme-light-focused: #{$light-focused};
+
+  // App
+  --lux-theme-app-header-bg: #{$app-header-bg};
+  --lux-theme-app-content-bg: #{$app-content-bg};
+  --lux-theme-app-footer-bg: #{$app-footer-bg};
+  --lux-theme-app-data-bg: #{$app-data-bg};
+
+  // Form
+  --lux-theme-form-border-color: #{$form-border-color};
+
+  // Button
+  --lux-theme-button-height: #{$button-height};
+  --lux-theme-button-fav-height: #{$button-fav-height};
+
+  // Fokus
+  --lux-theme-outline-color-bright: #{$outline-color-bright};
+  --lux-theme-outline-color-dark: #{$outline-color-dark};
+
+  // Hover
+  --lux-theme-hover-color: #{$lux-hover-color};
+  --lux-theme-hover-color-for-dark-background: #{$lux-hover-color-for-dark-background};
+
+  // Selektion
+  --lux-theme-selected-border-color: #{$lux-selected-border-color};
+  --lux-theme-selected-bg-color: #{$lux-selected-bg-color};
+
+  // Hauptfarben
+  --lux-theme-primary-color: #{map-get($lux-palette_primary, 500)};
+  --lux-theme-accent-color: #{map-get($lux-palette_accent, 500)};
+  --lux-theme-warn-color: #{map-get($lux-palette_warn, 500)};
+
+  // Hintergrundfarben (z.B. Badge oder Progress)
+  @each $colorName, $colorNameHex in $componentBgColors {
+    --lux-theme-component-bg-#{''+$colorName+''}: #{$colorNameHex};
+  }
+
+  @each $colorName, $colorNameHex in $colorsForDarkBg {
+    --lux-theme-component-bg-dark-#{''+$colorName+''}: #{$colorNameHex};
+  }
+
+  @each $colorName, $colorNameHex in $componentFontColors {
+    --lux-theme-component-font-color-#{''+$colorName+''}: #{$colorNameHex};
+  }
+}
+
 html,
 body,
 .lux-app-container {
@@ -418,10 +487,6 @@ lux-button.lux-uppercase {
 .lux-color-light-focused {
   color: $light-focused;
 }
-
-$sizes: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A300, A400, A700;
-$paletten: $lux-palette_primary, $lux-palette_accent, $lux-palette_warn;
-$paletteNamen: primary, accent, warn;
 
 @each $size in $sizes {
   @for $i from 1 through 3 {
