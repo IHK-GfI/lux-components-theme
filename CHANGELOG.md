@@ -1,3 +1,6 @@
+# Version 11.6.1
+- **table**: Falsche Fokusdarstellung bei den Tabellenzellen (td-Tags) [Issue 11](https://github.com/IHK-GfI/lux-components-theme/issues/11)
+
 # Version 11.6.0
 - **badge-notification**: Accent-Farbe noch ans Theme anpassen [Issue 7](https://github.com/IHK-GfI/lux-components-theme/issues/7)
 - **allgemein**: Themefarben auch als Css-Variablen zur Verfügung stellen [Issue 8](https://github.com/IHK-GfI/lux-components-theme/issues/8)

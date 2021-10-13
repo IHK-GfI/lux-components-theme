@@ -336,7 +336,7 @@ lux-table {
     }
   }
 
-  tr:focus {
+  tr:focus, td:focus {
     @include focus-dark-mixin;
   }
 
