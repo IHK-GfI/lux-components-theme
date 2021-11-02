@@ -345,3 +345,21 @@ lux-tile {
     }
   }
 }
+
+/*
+ * Theming für LUX-Table
+ */
+ lux-table {
+  .mat-header-row {
+    // IHK24-Leichtgrün
+    background-color: #E4F1E4;
+  }
+  .mat-row:nth-child(even){
+     // IHK24-Hellgrau
+    background-color: #EFF3F6;
+  }
+  .mat-row:nth-child(odd){
+    background-color:#ffffff;
+  }
+
+}
