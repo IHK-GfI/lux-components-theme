@@ -326,3 +326,22 @@ lux-tile {
   }
   
 }
+
+/*
+ * Theming für LUX-Checkbox
+ */
+ lux-checkbox {
+    
+  .mat-checkbox-inner-container {
+    border-radius: 4px;
+    border: 1px solid map-get($lux-palette_primary, 500);
+
+    .mat-checkbox-frame {
+      border: none;
+    }
+
+    .mat-checkbox-background .mat-checkbox-checkmark {
+      border-radius: 1px;
+    }
+  }
+}
