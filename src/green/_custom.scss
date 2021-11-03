@@ -335,6 +335,8 @@ lux-tile {
   .mat-checkbox-inner-container {
     border-radius: 4px;
     border: 1px solid map-get($lux-palette_primary, 500);
+    width: 18px !important;
+    height: 18px !important;
 
     .mat-checkbox-frame {
       border: none;
@@ -350,6 +352,7 @@ lux-tile {
  * Theming für LUX-Table
  */
  lux-table {
+
   .mat-header-row {
     // IHK24-Leichtgrün
     background-color: #E4F1E4;
@@ -361,5 +364,46 @@ lux-tile {
   .mat-row:nth-child(odd){
     background-color:#ffffff;
   }
+ }
 
+ /*
+  * Theming für Lux-Radio-Buttons
+  */
+lux-radio {
+
+  .mat-radio-container {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .mat-radio-outer-circle{
+    border: 1.5px solid map-get($lux-palette_primary, 500);
+  }
+
+  .mat-radio-inner-circle{ 
+    // Checkmark-Symbol (statt Kreis) im Radio-Button
+    border-radius:2px;
+    background-color: transparent!important;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    height: 33px;  
+    width: 14px;
+    margin-top: -8px;
+    margin-left: 3px;
+  }
+
+  .mat-radio-checked .mat-radio-outer-circle{
+    background: map-get($lux-palette_primary, 500)!important;
+  }
+  
+  .mat-radio-checked .mat-radio-inner-circle{
+    transform: rotate(45deg) scale(0.4);
+  }
+
+  .mat-radio-button .mat-radio-ripple{
+    height: 18px; /*double of your required circle radius*/
+    width: 18px;  /*double of your required circle radius*/
+    left: calc(50% - 9px); /*'9px'-same as your required circle radius*/
+    top: calc(50% - 9px); /*'9px'-same as your required circle radius */
+  }
 }
