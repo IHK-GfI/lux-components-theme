@@ -1,4 +1,6 @@
-$green-button-font-size: 18px;
+$button-font-size: 18px;
+$light-green: #E4F1E4;
+$light-gray: #EFF3F6;
 
 body {
   color: #003366;
@@ -37,7 +39,7 @@ lux-app-footer {
       > lux-button {
         button {
           &.lux-button {
-            font-size: $green-button-font-size;
+            font-size: $button-font-size;
           }
         }
       }
@@ -213,7 +215,7 @@ lux-button button.lux-button {
   &.mat-button, &.mat-raised-button {
     border-radius: 18px;
     height: $button-height;
-    font-size: $green-button-font-size;
+    font-size: $button-font-size;
     margin-left: $outline-width;
     margin-right: $outline-width;
   }
@@ -473,6 +475,26 @@ lux-checkbox {
     .mat-checkbox-background .mat-checkbox-checkmark {
       border-radius: 2px; // bei 4px ist ein grüner Rand zu sehen
     }
+  }
+}
+
+/*
+ * Theming für LUX-Table
+ */
+lux-table {
+
+  table.mat-table.cdk-table.mat-sort.lux-multiselect-table {
+    border-spacing: 0px 0px !important;
+  }
+
+  .mat-header-row:not(.lux-table-header-no-data) {
+    background-color: $light-green;
+  }
+  .mat-row:nth-child(even){
+    background-color: $light-gray;
+  }
+  .mat-row:nth-child(odd){
+    background-color:#ffffff;
   }
 }
 
