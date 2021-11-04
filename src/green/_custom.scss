@@ -455,6 +455,10 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
  */
 lux-checkbox {
 
+  .mat-checkbox-disabled .mat-checkbox-inner-container{
+    border: 1px solid $dark-disabled-text;
+  }
+
   .mat-checkbox-inner-container {
     border-radius: 4px;
     border: 1px solid map-get($lux-palette_primary, 500);
