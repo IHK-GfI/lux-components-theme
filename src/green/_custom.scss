@@ -448,3 +448,27 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
     }
   }
 }
+
+
+/*
+ * Theming für LUX-Checkbox
+ */
+lux-checkbox {
+
+  .mat-checkbox-inner-container {
+    border-radius: 4px;
+    border: 1px solid map-get($lux-palette_primary, 500);
+    // wegen der Border
+    height: 18px !important;
+    width: 18px !important;
+
+    .mat-checkbox-frame {
+      border: none;
+    }
+
+    .mat-checkbox-background .mat-checkbox-checkmark {
+      border-radius: 2px; // bei 4px ist ein grüner Rand zu sehen
+    }
+  }
+}
+
