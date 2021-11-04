@@ -326,3 +326,125 @@ lux-tile {
   }
   
 }
+
+/*
+ * Theming for LUX-Form-Controls
+ */
+$form-control-padding: 10px 5px 10px 5px;
+$form-control-label-padding-bottom: 4px;
+$form-control-border-radius: 4px;
+$form-control-old-border-bottom: 0px;
+
+lux-checkbox, lux-toggle, lux-radio, lux-slider {
+  & .lux-form-control {
+    margin-right: 0px;
+    margin-left: 0px;
+
+    .lux-form-control-label {
+      padding-bottom: $form-control-label-padding-bottom;
+    }
+
+    .lux-form-control-container {
+      padding: $form-control-padding;
+    }
+  }
+
+  .lux-form-control:not(.lux-form-control-disabled), .lux-form-control:not(.lux-form-control-disabled).lux-focused {
+    .lux-form-control-label {
+      > * {
+        color: $dark-secondary-text;
+      }
+    }
+  }
+}
+
+lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datepicker, lux-datetimepicker, lux-chips {
+  & .lux-form-control {
+    margin-right: 4px;
+    margin-left: 4px;
+
+    .lux-form-control-label {
+      padding-bottom: $form-control-label-padding-bottom;
+    }
+
+    .lux-form-control-container {
+      border: 1px solid $form-border-color;
+      border-radius: $form-control-border-radius;
+      padding: $form-control-padding;
+
+      &:after {
+        border-bottom: $form-control-old-border-bottom;
+      }
+    }
+
+    .lux-label, mat-hint, mat-error {
+      color: $dark-secondary-text;
+    }
+  }
+
+  .lux-form-control-error {
+    .lux-form-control-label {
+      > * {
+        color: $lux-warn-color !important;
+      }
+    }
+
+    .lux-form-control-container {
+      border-color: $lux-selected-border-color !important;
+      box-shadow: 0 0 0 2px $lux-warn-color, 0 0 4px 2px $lux-warn-color;
+    }
+
+    .lux-form-control-misc {
+      > * {
+        color: $lux-warn-color !important;
+      }
+    }
+  }
+
+  .lux-form-control-disabled {
+    .lux-form-control-container {
+      color: $dark-disabled-text !important;
+      border: 1px dashed $dark-disabled-text !important;
+      border-radius: $form-control-border-radius;
+      padding: $form-control-padding;
+
+      &:after {
+        border-bottom: $form-control-old-border-bottom;
+      }
+    }
+  }
+
+  .lux-form-control:not(.lux-form-control-disabled).lux-focused {
+    .lux-form-control-label {
+      > * {
+        color: $dark-secondary-text;
+      }
+    }
+
+    .lux-form-control-container {
+      box-shadow: 0 0 0 2px $lux-selected-border-color, 0 0 4px 2px $lux-selected-border-color;
+
+      &:after {
+        border-bottom: $form-control-old-border-bottom;
+      }
+    }
+  }
+}
+
+.lux-form-control-error {
+  .lux-form-control-label {
+    > * {
+      color: $lux-warn-color !important;
+    }
+  }
+
+  .lux-form-control-container {
+    border-color: $lux-warn-color !important;
+  }
+
+  .lux-form-control-misc {
+    > * {
+      color: $lux-warn-color !important;
+    }
+  }
+}
