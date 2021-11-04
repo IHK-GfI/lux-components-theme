@@ -472,3 +472,72 @@ lux-checkbox {
   }
 }
 
+/*
+ * Theming für LUX-Radio-Buttons
+ */
+lux-radio {
+
+  .mat-radio-outer-circle{
+    border: 1.5px solid map-get($lux-palette_primary, 500);
+  }
+
+  .mat-radio-inner-circle{
+    // Checkmark-Symbol mit css gezeichnet, anstatt des inneren Kreises
+    border-radius:2px;
+    background-color: transparent!important;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    height: 32px;
+    width: 14px;
+    margin-top: -8px;
+    margin-left: 3px;
+  }
+
+  .mat-radio-checked {
+    .mat-radio-outer-circle {
+      background: map-get($lux-palette_primary, 500);
+    }
+
+    &.mat-radio-disabled .mat-radio-outer-circle {
+      background: $dark-disabled-text;
+      border-color: $dark-disabled-text;
+    }
+
+    &.mat-radio-disabled label .mat-radio-container {
+      span.mat-radio-inner-circle {
+        background-color: $dark-disabled-text;
+      }
+
+      span.mat-radio-outer-circle {
+        border-color: $dark-disabled-text;
+      }
+    }
+  }
+
+  .mat-radio-disabled label.mat-radio-label {
+    .mat-radio-label-content {
+      color: $dark-disabled-text;
+    }
+
+    .mat-radio-container {
+      span.mat-radio-inner-circle {
+        background-color: $dark-disabled-text;
+      }
+
+      span.mat-radio-outer-circle {
+        border-color: $dark-disabled-text;
+      }
+    }
+  }
+
+  .mat-radio-checked .mat-radio-inner-circle{
+    transform: rotate(45deg) scale(0.4);
+  }
+
+  .mat-radio-button .mat-radio-ripple{
+    height: 20px; /*double of your required circle radius*/
+    width: 20px;  /*double of your required circle radius*/
+    left: calc(50% - 10px); /*'10px'-same as your required circle radius*/
+    top: calc(50% - 10px); /*'10px'-same as your required circle radius */
+  }
+}
