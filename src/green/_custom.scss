@@ -1,4 +1,7 @@
 $green-button-font-size: 18px;
+$ihk24-light-green: #E4F1E4;
+$ihk24-light-gray: #EFF3F6;
+$ihk24-light-blue: #E3EBF5;;
 
 body {
   color: #003366;
@@ -334,14 +337,17 @@ lux-tile {
     
   .mat-checkbox-inner-container {
     border-radius: 4px;
-    border: 1px solid map-get($lux-palette_primary, 500);  
+    border: 1px solid map-get($lux-palette_primary, 500);
+    // wegen der Border 
+    height: 18px !important;
+    width: 18px !important;  
 
     .mat-checkbox-frame {
       border: none;
     }
 
     .mat-checkbox-background .mat-checkbox-checkmark {
-      border-radius: 1px;
+      border-radius: 2px; // bei 4px ist ein grüner Rand zu sehen
     }
   }
 }
@@ -357,11 +363,11 @@ lux-tile {
 
   .mat-header-row {
     // IHK24-Leichtgrün
-    background-color: #E4F1E4;
+    background-color: $ihk24-light-green;
   }
   .mat-row:nth-child(even){
      // IHK24-Hellgrau
-    background-color: #EFF3F6;
+    background-color: $ihk24-light-gray;
   }
   .mat-row:nth-child(odd){
     background-color:#ffffff;
@@ -383,7 +389,7 @@ lux-radio {
     background-color: transparent!important;
     border-bottom: 5px solid white;
     border-right: 5px solid white;
-    height: 33px;  
+    height: 32px;  
     width: 14px;
     margin-top: -8px;
     margin-left: 3px;
@@ -404,6 +410,9 @@ lux-radio {
     top: calc(50% - 10px); /*'10px'-same as your required circle radius */
   }
 }
+
+
+
 
 /*
 * Theming für Lux-Datepicker
