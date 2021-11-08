@@ -13,6 +13,10 @@
 - **form-fields**: Eingabefelder mit abgerundetem Rahmen und Label darstellen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
 - **table**: Die Zeilenhintergrundfarbe alternierend in Weiß und Hellgrau darstellen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
 - **table**: Den Tabellenheader in Grün darstellen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
+- **datepicker**: Überschriften (Wochentage) mit zwei Buchstaben darstellen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
+- **datepicker**: Tagehintergrund in hellblauen Kästchen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
+- **datepicker**: Selektierter Tag als dunkelblaues Kästchen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
+- **datepicker**: Monatsname unterhalb der Tagesspaltenköpfe soll entfallen (falls möglich). [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
 
 # Version 11.6.1
 ## Bug Fixes
