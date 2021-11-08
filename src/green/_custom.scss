@@ -1,6 +1,7 @@
 $button-font-size: 18px;
 $light-green: #E4F1E4;
 $light-gray: #EFF3F6;
+$light-blue: #E3EBF5;
 
 body {
   color: #003366;
@@ -565,5 +566,85 @@ lux-radio {
     width: 20px;  /*double of your required circle radius*/
     left: calc(50% - 10px); /*'10px'-same as your required circle radius*/
     top: calc(50% - 10px); /*'10px'-same as your required circle radius */
+  }
+}
+/*
+* Theming für Lux-Datepicker 
+*/
+.lux-datepicker-panel {
+
+  .mat-datepicker-content .mat-calendar {
+    min-height: 320px;
+  }
+
+  .mat-calendar-content {
+    padding: 0px 10px 10px 10px;
+    
+    th {
+      font-size: 18px;
+      color: map-get($lux-palette_primary, 500);
+    }
+
+    td.mat-calendar-body-cell {
+
+      &:after {
+        background-color: white;
+      }
+
+      &:hover > div {
+        border-radius: 2px;
+        background-color:map-get($lux-palette_accent, 300) !important;
+        color: map-get($lux-palette_primary, 500);
+      }
+
+      & > div {
+        border-radius: 2px;
+        background-color: $light-blue;
+        font-size: 18px;
+        color: map-get($lux-palette_primary, 500);
+      }
+    }
+
+    .mat-calendar-body-cell-content.mat-focus-indicator.mat-calendar-body-selected {
+      border-radius: 2px;
+      background-color: map-get($lux-palette_primary, 500);
+      color: $light-blue;
+    }
+
+    // Ausblenden des zusätzlichen Monatslabels
+    .mat-calendar-body-label:not(:last-of-type) {
+      visibility: hidden;
+    }
+
+    .mat-calendar-body-label:last-of-type, th.mat-calendar-table-header-divider {
+        display: none;
+    }
+  }
+}
+
+/*
+* Theming für Lux-Datepicker-Custom-Header 
+*/
+.lux-datepicker-custom-header-component {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px 18px 10px;
+
+  button, .mat-icon-button {
+    font-size: 18px;
+    color: map-get($lux-palette_primary, 500);
+
+    .mat-button-focus-overlay {
+      display: none;
+    }
+
+    &:focus {
+      @include focus-dark-mixin;
+    }
+
+    &:hover {
+      @include lux-hovered-mixin;
+    }
   }
 }
