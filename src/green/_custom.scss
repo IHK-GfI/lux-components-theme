@@ -411,77 +411,83 @@ lux-radio {
   }
 }
 
-
-
-
 /*
-* Theming für Lux-Datepicker
+* Theming für Lux-Datepicker 
 */
-
 .lux-datepicker-panel {
-   
+
   .mat-datepicker-content .mat-calendar {
-    height:unset;
-    border: 1px solid #CCD7E6;
-  }
-
-  table, td, th {
-    font-size: 18px;
-    color: map-get($lux-palette_primary, 500);
-  }
-  div.green-theme-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px;
-
-    .mat-calendar-period-button,
-    .mat-calendar-next-button.mat-icon-button,
-    .mat-calendar-previous-button.mat-icon-button {
-    font-size: 18px;
-    color: map-get($lux-palette_primary, 500);
-  }
+    min-height: 320px;
   }
 
   .mat-calendar-content {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
+    padding: 0px 10px 10px 10px;
+    
+    th {
+      font-size: 18px;
+      color: map-get($lux-palette_primary, 500);
+    }
+
+    td.mat-calendar-body-cell {
+
+      &:after {
+        background-color: white;
+      }
+
+      &:hover > div {
+        border-radius: 2px;
+        background-color:map-get($lux-palette_accent, 300) !important;
+        color: map-get($lux-palette_primary, 500);
+      }
+
+      & > div {
+        border-radius: 2px;
+        background-color: $ihk24-light-blue;
+        font-size: 18px;
+        color: map-get($lux-palette_primary, 500);
+      }
+    }
+
+    .mat-calendar-body-cell-content.mat-focus-indicator.mat-calendar-body-selected {
+      border-radius: 2px;
+      background-color: map-get($lux-palette_primary, 500);
+      color: $ihk24-light-blue;
+    }
+
+    // Ausblenden des zusätzlichen Monatslabels
+    .mat-calendar-body-label:not(:last-of-type) {
+      visibility: hidden;
+    }
+
+    .mat-calendar-body-label:last-of-type, th.mat-calendar-table-header-divider {
+        display: none;
+    }
   }
+}
 
-  // .mat-calendar-header {
-  //   padding-top: 10px;
-  //   padding-bottom: 12px;
-  // }
+/*
+* Theming für Lux-Datepicker-Custom-Header 
+*/
+.lux-datepicker-custom-header-component {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px 18px 10px;
 
-  .mat-calendar-arrow {
-    border-top-color: inherit;
-  }
-
-  .mat-calendar-controls { // damit der calender-header nicht so hoch ist
-    margin: unset;
-  }
-
-  // das zweite Label für den Monatsnamen abschalten
-  .mat-calendar-body-label {
-    opacity: 0;
-  }
-  // wichtig dass die Reihenfolge im Kalender erhalten bleibt
-  .mat-calendar-body-label[colspan="7"], th.mat-calendar-table-header-divider{
-    display: none;
-
-  }
-
-  // Kästchen hinter den Tagen
-  .mat-calendar-body-cell-content:not(.mat-focus-indicator.mat-calendar-body-selected) {
-    border-radius: 2px;
-    background-color: #E3EBF5; // IHK24-Leichtblau
+  button, .mat-icon-button {
+    font-size: 18px;
     color: map-get($lux-palette_primary, 500);
-  }
-  // für den Ausgewählten Tag
-  .mat-calendar-body-cell-content.mat-focus-indicator.mat-calendar-body-selected {
-    border-radius: 2px;
-    color:#E3EBF5; // IHK24-Leichtblau
-  }
 
+    .mat-button-focus-overlay {
+      display: none;
+    }
+
+    &:focus {
+      @include focus-dark-mixin;
+    }
+
+    &:hover {
+      @include lux-hovered-mixin;
+    }
+  }
 }
