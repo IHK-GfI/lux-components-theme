@@ -568,15 +568,11 @@ lux-radio {
     top: calc(50% - 10px); /*'10px'-same as your required circle radius */
   }
 }
-/*
-* Theming für Lux-Datepicker 
-*/
-.lux-datepicker-panel {
 
-  .mat-datepicker-content .mat-calendar {
-    min-height: 320px;
-  }
-
+/* 
+ * Mixin für den Datepicker und Datetimepicker
+ */
+@mixin datepicker-content {
   .mat-calendar-content {
     padding: 0px 10px 10px 10px;
     
@@ -650,6 +646,19 @@ lux-radio {
 }
 
 /*
+* Theming für Lux-Datepicker 
+*/
+.lux-datepicker-panel {
+
+  .mat-calendar.mat-datepicker-content  {
+    min-height: 350px;
+  }
+  @include datepicker-content();
+}
+
+
+
+/*
 * Theming für Lux-Datetime-Picker 
 */
 .lux-datetime-overlay-content {
@@ -657,48 +666,5 @@ lux-radio {
   .mat-calendar.lux-datetime-overlay-calendar {
     min-height: 340px ;
   }
-  
-  .mat-calendar-content {
-    padding: 0px 10px 10px 10px;
-    
-    th {
-      font-size: 18px;
-      color: map-get($lux-palette_primary, 500);
-    }
-
-    td.mat-calendar-body-cell {
-
-      &:after {
-        background-color: white;
-      }
-
-      &:hover > div {
-        border-radius: 2px;
-        background-color:map-get($lux-palette_accent, 300) !important;
-        color: map-get($lux-palette_primary, 500);
-      }
-
-      & > div {
-        border-radius: 2px;
-        background-color: $light-blue;
-        font-size: 18px;
-        color: map-get($lux-palette_primary, 500);
-      }
-    }
-
-    .mat-calendar-body-cell-content.mat-focus-indicator.mat-calendar-body-selected {
-      border-radius: 2px;
-      background-color: map-get($lux-palette_primary, 500);
-      color: $light-blue;
-    }
-
-    // Ausblenden des zusätzlichen Monatslabels
-    .mat-calendar-body-label:not(:last-of-type) {
-      visibility: hidden;
-    }
-
-    .mat-calendar-body-label:last-of-type, th.mat-calendar-table-header-divider {
-        display: none;
-    }
-  }
+  @include datepicker-content();
 }
