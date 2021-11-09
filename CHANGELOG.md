@@ -1,4 +1,8 @@
 # Version 11.7.0
+## Bug Fixes - Theme "green"
+- **checkbox**: Deaktivierte Checkbox wird nicht angezeigt. [Issue 13](https://github.com/IHK-GfI/lux-components-theme/issues/13)
+
+# Version 11.7.0
 ## New
 - **allgemein**: Die folgenden neuen CSS-Variablen wurden eingeführt: [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
  - `--lux-theme-form-control-default-height-not-scalable` 
