@@ -459,7 +459,7 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
 lux-checkbox {
 
   .mat-checkbox-disabled .mat-checkbox-inner-container{
-    border: 1px solid $dark-disabled-text;
+    border: none;
   }
 
   .mat-checkbox-inner-container {
@@ -527,7 +527,7 @@ lux-radio {
 
     &.mat-radio-disabled .mat-radio-outer-circle {
       background: $dark-disabled-text;
-      border-color: $dark-disabled-text;
+      border: none;
     }
 
     &.mat-radio-disabled label .mat-radio-container {
