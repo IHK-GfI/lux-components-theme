@@ -305,6 +305,8 @@ lux-file-progress {
  */
 .lux-form-control {
   .lux-form-control-container {
+    padding: 6px 0 0 0;
+
     &:after {
       border-bottom: 1px solid $form-border-color;
     }

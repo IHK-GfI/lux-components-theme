@@ -42,6 +42,11 @@ Alles zusammen bildet die Grundlage für das Theming der eigenen Komponenten auf
 - `--lux-theme-light-dividers`
 - `--lux-theme-light-focused`
 - `--lux-theme-form-border-color`
+- `--lux-theme-form-control-default-height-not-scalable`
+- `--lux-theme-form-control-height`
+- `--lux-theme-form-control-height-small`
+- `--lux-theme-form-control-font-size`
+- `--lux-theme-form-control-font-size-small`
 - `--lux-theme-button-height`
 - `--lux-theme-button-fav-height`
 - `--lux-theme-outline-color-bright`

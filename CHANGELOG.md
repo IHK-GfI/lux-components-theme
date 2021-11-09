@@ -1,13 +1,38 @@
+# Version 11.7.0
+## New
+- **allgemein**: Die folgenden neuen CSS-Variablen wurden eingeführt: [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
+ - `--lux-theme-form-control-default-height-not-scalable` 
+ - `--lux-theme-form-control-height`
+ - `--lux-theme-form-control-height-small`
+ - `--lux-theme-form-control-font-size`
+ - `--lux-theme-form-control-font-size-small`
+
+## New - Theme "green"
+- **checkbox**: Checkboxen abgerundet darstellen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
+- **radio**: Aktivierte Radio-Buttons mit Haken-Icon darstellen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
+- **form-fields**: Eingabefelder mit abgerundetem Rahmen und Label darstellen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
+- **table**: Die Zeilenhintergrundfarbe alternierend in Weiß und Hellgrau darstellen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
+- **table**: Den Tabellenheader in Grün darstellen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
+- **datepicker**: Überschriften (Wochentage) mit zwei Buchstaben darstellen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
+- **datepicker**: Tagehintergrund in hellblauen Kästchen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
+- **datepicker**: Selektierter Tag als dunkelblaues Kästchen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
+- **datepicker**: Monatsname unterhalb der Tagesspaltenköpfe soll entfallen (falls möglich). [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
+
 # Version 11.6.1
+## Bug Fixes
 - **table**: Falsche Fokusdarstellung bei den Tabellenzellen (td-Tags) [Issue 11](https://github.com/IHK-GfI/lux-components-theme/issues/11)
 
 # Version 11.6.0
+## New
 - **badge-notification**: Accent-Farbe noch ans Theme anpassen [Issue 7](https://github.com/IHK-GfI/lux-components-theme/issues/7)
 - **allgemein**: Themefarben auch als Css-Variablen zur Verfügung stellen [Issue 8](https://github.com/IHK-GfI/lux-components-theme/issues/8)
 
 # Version 11.5.0
-- **button**: Unterschiedliche Buttonhöhen (mit/ohne Icons) korrigieren [Issue 5](https://github.com/IHK-GfI/lux-components-theme/issues/5)
+## New
 - **green**: Die Buttons und Schriften im Theme "green" überarbeiten. [Issue 6](https://github.com/IHK-GfI/lux-components-theme/issues/6)
+
+## Bug Fixes
+- **button**: Unterschiedliche Buttonhöhen (mit/ohne Icons) korrigieren [Issue 5](https://github.com/IHK-GfI/lux-components-theme/issues/5)
 
 # Version 11.4.0
 ## New

@@ -31,6 +31,11 @@ $paletteNamen: primary, accent, warn;
 
   // Form
   --lux-theme-form-border-color: #{$form-border-color};
+  --lux-theme-form-control-default-height-not-scalable: #{$form-control-default-height-not-scalable};
+  --lux-theme-form-control-height: #{$form-control-height};
+  --lux-theme-form-control-height-small: #{$form-control-height-small};
+  --lux-theme-form-control-font-size: #{$form-control-font-size};
+  --lux-theme-form-control-font-size-small: #{$form-control-font-size-small};
 
   // Button
   --lux-theme-button-height: #{$button-height};
