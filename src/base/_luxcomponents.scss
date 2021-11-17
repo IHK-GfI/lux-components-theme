@@ -24,6 +24,7 @@ lux-app-footer {
 lux-app-header {
   .lux-app-header {
     background-color: $app-header-bg;
+    @include lux-elevation-z6();
 
     .lux-show-border {
       border-left: 1px solid $light-dividers;
@@ -55,6 +56,10 @@ lux-app-header {
 
           &.mat-primary:not(.mat-button-disabled) {
             color: map-get($lux-palette_primary, A100);
+          }
+
+          &.lux-button-rounded {
+            @include lux-elevation-z0;
           }
         }
       }
@@ -162,6 +167,9 @@ lux-card {
   .lux-card-content-expanded {
     background: $app-data-bg;
   }
+  .mat-card:not([class*=mat-elevation-z]) {
+    @include lux-elevation-z1;
+  }
 }
 
 /**
@@ -227,6 +235,11 @@ lux-datetimepicker {
     }
   }
 }
+.lux-datetime-overlay-content {
+  mat-card.mat-card {
+    @include lux-elevation-z4();
+  } 
+}
 
 /*
  * Theming for LUX-Dialog
@@ -234,6 +247,9 @@ lux-datetimepicker {
 .lux-dialog {
   .lux-dialog-title {
     color: $dark-primary-text;
+  }
+  .mat-dialog-container {
+    @include lux-elevation-z24;
   }
 }
 
@@ -403,6 +419,18 @@ lux-lookup-combobox {
   }
 }
 
+/* 
+ * Eineheitliche Elevation für die Components auf Cdk-Overlay-Pane
+ */
+.cdk-overlay-pane {
+  & > .mat-autocomplete-panel:not([class*=mat-elevation-z]), 
+      .mat-datepicker-content, 
+      .mat-select-panel:not([class*=mat-elevation-z]),
+      .mat-menu-panel {
+        @include lux-elevation-z4;
+  }
+}
+
 /*
  * Theming for LUX-Master-Detail
  */
@@ -413,6 +441,16 @@ lux-master-detail {
       color: $dark-primary-text;
     }
   }
+
+  .lux-master-container.lux-empty-elements-aligned {
+    @include lux-elevation-z1;
+  }
+
+  lux-list {
+    .mat-card:not([class*=mat-elevation-z]) {
+      @include lux-elevation-z0;
+    }
+  }
 }
 
 /*
@@ -420,6 +458,7 @@ lux-master-detail {
  */
 lux-master-footer {
   background-color: $app-data-bg;
+  @include lux-elevation-z1;
 }
 
 /*
@@ -427,6 +466,7 @@ lux-master-footer {
  */
 lux-master-header {
   background-color: $app-data-bg;
+  @include lux-elevation-z1;
 }
 
 /*
@@ -446,7 +486,7 @@ lux-master-header {
  */
 lux-message-box {
   &.mat-elevation-z4 {
-    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    @include lux-elevation-z4();
   }
 }
 
@@ -459,6 +499,10 @@ lux-message-box {
     background-color: transparent;
   }
 }
+snack-bar-container.mat-snack-bar-container {
+  @include lux-elevation-z6();
+}
+
 
 /*
  * Theming for LUX-Progress
@@ -554,7 +598,7 @@ lux-select {
 lux-side-nav {
   .lux-side-nav {
     background: $app-data-bg;
-    box-shadow: 3px 3px 5px 0 rgba(0, 0, 0, 0.5);
+    @include lux-elevation-z16();
 
     .lux-side-nav-header {
       border-bottom: 1px solid $dark-dividers;
@@ -719,6 +763,10 @@ lux-tile {
   .lux-highlight {
     color: map-get($lux-palette_primary, A400);
   }
+
+  .mat-card:not([class*=mat-elevation-z]){
+    @include lux-elevation-z2;
+  }
 }
 
 /*
@@ -730,6 +778,10 @@ lux-toggle {
     label {
       color: $dark-primary-text;
       font-family: $app-font-family;
+    }
+
+    .mat-slide-toggle-thumb {
+      @include lux-elevation-z1;
     }
 
     &.mat-checked {
@@ -784,3 +836,10 @@ lux-toggle {
 mat-tooltip-component .mat-tooltip {
   font-size: 14px;
 }
+
+/*
+ * Theming for LUX-Accordion
+ */
+ mat-expansion-panel.mat-expansion-panel:not([class*=mat-elevation-z]) {
+   @include lux-elevation-z2;
+ }

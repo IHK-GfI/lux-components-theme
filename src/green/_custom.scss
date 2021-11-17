@@ -2,6 +2,7 @@ $button-font-size: 18px;
 $light-green: #E4F1E4;
 $light-gray: #EFF3F6;
 $light-blue: #E3EBF5;
+$dark-green: #2E8533;
 
 body {
   color: #003366;
@@ -301,18 +302,17 @@ lux-tile {
 
   mat-card[class~=lux-cursor] {
 
-    box-shadow: 0px 2px 1px -1px rgb(0 51 102 / 60%), 0px 1px 1px 0px rgb(0 51 102 / 50%), 0px 1px 3px 0px rgb(0 51 102 / 40%) !important;
-
     &:focus {
       @include focus-dark-mixin;
     }
 
     &:hover {
       background-color: white !important;
-      box-shadow: 0px 2px 1px -1px rgb(46 133 51 / 60%), 0px 1px 1px 0px rgb(46 133 51 / 50%), 0px 1px 3px 0px rgb(46 133 51 / 40%) !important;
+      // farbiger Schatten beim Hover
+      @include mat-elevation(2, $dark-green, 1);
 
       h2 {
-        color: #56BD66;
+        color: #56bd66;
       }
     }
   }
