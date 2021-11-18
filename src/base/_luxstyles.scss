@@ -348,7 +348,6 @@ lux-card.lux-card-grow {
   position: relative;
   margin: 0 !important;
   min-width: unset !important;
-  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
   // Die Snackbar wird durch die App umpositioniert, bevor sie sichtbar geschaltet wird.
   // Würde man die Snackbar nicht verstecken, würde sie von der initialen Position zur neuen
   // springen.
