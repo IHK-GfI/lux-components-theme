@@ -348,7 +348,8 @@ lux-checkbox, lux-toggle, lux-radio, lux-slider {
     }
 
     .lux-form-control-container {
-      padding: $form-control-padding;
+      padding-left: 0px;
+      padding-right: 0px;
     }
   }
 
