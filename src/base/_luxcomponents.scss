@@ -301,7 +301,7 @@ lux-file-list .lux-file-list {
 // wenn die LUX-file-list in einer Card angezeigt wird, soll das Margin verringert werden
 lux-card {
   .lux-file-list mat-card {
-    margin: $outline-width;
+    margin: 0px;
   }
 }
 
