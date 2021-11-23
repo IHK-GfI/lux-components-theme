@@ -452,6 +452,17 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
   }
 }
 
+/*
+ * Theming für LUX-Layout-Form-Row
+ */
+lux-layout-form-row {
+  lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datepicker, lux-datetimepicker, lux-chips {
+    & .lux-form-control {
+      margin-right: 0px;
+      margin-left: 0px;
+    }
+  }
+}
 
 /*
  * Theming für LUX-Checkbox
