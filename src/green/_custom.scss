@@ -500,6 +500,29 @@ lux-table {
 }
 
 /*
+ * Theming für LUX-Tabs.
+ */
+// Tabs außerhalb einer LUX-Card (z.B. Master-Detail)
+lux-tabs {
+  .mat-tab-label-active:not(.mat-tab-disabled) {
+    background-color: $lux-hover-color-for-dark-background;
+  }
+
+  div.lux-tab-title {
+    font-family: "Korb", "Source Code Pro", "Helvetica", "Arial", "sans-serif";
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+
+// Tabs innerhalb einer LUX-Card
+mat-card lux-tabs {
+  .mat-tab-label-active:not(.mat-tab-disabled) {
+    background-color: $lux-hover-color-for-dark-background;
+  }
+}
+
+/*
  * Theming für LUX-Radio-Buttons
  */
 lux-radio {
