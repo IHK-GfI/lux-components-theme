@@ -340,8 +340,8 @@ $form-control-old-border-bottom: 0px;
 
 lux-checkbox, lux-toggle, lux-radio, lux-slider {
   & .lux-form-control {
-    margin-right: 0px;
-    margin-left: 0px;
+    margin-right: 4px;
+    margin-left: 4px;
 
     .lux-form-control-label {
       padding-bottom: $form-control-label-padding-bottom;
@@ -448,18 +448,6 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
   .lux-form-control-misc {
     > * {
       color: $lux-warn-color !important;
-    }
-  }
-}
-
-/*
- * Theming für LUX-Layout-Form-Row
- */
-lux-layout-form-row {
-  lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datepicker, lux-datetimepicker, lux-chips {
-    & .lux-form-control {
-      margin-right: 0px;
-      margin-left: 0px;
     }
   }
 }
