@@ -1,23 +1,24 @@
-// der Zielcontainer, muss ein padding vom Wert $Alignment-base-padding bereitstellen, 
+// der Zielcontainer, muss ein padding vom Wert $form-control-margin bereitstellen, 
 // damit bei allen Children die Elemente im "overflow" wie, box-shadow oder foxus-indicator
 // korrekt angezeigt werden können.
-// Die Formcontrols erhalten eine min-height vom Wert $alignment-control-height.
+// Die Formcontrols erhalten eine min-height vom Wert $from-control-height.
 // Beide Werte werden im global.scss gesetzt und können im jeweiligen Theme angepasst werden. 
 
 @mixin alignment-container {
+  
+  lux-form-control div.lux-form-control {
+    margin: $form-control-margin 0px;
+    min-height: $form-control-height;
+  }
 
-
-  .lux-form-control:not(td *) {
-    margin-left: 0px !important; // green
-    margin-right: 0px !important; // green
-    padding: $alignment-base-padding 0px!important;
-    min-height: $alignment-control-height;
+  lux-chips div.lux-form-control {
+    min-height: $form-control-height + 20px;
   }
 
   & lux-file-list {
     & .lux-file-list {
       margin: 0px !important;
-      padding: $alignment-base-padding 0px !important;
+      padding: $form-control-margin 0px !important;
     }
 
     lux-card {
@@ -32,4 +33,14 @@
       overflow: visible !important;
     }  
   }
-}
+
+  lux-table {
+    table td {
+      div.lux-form-control {
+        min-height: unset;
+        margin: $form-control-margin;
+      }
+    }
+  }
+  
+} 

@@ -1,3 +1,5 @@
+@import "luxalignment";
+
 /*
  * Theming for LUX-App-Content
  */
@@ -37,7 +39,6 @@ lux-app-header {
     div.lux-header-action {
       lux-button {
         button {
-
           &:not(.mat-accent):not(.mat-warn):not(.mat-primary):not(.mat-button-disabled) {
             color: map-get(map-get($lux-palette-primary, contrast), 500);
           }
@@ -120,7 +121,7 @@ lux-button button.lux-button {
   }
 
   &.lux-icon-button {
-    height: $button-height;;
+    height: $button-height;
     padding-top: 4px;
     padding-bottom: 2px;
   }
@@ -156,6 +157,15 @@ lux-card {
     border-color: $app-data-bg;
   }
 
+  .lux-card-content-container {
+    overflow-x: hidden;
+    padding: $form-control-margin;
+    @include alignment-container;
+    > * {
+      margin-bottom: 0;
+    }
+  }
+
   .lux-highlight {
     color: $dark-primary-text;
   }
@@ -167,7 +177,8 @@ lux-card {
   .lux-card-content-expanded {
     background: $app-data-bg;
   }
-  .mat-card:not([class*=mat-elevation-z]) {
+
+  .mat-card:not([class*="mat-elevation-z"]) {
     @include lux-elevation-z1;
   }
 }
@@ -235,10 +246,17 @@ lux-datetimepicker {
     }
   }
 }
+
 .lux-datetime-overlay-content {
   mat-card.mat-card {
     @include lux-elevation-z4();
-  } 
+
+    lux-input div.lux-form-control {
+      min-height: unset;
+      margin: $form-control-margin;
+      text-align: center;
+    }
+  }
 }
 
 /*
@@ -252,7 +270,6 @@ lux-datetimepicker {
     @include lux-elevation-z24;
   }
 }
-
 
 /*
  * Theming for LUX-Divider
@@ -299,11 +316,11 @@ lux-file-list .lux-file-list {
   }
 }
 // wenn die LUX-file-list in einer Card angezeigt wird, soll das Margin verringert werden
-lux-card {
-  .lux-file-list mat-card {
-    margin: 0px;
-  }
-}
+// lux-card {
+//   .lux-file-list mat-card {
+//     margin: 0px;
+//   }
+// }
 
 /*
  * Theming for LUX-File-Progress
@@ -326,16 +343,17 @@ lux-file-progress {
  * Theming for LUX-Form-Controls
  */
 .lux-form-control {
+  margin: $form-control-margin;
+  .lux-label, mat-hint, mat-error {
+    color: $dark-secondary-text;
+  }
+  
   .lux-form-control-container {
     padding: 6px 0 0 0;
 
     &:after {
       border-bottom: 1px solid $form-border-color;
     }
-  }
-
-  .lux-label, mat-hint, mat-error {
-    color: $dark-secondary-text;
   }
 }
 
@@ -383,6 +401,29 @@ lux-layout-form-row {
   .row-title {
     color: $dark-primary-text;
   }
+
+  .row-item-container {
+    @include alignment-container;
+
+    & lux-input,
+    lux-toggle,
+    lux-checkbox,
+    lux-radio,
+    lux-autocomplete,
+    lux-datepicker,
+    lux-file-input,
+    lux-slider,
+    lux-select,
+    lux-textarea,
+    lux-lookup-autocomplete,
+    lux-lookup-combobox {
+      min-height: $form-control-height;
+    }
+
+    & lux-chips {
+      min-height: $form-control-height + 20px;
+    }
+  }
 }
 
 /*
@@ -429,11 +470,11 @@ lux-lookup-combobox {
  * Eineheitliche Elevation für die Components auf Cdk-Overlay-Pane
  */
 .cdk-overlay-pane {
-  & > .mat-autocomplete-panel:not([class*=mat-elevation-z]), 
-      .mat-datepicker-content, 
-      .mat-select-panel:not([class*=mat-elevation-z]),
-      .mat-menu-panel {
-        @include lux-elevation-z4;
+  & > .mat-autocomplete-panel:not([class*="mat-elevation-z"]),
+  .mat-datepicker-content,
+  .mat-select-panel:not([class*="mat-elevation-z"]),
+  .mat-menu-panel {
+    @include lux-elevation-z4;
   }
 }
 
@@ -453,7 +494,7 @@ lux-master-detail {
   }
 
   lux-list {
-    .mat-card:not([class*=mat-elevation-z]) {
+    .mat-card:not([class*="mat-elevation-z"]) {
       @include lux-elevation-z0;
     }
   }
@@ -500,7 +541,7 @@ lux-message-box {
  * Theming for LUX-Snackbar
  */
 @each $colorName, $colorNameHex in $colorsForDarkBg {
-  .lux-snackbar-content .lux-bg-color-#{'' + $colorName + ''} {
+  .lux-snackbar-content .lux-bg-color-#{"" + $colorName + ""} {
     color: $colorNameHex;
     background-color: transparent;
   }
@@ -508,7 +549,6 @@ lux-message-box {
 snack-bar-container.mat-snack-bar-container {
   @include lux-elevation-z6();
 }
-
 
 /*
  * Theming for LUX-Progress
@@ -521,7 +561,7 @@ lux-progress {
   }
 
   @each $colorName, $colorNameHex in $componentBgColors {
-    .lux-bg-color-#{'' + $colorName + ''} {
+    .lux-bg-color-#{"" + $colorName + ""} {
       .mat-progress-bar-primary:after,
       .mat-progress-bar-secondary:after {
         background: $colorNameHex;
@@ -530,7 +570,7 @@ lux-progress {
   }
 
   @each $colorName, $colorNameHex in $componentBgColors {
-    mat-progress-spinner.lux-bg-color-#{'' + $colorName + ''} {
+    mat-progress-spinner.lux-bg-color-#{"" + $colorName + ""} {
       circle {
         stroke: $colorNameHex;
       }
@@ -666,17 +706,16 @@ lux-spinner {
  * Theming for LUX-Stepper
  */
 lux-stepper {
-
   // luxUseCustomIcons=true
   .lux-ignore-mat-step-icons {
-
     mat-step-header {
       color: $dark-secondary-text;
 
       &.lux-step-header-touched {
         .lux-stepper-edited-icon,
         .lux-stepper-normal-icon {
-          i, mat-icon {
+          i,
+          mat-icon {
             color: $app-data-bg;
             background-color: map-get($lux-palette_primary, 500);
           }
@@ -686,7 +725,8 @@ lux-stepper {
       &:not(.lux-step-header-touched) {
         .lux-stepper-edited-icon,
         .lux-stepper-normal-icon {
-          i, mat-icon {
+          i,
+          mat-icon {
             color: $app-data-bg;
             background-color: $dark-secondary-text;
           }
@@ -697,7 +737,6 @@ lux-stepper {
 
   // luxUseCustomIcons=false
   .mat-step-header {
-
     lux-step-header {
       color: $dark-secondary-text;
     }
@@ -741,7 +780,8 @@ lux-table {
  * Theming for LUX-Tabs
  */
 lux-tabs {
-  .mat-tab-nav-bar, .mat-tab-header {
+  .mat-tab-nav-bar,
+  .mat-tab-header {
     border-color: $dark-dividers;
   }
 
@@ -770,7 +810,7 @@ lux-tile {
     color: map-get($lux-palette_primary, A400);
   }
 
-  .mat-card:not([class*=mat-elevation-z]){
+  .mat-card:not([class*="mat-elevation-z"]) {
     @include lux-elevation-z2;
   }
 }
@@ -779,7 +819,6 @@ lux-tile {
  * Theming for LUX-Toggle
  */
 lux-toggle {
-
   .mat-slide-toggle {
     label {
       color: $dark-primary-text;
@@ -846,6 +885,12 @@ mat-tooltip-component .mat-tooltip {
 /*
  * Theming for LUX-Accordion
  */
- mat-expansion-panel.mat-expansion-panel:not([class*=mat-elevation-z]) {
-   @include lux-elevation-z2;
- }
+mat-expansion-panel.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+  @include lux-elevation-z2;
+}
+
+mat-expansion-panel-body {
+  .lux-panel-content {
+    @include alignment-container;
+  }
+}
