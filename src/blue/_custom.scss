@@ -1,0 +1,8 @@
+// Tabs außerhalb einer LUX-Card (z.B. Master-Detail)
+lux-tabs {
+  .mat-tab-label:not(.mat-tab-disabled) {
+    &:hover:not(.mat-tab-disabled) {
+      background-color: $app-data-bg !important;
+    }
+  }
+}

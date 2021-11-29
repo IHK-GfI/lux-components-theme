@@ -1,4 +1,9 @@
-# Version 11.7.0
+# Version 11.8.0
+## New - Theme "green"
+- **tabs**: Die Schrift der Tablabels soll auf die Schrift "Korb (700) 22px" umgestellt werden. [Issue 14](https://github.com/IHK-GfI/lux-components-theme/issues/14)
+- **tabs**: Die Hover- und Active-Farbe soll auf den Wert "E3EBF5" eingestellt werden. [Issue 14](https://github.com/IHK-GfI/lux-components-theme/issues/14)
+
+# Version 11.7.1
 ## Bug Fixes - Theme "green"
 - **checkbox**: Deaktivierte Checkbox wird nicht angezeigt. [Issue 13](https://github.com/IHK-GfI/lux-components-theme/issues/13)
 

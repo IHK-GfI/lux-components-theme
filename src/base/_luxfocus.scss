@@ -483,7 +483,6 @@ lux-tabs {
 
     &:hover:not(.mat-tab-disabled) {
       @include lux-hovered-mixin;
-      background-color: $app-data-bg !important;
     }
   }
 
