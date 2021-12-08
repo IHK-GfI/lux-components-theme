@@ -228,6 +228,12 @@ lux-form-control {
       height: 2px;
       border-bottom: 2px solid $lux-selected-border-color;
     }
+     
+    &.lux-form-control-error {
+      .lux-form-control-container:after {
+        border-bottom: 2px solid $lux-warn-color;
+      }
+    }
   }
 }
 
@@ -236,6 +242,7 @@ lux-datepicker {
   mat-datepicker-toggle {
     button:focus {
       @include focus-dark-mixin;
+      border-radius: 4px;
     }
 
     .mat-button-focus-overlay {
@@ -282,6 +289,7 @@ lux-datetimepicker {
   mat-datepicker-toggle {
     button:focus {
       @include focus-dark-mixin;
+      border-radius: 4px;
     }
 
     .mat-button-focus-overlay {

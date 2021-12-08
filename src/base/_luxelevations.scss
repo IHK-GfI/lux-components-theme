@@ -14,9 +14,9 @@
   lux-elevation-z0: (kein Schatten/niedrigste Ebene)
   - im lux-Master-Detail wird die Card ohne Schatten genutzt, im Header der lux-rounded-Button ohne Schatten
   lux-elevation-z1: (Strukturierende Elemente ohne Funktion)
-  - lux-card, lux-toggle(mat-slide-toggle-thumb), lux-master-header/-footer/detail-contianer
+  - lux-card,lux-master-header/-footer/detail-contianer, wegen der geringen Größe Toggle-Thumb,
   lux-elevation-z2: ("klickbare" Elemente)
-  - lux-buttons, lux-tile, lux-accordion
+  - lux-buttons (luxRaised/luxRounded), lux-tile, lux-accordion
   lux-elevation-z4: (Listen/Menüs im cdk-overlay)
   - lux-message-box, lux-datepicker, lux-datetimepicker, lux-autocomplete, lux-select, lux-menu
   lux-elevation-z6:

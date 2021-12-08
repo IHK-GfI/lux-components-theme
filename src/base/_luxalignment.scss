@@ -1,24 +1,53 @@
-// der Zielcontainer, muss ein padding vom Wert $form-control-margin bereitstellen, 
-// damit bei allen Children die Elemente im "overflow" wie, box-shadow oder foxus-indicator
-// korrekt angezeigt werden können.
-// Die Formcontrols erhalten eine min-height vom Wert $from-control-height.
-// Beide Werte werden im global.scss gesetzt und können im jeweiligen Theme angepasst werden. 
+// in diesem Mixin werden die Form-Controls wie in der der Lux-layout-form-row behandelt
+// d.h. das Margin wird entfernt und sie bekommen eine min-heigt über die Gesamthöhe des Form-Controls
+// Damit ist gewährleistet, dass bei Input-Feldern ohne Hinweistext evtl. auftretende Fehlermeldungen nicht zum
+// Verschieben des gesamten Layouts führen.
+// Dieses Mixin, wurde bisher der Lux-Card(.lux-card-content-container) 
+// und dem Lux-Accordion(mat-expansion-panel-body.lux-panel-content) hinzugefügt
+// und der .lux-highlight-section in der Demo
+// Wichtig ist, dass in dem betreffenden Container der Abstand aller Elemente zueinander definiert wird.
 
 @mixin alignment-container {
   
-  lux-form-control div.lux-form-control {
-    margin: $form-control-margin 0px;
-    min-height: $form-control-height;
+  & lux-input,
+  lux-toggle,
+  lux-checkbox,
+  lux-radio,
+  lux-autocomplete,
+  lux-datepicker,
+  lux-datetimepicker,
+  lux-slider,
+  lux-select,
+  lux-textarea,
+  lux-file-input,
+  lux-lookup-autocomplete,
+  lux-lookup-combobox{
+    & lux-form-control div.lux-form-control {
+      margin: 0px;
+      min-height: $lux-form-control-height;
+    }
   }
 
-  lux-chips div.lux-form-control {
-    min-height: $form-control-height + 20px;
+  & lux-chips {
+    min-height: calc(#{$lux-form-control-height} + 20px);
+    margin-bottom: 20px;
+    
+    div.lux-form-control{
+      margin: 0px;
+    }
+   
+    mat-chip-list {
+      & div.mat-chip-list-wrapper {
+        margin: 0px 0px 0px -4px;
+      }
+    }
   }
-
+  
+  // lux-File-list benötigt in einer Card, nicht das Margin
   & lux-file-list {
     & .lux-file-list {
       margin: 0px !important;
-      padding: $form-control-margin 0px !important;
+      padding: 0px !important;
     }
 
     lux-card {
@@ -28,19 +57,20 @@
     }
   }
 
-  lux-layout {
+  lux-layout { 
+    // führt an falscher Stelle zu unerwünschtem Abschneiden der Form-Controls
+    // das overlflow: hidden wurde stattdesen den Containern mit ensprechendem Margin/padding wieder hinzugefügt
+    // dadurch werden die Form-Controls korrekt angezeigt, zu viel eingefügte Elemente aber nicht.
     > * {
       overflow: visible !important;
     }  
   }
-
+  // Form-Controls in einer Table besitzen kein Label/Hint, daher haben sie eine geringere Min-Heigth
   lux-table {
     table td {
       div.lux-form-control {
         min-height: unset;
-        margin: $form-control-margin;
       }
     }
   }
-  
 } 

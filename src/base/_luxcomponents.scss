@@ -116,8 +116,14 @@ lux-button button.lux-button {
 
   &.mat-button.mat-button-disabled,
   &.mat-raised-button.mat-button-disabled,
+  &.mat-raised-button.mat-button-disabled:not([class*=mat-elevation-z]),
   &.mat-fab.mat-button-disabled {
     color: $dark-disabled-text;
+    @include lux-elevation-z0;
+  }
+
+  &.mat-raised-button:not([class*=mat-elevation-z]) {
+    @include lux-elevation-z2;
   }
 
   &.lux-icon-button {
@@ -129,6 +135,7 @@ lux-button button.lux-button {
   &.lux-button-rounded {
     height: $button-fav-height;
     width: $button-fav-height;
+    @include lux-elevation-z2;
   }
 }
 
@@ -253,7 +260,7 @@ lux-datetimepicker {
 
     lux-input div.lux-form-control {
       min-height: unset;
-      margin: $form-control-margin;
+      margin: $lux-form-control-margin;
       text-align: center;
     }
   }
@@ -314,13 +321,13 @@ lux-file-list .lux-file-list {
       }
     }
   }
+  
+  &.lux-file-list-error {
+    mat-card-title .lux-card-title-container {
+      color: $lux-warn-color;
+    }
+  }
 }
-// wenn die LUX-file-list in einer Card angezeigt wird, soll das Margin verringert werden
-// lux-card {
-//   .lux-file-list mat-card {
-//     margin: 0px;
-//   }
-// }
 
 /*
  * Theming for LUX-File-Progress
@@ -343,13 +350,22 @@ lux-file-progress {
  * Theming for LUX-Form-Controls
  */
 .lux-form-control {
-  margin: $form-control-margin;
-  .lux-label, mat-hint, mat-error {
+  margin: $lux-form-control-margin;
+
+  .lux-label,
+  mat-hint,
+  mat-error {
     color: $dark-secondary-text;
   }
-  
+
   .lux-form-control-container {
     padding: 6px 0 0 0;
+    
+    input, textarea {
+      &:required {
+        @include lux-elevation-z0;
+      }
+    }
 
     &:after {
       border-bottom: 1px solid $form-border-color;
@@ -365,7 +381,10 @@ lux-file-progress {
   }
 
   .lux-form-control-container {
-    border-color: $lux-warn-color !important;
+    $lux-selected-border-color: $lux-warn-color !important;
+    &:after { // inaktives form-control hat auch eine rote Linie (anstatt schwarz)
+      border-bottom: 1px solid $lux-warn-color;
+    }
   }
 
   .lux-form-control-misc {
@@ -402,26 +421,39 @@ lux-layout-form-row {
     color: $dark-primary-text;
   }
 
-  .row-item-container {
-    @include alignment-container;
-
+  & div.row-item-container {
     & lux-input,
     lux-toggle,
     lux-checkbox,
     lux-radio,
     lux-autocomplete,
     lux-datepicker,
+    lux-datetimepicker,
     lux-file-input,
     lux-slider,
     lux-select,
     lux-textarea,
     lux-lookup-autocomplete,
     lux-lookup-combobox {
-      min-height: $form-control-height;
+      & lux-form-control div.lux-form-control {
+        margin: 0px;
+        min-height: $lux-form-control-height;
+      }
     }
 
     & lux-chips {
-      min-height: $form-control-height + 20px;
+      min-height: calc(#{$lux-form-control-height} + 20px);
+      margin-bottom: 20px;
+      
+      div.lux-form-control{
+        margin: 0px;
+      }
+     
+      mat-chip-list {
+        & div.mat-chip-list-wrapper {
+          margin: 0px 0px 0px -4px;
+        }
+      }
     }
   }
 }
@@ -894,3 +926,16 @@ mat-expansion-panel-body {
     @include alignment-container;
   }
 }
+
+/*
+ * Theming for LUX-Errorpage
+ */
+ lux-error-page {
+  lux-card:not(.lux-error-page-desktop) {
+      .mat-card:not([class*="mat-elevation-z"]) {
+        @include lux-elevation-z0;
+      }
+      
+    } 
+ }
+ 

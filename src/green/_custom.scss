@@ -340,9 +340,6 @@ $form-control-old-border-bottom: 0px;
 
 lux-checkbox, lux-toggle, lux-radio, lux-slider {
   & .lux-form-control {
-    margin-right: 4px;
-    margin-left: 4px;
-
     .lux-form-control-label {
       padding-bottom: $form-control-label-padding-bottom;
     }
@@ -363,9 +360,6 @@ lux-checkbox, lux-toggle, lux-radio, lux-slider {
 
 lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datepicker, lux-datetimepicker, lux-chips {
   & .lux-form-control {
-    // margin-right: 4px;
-    // margin-left: 4px;
-
     .lux-form-control-label {
       padding-bottom: $form-control-label-padding-bottom;
     }
@@ -395,6 +389,10 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
     .lux-form-control-container {
       border-color: $lux-selected-border-color !important;
       box-shadow: 0 0 0 2px $lux-warn-color, 0 0 4px 2px $lux-warn-color;
+      
+      &:after {
+        border-bottom: $form-control-old-border-bottom;
+      }
     }
 
     .lux-form-control-misc {
@@ -428,7 +426,17 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
       box-shadow: 0 0 0 2px $lux-selected-border-color, 0 0 4px 2px $lux-selected-border-color;
 
       &:after {
-        border-bottom: $form-control-old-border-bottom;
+        border-bottom: $form-control-old-border-bottom !important;
+      }
+    }
+
+    &.lux-form-control-error {
+      .lux-form-control-container {
+        border-color: $lux-warn-color !important;
+        box-shadow: 0 0 0 2px $lux-warn-color, 0 0 4px 2px $lux-warn-color;
+      }
+      &:after {
+        border-bottom: $form-control-old-border-bottom !important;
       }
     }
   }
