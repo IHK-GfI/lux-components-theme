@@ -166,7 +166,7 @@ lux-card {
 
   .lux-card-content-container {
     overflow-x: hidden;
-    padding: $form-control-margin;
+    padding: $lux-form-control-margin;
     @include alignment-container;
     > * {
       margin-bottom: 0;
