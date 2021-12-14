@@ -738,11 +738,15 @@ lux-spinner {
  * Theming for LUX-Stepper
  */
 lux-stepper {
+  .mat-stepper-horizontal, .mat-stepper-vertical {
+    background-color: transparent;
+  }
+
   // luxUseCustomIcons=true
   .lux-ignore-mat-step-icons {
     mat-step-header {
       color: $dark-secondary-text;
-
+    
       &.lux-step-header-touched {
         .lux-stepper-edited-icon,
         .lux-stepper-normal-icon {
@@ -751,6 +755,10 @@ lux-stepper {
             color: $app-data-bg;
             background-color: map-get($lux-palette_primary, 500);
           }
+        }
+
+        lux-step-header {
+          color: map-get($lux-palette_primary, 500);
         }
       }
 
@@ -770,9 +778,9 @@ lux-stepper {
   // luxUseCustomIcons=false
   .mat-step-header {
     lux-step-header {
-      color: $dark-secondary-text;
+      color: $dark-secondary-text;;
     }
-
+    
     &.lux-step-header-touched {
       .mat-step-icon {
         color: $app-data-bg;
@@ -782,6 +790,10 @@ lux-stepper {
       .mat-step-icon-selected {
         color: $app-data-bg;
         background-color: map-get($lux-palette_primary, 500);
+      }
+
+      lux-step-header {
+        color: map-get($lux-palette_primary, 500);
       }
     }
 
