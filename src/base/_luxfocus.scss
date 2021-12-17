@@ -198,6 +198,9 @@ lux-chips {
   & .mat-standard-chip:focus {
     @include focus-dark-mixin;
   }
+  .mat-chip.mat-standard-chip:after { //mat-overlay für focus deaktivieren
+    background-color: unset;
+  }
 }
 
 /** ########## Form-Control ########## **/

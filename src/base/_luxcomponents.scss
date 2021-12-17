@@ -611,6 +611,11 @@ lux-progress {
 }
 
 lux-radio {
+  // damit ist der Focus-Indicator rund, wie bei Toggle-Thumb und Chips
+  .mat-radio-container {
+    border-radius: 50%;
+  }
+
   .mat-radio-checked {
     label.mat-radio-label .mat-radio-container {
       span.mat-radio-inner-circle {
