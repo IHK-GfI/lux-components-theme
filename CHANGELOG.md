@@ -1,3 +1,8 @@
+# Version 11.9.0
+- **allgemein**: Die folgenden neuen CSS-Klassen wurden eingeführt: [Issue 14](https://github.com/IHK-GfI/lux-components-theme/issues/14)
+  - lux-display-none-important
+  - lux-hidden-important
+ 
 # Version 11.8.0
 ## New - Theme "green"
 - **tabs**: Die Schrift der Tablabels soll auf die Schrift "Korb (700) 22px" umgestellt werden. [Issue 14](https://github.com/IHK-GfI/lux-components-theme/issues/14)

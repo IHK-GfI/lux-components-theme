@@ -269,8 +269,16 @@ lux-card.lux-card-grow {
   display: none;
 }
 
+.lux-display-none-important {
+  display: none !important;
+}
+
 .lux-hidden {
   visibility: hidden;
+}
+
+.lux-hidden-important {
+  visibility: hidden !important;
 }
 
 .lux-nowrap {
