@@ -1,5 +1,5 @@
 # Version 11.9.0
-- **allgemein**: Die folgenden neuen CSS-Klassen wurden eingeführt: [Issue 14](https://github.com/IHK-GfI/lux-components-theme/issues/14)
+- **allgemein**: Die folgenden neuen CSS-Klassen wurden eingeführt: [Issue 15](https://github.com/IHK-GfI/lux-components-theme/issues/15)
   - lux-display-none-important
   - lux-hidden-important
  
