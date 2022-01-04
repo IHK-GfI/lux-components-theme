@@ -2,8 +2,8 @@
 // d.h. das Margin wird entfernt und sie bekommen eine min-heigt über die Gesamthöhe des Form-Controls
 // Damit ist gewährleistet, dass bei Input-Feldern ohne Hinweistext evtl. auftretende Fehlermeldungen nicht zum
 // Verschieben des gesamten Layouts führen.
-// Dieses Mixin, wurde bisher der Lux-Card(.lux-card-content-container) 
-// und dem Lux-Accordion(mat-expansion-panel-body.lux-panel-content) hinzugefügt
+// Dieses Mixin, wurde bisher der Lux-Card(.lux-card-content-container), der Lux-Layout-Form-Row (div.row-item-container)
+// dem Lux-Accordion(mat-expansion-panel-body.lux-panel-content) hinzugefügt
 // und der .lux-highlight-section in der Demo
 // Wichtig ist, dass in dem betreffenden Container der Abstand aller Elemente zueinander definiert wird.
 

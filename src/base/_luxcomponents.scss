@@ -422,39 +422,7 @@ lux-layout-form-row {
   }
 
   & div.row-item-container {
-    & lux-input,
-    lux-toggle,
-    lux-checkbox,
-    lux-radio,
-    lux-autocomplete,
-    lux-datepicker,
-    lux-datetimepicker,
-    lux-file-input,
-    lux-slider,
-    lux-select,
-    lux-textarea,
-    lux-lookup-autocomplete,
-    lux-lookup-combobox {
-      & lux-form-control div.lux-form-control {
-        margin: 0px;
-        min-height: $lux-form-control-height;
-      }
-    }
-
-    & lux-chips {
-      min-height: calc(#{$lux-form-control-height} + 20px);
-      margin-bottom: 20px;
-      
-      div.lux-form-control{
-        margin: 0px;
-      }
-     
-      mat-chip-list {
-        & div.mat-chip-list-wrapper {
-          margin: 0px 0px 0px -4px;
-        }
-      }
-    }
+    @include alignment-container;
   }
 }
 
@@ -938,11 +906,10 @@ mat-expansion-panel.mat-expansion-panel:not([class*="mat-elevation-z"]) {
   @include lux-elevation-z2;
 }
 
-mat-expansion-panel-body {
-  .lux-panel-content {
+
+  lux-panel-content {
     @include alignment-container;
   }
-}
 
 /*
  * Theming for LUX-Errorpage
