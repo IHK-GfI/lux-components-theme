@@ -333,7 +333,6 @@ lux-tile {
 /*
  * Theming for LUX-Form-Controls
  */
-$form-control-padding: 10px 5px 10px 5px;
 $form-control-label-padding-bottom: 4px;
 $form-control-border-radius: 4px;
 $form-control-old-border-bottom: 0px;
@@ -367,7 +366,7 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
     .lux-form-control-container {
       border: 1px solid $form-border-color;
       border-radius: $form-control-border-radius;
-      padding: $form-control-padding;
+      padding: $form-control-container-padding;
 
       &:after {
         border-bottom: $form-control-old-border-bottom;
@@ -407,7 +406,7 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
       color: $dark-disabled-text !important;
       border: 1px dashed $dark-disabled-text !important;
       border-radius: $form-control-border-radius;
-      padding: $form-control-padding;
+      padding: $form-control-container-padding;
 
       &:after {
         border-bottom: $form-control-old-border-bottom;

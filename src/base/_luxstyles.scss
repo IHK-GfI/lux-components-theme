@@ -1,5 +1,3 @@
-@import "luxalignment";
-
 $sizes: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700;
 $paletten: $lux-palette_primary, $lux-palette_accent, $lux-palette_warn;
 $paletteNamen: primary, accent, warn;
@@ -38,6 +36,12 @@ $paletteNamen: primary, accent, warn;
   --lux-theme-form-control-height-small: #{$form-control-height-small};
   --lux-theme-form-control-font-size: #{$form-control-font-size};
   --lux-theme-form-control-font-size-small: #{$form-control-font-size-small};
+  --lux-theme-form-control-label-padding: #{$form-control-label-padding};
+  --lux-theme-form-control-container-padding: #{$form-control-container-padding};
+  --lux-theme-form-control-misc-margin: #{$form-control-misc-margin};
+  --lux-theme-form-control-complete-height: #{$form-control-complete-height};
+  --lux-theme-form-control-buffer: #{$form-control-buffer};
+  --lux-theme-form-control-margin: #{$form-control-margin};
 
   // Button
   --lux-theme-button-height: #{$button-height};
@@ -199,7 +203,6 @@ h6 {
   display: flex;
   margin: 0 0 16px 0;
   word-break: break-word;
-  @include alignment-container;
 }
 
 .lux-highlight-section-label {

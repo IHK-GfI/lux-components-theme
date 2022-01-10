@@ -47,6 +47,12 @@ Alles zusammen bildet die Grundlage für das Theming der eigenen Komponenten auf
 - `--lux-theme-form-control-height-small`
 - `--lux-theme-form-control-font-size`
 - `--lux-theme-form-control-font-size-small`
+- `--lux-theme-form-control-label-padding`
+- `--lux-theme-form-control-container-padding`
+- `--lux-theme-form-control-misc-margin`
+- `--lux-theme-form-control-complete-height`
+- `--lux-theme-form-control-buffer`
+- `--lux-theme-form-control-margin`
 - `--lux-theme-button-height`
 - `--lux-theme-button-fav-height`
 - `--lux-theme-outline-color-bright`
