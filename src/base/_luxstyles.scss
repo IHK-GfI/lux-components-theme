@@ -198,16 +198,38 @@ h6 {
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
-  padding: 8px 12px;
+  margin: 16px 0;
+  padding: 16px 16px;
   border: 1px solid $dark-dividers;
   display: flex;
-  margin: 0 0 16px 0;
   word-break: break-word;
+  
+  &.column {
+    flex-direction: column;
+    gap: 16px;
+  }
+  &.row {
+    flex-direction: row;
+    gap: 16px;
+  }
 }
 
 .lux-highlight-section-label {
   margin-top: 0;
   margin-left: 0;
+}
+
+.lux-simple-form {
+  margin: 4px 0;
+  display: flex;
+  &.column {
+    flex-direction: column;
+    gap: 16px;
+  }
+  &.row {
+    flex-direction: row;
+    gap: 16px;
+  }
 }
 
 .lux-app-container {
