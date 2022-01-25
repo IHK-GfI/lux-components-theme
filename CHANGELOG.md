@@ -1,3 +1,7 @@
+# Version 11.10.0
+## New - Theme "green"
+- **stepper-large**: Styles für den neuen Stepper (lux-stepper-large) entwickeln. [Issue 16](https://github.com/IHK-GfI/lux-components-theme/issues/16)
+
 # Version 11.9.0
 - **allgemein**: Die folgenden neuen CSS-Klassen wurden eingeführt: [Issue 15](https://github.com/IHK-GfI/lux-components-theme/issues/15)
   - lux-display-none-important

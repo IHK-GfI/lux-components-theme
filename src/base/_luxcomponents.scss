@@ -784,3 +784,295 @@ lux-toggle {
 mat-tooltip-component .mat-tooltip {
   font-size: 14px;
 }
+
+/*
+* Theming für Lux-Stepper-Large
+*/
+lux-stepper-large {
+  display: flex;
+  flex-direction: row;
+
+  height: 100%;
+  overflow-y: hidden;
+  background-color: transparent;
+}
+
+.lux-stepper-large-container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+
+  .lux-stepper-large-button-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+.lux-stepper-large-button-container {
+  margin-top: 30px;
+}
+
+.lux-stepper-large-nav-container {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 30%;
+  gap: 12px;
+  padding: 12px;
+
+  overflow-y: auto;
+  min-width: 400px;
+}
+
+.lux-stepper-large-nav-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-size: 22px;
+  line-height: 1.5;
+
+  &.lux-active {
+    font-weight: bold;
+  }
+
+  &.lux-completed {
+    color: $lux-stepper-large-completed-fc;
+
+    a {
+      text-decoration: underline;
+    }
+  }
+
+  &.lux-disabled {
+    opacity: 0.6;
+  }
+
+  &.lux-completed .lux-stepper-large-nav-item-number-container {
+    color: $lux-stepper-large-nav-item-completed-fg;
+    background-color: $lux-stepper-large-nav-item-completed-bg;
+  }
+
+  &.lux-active .lux-stepper-large-nav-item-number-container {
+    color: $lux-stepper-large-nav-item-active-fc;
+    background-color: $lux-stepper-large-nav-item-active-bg;
+  }
+
+  &.lux-touched .lux-stepper-large-nav-item-number-container {
+  }
+
+  &.lux-disabled .lux-stepper-large-nav-item-number-container {
+    color: $lux-stepper-large-nav-item-disabled-fg;
+    background-color: $lux-stepper-large-nav-item-disabled-bg;
+  }
+
+  &.lux-disabled .lux-stepper-large-nav-item-label {
+    color: $lux-stepper-large-nav-item-disabled-fg;
+  }
+
+  .lux-stepper-large-nav-item-number-container {
+    max-width: 45px;
+    max-height: 45px;
+    margin: 0 15px 0 0;
+    padding: 6px 11px;
+    border-radius: 18px;
+
+    .lux-stepper-large-nav-item-number {
+      text-align: center;
+    }
+  }
+
+  .lux-stepper-large-nav-item-label-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .lux-stepper-large-nav-item-label-link {
+      cursor: pointer;
+    }
+
+    .lux-stepper-large-nav-item-label {
+    }
+
+    .lux-stepper-large-nav-item-complete {
+      color: $lux-stepper-large-completed-fc;
+      font-size: 23px;
+    }
+  }
+}
+
+.lux-stepper-large-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.lux-stepper-large-content-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 70%;
+
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.lux-stepper-large-mobile-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+
+  overflow-y: auto;
+  padding: 12px;
+
+  lux-button {
+    display: flex;
+
+    & button {
+      display: flex;
+      flex: 1 1 auto;
+      justify-content: center;
+    }
+  }
+
+  .lux-stepper-large-button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+  }
+}
+
+.lux-stepper-large-mobile-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 2px;
+
+  font-size: 12px;
+
+  .lux-stepper-large-mobile-header-label {
+    display: flex;
+    flex: 0 1 auto;
+  }
+
+  .lux-stepper-large-mobile-header-button {
+    display: flex;
+    flex: 0 0 auto;
+    padding: 0;
+
+    button {
+      padding: 0;
+      min-height: 45px;
+      min-width: 45px;
+      display: flex;
+      justify-content: center;
+
+      i {
+        font-size: 25px;
+      }
+    }
+  }
+}
+
+// Lux-Stepper-Large - Overlay
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  &.lux-stepper-large-mobile-overlay-backdrop {
+    opacity: 0.6;
+    background-color: $lux-stepper-large-backdrop-bg;
+  }
+}
+
+.lux-stepper-large-mobile-nav-container {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: calc(100% - 0px);
+  max-height: calc(100% - 0px);
+
+  padding: 0;
+  background: $app-data-bg;
+}
+.lux-stepper-large-mobile-nav-close-button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 13px;
+}
+
+.lux-stepper-large-mobile-nav-header {
+  display: flex;
+  flex-direction: row;
+
+  padding: 0 30px 24px 30px;
+
+  div {
+    font-family: "Korb", $app-font-family;
+    font-size: 28px;
+  }
+}
+
+.lux-stepper-large-mobile-nav-item-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: auto;
+
+  padding: 0 30px 30px 30px;
+}
+
+.lux-stepper-large-mobile-nav-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-size: 18px;
+
+  &.lux-completed .lux-stepper-large-mobile-nav-item-number-container {
+  }
+
+  &.lux-active .lux-stepper-large-mobile-nav-item-number-container {
+  }
+
+  &.lux-touched .lux-stepper-large-mobile-nav-item-number-container {
+  }
+
+  &.lux-disabled .lux-stepper-large-mobile-nav-item-number-container {
+  }
+
+  .lux-stepper-large-mobile-nav-item-number-container {
+    max-width: 30px;
+    max-height: 30px;
+    margin: 0 10px 0 0;
+    padding: 1px 6px 2px 5px;
+    border-radius: 12px;
+
+    .lux-stepper-large-mobile-nav-item-number {
+    }
+  }
+
+  .lux-stepper-large-mobile-nav-item-label-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .lux-stepper-large-mobile-nav-item-label-link {
+      cursor: pointer;
+    }
+
+    .lux-stepper-large-mobile-nav-item-label {
+    }
+
+    .lux-stepper-large-mobile-nav-item-complete {
+      color: $lux-stepper-large-completed-fc;
+      font-size: 18px;
+    }
+  }
+}
