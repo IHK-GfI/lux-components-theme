@@ -1,5 +1,6 @@
 # Version 11.11.0
 - **allgemein**: Die Font Awesome- und Material-Icons sollen nicht über die Server von Google und Font Awesome direkt importiert werden. [Issue 17](https://github.com/IHK-GfI/lux-components-theme/issues/17)
+- **stepper-large**: lux-stepper-larger - Der Inhaltscontainer soll sich automatisch der Größe seines Containers anpassen. [Issue 18](https://github.com/IHK-GfI/lux-components-theme/issues/18)
 
 # Version 11.10.0
 ## New - Theme "green"
