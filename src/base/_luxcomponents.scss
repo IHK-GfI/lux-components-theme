@@ -126,13 +126,16 @@ lux-button button.lux-button {
 
   &.lux-icon-button {
     height: $button-height;
-    padding-top: 4px;
-    padding-bottom: 2px;
   }
 
   &.lux-button-rounded {
     height: $button-fav-height;
     width: $button-fav-height;
+    
+    &.lux-icon-button {
+      padding-top: 2px;
+      padding-bottom: 2px;
+    }
     @include lux-elevation-z2;
   }
 }
