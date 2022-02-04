@@ -706,3 +706,20 @@ lux-message-box {
     }
   }
 }
+
+/** ########## Stepper large ########## **/
+lux-stepper-large {
+  a {
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      @include lux-hovered-mixin;
+    }
+
+    &.lux-focused {
+      @include lux-hovered-mixin;
+    }
+  }
+}

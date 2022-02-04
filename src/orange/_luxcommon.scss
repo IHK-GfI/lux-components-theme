@@ -47,6 +47,17 @@ $lux-hover-color-for-dark-background: #9b6100;
 $lux-selected-border-color: #b3790b;
 $lux-selected-bg-color: #f1e4bc;
 
+// Stepper (large)
+$lux-stepper-large-backdrop-bg: #636d76;
+$lux-stepper-large-completed-fc: #2E8533;
+
+$lux-stepper-large-nav-item-active-fc: #ffffff;
+$lux-stepper-large-nav-item-active-bg: #003366;
+$lux-stepper-large-nav-item-disabled-fg: #003366;
+$lux-stepper-large-nav-item-disabled-bg: #eff3f6;
+$lux-stepper-large-nav-item-completed-fg: #ffffff;
+$lux-stepper-large-nav-item-completed-bg: #2E8533;
+
 // Hintergrundfarben (z.B. Badge oder Progress)
 $componentBgColors: (
   "red": #b01211,

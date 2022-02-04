@@ -1,6 +1,6 @@
 @import "luxpalette";
 @import "../public/global";
-$app-font-family: "Source Code Pro", "Helvetica", "Arial", "sans-serif";
+$app-font-family: "Source Sans Pro", "Helvetica", "Arial", "sans-serif";
 $outline-width: 1px;
 @import "luxcommon";
 @import "../base/luxelevations";
@@ -8,7 +8,6 @@ $outline-width: 1px;
 $lux-hover-color: #e3ebf5;
 @import "../base/luxfocus";
 @import "../base/luxstyles";
-@import "../base/luxicons";
 @import "../../node_modules/@angular/material/theming";
 @import "../base/luxtheme";
 @import "custom";
