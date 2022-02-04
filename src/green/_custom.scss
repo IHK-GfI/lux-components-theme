@@ -212,8 +212,9 @@ lux-app-header {
  */
 lux-button button.lux-button {
 
-  font-weight: lighter !important;
-
+  font-weight: normal !important;
+  align-items: center;
+  
   &.mat-button, &.mat-raised-button {
     border-radius: 18px;
     height: $button-height;
@@ -235,13 +236,14 @@ lux-button button.lux-button {
   &.lux-icon-button {
     border-radius: 18px;
     height: $button-height;
-    padding-top: 4px;
-    padding-bottom: 2px;
 
     & lux-icon {
-      i,
-      mat-icon {
+      line-height: 1;
+      i {
         font-size: 1em;
+      }
+      mat-icon {
+        font-size: 1.2em !important;
       }
     }
   }
@@ -250,11 +252,12 @@ lux-button button.lux-button {
     border-radius: 16px !important;
     height: $button-fav-height;
     width: $button-fav-height;
-
+    font-size: $button-font-size;
     & lux-icon {
+      line-height: 1;
       i,
       mat-icon {
-        font-size: 1.5em;
+        font-size: 1.2em !important;
       }
     }
   }
