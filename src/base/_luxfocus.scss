@@ -712,3 +712,13 @@ lux-stepper-large {
     }
   }
 }
+
+/** ########## File-Upload ########## **/
+.lux-file-upload-drop-container {
+  margin-left: $outline-width;
+  margin-right: $outline-width;
+
+  &:focus {
+    outline: $outline-dark;
+  }
+}
