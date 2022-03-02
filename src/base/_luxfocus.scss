@@ -442,7 +442,7 @@ lux-button {
 
 /** ########## Autocomplete ########## **/
 // Class, welche das aufgeklappte Panel referenziert
-.lux-autocomplete-panel {
+.lux-autocomplete-panel, .lux-chips-autocomplete-panel {
   mat-option {
 
     &:focus {

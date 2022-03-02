@@ -1,3 +1,6 @@
+# Version 11.13.0
+- **chips**: Vorschlagsliste soll so breit wie die Chips-Komponente sein. [Issue 20](https://github.com/IHK-GfI/lux-components-theme/issues/20)
+
 # Version 11.12.0
 - **lux-file-upload**: Styles für die neue Dateiupload-Komponente (lux-file-upload) entwickeln. [Issue 19](https://github.com/IHK-GfI/lux-components-theme/issues/19)
 
