@@ -1,5 +1,9 @@
+# Version 11.13.0
+## New - Theme "green"
+- **select**: Schriftfarbe anpasse. [Issue 21](https://github.com/IHK-GfI/lux-components-theme/issues/21)
+
 # Version 11.12.0
-- **lux-file-upload**: Styles für die neue Dateiupload-Komponente (lux-file-upload) entwickeln. [Issue 19](https://github.com/IHK-GfI/lux-components-theme/issues/19)
+- **file-upload**: Styles für die neue Dateiupload-Komponente (lux-file-upload) entwickeln. [Issue 19](https://github.com/IHK-GfI/lux-components-theme/issues/19)
 
 # Version 11.11.0
 - **allgemein**: Die Font Awesome- und Material-Icons sollen nicht über die Server von Google und Font Awesome direkt importiert werden. [Issue 17](https://github.com/IHK-GfI/lux-components-theme/issues/17)

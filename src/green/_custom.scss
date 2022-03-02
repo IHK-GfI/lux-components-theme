@@ -361,6 +361,10 @@ lux-checkbox, lux-toggle, lux-radio, lux-slider {
   }
 }
 
+.mat-select-value {
+  color: currentColor;
+}
+
 lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datepicker, lux-datetimepicker, lux-chips {
   & .lux-form-control {
     margin-right: 4px;
