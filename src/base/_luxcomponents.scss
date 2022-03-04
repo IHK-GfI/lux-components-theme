@@ -168,6 +168,18 @@ lux-card {
  * Theming für LUX-Chips
  */
 lux-chips {
+  .lux-chips-autocomplete-icon {
+    color: var(--lux-theme-primary-500);
+    font-size: 24px;
+    padding-right: 4px;
+    cursor: pointer;
+
+    &.lux-disabled {
+      color: var(--lux-theme-dark-disabled-text);
+      cursor: default;
+    }
+  }
+
   .lux-chips {
     mat-chip {
       // Löschicon (luxSelected=true)
@@ -195,6 +207,17 @@ lux-chips {
         }
       }
     }
+  }
+}
+
+.lux-chips-autocomplete-panel {
+  padding: $outline-width;
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: 4px;
+
+  mat-option:not(:last-of-type) {
+    margin-bottom: $outline-width;
   }
 }
 
