@@ -698,17 +698,52 @@ lux-message-box {
 
 /** ########## Stepper large ########## **/
 lux-stepper-large {
-  a {
-    &:focus {
-      outline: none;
+  .lux-stepper-large-nav-item {
+
+    // Links allgemein
+    a {
+      &:focus {
+        outline: none;
+      }
+
+      &.lux-focused {
+        outline: $outline-dark;
+      }
     }
 
-    &:hover {
-      @include lux-hovered-mixin;
+    // Link ausgewählt
+    &.lux-active {
+      .lux-stepper-large-nav-item-label-container {
+        a.lux-stepper-large-nav-item-label-link {
+          cursor: text;
+          &:hover {
+            color: unset;
+          }
+        }
+      }
     }
 
-    &.lux-focused {
-      @include lux-hovered-mixin;
+    // Links nicht ausgewählt
+    &:not(.lux-active) {
+      &:not(.lux-completed) {
+        .lux-stepper-large-nav-item-label-container {
+          a.lux-stepper-large-nav-item-label-link {
+            &:hover {
+              color: #2E8533;
+            }
+          }
+        }
+      }
+
+        &.lux-completed {
+          .lux-stepper-large-nav-item-label-container {
+            a.lux-stepper-large-nav-item-label-link {
+              &:hover {
+                color: #56BD66;
+              }
+            }
+          }
+        }
     }
   }
 }

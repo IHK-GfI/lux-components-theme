@@ -1094,42 +1094,62 @@ lux-stepper-large {
   font-size: 22px;
   line-height: 1.5;
 
-  &.lux-active {
-    font-weight: bold;
+  &.lux-active:not(.lux-disabled) {
+    .lux-stepper-large-nav-item-number-container {
+      color: $lux-stepper-large-nav-item-active-fc;
+      background-color: $lux-stepper-large-nav-item-active-bg;
+    }
+
+    .lux-stepper-large-nav-item-label {
+      color: #003366;
+    }
   }
 
-  &.lux-completed {
-    color: $lux-stepper-large-completed-fc;
-
+  &.lux-touched:not(.lux-disabled) {
     a {
       text-decoration: underline;
+    }
+
+    &.lux-completed:not(.lux-active) {
+      .lux-stepper-large-nav-item-number-container {
+        color: $lux-stepper-large-nav-item-completed-fg;
+        background-color: $lux-stepper-large-nav-item-completed-bg;
+      }
+
+      a {
+        color: #2E8533;
+      }
+    }
+
+    &:not(.lux-completed):not(.lux-active) {
+      .lux-stepper-large-nav-item-number-container {
+        color: $lux-stepper-large-nav-item-completed-fg;
+        background-color: $lux-stepper-large-nav-item-completed-bg;
+      }
+    }
+  }
+
+  &:not(.lux-touched) {
+    opacity: 0.6;
+    color: #003366;
+
+    .lux-stepper-large-nav-item-number-container {
+      color: $lux-stepper-large-nav-item-disabled-fg;
+      background-color: $lux-stepper-large-nav-item-disabled-bg;
     }
   }
 
   &.lux-disabled {
     opacity: 0.6;
-  }
 
-  &.lux-completed .lux-stepper-large-nav-item-number-container {
-    color: $lux-stepper-large-nav-item-completed-fg;
-    background-color: $lux-stepper-large-nav-item-completed-bg;
-  }
+    .lux-stepper-large-nav-item-number-container {
+      color: $lux-stepper-large-nav-item-disabled-fg;
+      background-color: $lux-stepper-large-nav-item-disabled-bg;
+    }
 
-  &.lux-active .lux-stepper-large-nav-item-number-container {
-    color: $lux-stepper-large-nav-item-active-fc;
-    background-color: $lux-stepper-large-nav-item-active-bg;
-  }
-
-  &.lux-touched .lux-stepper-large-nav-item-number-container {
-  }
-
-  &.lux-disabled .lux-stepper-large-nav-item-number-container {
-    color: $lux-stepper-large-nav-item-disabled-fg;
-    background-color: $lux-stepper-large-nav-item-disabled-bg;
-  }
-
-  &.lux-disabled .lux-stepper-large-nav-item-label {
-    color: $lux-stepper-large-nav-item-disabled-fg;
+    .lux-stepper-large-nav-item-label {
+      color: $lux-stepper-large-nav-item-disabled-fg;
+    }
   }
 
   .lux-stepper-large-nav-item-number-container {
