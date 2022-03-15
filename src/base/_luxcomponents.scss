@@ -198,6 +198,18 @@ lux-chips {
   min-height: calc(#{$form-control-complete-height} + 20px);
   margin-bottom: 20px;
 
+  .lux-chips-autocomplete-icon {
+    color: var(--lux-theme-primary-500);
+    font-size: 24px;
+    padding-right: 4px;
+    cursor: pointer;
+
+    &.lux-disabled {
+      color: var(--lux-theme-dark-disabled-text);
+      cursor: default;
+    }
+  }
+
   .lux-chips {
     mat-chip {
       // Löschicon (luxSelected=true)
@@ -230,6 +242,17 @@ lux-chips {
         margin: 0px 0px 0px -4px;
       }
     }
+  }
+}
+
+.lux-chips-autocomplete-panel {
+  padding: $outline-width;
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: 4px;
+
+  mat-option:not(:last-of-type) {
+    margin-bottom: $outline-width;
   }
 }
 
@@ -360,6 +383,241 @@ lux-file-progress {
     }
   }
 }
+
+/*
+* Theming für Lux-File-Upload
+*/
+.lux-file-upload-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+
+  .lux-file-upload-drop-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 1 auto;
+
+    border: 1px solid var(--lux-theme-primary-500);
+    border-radius: 4px;
+    color: var(--lux-theme-primary-500);
+
+    .lux-file-upload-drop-label-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1 1 auto;
+      gap: 12px;
+
+      padding: 24px 48px;
+    }
+
+    .lux-file-upload-drop-container-progress, .lux-file-upload-drop-container-no-progress{
+      height: 8px;
+    }
+
+    &.lux-file-upload-drop-container-disabled {
+      color: var(--lux-theme-dark-disabled-text);
+      background-color: var(--lux-theme-app-data-bg);
+      border: 1px solid var(--lux-theme-dark-disabled-text);
+
+      .lux-file-upload-link {
+        cursor: default;
+      }
+    }
+
+    &.lux-file-upload-drag-active {
+      background-color: var(--lux-theme-selected-bg-color);
+    }
+
+    .lux-file-upload-icon {
+      display: flex;
+      flex: 0 0 auto;
+    }
+
+    .lux-file-upload-label-container {
+      display: flex;
+      flex: 1 1 auto;
+    }
+
+    .lux-file-upload-link {
+      cursor: pointer;
+      text-decoration: underline;
+
+      white-space: nowrap;
+    }
+  }
+
+  .lux-file-upload-error-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 1 auto;
+    gap: 12px;
+
+    border: 1px solid var(--lux-theme-warn-500);
+    border-radius: 4px;
+    color: var(--lux-theme-warn-500);
+    padding: 18px 15px 15px 26px;
+    margin-bottom: 12px;
+
+    .lux-file-upload-error-icon {
+      display: flex;
+      flex: 0 0 30px;
+    }
+
+    .lux-file-upload-error-message {
+      display: flex;
+      flex: 1 1 auto;
+    }
+
+    .lux-file-upload-error-button {
+      display: flex;
+      flex: 0 0 auto;
+
+      button {
+        padding: 0;
+        margin: 0;
+        border-radius: 8px;
+        min-width: 40px;
+        min-height: 30px;
+
+        i {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+
+  .lux-file-upload-hint-container {
+    margin-top: 4px;
+    margin-bottom: 12px;
+  }
+
+  .lux-file-upload-no-hint-container {
+    min-height: 12px;
+  }
+
+  .lux-file-upload-view-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 1 auto;
+    gap: 12px;
+
+    background-color: var(--lux-theme-selected-bg-color);
+    border: 1px solid var(--lux-theme-accent-500);
+    border-radius: 4px;
+    color: var(--lux-theme-primary-500);
+    padding: 18px 15px 18px 26px;
+    margin-bottom: 12px;
+
+    &.lux-file-upload-view-item-disabled {
+      color: var(--lux-theme-dark-disabled-text);
+      background-color: var(--lux-theme-app-data-bg);
+      border: 1px solid var(--lux-theme-dark-disabled-text);
+    }
+
+    .lux-file-upload-view-item {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1 1 auto;
+      gap: 12px;
+
+      .lux-file-upload-view-item-icon {
+        display: flex;
+        flex: 0 0 30px;
+      }
+
+      .lux-file-upload-view-item-label-container {
+        display: flex;
+        flex: 1 1 auto;
+      }
+
+      lux-button.lux-file-upload-view-item-delete-button {
+        display: flex;
+        align-items: center;
+
+        button {
+          padding: 0;
+          margin: 0;
+          border-radius: 8px;
+          min-width: 40px;
+          min-height: 30px;
+
+          i {
+            font-size: 24px;
+          }
+        }
+      }
+    }
+  }
+
+  /* Die eigentliche File-Inputs und den Download-Anchor blenden wir aus */
+  .lux-file-upload-input {
+    display: none;
+  }
+}
+
+.file-upload-dialog-title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  .file-upload-dialog-close-button-container {
+    display: flex;
+    flex: 1 0 auto;
+    justify-content: flex-end;
+    align-items: center;
+
+    .file-upload-dialog-close-button {
+      display: flex;
+      flex: 0 0 auto;
+
+      button {
+        padding: 0;
+        margin: 0;
+        border-radius: 8px;
+        min-width: 40px;
+        min-height: 40px;
+
+        i,
+        mat-icon {
+          font-size: 30px !important;
+        }
+      }
+    }
+  }
+
+  .file-upload-dialog-title {
+    padding-right: 50px;
+  }
+
+  .file-upload-dialog-content-text {
+    padding-bottom: 30px;
+  }
+}
+
+.file-dialog {
+  div.mat-dialog-title.lux-dialog-title {
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 0;
+  }
+
+  p {
+    margin: 0;
+    padding-top: 12px;
+    padding-bottom: 30px;
+  }
+}
+
 
 /*
  * Theming for LUX-Form-Controls
@@ -994,42 +1252,62 @@ lux-stepper-large {
   font-size: 22px;
   line-height: 1.5;
 
-  &.lux-active {
-    font-weight: bold;
+  &.lux-active:not(.lux-disabled) {
+    .lux-stepper-large-nav-item-number-container {
+      color: $lux-stepper-large-nav-item-active-fc;
+      background-color: $lux-stepper-large-nav-item-active-bg;
+    }
+
+    .lux-stepper-large-nav-item-label {
+      color: #003366;
+    }
   }
 
-  &.lux-completed {
-    color: $lux-stepper-large-completed-fc;
-
+  &.lux-touched:not(.lux-disabled) {
     a {
       text-decoration: underline;
+    }
+
+    &.lux-completed:not(.lux-active) {
+      .lux-stepper-large-nav-item-number-container {
+        color: $lux-stepper-large-nav-item-completed-fg;
+        background-color: $lux-stepper-large-nav-item-completed-bg;
+      }
+
+      a {
+        color: #2E8533;
+      }
+    }
+
+    &:not(.lux-completed):not(.lux-active) {
+      .lux-stepper-large-nav-item-number-container {
+        color: $lux-stepper-large-nav-item-completed-fg;
+        background-color: $lux-stepper-large-nav-item-completed-bg;
+      }
+    }
+  }
+
+  &:not(.lux-touched) {
+    opacity: 0.6;
+    color: #003366;
+
+    .lux-stepper-large-nav-item-number-container {
+      color: $lux-stepper-large-nav-item-disabled-fg;
+      background-color: $lux-stepper-large-nav-item-disabled-bg;
     }
   }
 
   &.lux-disabled {
     opacity: 0.6;
-  }
 
-  &.lux-completed .lux-stepper-large-nav-item-number-container {
-    color: $lux-stepper-large-nav-item-completed-fg;
-    background-color: $lux-stepper-large-nav-item-completed-bg;
-  }
+    .lux-stepper-large-nav-item-number-container {
+      color: $lux-stepper-large-nav-item-disabled-fg;
+      background-color: $lux-stepper-large-nav-item-disabled-bg;
+    }
 
-  &.lux-active .lux-stepper-large-nav-item-number-container {
-    color: $lux-stepper-large-nav-item-active-fc;
-    background-color: $lux-stepper-large-nav-item-active-bg;
-  }
-
-  &.lux-touched .lux-stepper-large-nav-item-number-container {
-  }
-
-  &.lux-disabled .lux-stepper-large-nav-item-number-container {
-    color: $lux-stepper-large-nav-item-disabled-fg;
-    background-color: $lux-stepper-large-nav-item-disabled-bg;
-  }
-
-  &.lux-disabled .lux-stepper-large-nav-item-label {
-    color: $lux-stepper-large-nav-item-disabled-fg;
+    .lux-stepper-large-nav-item-label {
+      color: $lux-stepper-large-nav-item-disabled-fg;
+    }
   }
 
   .lux-stepper-large-nav-item-number-container {
