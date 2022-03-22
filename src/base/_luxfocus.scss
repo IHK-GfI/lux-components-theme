@@ -11,6 +11,13 @@ $outline-bright: $outline-width $outline-style $outline-color-bright !important;
   outline: $outline-dark;
 }
 
+@mixin focus-dark-mixin-inline {
+  // der Focus um Elemente in Panels wird mit negativen Margin nach in das Element verlegt
+  // damit wird er nicht mehr am Rand abgeschnitten oder verdeckt
+  outline: $outline-dark;
+  outline-offset: -$outline-width;
+}
+
 @mixin focus-bright-mixin {
   outline: $outline-bright;
 }
@@ -375,11 +382,13 @@ lux-table {
     }
 
     &:focus {
-     @include focus-dark-mixin;
+      @include focus-dark-mixin-inline;
+      border-radius: 4px;
     }
 
     &.mat-active {
-      @include focus-dark-mixin;
+      @include focus-dark-mixin-inline;
+      border-radius: 4px;
     }
 
     &:hover {
@@ -457,11 +466,13 @@ lux-button {
   mat-option {
 
     &:focus {
-      @include focus-dark-mixin;
+      @include focus-dark-mixin-inline;
+      border-radius: 4px;
     }
 
     &.mat-active {
-      @include focus-dark-mixin;
+      @include focus-dark-mixin-inline;
+      border-radius: 4px;
     }
 
     &:hover {

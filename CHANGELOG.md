@@ -2,6 +2,7 @@
 ## New
 - **chips**: Vorschlagsliste soll so breit wie die Chips-Komponente sein. [Issue 20](https://github.com/IHK-GfI/lux-components-theme/issues/20)
 - **stepper-large**: Farben und Hover-Effekte ändern. [Issue 22](https://github.com/IHK-GfI/lux-components-theme/issues/22)
+- **lux-autocomplete**, **lux-chips**, **lux-lookup-autocomplete**: Mehrzeilige Mat-Option im Dropdown-Menü eingeführt. [Issue 177](https://github.com/IHK-GfI/lux-components/issues/177)
 
 ## New - Theme "green"
 - **select**: Schriftfarbe anpasse. [Issue 21](https://github.com/IHK-GfI/lux-components-theme/issues/21)
