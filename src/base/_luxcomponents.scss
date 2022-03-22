@@ -247,8 +247,9 @@ lux-chips {
 
 .lux-chips-autocomplete-panel {
   padding: $outline-width;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-top: -20px;
+  margin-left: 0;
+  margin-right: 0;
   border-radius: 4px;
 
   mat-option:not(:last-of-type) {

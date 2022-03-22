@@ -263,15 +263,6 @@ lux-button button.lux-button {
   }
 }
 
-/**
- * Theming für LUX-Chips
- */
-.lux-chips-autocomplete-panel {
-  margin-left: 6px;
-  margin-right: 6px;
-  border-radius: 4px;
-}
-
 /*
  * Theming for LUX-Menu
  */
@@ -370,7 +361,7 @@ lux-checkbox, lux-toggle, lux-radio, lux-slider {
 }
 
 .mat-select-value {
-  color: currentColor;
+  color: $dark-secondary-text;
 }
 
 lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datepicker, lux-datetimepicker, lux-chips {
