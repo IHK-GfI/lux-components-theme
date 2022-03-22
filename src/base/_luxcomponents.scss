@@ -1113,6 +1113,15 @@ lux-tile {
   .mat-card:not([class*="mat-elevation-z"]) {
     @include lux-elevation-z2;
   }
+
+  .lux-tile-label {
+    margin: 0;
+    display: flex;
+    flex-shrink: 1;
+    flex-grow: 0;
+    min-height: 65px;
+    max-height: 65px;
+  }
 }
 
 /*
