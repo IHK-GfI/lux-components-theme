@@ -209,11 +209,18 @@ lux-app-header {
 /*
  * Theming for LUX-Button
  */
+ // Farbwerte gemäß OZG-Vorgaben
+ $blueHover: #335c85;
+ $blueInactiv: #b0c4d6;
+ $greenHover: #9ad7a3;
+ $greenInactiv: #e4F1e4;
+ $redHover: #f7767e;
+ $redInactiv: #ff9ca2; 
+
 lux-button button.lux-button {
+  font-weight: normal !important;
 
-  font-weight: lighter !important;
-
-  &.mat-button, &.mat-raised-button {
+  &.mat-button, &.mat-raised-button, &.mat-stroked-button {
     border-radius: 18px;
     height: $button-height;
     font-size: $button-font-size;
@@ -221,14 +228,129 @@ lux-button button.lux-button {
     margin-right: $outline-width;
   }
 
-  &.mat-button.mat-button-disabled,
-  &.mat-raised-button.mat-button-disabled,
-  &.mat-fab.mat-button-disabled {
-    color: $dark-disabled-text;
+  &.mat-button:not(.mat-button-disabled){
+    color: $dark-primary-text;
+    &:hover {
+      color: #fff !important;
+      background-color: $dark-secondary-text !important;   
+    }
+    &.mat-primary {
+      color: $lux-primary-color;
+      &:hover {
+        color: #fff !important;
+        background-color: $blueHover !important;
+      }
+    }
+    &.mat-accent {
+      color: $lux-accent-color;
+      &:hover {
+        color: map-get($lux-palette-primary, 500) !important;
+        background-color: $greenHover !important;
+      }
+    }
+    &.mat-warn {
+      color: $lux-warn-color;
+      &:hover {
+        color: #fff !important;
+        background-color: $redHover !important;
+      }
+    }
   }
-
+  
+  &.mat-raised-button:not(.mat-button-disabled),
+  &.mat-stroked-button:not(.mat-button-disabled),
+  &.mat-fab:not(.mat-button-disabled) {
+    &:hover{
+      color: #fff !important;
+      border: none !important;
+      background-color: $dark-secondary-text !important;   
+      &.mat-primary {
+        background-color: $blueHover !important;
+      }
+      &.mat-accent {
+        color: map-get($lux-palette-primary, 500) !important;
+        background-color: $greenHover !important;
+      }
+      &.mat-warn {
+        background-color: $redHover !important;
+      }
+    }
+  }
   &.mat-raised-button.mat-accent:not(.mat-button-disabled), &.mat-fab.mat-accent:not(.mat-button-disabled) {
     color: map-get($lux-palette-primary, 500);
+  }
+
+  &.mat-button.mat-button-disabled,
+  &.mat-raised-button.mat-button-disabled,
+  &.mat-stroked-button.mat-button-disabled,
+  &.mat-fab.mat-button-disabled {
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+  &.mat-button.mat-button-disabled {
+    color: $dark-disabled-text;
+    &.mat-primary {
+      color: $blueInactiv;
+    }
+    &.mat-accent {
+      color: $greenInactiv;
+    }
+    &.mat-warn {
+      color: $redInactiv;
+    }
+  }
+  &.mat-raised-button.mat-button-disabled, &.mat-fab.mat-button-disabled {
+    color: $dark-secondary-text;
+    background-color: $dark-disabled-text;
+    &.mat-primary {
+      color: #fff;
+      background-color: $blueInactiv;
+    }
+    &.mat-warn {
+      color: #fff;
+      background-color: $redInactiv;
+    }
+    &.mat-accent {
+      color: $blueHover;
+      background-color: $greenInactiv;
+    }
+  }
+  
+  &.mat-stroked-button {
+      color: $dark-primary-text;
+      border-color: $dark-primary-text;
+      &.mat-primary {
+        color: map-get($lux-palette-primary, 500);
+        border-color: map-get($lux-palette-primary, 500);
+      }
+      &.mat-accent {
+        color: map-get($lux-palette-accent, 500);
+        border-color: map-get($lux-palette-accent, 500);
+      }
+      &.mat-warn {
+        color: map-get($lux-palette_warn, 500);
+        border-color: map-get($lux-palette_warn, 500);
+      }
+    &.mat-button-disabled {
+      color: $dark-disabled-text;
+      border-color: $dark-disabled-text;
+      &.mat-primary {
+        color: $blueInactiv;
+        border-color: $blueInactiv;
+        background-color: unset;
+      }
+      &.mat-accent {
+        color: $greenInactiv;
+        border-color: $greenInactiv;
+        background-color: unset;
+      }
+      &.mat-warn {
+        color: $redInactiv;
+        border-color: $redInactiv;
+        background-color: unset;
+      }
+    }
   }
 
   &.lux-icon-button {
@@ -254,6 +376,29 @@ lux-button button.lux-button {
       i,
       mat-icon {
         font-size: 1.5em;
+      }
+    }
+  }
+}
+
+/**
+ * Theming für LUX-Link
+ */
+lux-link {
+  lux-button.lux-link {
+    button.lux-button.mat-button:not(.mat-button-raised) {
+      text-decoration: underline;
+      &.mat-primary {
+        &:hover {
+          color: #56bd66 !important;
+          background-color: #fff !important;
+        }
+        &.mat-button-disabled{
+          color: #b0c4d6 !important;
+          &:hover {
+            color: #b0c4d6 !important;
+          }
+        }
       }
     }
   }

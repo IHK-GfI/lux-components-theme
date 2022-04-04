@@ -1,3 +1,8 @@
+# Version 11.14.0
+## New
+- **buttons**: Die Button-Variante luxStroked wurde eingeführt
+- **Theme - "green**: Bei den Buttons wurden Hover und Disabled gemäß den OZG-Vorgaben überarbeitet. LuxLink (raised=false) wurde dem Text-Link gemäß den OZG-Vorgaben angepasst. [Issue 185](https://github.com/IHK-GfI/lux-components/issues/185)
+
 # Version 11.13.0
 ## New
 - **chips**: Vorschlagsliste soll so breit wie die Chips-Komponente sein. [Issue 20](https://github.com/IHK-GfI/lux-components-theme/issues/20)
