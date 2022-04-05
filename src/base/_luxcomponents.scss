@@ -1130,8 +1130,7 @@ lux-stepper-large {
   }
 
   &:not(.lux-touched) {
-    opacity: 0.6;
-    color: #003366;
+    color: $lux-stepper-large-nav-item-disabled-fg;
 
     .lux-stepper-large-nav-item-number-container {
       color: $lux-stepper-large-nav-item-disabled-fg;
@@ -1140,8 +1139,6 @@ lux-stepper-large {
   }
 
   &.lux-disabled {
-    opacity: 0.6;
-
     .lux-stepper-large-nav-item-number-container {
       color: $lux-stepper-large-nav-item-disabled-fg;
       background-color: $lux-stepper-large-nav-item-disabled-bg;
@@ -1149,7 +1146,7 @@ lux-stepper-large {
 
     .lux-stepper-large-nav-item-label {
       color: $lux-stepper-large-nav-item-disabled-fg;
-    }
+    }  
   }
 
   .lux-stepper-large-nav-item-number-container {

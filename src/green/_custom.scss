@@ -392,6 +392,9 @@ lux-link {
         background-color: #fff !important;
       }
     }
+    &.mat-primary.mat-button-disabled {
+      color: $lux-stepper-large-nav-item-disabled-fg;
+    }
   }
 }
 
