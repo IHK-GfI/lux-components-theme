@@ -276,9 +276,6 @@ lux-button button.lux-button {
       }
     }
   }
-  &.mat-raised-button.mat-accent:not(.mat-button-disabled), &.mat-fab.mat-accent:not(.mat-button-disabled) {
-    color: map-get($lux-palette-primary, 500);
-  }
 
   &.mat-button.mat-button-disabled,
   &.mat-raised-button.mat-button-disabled,
@@ -385,21 +382,21 @@ lux-button button.lux-button {
  * Theming für LUX-Link
  */
 lux-link {
-  lux-button.lux-link {
-    button.lux-button.mat-button:not(.mat-button-raised) {
+  button.lux-button.mat-button:not(.mat-button-raised) {
+    .lux-button-label {
       text-decoration: underline;
-      &.mat-primary {
-        &:hover {
-          color: #56bd66 !important;
-          background-color: #fff !important;
-        }
-        &.mat-button-disabled{
-          color: #b0c4d6 !important;
-          &:hover {
-            color: #b0c4d6 !important;
-          }
-        }
+    }
+    &.mat-primary:not(.mat-button-disabled) {
+      &:hover {
+        color: #56bd66 !important;
+        background-color: #fff !important;
       }
+      // &.mat-button-disabled{
+      //   color: $blueInactiv !important;
+      //   &:hover {
+      //     color: $blueInactiv !important;
+      //   }
+      // }
     }
   }
 }
