@@ -1,3 +1,7 @@
+#Version 13.0.0
+## New
+-**allgemein**: die Version für @angular/material und sass, analog zu denen der Lux-Components aktualisiert. [Issue 28](https://github.com/IHK-GfI/lux-components-theme/issues/28)
+
 # Version 11.13.0
 ## New
 - **chips**: Vorschlagsliste soll so breit wie die Chips-Komponente sein. [Issue 20](https://github.com/IHK-GfI/lux-components-theme/issues/20)
