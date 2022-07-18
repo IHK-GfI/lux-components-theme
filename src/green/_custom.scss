@@ -1,3 +1,11 @@
+@use "sass:map";
+@use "../base/luxfocus";
+@use "../public/global";
+@use "luxcommon";
+@use "luxpalette";
+
+@use '@angular/material' as mat;
+
 $button-font-size: 22px;
 $light-green: #E4F1E4;
 $light-gray: #EFF3F6;
@@ -6,15 +14,15 @@ $dark-green: #2E8533;
 
 body {
   color: #003366;
-  font-family: $app-font-family;
+  font-family: global.$app-font-family;
 }
 
 p, div {
-  font-family: $app-font-family;
+  font-family: global.$app-font-family;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Korb", $app-font-family;
+  font-family: "Korb", global.$app-font-family;
 }
 
 lux-card .mat-card {
@@ -51,14 +59,14 @@ lux-app-footer {
 
 lux-app-header {
   .lux-app-header {
-    background-color: $app-header-bg;
+    background-color: luxcommon.$app-header-bg;
 
     .lux-show-border {
       border-left: 1px solid #003366;
     }
 
     .lux-header-title {
-      color: map-get($lux-palette-primary, 500);
+      color: map.get(luxpalette.$lux-palette-primary, 500);
     }
 
     div.lux-header-action {
@@ -66,55 +74,55 @@ lux-app-header {
         button {
 
           &:not(.mat-accent):not(.mat-warn):not(.mat-primary):not(.mat-button-disabled) {
-            color: map-get($lux-palette-primary, 500);
+            color: map.get(luxpalette.$lux-palette-primary, 500);
           }
 
           &:not(.mat-accent):not(.mat-warn):not(.mat-primary).mat-button-disabled {
-            color: $dark-disabled-text;
+            color: luxcommon.$dark-disabled-text;
           }
 
           &.mat-accent:not(.mat-button-disabled) {
-            color: map-get($lux-palette_accent, A100);
+            color: map.get(luxpalette.$lux-palette_accent, A100);
           }
 
           &.mat-warn:not(.mat-button-disabled) {
-            color: map-get($lux-palette_warn, A100);
+            color: map.get(luxpalette.$lux-palette_warn, A100);
           }
 
           &.mat-primary:not(.mat-button-disabled) {
-            color: map-get($lux-palette_primary, A100);
+            color: map.get(luxpalette.$lux-palette_primary, A100);
           }
         }
       }
     }
 
     button:not(.mat-primary):not(.mat-warn):not(.mat-accent):not(.lux-button-rounded) {
-      color: map-get($lux-palette-primary, 500);
+      color: map.get(luxpalette.$lux-palette-primary, 500);
     }
 
     .lux-header-user {
       .lux-header-user-short {
         > span {
-          color: map-get($lux-palette_primary, 500);
-          background-color: map-get(map-get($lux-palette-primary, contrast), 500);
+          color: map.get(luxpalette.$lux-palette_primary, 500);
+          background-color: map.get(map.get(luxpalette.$lux-palette-primary, contrast), 500);
         }
       }
     }
   }
 
   .lux-side-nav-header, .lux-side-nav-footer {
-    color: map-get($lux-palette_primary, A400);
+    color: map.get(luxpalette.$lux-palette_primary, A400);
   }
 
   .lux-header-side-nav {
     .lux-side-nav-trigger-active {
-      background-color: $dark-focused;
+      background-color: luxcommon.$dark-focused;
     }
   }
 
   .lux-side-nav .lux-side-nav-content {
     lux-button, .lux-menu-item, .lux-action-nav-menu lux-button {
-      color: map-get($lux-palette_primary, 500);
+      color: map.get(luxpalette.$lux-palette_primary, 500);
     }
   }
 }
@@ -122,7 +130,7 @@ lux-app-header {
 lux-app-header {
   .lux-app-header-title-label {
     &:focus {
-      @include focus-dark-mixin;
+      @include luxfocus.focus-dark-mixin;
     }
 
     &:hover {
@@ -133,68 +141,68 @@ lux-app-header {
 
   & .lux-side-nav-trigger button:not([disabled]) {
     &:focus {
-      @include focus-dark-mixin;
+      @include luxfocus.focus-dark-mixin;
     }
 
     &:hover {
-      background-color: $lux-hover-color !important;
+      background-color: luxcommon.$lux-hover-color !important;
       color: #003366 !important;
     }
 
     &:hover lux-icon {
-      background-color: $lux-hover-color;
+      background-color: luxcommon.$lux-hover-color;
       color: #003366 !important;
     }
   }
 
   & .lux-header-action button:not([disabled]) {
     &:focus {
-      @include focus-dark-mixin;
+      @include luxfocus.focus-dark-mixin;
     }
 
     color: #003366 !important;
 
     &.mat-accent lux-icon {
-      color: map-get($lux-palette_accent, 500) !important;
+      color: map.get(luxpalette.$lux-palette_accent, 500) !important;
     }
 
     &.mat-warn lux-icon {
-      color: map-get($lux-palette_warn, 500) !important;
+      color: map.get(luxpalette.$lux-palette_warn, 500) !important;
     }
 
     &.mat-primary lux-icon {
-      color: map-get($lux-palette_primary, 500) !important;
+      color: map.get(luxpalette.$lux-palette_primary, 500) !important;
     }
 
     &:hover {
       color: #003366 !important;
-      background-color: $lux-hover-color !important;
+      background-color: luxcommon.$lux-hover-color !important;
 
       &.mat-accent lux-icon {
-        color: map-get($lux-palette_accent, 500) !important;
+        color: map.get(luxpalette.$lux-palette_accent, 500) !important;
       }
 
       &.mat-warn lux-icon {
-        color: map-get($lux-palette_warn, 500) !important;
+        color: map.get(luxpalette.$lux-palette_warn, 500) !important;
       }
 
       &.mat-primary lux-icon {
-        color: map-get($lux-palette_primary, 500) !important;
+        color: map.get(luxpalette.$lux-palette_primary, 500) !important;
       }
     }
   }
 
   & lux-image:focus {
-    @include focus-dark-mixin;
+    @include luxfocus.focus-dark-mixin;
   }
 
   & lux-icon:focus {
-    @include focus-dark-mixin;
+    @include luxfocus.focus-dark-mixin;
   }
 
   lux-menu-trigger button.lux-right-nav-trigger {
     &:focus {
-      @include focus-dark-mixin;
+      @include luxfocus.focus-dark-mixin;
     }
 
     &:hover {
@@ -217,25 +225,25 @@ lux-button button.lux-button {
   
   &.mat-button, &.mat-raised-button {
     border-radius: 18px;
-    height: $button-height;
+    height: luxcommon.$button-height;
     font-size: $button-font-size;
-    margin-left: $outline-width;
-    margin-right: $outline-width;
+    margin-left: global.$outline-width;
+    margin-right: global.$outline-width;
   }
 
   &.mat-button.mat-button-disabled,
   &.mat-raised-button.mat-button-disabled,
   &.mat-fab.mat-button-disabled {
-    color: $dark-disabled-text;
+    color: luxcommon.$dark-disabled-text;
   }
 
   &.mat-raised-button.mat-accent:not(.mat-button-disabled), &.mat-fab.mat-accent:not(.mat-button-disabled) {
-    color: map-get($lux-palette-primary, 500);
+    color: map.get(luxpalette.$lux-palette-primary, 500);
   }
 
   &.lux-icon-button {
     border-radius: 18px;
-    height: $button-height;
+    height: luxcommon.$button-height;
 
     & lux-icon {
       line-height: 1;
@@ -250,8 +258,8 @@ lux-button button.lux-button {
 
   &.lux-button-rounded {
     border-radius: 16px !important;
-    height: $button-fav-height;
-    width: $button-fav-height;
+    height: luxcommon.$button-fav-height;
+    width: luxcommon.$button-fav-height;
     font-size: $button-font-size;
     & lux-icon {
       line-height: 1;
@@ -313,13 +321,13 @@ lux-tile {
   mat-card[class~=lux-cursor] {
 
     &:focus {
-      @include focus-dark-mixin;
+      @include luxfocus.focus-dark-mixin;
     }
 
     &:hover {
       background-color: white !important;
       // farbiger Schatten beim Hover
-      @include mat-elevation(2, $dark-green, 1);
+      @include mat.elevation(2, $dark-green, 1);
 
       h2 {
         color: #56bd66;
@@ -335,7 +343,7 @@ lux-tile {
 .lux-badge-notification {
 
   &.mat-badge:not(.mat-badge-disabled).mat-badge-accent .mat-badge-content {
-    background-color: map-get($lux-palette_accent, 500);
+    background-color: map.get(luxpalette.$lux-palette_accent, 500);
   }
   
 }
@@ -361,14 +369,14 @@ lux-checkbox, lux-toggle, lux-radio, lux-slider {
   .lux-form-control:not(.lux-form-control-disabled), .lux-form-control:not(.lux-form-control-disabled).lux-focused {
     .lux-form-control-label {
       > * {
-        color: $dark-secondary-text;
+        color: luxcommon.$dark-secondary-text;
       }
     }
   }
 }
 
 .mat-select-value {
-  color: $dark-secondary-text;
+  color: luxcommon.$dark-secondary-text;
 }
 
 lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datepicker, lux-datetimepicker, lux-chips {
@@ -378,9 +386,9 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
     }
 
     .lux-form-control-container {
-      border: 1px solid $form-border-color;
+      border: 1px solid luxcommon.$form-border-color;
       border-radius: $form-control-border-radius;
-      padding: $form-control-container-padding;
+      padding: luxcommon.$form-control-container-padding;
 
       &:after {
         border-bottom: $form-control-old-border-bottom;
@@ -388,20 +396,20 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
     }
 
     .lux-label, mat-hint, mat-error {
-      color: $dark-secondary-text;
+      color: luxcommon.$dark-secondary-text;
     }
   }
 
   .lux-form-control-error {
     .lux-form-control-label {
       > * {
-        color: $lux-warn-color !important;
+        color: luxpalette.$lux-warn-color !important;
       }
     }
 
     .lux-form-control-container {
-      border-color: $lux-selected-border-color !important;
-      box-shadow: 0 0 0 2px $lux-warn-color, 0 0 4px 2px $lux-warn-color;
+      border-color: luxcommon.$lux-selected-border-color !important;
+      box-shadow: 0 0 0 2px luxpalette.$lux-warn-color, 0 0 4px 2px luxpalette.$lux-warn-color;
       
       &:after {
         border-bottom: $form-control-old-border-bottom;
@@ -410,17 +418,17 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
 
     .lux-form-control-misc {
       > * {
-        color: $lux-warn-color !important;
+        color: luxpalette.$lux-warn-color !important;
       }
     }
   }
 
   .lux-form-control-disabled {
     .lux-form-control-container {
-      color: $dark-disabled-text !important;
-      border: 1px dashed $dark-disabled-text !important;
+      color: luxcommon.$dark-disabled-text !important;
+      border: 1px dashed luxcommon.$dark-disabled-text !important;
       border-radius: $form-control-border-radius;
-      padding: $form-control-container-padding;
+      padding: luxcommon.$form-control-container-padding;
 
       &:after {
         border-bottom: $form-control-old-border-bottom;
@@ -431,12 +439,12 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
   .lux-form-control:not(.lux-form-control-disabled).lux-focused {
     .lux-form-control-label {
       > * {
-        color: $dark-secondary-text;
+        color: luxcommon.$dark-secondary-text;
       }
     }
 
     .lux-form-control-container {
-      box-shadow: 0 0 0 2px $lux-selected-border-color, 0 0 4px 2px $lux-selected-border-color;
+      box-shadow: 0 0 0 2px luxcommon.$lux-selected-border-color, 0 0 4px 2px luxcommon.$lux-selected-border-color;
 
       &:after {
         border-bottom: $form-control-old-border-bottom !important;
@@ -445,8 +453,8 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
 
     &.lux-form-control-error {
       .lux-form-control-container {
-        border-color: $lux-warn-color !important;
-        box-shadow: 0 0 0 2px $lux-warn-color, 0 0 4px 2px $lux-warn-color;
+        border-color: luxpalette.$lux-warn-color !important;
+        box-shadow: 0 0 0 2px luxpalette.$lux-warn-color, 0 0 4px 2px luxpalette.$lux-warn-color;
       }
       &:after {
         border-bottom: $form-control-old-border-bottom !important;
@@ -458,17 +466,17 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
 .lux-form-control-error {
   .lux-form-control-label {
     > * {
-      color: $lux-warn-color !important;
+      color: luxpalette.$lux-warn-color !important;
     }
   }
 
   .lux-form-control-container {
-    border-color: $lux-warn-color !important;
+    border-color: luxpalette.$lux-warn-color !important;
   }
 
   .lux-form-control-misc {
     > * {
-      color: $lux-warn-color !important;
+      color: luxpalette.$lux-warn-color !important;
     }
   }
 }
@@ -491,12 +499,12 @@ lux-layout-form-row {
 lux-checkbox {
 
   .mat-checkbox-disabled .mat-checkbox-inner-container{
-    border: 1px solid $dark-disabled-text;
+    border: 1px solid luxcommon.$dark-disabled-text;
   }
 
   .mat-checkbox-inner-container {
     border-radius: 4px;
-    border: 1px solid map-get($lux-palette_primary, 500);
+    border: 1px solid map.get(luxpalette.$lux-palette_primary, 500);
     // wegen der Border
     height: 18px !important;
     width: 18px !important;
@@ -537,7 +545,7 @@ lux-table {
 // Tabs außerhalb einer LUX-Card (z.B. Master-Detail)
 lux-tabs {
   .mat-tab-label-active:not(.mat-tab-disabled) {
-    background-color: $lux-hover-color-for-dark-background;
+    background-color: luxcommon.$lux-hover-color-for-dark-background;
   }
 
   div.lux-tab-title {
@@ -550,7 +558,7 @@ lux-tabs {
 // Tabs innerhalb einer LUX-Card
 mat-card lux-tabs {
   .mat-tab-label-active:not(.mat-tab-disabled) {
-    background-color: $lux-hover-color-for-dark-background;
+    background-color: luxcommon.$lux-hover-color-for-dark-background;
   }
 }
 
@@ -560,7 +568,7 @@ mat-card lux-tabs {
 lux-radio {
 
   .mat-radio-outer-circle{
-    border: 1.5px solid map-get($lux-palette_primary, 500);
+    border: 1.5px solid map.get(luxpalette.$lux-palette_primary, 500);
   }
 
   .mat-radio-inner-circle{
@@ -577,37 +585,37 @@ lux-radio {
 
   .mat-radio-checked {
     .mat-radio-outer-circle {
-      background: map-get($lux-palette_primary, 500);
+      background: map.get(luxpalette.$lux-palette_primary, 500);
     }
 
     &.mat-radio-disabled .mat-radio-outer-circle {
-      background: $dark-disabled-text;
+      background: luxcommon.$dark-disabled-text;
       border: none;
     }
 
     &.mat-radio-disabled label .mat-radio-container {
       span.mat-radio-inner-circle {
-        background-color: $dark-disabled-text;
+        background-color: luxcommon.$dark-disabled-text;
       }
 
       span.mat-radio-outer-circle {
-        border-color: $dark-disabled-text;
+        border-color: luxcommon.$dark-disabled-text;
       }
     }
   }
 
   .mat-radio-disabled label.mat-radio-label {
     .mat-radio-label-content {
-      color: $dark-disabled-text;
+      color: luxcommon.$dark-disabled-text;
     }
 
     .mat-radio-container {
       span.mat-radio-inner-circle {
-        background-color: $dark-disabled-text;
+        background-color: luxcommon.$dark-disabled-text;
       }
 
       span.mat-radio-outer-circle {
-        border-color: $dark-disabled-text;
+        border-color: luxcommon.$dark-disabled-text;
       }
     }
   }
@@ -633,7 +641,7 @@ lux-radio {
     
     th {
       font-size: 18px;
-      color: map-get($lux-palette_primary, 500);
+      color: map.get(luxpalette.$lux-palette_primary, 500);
     }
 
     td.mat-calendar-body-cell {
@@ -644,21 +652,21 @@ lux-radio {
 
       &:hover > div {
         border-radius: 2px;
-        background-color:map-get($lux-palette_accent, 300) !important;
-        color: map-get($lux-palette_primary, 500);
+        background-color:map.get(luxpalette.$lux-palette_accent, 300) !important;
+        color: map.get(luxpalette.$lux-palette_primary, 500);
       }
 
       & > div {
         border-radius: 2px;
         background-color: $light-blue;
         font-size: 18px;
-        color: map-get($lux-palette_primary, 500);
+        color: map.get(luxpalette.$lux-palette_primary, 500);
       }
     }
 
     .mat-calendar-body-cell-content.mat-focus-indicator.mat-calendar-body-selected {
       border-radius: 2px;
-      background-color: map-get($lux-palette_primary, 500);
+      background-color: map.get(luxpalette.$lux-palette_primary, 500);
       color: $light-blue;
     }
 
@@ -684,18 +692,18 @@ lux-radio {
 
   button, .mat-icon-button {
     font-size: 18px;
-    color: map-get($lux-palette_primary, 500);
+    color: map.get(luxpalette.$lux-palette_primary, 500);
 
     .mat-button-focus-overlay {
       display: none;
     }
 
     &:focus {
-      @include focus-dark-mixin;
+      @include luxfocus.focus-dark-mixin;
     }
 
     &:hover {
-      @include lux-hovered-mixin;
+      @include luxfocus.lux-hovered-mixin;
     }
   }
 }

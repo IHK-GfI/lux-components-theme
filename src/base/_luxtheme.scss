@@ -1,7 +1,13 @@
-$lux-primary: mat-palette($lux-palette_primary);
-$lux-accent: mat-palette($lux-palette_accent);
-$lux-warn: mat-palette($lux-palette_warn);
-$lux-theme: mat-light-theme($lux-primary, $lux-accent, $lux-warn);
+@use "../blue/luxpalette";
 
-@include mat-core();
-@include angular-material-theme($lux-theme);
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$lux-primary: mat.define-palette(luxpalette.$lux-palette_primary);
+$lux-accent: mat.define-palette(luxpalette.$lux-palette_accent);
+$lux-warn: mat.define-palette(luxpalette.$lux-palette_warn);
+$lux-theme: mat.define-light-theme($lux-primary, $lux-accent, $lux-warn);
+
+
+@include mat.all-component-themes($lux-theme);

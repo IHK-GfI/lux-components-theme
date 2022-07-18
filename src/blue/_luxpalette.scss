@@ -1,3 +1,4 @@
+@use "sass:map";
 /*
   Dieses Partial-SCSS dient der Verwaltung der Farb-Paletten für die LUX-Components.
 */
@@ -100,6 +101,6 @@ $lux-palette_warn: (
   )
 );
 
-$lux-primary-color: map-get($lux-palette_primary, 500);
-$lux-accent-color: map-get($lux-palette_accent, 500);
-$lux-warn-color: map-get($lux-palette_warn, 500);
+$lux-primary-color: map.get($lux-palette_primary, 500);
+$lux-accent-color: map.get($lux-palette_accent, 500);
+$lux-warn-color: map.get($lux-palette_warn, 500);
