@@ -1,11 +1,14 @@
 @use "luxpalette";
-@use "../public/global";
-global.$app-font-family: "Source Sans Pro", "Helvetica", "Arial", "sans-serif";
-global.$outline-width: 1px;
-@use "luxcommon";
+@use "../public/global" with (
+    $app-font-family: ("Source Sans Pro", "Helvetica", "Arial", "sans-serif"),
+    $outline-width: 1px
+);
+@use 'luxcommon' with (
+    $lux-hover-color: #e3ebf5
+);
 @use "../base/luxelevations";
 @use "../base/luxcomponents";
-luxcommon.$lux-hover-color: #e3ebf5;
+
 @use "../base/luxfocus";
 @use "../base/luxstyles";
 @use "../base/luxtheme";
