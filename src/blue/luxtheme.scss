@@ -1,9 +1,95 @@
-@use "luxpalette";
 @use "../public/global";
-@use "luxcommon";
+
+@use "luxpalette" as themePalette;
+@use "../base/luxpalette" with (
+    // Farbpaletten    
+    $lux-palette_primary: themePalette.$lux-palette_primary,
+    $lux-palette_accent: themePalette.$lux-palette_accent,
+    $lux-palette_warn: themePalette.$lux-palette_warn,
+
+    // Hauptfarben
+    $lux-primary-color: themePalette.$lux-primary-color,
+    $lux-accent-color:themePalette.$lux-accent-color,
+    $lux-warn-color: themePalette.$lux-warn-color
+);
+
+
+@use "luxcommon" as currentTheme;
+@use "../base/luxcommon" with ( 
+    // Allgemein
+    $dark-primary-text: currentTheme.$dark-primary-text,
+    $dark-secondary-text: currentTheme.$dark-secondary-text,
+    $dark-disabled-text: currentTheme.$dark-disabled-text,
+    $dark-dividers: currentTheme.$dark-dividers,
+    $dark-focused: currentTheme.$dark-focused,
+
+    $light-primary-text: currentTheme.$light-primary-text,
+    $light-secondary-text: currentTheme.$light-secondary-text,
+    $light-disabled-text: currentTheme.$light-disabled-text,
+    $light-dividers: currentTheme.$light-dividers,
+    $light-focused: currentTheme.$light-focused,
+
+    // App
+    $app-header-bg: currentTheme.$app-header-bg,
+    $app-content-bg: currentTheme.$app-content-bg,
+    $app-footer-bg: currentTheme.$app-footer-bg,
+    $app-data-bg: currentTheme.$app-data-bg,
+
+    // Form
+    $form-border-color: currentTheme.$form-border-color,
+    $form-control-default-height-not-scalable: currentTheme.$form-control-default-height-not-scalable,
+    $form-control-height: currentTheme.$form-control-height,
+    $form-control-height-small: currentTheme.$form-control-height-small,
+    $form-control-font-size: currentTheme.$form-control-font-size,
+    $form-control-font-size-small: currentTheme.$form-control-font-size-small,
+    $form-control-label-padding: currentTheme.$form-control-label-padding,
+    $form-control-container-padding: currentTheme.$form-control-container-padding,
+    $form-control-misc-margin: currentTheme.$form-control-misc-margin,
+    $form-control-complete-height: currentTheme.$form-control-complete-height,
+    $form-control-buffer: currentTheme.$form-control-buffer,
+    $form-control-margin: currentTheme.$form-control-margin,
+
+    // Button
+    $button-height: currentTheme.$button-height,
+    $button-fav-height: currentTheme.$button-fav-height,
+
+    // Fokus
+    $outline-color-bright: currentTheme.$outline-color-bright,
+    $outline-color-dark: currentTheme.$outline-color-dark,
+
+    // Hover
+    $lux-hover-color: currentTheme.$lux-hover-color,
+    $lux-hover-color-for-dark-background: currentTheme.$lux-hover-color-for-dark-background,
+
+    // Selektion
+    $lux-selected-border-color: currentTheme.$lux-selected-border-color,
+    $lux-selected-bg-color: currentTheme.$lux-selected-bg-color,
+
+    // Stepper (large)
+    $lux-stepper-large-backdrop-bg: currentTheme.$lux-stepper-large-backdrop-bg,
+    $lux-stepper-large-completed-fc: currentTheme.$lux-stepper-large-completed-fc,
+
+    $lux-stepper-large-nav-item-active-fc: currentTheme.$lux-stepper-large-nav-item-active-fc,
+    $lux-stepper-large-nav-item-active-bg: currentTheme.$lux-stepper-large-nav-item-active-bg,
+    $lux-stepper-large-nav-item-disabled-fg: currentTheme.$lux-stepper-large-nav-item-disabled-fg,
+    $lux-stepper-large-nav-item-disabled-bg: currentTheme.$lux-stepper-large-nav-item-disabled-bg,
+    $lux-stepper-large-nav-item-completed-fg: currentTheme.$lux-stepper-large-nav-item-completed-fg,
+    $lux-stepper-large-nav-item-completed-bg: currentTheme.$lux-stepper-large-nav-item-completed-bg,
+
+    // Hintergrundfarben (z.B. Badge oder Progress)
+    $componentBgColors: currentTheme.$componentBgColors,
+
+    // Vordergrundfarben (z.B. Badge)
+    $componentFontColors: currentTheme.$componentFontColors,
+
+    // Farben für einen dunklen Hintergrund (z.B. Snackbar).
+    $colorsForDarkBg: currentTheme.$colorsForDarkBg
+);
+
 @use "../base/luxelevations";
 @use "../base/luxcomponents";
 @use "../base/luxfocus";
 @use "../base/luxstyles";
 @use "../base/luxtheme";
+
 @use "custom";

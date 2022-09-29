@@ -1,15 +1,97 @@
-@use "luxpalette";
 @use "../public/global" with (
     $app-font-family: ("Source Sans Pro", "Helvetica", "Arial", "sans-serif"),
     $outline-width: 1px
 );
-@use 'luxcommon' with (
-    $lux-hover-color: #e3ebf5
+
+@use "luxpalette" as themePalette;
+@use "../base/luxpalette" with (
+    // Farbpaletten
+    $lux-palette_primary: themePalette.$lux-palette_primary,
+    $lux-palette_accent: themePalette.$lux-palette_accent,
+    $lux-palette_warn: themePalette.$lux-palette_warn,
+
+    // Hauptfarben
+    $lux-primary-color: themePalette.$lux-primary-color,
+    $lux-accent-color:themePalette.$lux-accent-color,
+    $lux-warn-color: themePalette.$lux-warn-color
 );
+
+@use "luxcommon" as themeCommon;
+@use "../base/luxcommon" with ( 
+    // Allgemein
+    $dark-primary-text: themeCommon.$dark-primary-text,
+    $dark-secondary-text: themeCommon.$dark-secondary-text,
+    $dark-disabled-text: themeCommon.$dark-disabled-text,
+    $dark-dividers: themeCommon.$dark-dividers,
+    $dark-focused: themeCommon.$dark-focused,
+
+    $light-primary-text: themeCommon.$light-primary-text,
+    $light-secondary-text: themeCommon.$light-secondary-text,
+    $light-disabled-text: themeCommon.$light-disabled-text,
+    $light-dividers: themeCommon.$light-dividers,
+    $light-focused: themeCommon.$light-focused,
+
+    // App
+    $app-header-bg: themeCommon.$app-header-bg,
+    $app-content-bg: themeCommon.$app-content-bg,
+    $app-footer-bg: themeCommon.$app-footer-bg,
+    $app-data-bg: themeCommon.$app-data-bg,
+
+    // Form
+    $form-border-color: themeCommon.$form-border-color,
+    $form-control-default-height-not-scalable: themeCommon.$form-control-default-height-not-scalable,
+    $form-control-height: themeCommon.$form-control-height,
+    $form-control-height-small: themeCommon.$form-control-height-small,
+    $form-control-font-size: themeCommon.$form-control-font-size,
+    $form-control-font-size-small: themeCommon.$form-control-font-size-small,
+    $form-control-label-padding: themeCommon.$form-control-label-padding,
+    $form-control-container-padding: themeCommon.$form-control-container-padding,
+    $form-control-misc-margin: themeCommon.$form-control-misc-margin,
+    $form-control-complete-height: themeCommon.$form-control-complete-height,
+    $form-control-buffer: themeCommon.$form-control-buffer,
+    $form-control-margin: themeCommon.$form-control-margin,
+
+    // Button
+    $button-height: themeCommon.$button-height,
+    $button-fav-height: themeCommon.$button-fav-height,
+
+    // Fokus
+    $outline-color-bright: themeCommon.$outline-color-bright,
+    $outline-color-dark: themeCommon.$outline-color-dark,
+
+    // Hover
+    $lux-hover-color: themeCommon.$lux-hover-color,
+    $lux-hover-color-for-dark-background: themeCommon.$lux-hover-color-for-dark-background,
+
+    // Selektion
+    $lux-selected-border-color: themeCommon.$lux-selected-border-color,
+    $lux-selected-bg-color: themeCommon.$lux-selected-bg-color,
+
+    // Stepper (large)
+    $lux-stepper-large-backdrop-bg: themeCommon.$lux-stepper-large-backdrop-bg,
+    $lux-stepper-large-completed-fc: themeCommon.$lux-stepper-large-completed-fc,
+
+    $lux-stepper-large-nav-item-active-fc: themeCommon.$lux-stepper-large-nav-item-active-fc,
+    $lux-stepper-large-nav-item-active-bg: themeCommon.$lux-stepper-large-nav-item-active-bg,
+    $lux-stepper-large-nav-item-disabled-fg: themeCommon.$lux-stepper-large-nav-item-disabled-fg,
+    $lux-stepper-large-nav-item-disabled-bg: themeCommon.$lux-stepper-large-nav-item-disabled-bg,
+    $lux-stepper-large-nav-item-completed-fg: themeCommon.$lux-stepper-large-nav-item-completed-fg,
+    $lux-stepper-large-nav-item-completed-bg: themeCommon.$lux-stepper-large-nav-item-completed-bg,
+
+    // Hintergrundfarben (z.B. Badge oder Progress)
+    $componentBgColors: themeCommon.$componentBgColors,
+
+    // Vordergrundfarben (z.B. Badge)
+    $componentFontColors: themeCommon.$componentFontColors,
+
+    // Farben für einen dunklen Hintergrund (z.B. Snackbar).
+    $colorsForDarkBg: themeCommon.$colorsForDarkBg
+);
+    
 @use "../base/luxelevations";
 @use "../base/luxcomponents";
-
 @use "../base/luxfocus";
 @use "../base/luxstyles";
 @use "../base/luxtheme";
+
 @use "custom";

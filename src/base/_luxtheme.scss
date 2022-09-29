@@ -1,6 +1,5 @@
-@use "../blue/luxpalette";
-
 @use '@angular/material' as mat;
+@use "luxpalette";
 
 @include mat.core();
 
