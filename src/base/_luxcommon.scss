@@ -16,6 +16,10 @@ $app-header-bg: mustOverriden !default;
 $app-content-bg: mustOverriden !default;
 $app-footer-bg: mustOverriden !default;
 $app-data-bg: mustOverriden !default;
+$app-gradient: mustOverriden !default;
+$app-gradient-reverse: mustOverriden !default;
+$app-border-color: mustOverriden !default;
+$app-headline-font: mustOverriden !default;
 
 // Form
 $form-border-color: mustOverriden !default;
@@ -34,6 +38,7 @@ $form-control-margin: mustOverriden !default;
 // Button
 $button-height: mustOverriden !default;
 $button-fav-height: mustOverriden !default;
+$button-font-size: mustOverriden !default;
 
 // Fokus
 $outline-color-bright: mustOverriden !default;

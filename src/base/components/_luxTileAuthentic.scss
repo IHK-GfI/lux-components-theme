@@ -1,0 +1,57 @@
+@use "sass:map";
+@use "../luxfocus";
+@use "../luxcommon";
+@use "../luxpalette";
+@use "../../public/global";
+@use "../luxelevations";
+
+
+lux-tile-authentic {
+  .mat-card.lux-tile-authentic {   
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    background-color: luxcommon.$app-data-bg;
+    background-image: luxcommon.$app-gradient;
+    border: 1px solid rgba(black, 0.12);
+    font-size: 16px;
+    
+    .lux-tile-icon {
+      color: map.get(luxpalette.$lux-palette-primary, 500);
+      lux-icon {  
+         i,
+         mat-icon {
+          padding: 0 !important;
+          font-size: 2em !important;
+        }
+      }
+    }
+  
+    .lux-tile-header-titel-authentic {
+      mat-card-title {
+        color: luxcommon.$dark-primary-text;
+        font-family: luxcommon.$app-headline-font, global.$app-font-family;
+        font-size: 20px;
+        margin-bottom: 8px;
+      }
+      mat-card-subtitle.mat-card-subtitle:not(:first-child){
+        color: luxcommon.$dark-secondary-text;
+        font-size: 14px;
+        font-weight: normal;
+        margin-top: 0px;
+      }
+    }
+    
+    &:not([class*="mat-elevation-z"]) {
+      @include luxelevations.lux-elevation-z2;
+    }
+
+    &[class~=lux-cursor]:focus-visible {
+      @include luxfocus.focus-dark-mixin;
+    }
+    &[class~=lux-cursor]:hover {
+      background-color: luxcommon.$lux-hover-color;
+      background-image: unset;
+    }
+  }
+}

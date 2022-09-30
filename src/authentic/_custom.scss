@@ -1,0 +1,589 @@
+@use "sass:map";
+@use "../base/luxelevations";
+@use "../base/luxfocus";
+@use "@angular/material" as mat;
+@use "../public/global";
+@use "luxcommon";
+@use "luxpalette";
+
+
+$light-gray: #EFF3F6; //für die Table
+
+
+
+h1, h2, h3, h4, h5, h6 {
+  color: rgba(black, 0.87);
+  font-weight: normal;
+}
+
+.lux-menu-item {
+  color: luxpalette.$lux-primary-color;
+}
+
+// Optionen werden im Cdk-Overlay dargestellt und hängen nicht unter der Component selbst.
+// eigentlich nur für select-panel nötig
+.lux-autocomplete-panel-ac, .lux-select-panel-ac {
+  .mat-option {
+    font-family: global.$app-font-family;
+    &.invalid {
+      border-radius: 4px;
+      box-shadow: 0 0 0 2px luxpalette.$lux-warn-color inset;
+    }
+  }
+}
+
+// Hintergrundfarbe 
+lux-app-content {
+  background-color: #fff; //Fallback
+  background-image: luxcommon.$app-gradient;
+}
+
+
+/*
+ * Theming for LUX-App-Footer
+ */
+ lux-app-footer {
+  .lux-app-footer {
+    border-bottom: 8px solid map.get(luxpalette.$lux-palette_primary, 600);
+  }
+}
+
+
+//Tabs außerhalb einer LUX-Card (z.B. Master-Detail)
+lux-tabs {
+  div.lux-tab-title {
+    font-size: 16px;
+  }
+  .mat-tab-label:not(.mat-tab-disabled) {
+    &:hover:not(.mat-tab-disabled) {
+      background-color: luxcommon.$app-data-bg !important;
+    }
+  }
+}
+
+
+/*
+ * Theming for LUX-Table
+ */
+lux-table {
+  
+  .lux-table {
+    th, .lux-table-header-no-data th {
+      vertical-align: middle;
+    }
+
+    th.mat-header-cell, td.mat-cell {
+      border: none;
+    }
+    td.mat-footer-cell {
+      border: none;
+      border-top: 1px solid luxcommon.$app-border-color;
+      font-size: 15px;
+      color: luxcommon.$dark-primary-text;
+      padding-bottom: 16px;
+    }
+
+    .lux-table-content {
+      border: 1px solid luxcommon.$app-border-color;
+      border-radius: 4px;
+      
+      table {
+        border-spacing: 0 !important;
+        td .lux-form-control-container-authentic {
+          padding: 0.25em 0.5em; // bei den Form-Controls in einer Tabellen-Zelle wird die Höhe reduziert
+        }
+      }
+      
+      thead th {
+        font-size: 16px;
+        color: luxcommon.$dark-primary-text;
+        font-weight: 700;
+      }
+
+      .mat-row:nth-child(odd){
+        background-color: $light-gray;
+      }
+      .mat-row:nth-child(even){
+        background-color:#ffffff;
+      }
+    }
+    .mat-paginator {
+      font-size: 15px;
+      color: rgba(black, 0.87);
+      .mat-paginator-container {
+        padding: 0;
+      }
+      mat-form-field.mat-paginator-page-size-select span {
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+
+/**
+ * Theming für LUX-Card
+ */
+ lux-card {
+  
+  .lux-highlight{
+    color: map.get(luxpalette.$lux-palette-primary, 500 );
+  }
+  .mat-card.lux-card {
+    border: 1px solid rgba(black, 0.12);
+    background-color: #fff;
+    
+    &:not([class*="mat-elevation-z"]) {
+      @include luxelevations.lux-elevation-z0;
+    }
+
+    mat-card-subtitle {
+      color: luxcommon.$dark-secondary-text;
+      font-size: 16px;
+      font-weight: normal;
+    }
+  }
+}
+
+/*
+ * Theming for LUX-Accordion
+ */
+ lux-accordion lux-panel {
+   padding: 0px;
+ }
+
+ mat-expansion-panel.mat-expansion-panel:not([class*="mat-elevation-z"]) {
+  @include luxelevations.lux-elevation-z0;
+  border: 1px solid rgba(black, 0.12);
+  border-radius: 4px;
+}
+
+lux-accordion { 
+  .mat-expansion-panel-header .mat-content {
+    flex-direction: column; //damit sind Title und Description untereinander
+
+    .mat-expansion-panel-header-description {
+      margin-top: 4px;
+      font-weight: 400;
+    }
+  }
+
+  .mat-expansion-panel-header .mat-expansion-indicator::after {
+    color: map.get(luxpalette.$lux-palette-primary, 500);
+  }
+
+  mat-expansion-panel-header.mat-expansion-panel-header, 
+  mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded,
+  mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded:focus {
+    background-color: map.get(luxpalette.$lux-palette-primary, 50);
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    font-family: luxcommon.$app-headline-font, global.$app-font-family;
+    font-weight: 500;
+    color: luxcommon.$dark-primary-text;
+  }
+}
+
+
+/**
+* Theming für lux-Badge-notification
+*/
+
+.lux-badge-notification {
+  
+  &.mat-badge:not(.mat-badge-disabled).mat-badge-accent .mat-badge-content {
+    background-color: map.get(luxpalette.$lux-palette_accent, 500);
+  }
+  
+  &.mat-badge .mat-badge-content {
+    font-family: luxcommon.$app-headline-font, global.$app-font-family;
+    border: 2px solid transparent;
+  }
+
+  &.mat-badge.lux-badge-no-border .mat-badge-content {
+    border: 2px solid transparent;
+  }
+
+  &.lux-badge-color-default {
+    &.mat-badge:not(.mat-badge-disabled) .mat-badge-content {
+      color: white;
+      background: map.get(luxcommon.$componentBgColors, 'gray');
+    }
+  }
+  &.mat-badge-disabled .mat-badge-content {
+    color: white;
+  }
+}
+
+/*
+ * Theming for LUX-Dialog
+ */
+.lux-dialog {
+  .lux-dialog-title.mat-dialog-title {
+    color: luxcommon.$dark-primary-text;
+    font-family: luxcommon.$app-headline-font, global.$app-font-family;
+  }
+  .mat-dialog-container {
+    @include luxelevations.lux-elevation-z24;
+    border:1px solid luxcommon.$dark-disabled-text;
+  }
+}
+
+
+/*
+ * Theming for LUX-Master-Detail
+ */
+ .lux-master-container {
+   height: 100%;
+  lux-button.lux-master-toggle{
+    position: absolute;
+    right: -18px;
+    top: 18px;
+    z-index: 1000;
+    
+    button.lux-button.lux-button-rounded {
+      @include luxelevations.lux-elevation-z0;  
+      border: 1px solid luxcommon.$app-border-color;
+      color: map.get(luxpalette.$lux-palette-primary, 500);
+      
+      &:not([disabled]):focus:hover{
+        background-color: luxcommon.$lux-hover-color;
+        border-radius: 50%
+      }
+    }
+  }
+}
+lux-master-header {
+  @include luxelevations.lux-elevation-z0;
+}
+lux-master-footer {
+  border: 1px solid luxcommon.$app-border-color;
+  border-radius: 4px;
+  background-color: luxcommon.$app-data-bg;
+  @include luxelevations.lux-elevation-z0;
+}
+
+/*
+ * Theming for LUX-Master-Detail
+ */
+ .master-light-container {
+  height: 100%;
+  position: relative;
+  lux-button.master-light-toggle{
+   position: absolute;
+   right: -18px;
+   top: 18px;
+   z-index: 1000;
+   
+   button.lux-button.lux-button-rounded {
+     @include luxelevations.lux-elevation-z0;  
+     border: 1px solid luxcommon.$app-border-color;
+     color: map.get(luxpalette.$lux-palette-primary, 500);
+     
+     &:not([disabled]):focus:hover{
+       background-color: luxcommon.$lux-hover-color;
+       border-radius: 50%
+     }
+   }
+ }
+}
+.detail-button-container{
+  lux-button.back-to-master-button {
+    button.lux-button.lux-button-rounded {
+      @include luxelevations.lux-elevation-z0;  
+      border: 1px solid luxcommon.$app-border-color;
+      color: map.get(luxpalette.$lux-palette-primary, 500);
+    }
+  }
+  .back-to-master-label {
+    font-size: 16px;
+    color: map.get(luxpalette.$lux-palette-primary, 300);
+  }
+}
+
+lux-message-box {
+  border-radius: 4px;
+
+  &.mat-elevation-z4 {
+    @include luxelevations.lux-elevation-z0();
+  }
+  
+  .lux-message-box-content{
+
+    margin: 0 !important;
+  }
+}
+
+lux-button button.lux-button {
+  .lux-button-label{
+    font-family: luxcommon.$app-headline-font, global.$app-font-family;
+    font-weight: normal;
+  }
+  
+}
+
+
+/*
+ * Theming for LUX-Form-Controls
+ * Übergangsweise wird hier nur die Schriftgröße angepasst, damit die Schrift vollständig im Input etc angezeigt wird
+ * gilt bis die alten Form-Controls abgelöst sind 
+ */
+ .lux-form-control {
+    margin: luxcommon.$form-control-margin;
+    min-height: luxcommon.$form-control-complete-height;
+
+  .lux-form-control-container {
+   font-size: 14px;
+    input, textarea {
+      font-size: 14px !important;
+
+    }
+  }
+}
+
+/*
+* Theming für Stepper
+*/
+lux-stepper {
+  lux-stepper-vertical mat-step-header {
+    
+    &[aria-selected="true"] {
+      // background-color: $lux-selected-bg-color;
+      @include luxfocus.lux-selected-mixin-ac;
+      &:after {
+        border-left: none;
+      }
+    }
+    
+    &[aria-selected="false"] {
+      div.mat-step-icon.mat-step-icon-state-number,
+      div.mat-step-icon.mat-step-icon-state-edit {
+        background-color: #fff ;
+        color: luxpalette.$lux-primary-color;
+        border: 1px solid luxcommon.$app-border-color;
+      }
+      div.mat-step-label lux-step-header {
+        color: luxpalette.$lux-primary-color;
+      }
+    }
+  }
+ 
+  lux-stepper-horizontal mat-step-header{
+
+    &[aria-selected="true"] {
+      div.mat-step-label.mat-step-label-active.mat-step-label-selected lux-step-header {
+        font-weight: 500;
+      }
+      &:after {
+        border-bottom: none;
+      }
+    }
+
+    &[aria-selected="false"] {
+      div.mat-step-icon.mat-step-icon-state-number,
+      div.mat-step-icon.mat-step-icon-state-edit {
+        background-color: #fff ;
+        color: luxpalette.$lux-primary-color;
+        border: 1px solid luxcommon.$app-border-color;
+      }
+      div.mat-step-label lux-step-header {
+        color: luxpalette.$lux-primary-color;
+      }
+    }
+  }
+
+ .lux-ignore-mat-step-icons mat-step-header {
+    &[aria-selected="false"] { 
+      .lux-stepper-edited-icon, 
+      .lux-stepper-normal-icon {
+        i, mat-icon {
+          color: luxpalette.$lux-primary-color;
+          background-color: #fff;
+          border: 1px solid luxcommon.$app-border-color;
+        }
+      }
+    }
+    &[aria-selected="true"] { 
+      .lux-stepper-edited-icon, 
+      .lux-stepper-normal-icon {
+        i, mat-icon {
+          color:#fff;
+          background-color:  luxpalette.$lux-primary-color;
+          border: 1px solid luxcommon.$app-border-color;
+        }
+      }
+    }
+  }
+}
+
+
+/*
+* Theming für Stepper-Large
+*/
+lux-stepper-large {
+  background-color: transparent;
+  .lux-stepper-large-nav-container,
+  .lux-stepper-large-content-container {
+    border: 1px solid luxcommon.$app-border-color;
+    border-radius: 4px;
+    background-color: luxcommon.$app-content-bg;
+  }
+
+//Desktop-View
+  .lux-stepper-large-nav-item {
+    .lux-stepper-large-nav-item-number-container {
+      border-radius: 50%;
+    }
+
+    &.lux-active:not(.lux-disabled) {
+      a {
+        font-weight: 500;
+      }
+      .lux-stepper-large-nav-item-number-container {
+        color: luxcommon.$lux-stepper-large-nav-item-active-fc;
+        background-color: luxcommon.$lux-stepper-large-nav-item-active-bg;
+      }
+  
+      .lux-stepper-large-nav-item-label {
+        color: #003366;
+      }
+    }
+  
+    &.lux-touched:not(.lux-disabled) {
+      a {
+        text-decoration: underline;
+        font-weight: 500;
+      }
+  
+      &.lux-completed:not(.lux-active) {
+        .lux-stepper-large-nav-item-number-container {
+          border: 1px solid luxcommon.$app-border-color;
+        }
+  
+        a {
+          color: luxpalette.$lux-accent-color;
+          font-weight: 400;
+        }
+      }
+  
+      &:not(.lux-completed):not(.lux-active) {
+        .lux-stepper-large-nav-item-number-container {
+          color: luxcommon.$lux-stepper-large-nav-item-completed-fg;
+          background-color: luxcommon.$lux-stepper-large-nav-item-completed-bg;
+        }
+      }
+    }
+
+    &:not(.lux-touched) {
+      opacity: 1;
+      color: #003366;
+  
+      .lux-stepper-large-nav-item-number-container {
+        color: luxpalette.$lux-primary-color;
+        background-color: #fff;
+        border: 1px solid luxcommon.$app-border-color;
+      }
+    }
+    &.lux-disabled {
+  
+      .lux-stepper-large-nav-item-number-container {
+        color: luxcommon.$dark-disabled-text;
+        background-color: #fff;
+        border: 1px solid luxcommon.$app-border-color;
+      }
+  
+      .lux-stepper-large-nav-item-label {
+        color: luxcommon.$dark-disabled-text;
+
+      }
+    }
+  }
+}
+
+//Mobile-View
+.lux-stepper-large-mobile-nav-header {
+  div {
+    font-family: luxcommon.$app-headline-font, global.$app-font-family;
+  }
+}
+.lux-stepper-large-mobile-nav-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+
+  font-size: 18px;
+  
+  .lux-stepper-large-mobile-nav-item-number-container {
+    border-radius: 50%;
+  }
+
+  &.lux-active:not(.lux-disabled) {
+    a {
+      font-weight: 500;
+    }
+    .lux-stepper-large-mobile-nav-item-number-container {
+      color: luxcommon.$lux-stepper-large-nav-item-active-fc;
+      background-color: luxcommon.$lux-stepper-large-nav-item-active-bg;
+    }
+
+    .lux-stepper-large-nav-item-label {
+      color: #003366;
+    }
+  }
+
+  &.lux-touched:not(.lux-disabled) {
+    a {
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    &.lux-completed:not(.lux-active) {
+      .lux-stepper-large-mobile-nav-item-number-container {
+        border: 1px solid luxcommon.$app-border-color;
+      }
+
+      a {
+        color: luxpalette.$lux-accent-color;
+        font-weight: 400;
+      }
+    }
+
+    &:not(.lux-completed):not(.lux-active) {
+      .lux-stepper-large-mobile-nav-item-number-container {
+        color: luxcommon.$lux-stepper-large-nav-item-completed-fg;
+        background-color: luxcommon.$lux-stepper-large-nav-item-completed-bg;
+      }
+    }
+  }
+
+  &:not(.lux-touched) {
+    opacity: 1;
+    color: #003366;
+
+    .lux-stepper-large-mobile-nav-item-number-container {
+      color: luxpalette.$lux-primary-color;
+      background-color: #fff;
+      border: 1px solid luxcommon.$app-border-color;
+    }
+  }
+  &.lux-disabled {
+
+    .lux-stepper-large-nav-item-number-container {
+      color: luxcommon.$dark-disabled-text;
+      background-color: #fff;
+      border: 1px solid luxcommon.$app-border-color;
+    }
+
+    .lux-stepper-large-mobile-nav-item-label {
+      color: luxcommon.$dark-disabled-text;
+    }
+  }
+
+  .lux-stepper-large-mobile-nav-item-label-container {
+    .lux-stepper-large-mobile-nav-item-complete {
+      color: luxcommon.$lux-stepper-large-completed-fc;
+      font-size: 18px;
+    }
+  }
+}

@@ -16,6 +16,10 @@ $app-header-bg: #335c85;
 $app-content-bg: #f0f0f2;
 $app-footer-bg: #c6d1dc;
 $app-data-bg: #ffffff;
+$app-gradient: linear-gradient(90deg, #ffffff 0%, #f8fbff 100%);
+$app-gradient-reverse: linear-gradient(270deg, #ffffff 0%, #f8fbff 100%);
+$app-border-color: rgba(black, 0.12);
+$app-headline-font: Roboto;
 
 // Form
 $form-border-color: rgba(0, 0, 0, 0.42);
@@ -33,6 +37,7 @@ $form-control-margin: 0px;
 
 // Button
 $button-height: 45px;
+$button-font-size: 14px;
 $button-fav-height: 45px;
 
 // Fokus
@@ -64,7 +69,7 @@ $componentBgColors: (
   "green": #3e8320,
   "purple": #9900B8,
   "blue": #00569a,
-  "gray": $dark-secondary-text,
+  "gray": #595959,
   "orange": #c75000,
   "brown": #783f04,
   "black": $dark-primary-text,

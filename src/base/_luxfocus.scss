@@ -1,9 +1,8 @@
 @use "sass:color";
 @use "sass:map";
-@use "../public/global";
 @use "luxcommon";
 @use "luxpalette";
-@use "luxelevations";
+@use "../public/global";
 
 /*
   Dieses Partial-SCSS dient der Verwaltung der Styles für Fokus, Hover und Selected für die LUX-Components und
@@ -50,6 +49,14 @@ $outline-bright: global.$outline-width global.$outline-style luxcommon.$outline-
     border-left: 4px solid luxcommon.$lux-selected-border-color;
     border-radius: 4px 0 0 4px;
   }
+}
+
+@mixin lux-selected-mixin-ac {
+  background: luxcommon.$app-gradient;
+  border: 1px solid map.get(luxpalette.$lux-palette-primary, 500);
+  box-shadow: 0 0 0 1px var(--lux-theme-primary-500) inset;
+  position: relative;
+  border-radius: 4px;
 }
 
 @mixin lux-selected-bottom-mixin {
@@ -162,7 +169,7 @@ lux-side-nav {
 
 /** ########## Card ########## **/
 lux-card mat-card {
-  &[class~=lux-cursor]:focus {
+  &[class~=lux-cursor]:focus-visible {
     @include focus-dark-mixin;
   }
 
@@ -175,24 +182,25 @@ lux-card mat-card {
 lux-list {
   border: global.$outline-width dashed transparent;
 
-  &:focus {
+  &:focus-visible {
     border: $outline-dark;
+    border-radius: 4px;
     outline: none;
   }
 
   lux-list-item {
-    &:focus {
+    &:focus-visible {
       outline: none;
 
       mat-card {
-        @include focus-dark-mixin;
+        @include focus-dark-mixin-inline;
       }
     }
 
     lux-card {
       &.lux-list-item-selected {
-        mat-card {
-          @include lux-selected-mixin;
+        mat-card.mat-card.lux-card {
+          @include lux-selected-mixin-ac;
         }
       }
 
@@ -207,9 +215,18 @@ lux-list {
   }
 }
 
+/** ########## Filter-Form ########## **/
+lux-filter-form lux-accordion {
+  lux-menu {
+    .lux-menu-trigger button.mat-button:hover {
+      border: 1px solid luxcommon.$app-border-color;
+    }
+  }
+}
+
 /** ########## Chips ########## **/
-lux-chips {
-  & .mat-standard-chip:focus {
+lux-chips, lux-chips-ac {
+  & .mat-standard-chip:focus-visible {
     @include focus-dark-mixin;
   }
   .mat-chip.mat-standard-chip:after { //mat-overlay für focus deaktivieren
@@ -226,9 +243,9 @@ lux-form-control {
       }
     }
 
-    .cdk-focused .mat-radio-container,
-    .mat-checkbox-inner-container,
-    .mat-slide-toggle-thumb {
+    .cdk-keyboard-focused .mat-radio-container,
+    .cdk-keyboard-focused .mat-checkbox-inner-container,
+    .cdk-keyboard-focused .mat-slide-toggle-thumb {
       position: relative;
       @include focus-dark-mixin;
     }
@@ -254,14 +271,29 @@ lux-form-control {
   }
 }
 
+.lux-form-control-wrapper {
+  &.lux-focused-authentic .cdk-keyboard-focused {
+    .mat-radio-container,  
+    .mat-checkbox-inner-container,
+    .mat-slide-toggle-thumb {
+      position: relative;
+      @include focus-dark-mixin;
+    }
+    
+   }
+}
 /** ########## Datepicker ########## **/
-lux-datepicker {
+lux-datepicker, lux-datepicker-ac {
   mat-datepicker-toggle {
-    button:focus {
+    button:focus-visible {
       @include focus-dark-mixin;
       border-radius: 4px;
     }
 
+    button:hover { 
+      @include lux-hovered-mixin();
+      border-radius: 4px;
+    }
     .mat-button-focus-overlay {
       display: none;
     }
@@ -276,7 +308,7 @@ lux-datepicker {
         display: none;
       }
 
-      &:focus {
+      &:focus-visible {
         @include focus-dark-mixin;
       }
 
@@ -302,13 +334,17 @@ lux-datepicker {
 }
 
 /** ########## Datetimepicker ########## **/
-lux-datetimepicker {
+lux-datetimepicker, lux-datetimepicker-ac {
   mat-datepicker-toggle {
-    button:focus {
+    button:focus-visible {
       @include focus-dark-mixin;
       border-radius: 4px;
     }
 
+    button:hover { 
+      @include lux-hovered-mixin();
+      border-radius: 4px;
+    }
     .mat-button-focus-overlay {
       display: none;
     }
@@ -323,7 +359,7 @@ lux-datetimepicker {
         display: none;
       }
 
-      &:focus {
+      &:focus-visible {
         @include focus-dark-mixin;
       }
 
@@ -348,6 +384,20 @@ lux-datetimepicker {
   }
 }
 
+/** ########## Lux-Dialog ########## **/
+lux-dialog-structure {
+  // x-Button oben rechts im Dialog-Fenster
+  .lux-icon-close { 
+    &:hover {
+      @include lux-hovered-mixin;
+      cursor: pointer;
+    }
+    &:focus-visible {
+      @include focus-dark-mixin;
+      border-radius: 4px;
+    }
+  }
+}
 /** ########## Table ########## **/
 lux-table {
 
@@ -361,11 +411,11 @@ lux-table {
     }
   }
 
-  tr:focus, td:focus {
-    @include focus-dark-mixin;
+  tr:focus-visible, td:focus-visible {
+    @include focus-dark-mixin-inline;
   }
 
-  .lux-row-selected:focus {
+  .lux-row-selected:focus-visible {
     background-color: luxcommon.$lux-hover-color !important;
     outline: none;
   }
@@ -381,19 +431,15 @@ lux-table {
 
 /** ########## Select ########## **/
 // Class, welche das aufgeklappte Panel referenziert
-.lux-select-panel {
+.lux-select-panel, .lux-select-panel-ac {
   mat-option {
-
-    &.mat-selected {
-      @include lux-selected-mixin;
+    &.mat-selected.mat-option:not(.mat-option-disabled) {
+      @include lux-selected-mixin-ac;
     }
 
-    &:focus {
-      @include focus-dark-mixin-inline;
-      border-radius: 4px;
-    }
-
-    &.mat-active {
+    // Der Focus bei mat-option wird über die Klasse .mat-active gesteuert 
+    // bisher noch keine Lösung um den mouse-focus auszuschalten
+    &.mat-active:not(.cdk-mouse-focused) {
       @include focus-dark-mixin-inline;
       border-radius: 4px;
     }
@@ -405,17 +451,17 @@ lux-table {
 }
 
 /** ########## Button ########## **/
-lux-button {
+lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac) {
   button:not([disabled]) {
     .mat-button-focus-overlay {
       display: none;
     }
-
-    &:focus {
+    
+    &:focus-visible{
       @include focus-dark-mixin;
     }
 
-    &:not(.mat-fab):not(.mat-raised-button) {
+    &:not(.mat-fab):not(.mat-raised-button):not(.mat-flat-button) {
       &:hover {
         background-color: luxcommon.$lux-hover-color;
 
@@ -432,7 +478,8 @@ lux-button {
     }
 
     &.mat-fab:hover,
-    &.mat-raised-button:hover {
+    &.mat-raised-button:hover,
+    &.mat-flat-button:hover {
       background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%) !important; // $lux-hover-color !important;
 
       &.mat-accent {
@@ -448,8 +495,9 @@ lux-button {
       }
     }
 
-    &.mat-fab:focus:not(:hover),
-    &.mat-raised-button:focus:not(:hover) {
+    &.mat-fab:focus-visible:not(:hover),
+    &.mat-raised-button:focus-visible:not(:hover),
+    &.mat-flat-button:focus-visible:not(:hover) {
       background-color: white !important;
 
       &.mat-accent {
@@ -469,10 +517,10 @@ lux-button {
 
 /** ########## Autocomplete ########## **/
 // Class, welche das aufgeklappte Panel referenziert
-.lux-autocomplete-panel, .lux-chips-autocomplete-panel {
+.lux-autocomplete-panel, .lux-chips-autocomplete-panel, .lux-autocomplete-panel-ac {
   mat-option {
 
-    &:focus {
+    &:focus-visible {
       @include focus-dark-mixin-inline;
       border-radius: 4px;
     }
@@ -490,11 +538,11 @@ lux-button {
 
 /** ########## Tabs ########## **/
 @mixin tab-label-mixin {
-  color: map.get(luxpalette.$lux-palette_primary, 500) !important;
+  color: map.get(luxpalette.$lux-palette_primary, 400) !important;
 }
 
 @mixin tab-ink-bar-mixin {
-  background-color: luxcommon.$lux-selected-border-color !important;
+  background-color: map.get(luxpalette.$lux-palette_primary, 500) !important;
   height: 4px;
   border-radius: 4px;
 }
@@ -506,13 +554,15 @@ lux-tabs {
   }
 
   .mat-tab-label:not(.mat-tab-disabled) {
-    &:focus {
-      @include focus-dark-mixin;
+     &:focus-visible{
+      @include focus-dark-mixin-inline;
+      border-radius: 4px;
     }
-
+    
+  
     &:hover:not(.mat-tab-disabled) {
       @include lux-hovered-mixin;
-    }
+    } 
   }
 
   mat-ink-bar.mat-ink-bar {
@@ -527,9 +577,9 @@ mat-card lux-tabs {
   }
 
   .mat-tab-label:not(.mat-tab-disabled) {
-    &:focus {
-      @include focus-dark-mixin;
-
+     &:focus-visible {
+      @include focus-dark-mixin-inline;
+      border-radius: 4px;
     }
 
     &:hover:not(.mat-tab-disabled) {
@@ -550,8 +600,9 @@ lux-stepper {
     }
   }
 
-  mat-step-header[tabindex="0"]:focus {
+  mat-step-header[tabindex="0"]:focus-visible {
     @include focus-dark-mixin;
+    border-radius: 4px;
   }
 
   lux-stepper-vertical mat-step-header[aria-selected="true"] {
@@ -568,7 +619,7 @@ lux-stepper {
 
 /** ########## Html ########## **/
 lux-html {
-  & a[href]:focus {
+  & a[href]:focus-visible {
     @include focus-dark-mixin;
   }
 }
@@ -576,7 +627,7 @@ lux-html {
 /** ########## Tile ########## **/
 lux-tile {
   mat-card {
-    &:focus {
+    &:focus-visible {
       @include focus-dark-mixin;
     }
 
@@ -589,10 +640,11 @@ lux-tile {
 /** ########## Panel ########## **/
 lux-panel {
   mat-expansion-panel-header:not([aria-disabled='true']) {
-    &:focus {
-      background-color: white !important;
-      @include focus-dark-mixin;
+    &:focus-visible {
+      //background-color: white !important;
+      @include focus-dark-mixin-inline;
     }
+    
 
     &:hover {
       @include lux-hovered-mixin;
@@ -602,7 +654,7 @@ lux-panel {
 
 /** ########## Master-Detail ########## **/
 lux-button.lux-master-toggle button:not([disabled]):focus {
-  &:focus {
+  &:focus-visible {
     @include focus-bright-mixin;
   }
 
@@ -617,7 +669,7 @@ lux-master-detail {
       button.lux-button {
         // Wir benötigen hier die spezielle CSS-Abfrage um die für die Buttons zu überschreiben
         // Wir nutzen $lux-hover-color, weil sich die normale lux-focus-color hier nicht genug abhebt
-        &:not(.mat-fab):not(.mat-raised-button):focus {
+        &:not(.mat-fab):not(.mat-raised-button):focus-visible {
           background-color: luxcommon.$lux-hover-color !important;
         }
       }
@@ -628,12 +680,13 @@ lux-master-detail {
 /** ########## File-List ########## **/
 lux-file-list {
   .lux-file-list {
-    &:focus {
+    &:focus-visible {
       @include focus-dark-mixin;
+      border-radius: 4px;
     }
 
     .lux-file-list-entry {
-      &:focus {
+      &:focus-visible {
         @include focus-dark-mixin;
       }
     }
@@ -641,7 +694,7 @@ lux-file-list {
 }
 
 lux-file-preview-toolbar lux-button button.lux-icon-button {
-  &:focus {
+  &:focus-visible {
     @include focus-bright-mixin;
   }
 }
@@ -651,8 +704,8 @@ lux-file-preview-toolbar lux-button button.lux-icon-button {
 .lux-menu-panel {
   .lux-menu-item {
     &:not([disabled="true"]) {
-      &:focus {
-        @include focus-dark-mixin;
+      &:focus-visible {
+        @include focus-dark-mixin-inline;
       }
 
       &:hover {
@@ -671,11 +724,11 @@ example-root {
       @include lux-selectable-mixin;
 
       &.example-component-list-item-selected {
-        @include lux-selected-mixin;
+        @include lux-selected-mixin-ac;
       }
 
-      &:focus {
-        @include focus-dark-mixin;
+      &:focus-visible {
+        @include focus-dark-mixin-inline;
       }
 
       &:hover {
@@ -690,16 +743,16 @@ lux-message-box {
 
   & div.lux-message-box-content {
 
-    &:focus {
+    &:focus-visible {
       @include focus-dark-mixin;
     }
 
     & div.lux-message-container.lux-bg-color-white {
-      & div.lux-message-text p:focus {
+      & div.lux-message-text p:focus-visible {
         @include focus-dark-mixin;
       }
 
-      & button:not([disabled]):focus {
+      & button:not([disabled]):focus-visible {
         @include focus-dark-mixin;
       }
 
@@ -709,11 +762,11 @@ lux-message-box {
     }
 
     & div.lux-message-container:not(.lux-bg-color-white) {
-      & div.lux-message-text p:focus {
+      & div.lux-message-text p:focus-visible {
         @include focus-bright-mixin;
       }
 
-      & button:not([disabled]):focus {
+      & button:not([disabled]):focus-visible {
         @include focus-bright-mixin;
       }
 
@@ -731,7 +784,7 @@ lux-stepper-large {
 
     // Links allgemein
     a {
-      &:focus {
+      &:focus-visible {
         outline: none;
       }
 
@@ -782,7 +835,7 @@ lux-stepper-large {
   margin-left: global.$outline-width;
   margin-right: global.$outline-width;
 
-  &:focus {
+  &:focus-visible {
     outline: $outline-dark;
   }
 }

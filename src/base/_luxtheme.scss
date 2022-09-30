@@ -1,4 +1,4 @@
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 @use "luxpalette";
 
 @include mat.core();
@@ -7,6 +7,5 @@ $lux-primary: mat.define-palette(luxpalette.$lux-palette_primary);
 $lux-accent: mat.define-palette(luxpalette.$lux-palette_accent);
 $lux-warn: mat.define-palette(luxpalette.$lux-palette_warn);
 $lux-theme: mat.define-light-theme($lux-primary, $lux-accent, $lux-warn);
-
 
 @include mat.all-component-themes($lux-theme);

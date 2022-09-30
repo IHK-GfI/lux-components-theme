@@ -1,5 +1,5 @@
 @use "../public/global" with (
-    $app-font-family: ("Source Sans Pro", "Helvetica", "Arial", "sans-serif"),
+    $app-font-family: ("Source Sans Pro", Helvetica, Arial, sans-serif),
     $outline-width: 1px
 );
 
@@ -36,6 +36,10 @@
     $app-content-bg: themeCommon.$app-content-bg,
     $app-footer-bg: themeCommon.$app-footer-bg,
     $app-data-bg: themeCommon.$app-data-bg,
+    $app-gradient: themeCommon.$app-gradient,
+    $app-gradient-reverse: themeCommon.$app-gradient-reverse,
+    $app-border-color: themeCommon.$app-border-color,
+    $app-headline-font: themeCommon.$app-headline-font,
 
     // Form
     $form-border-color: themeCommon.$form-border-color,
@@ -54,6 +58,7 @@
     // Button
     $button-height: themeCommon.$button-height,
     $button-fav-height: themeCommon.$button-fav-height,
+    $button-font-size: themeCommon.$button-font-size,
 
     // Fokus
     $outline-color-bright: themeCommon.$outline-color-bright,

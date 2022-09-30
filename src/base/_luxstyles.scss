@@ -1,9 +1,9 @@
 @use "sass:list";
 @use "sass:map";
 @use "sass:string";
-@use "../public/global";
 @use "luxcommon";
 @use "luxpalette";
+@use "../public/global";
 
 $sizes: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700;
 $paletten: luxpalette.$lux-palette_primary, luxpalette.$lux-palette_accent, luxpalette.$lux-palette_warn;
@@ -35,6 +35,9 @@ $paletteNamen: primary, accent, warn;
   --lux-theme-app-content-bg: #{luxcommon.$app-content-bg};
   --lux-theme-app-footer-bg: #{luxcommon.$app-footer-bg};
   --lux-theme-app-data-bg: #{luxcommon.$app-data-bg};
+  --lux-theme-app-gradient: #{luxcommon.$app-gradient};
+  --lux-theme-app-gradient-reverse: #{luxcommon.$app-gradient-reverse};
+  --lux-theme-app-border-color: #{app-border-color};
 
   // Form
   --lux-theme-form-border-color: #{luxcommon.$form-border-color};
@@ -51,6 +54,7 @@ $paletteNamen: primary, accent, warn;
   --lux-theme-form-control-margin: #{luxcommon.$form-control-margin};
 
   // Button
+  --lux-theme-button-font-size: #{luxcommon.$button-font-size};
   --lux-theme-button-height: #{luxcommon.$button-height};
   --lux-theme-button-fav-height: #{luxcommon.$button-fav-height};
 
@@ -92,7 +96,7 @@ body,
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: global.$app-font-family;
+  font-family: luxcommon.$app-headline-font, global.$app-font-family;
 }
 
 h1 {
@@ -163,6 +167,11 @@ h6 {
 
 .lux-hover-dark-bg {
   background-color: luxcommon.$lux-hover-color-for-dark-background;
+}
+
+.lux-gradient-bg {
+  background-color: #fff; //Fallback
+  background-image: luxcommon.$app-gradient;
 }
 
 .lux-color-dark-divider {
@@ -246,6 +255,13 @@ h6 {
   flex: 1 1 100%;
 }
 
+.lux-tile-authentic-wrapper-demo {
+  .lux-tile-authentic {
+    width: 260px;
+    min-height: 120px;
+  }
+}
+
 body {
   -webkit-overflow-scrolling: touch;
 }
@@ -301,7 +317,7 @@ lux-card.lux-card-grow {
 }
 
 .lux-display-none {
-  display: none !important;
+  display: none;
 }
 
 .lux-display-none-important {
@@ -429,7 +445,7 @@ lux-card.lux-card-grow {
 $directions: "t", "b", "l", "r";
 $directionsLong: "top", "bottom", "left", "right";
 $pxStep: 2;
-$steps: 0, 1, 2, 3, 4;
+$steps: 0, 1, 2, 3, 4, 5, 6;
 
 @for $i from 1 through list.length($directions) {
   @each $step in $steps {
@@ -595,7 +611,7 @@ lux-button.lux-uppercase {
   }
 
   &.mat-badge .mat-badge-content {
-    border: 2px solid white;
+    border: 2px solid #00000012;
   }
 
   &.mat-badge.lux-badge-no-border .mat-badge-content {
@@ -609,7 +625,7 @@ lux-button.lux-uppercase {
   &.lux-badge-color-default {
     &.mat-badge:not(.mat-badge-disabled) .mat-badge-content {
       color: white;
-      background: #595959;
+      background: map.get(luxcommon.$componentBgColors, "gray");
     }
   }
 }

@@ -1,10 +1,9 @@
 @use "sass:map";
-@use "../public/global";
+@use "@angular/material" as mat;
 @use "../base/luxfocus";
+@use "../public/global";
 @use "luxcommon";
 @use "luxpalette";
-
-@use '@angular/material' as mat;
 
 $button-font-size: 22px;
 $light-green: #E4F1E4;
@@ -22,7 +21,7 @@ p, div {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Korb", global.$app-font-family;
+  font-family: Korb, global.$app-font-family;
 }
 
 lux-card .mat-card {
@@ -223,21 +222,25 @@ lux-button button.lux-button {
   font-weight: normal !important;
   align-items: center;
   
-  &.mat-button, &.mat-raised-button {
+  &.mat-button, &.mat-raised-button,  &.mat-flat-button,  &.mat-stroked-button  {
     border-radius: 18px;
     height: luxcommon.$button-height;
     font-size: $button-font-size;
-    margin-left: global.$outline-width;
-    margin-right: global.$outline-width;
+
+    .mat-button-wrapper {
+      height: 24px !important;
+    }
   }
 
   &.mat-button.mat-button-disabled,
   &.mat-raised-button.mat-button-disabled,
-  &.mat-fab.mat-button-disabled {
+  &.mat-fab.mat-button-disabled,
+  &.mat-stroked-button.mat-button-disabled,
+  &.mat-flat-button.mat-button-disabled {
     color: luxcommon.$dark-disabled-text;
   }
 
-  &.mat-raised-button.mat-accent:not(.mat-button-disabled), &.mat-fab.mat-accent:not(.mat-button-disabled) {
+  &.mat-raised-button.mat-accent:not(.mat-button-disabled), &.mat-flat-button.mat-accent:not(.mat-button-disabled), &.mat-fab.mat-accent:not(.mat-button-disabled) {
     color: map.get(luxpalette.$lux-palette-primary, 500);
   }
 
@@ -250,8 +253,11 @@ lux-button button.lux-button {
       i {
         font-size: 1em;
       }
-      mat-icon {
+      mat-icon.mat-icon:not(.lux-lx-icon) {
         font-size: 1.2em !important;
+        line-height: 1;
+        height: unset !important;
+        width: unset !important;
       }
     }
   }
@@ -261,10 +267,17 @@ lux-button button.lux-button {
     height: luxcommon.$button-fav-height;
     width: luxcommon.$button-fav-height;
     font-size: $button-font-size;
+    .mat-button-wrapper {
+      height: 100%;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+    }
+
     & lux-icon {
       line-height: 1;
       i,
-      mat-icon {
+      mat-icon.mat-icon:not(.lux-lx-icon) {
         font-size: 1.2em !important;
       }
     }
@@ -537,6 +550,10 @@ lux-table {
   .mat-row:nth-child(odd){
     background-color:#ffffff;
   }
+  .lux-multiselect-td,
+  .lux-multiselect-tf:not(.lux-ignore-multiselect-tf) {
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+  }
 }
 
 /*
@@ -549,7 +566,7 @@ lux-tabs {
   }
 
   div.lux-tab-title {
-    font-family: "Korb", "Source Code Pro", "Helvetica", "Arial", "sans-serif";
+    font-family: Korb, "Source Code Pro", Helvetica, Arial, sans-serif;
     font-size: 22px;
     font-weight: 700;
   }
@@ -730,4 +747,11 @@ lux-radio {
     min-height: 340px ;
   }
   @include datepicker-content();
+}
+
+/*
+ * Theming for LUX-Filter-Form
+ */
+ lux-filter-form lux-accordion lux-panel mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded {
+  height: 60px !important;
 }

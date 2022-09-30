@@ -1,5 +1,3 @@
-@use "../public/global";
-
 @use "luxpalette" as themePalette;
 @use "../base/luxpalette" with (
     // Farbpaletten    
@@ -14,6 +12,12 @@
 );
 
 @use "luxcommon" as themeCommon;
+
+@use "../public/global" with (
+    $outline-width: themeCommon.$outline-width,
+    $outline-style: themeCommon.$outline-style
+);
+
 @use "../base/luxcommon" with ( 
     // Allgemein
     $dark-primary-text: themeCommon.$dark-primary-text,

@@ -1,0 +1,167 @@
+@use "sass:map";
+@use "../luxfocus";
+@use "../luxstyles";
+@use "../luxcommon";
+@use "../luxpalette";
+
+
+
+@mixin crop {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+@mixin form-label {
+  min-height: 1.2em;
+  font-size: 0.75em;
+  line-height: 1.2em;
+  color: luxcommon.$dark-secondary-text;
+}
+lux-form-control-wrapper {
+  width: 100%;
+
+  .lux-form-control-wrapper {
+    display: flex;
+    box-sizing: border-box;
+    font-size: luxcommon.$form-control-font-size;
+    color: luxcommon.$dark-primary-text;
+    margin: 0.25em 0;
+  
+    .lux-form-control-label-authentic {
+      @include form-label;
+      margin: 0 calc(0.5em + 1px) 0.25em calc(0.5em + 1px);
+      > * {
+        @include crop;
+      }
+      &.lux-label-long-format {
+        > * {
+          white-space: normal;
+          text-overflow: unset;
+          word-wrap: break-word;
+        }
+      }
+    }
+  
+    .lux-form-control-container-authentic {
+      box-sizing: border-box;
+      padding: 0.75em 0.5em;
+      font-size: luxcommon.$form-control-font-size;
+      color: luxcommon.$dark-primary-text;
+      background-color: #fff;
+      line-height: 1.5em;
+      border: 1px solid luxcommon.$form-border-color;
+      border-radius: 4px;
+      &.lux-no-input-row {
+        // lux-toggel-ac, lux-checkbox-ac, lux-slider-ac, lux-radio-ac werden auf der Baseline ausgerichtet
+        // haben aber nicht den Rahmen, den die Input-Elemente haben
+        border: none;
+        padding: 0.75em 0em;
+      }
+    }
+  
+    .lux-form-control-misc-authentic {
+      box-sizing: border-box;
+      margin: 0.25em calc(0.5em + 1px) 0 calc(0.5em + 1px);
+   
+      @include form-label;
+      word-wrap: break-word;
+   
+      .lux-form-control-character-counter-authentic {
+        min-width: 40px;
+        margin-left: 2px;
+        color: luxcommon.$dark-secondary-text !important;
+        text-align: end;
+  
+        &:only-child {
+          width: 100%;
+        }
+      }
+    }
+  
+    // zusätzlicher Container für Elemente, die einen input-prefix/input-suffix haben
+    // aktuell: lux-autocomplete-ac und lux-input-ac
+    .lux-input-row-authentic {
+      font-size: luxcommon.$form-control-font-size;
+      min-height: 1.5em;
+
+      .lux-input-prefix-container,
+      .lux-input-suffix-container {
+        width: auto;
+        white-space: nowrap;
+        display: inline-block;
+        max-height: 1.5em;
+        
+      
+        lux-icon {
+          i {
+            padding: 0 !important;
+            margin: 0;
+            font-size: 1em;
+          }
+          mat-icon {
+            padding: 0 !important;
+            margin: 0;
+            font-size: 1.5em !important;
+          }
+        }
+        
+      }
+    }
+    
+    // Definitionen der einzelnen States der Form-Controls
+    &:hover:not(.lux-form-control-disabled-authentic):not(.lux-focused-authentic):not(.lux-form-control-error-authentic) {
+      .lux-form-control-container-authentic:not(.lux-no-input-row) {
+        border-color: black;
+        box-shadow: 0 0 0 1px black inset;   
+      }
+    }
+    &.lux-focused-authentic{
+      .lux-form-control-label-authentic > * {
+        color: map.get(luxpalette.$lux-palette_primary, 400);
+      }
+      .lux-form-control-container-authentic:not(.lux-no-input-row) {
+        border-color: map.get(luxpalette.$lux-palette_primary, 500);
+        box-shadow: 0 0 0 1px  map.get(luxpalette.$lux-palette_primary, 500) inset;   
+      }
+    }
+  
+    &.lux-form-control-error-authentic:not(.lux-form-control-disabled-authentic) {
+      .lux-form-control-label-authentic > * {
+        color: map.get(luxpalette.$lux-palette_warn, 500);
+      }
+      .lux-form-control-container-authentic:not(.lux-no-input-row) {
+        border-color: map.get(luxpalette.$lux-palette_warn, 500);
+        box-shadow: 0 0 0 1px map.get(luxpalette.$lux-palette_warn, 500) inset;   
+      }
+    }
+  
+    &.lux-form-control-disabled-authentic {
+      .lux-form-control-container-authentic,
+      .lux-form-control-label-authentic > * {
+        color: luxcommon.$dark-disabled-text;
+      }
+    }
+  
+    &.lux-form-control-readonly-authentic, 
+    &.lux-form-control-disabled-authentic {
+      pointer-events: none;
+    }
+  
+
+  }
+
+  /* Change Autocomplete styles in Chrome*/
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    box-shadow: 0 0 0px 1000px var(--lux-theme-primary-50) inset;
+    -webkit-box-shadow: 0 0 0px 1000px var(--lux-theme-primary-50) inset;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+}

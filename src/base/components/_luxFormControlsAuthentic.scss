@@ -1,0 +1,278 @@
+@use "sass:map";
+@use "../luxcommon";
+@use "../luxpalette";
+@use "../../public/global";
+@use "../luxelevations";
+
+
+/*
+ * Theming for LUX-Select
+ */
+ lux-select-ac {
+  mat-select {
+    font-family: global.$app-font-family;
+    height: calc( 1.5em - 1px) !important;
+    // bisher noch nicht klar, warum das mat-select einen Pixel an Höhe mehr beansprucht, als es tatsächlich Hoch ist
+    // daher wird hier die Höhe korrigiert, damit die Baseline eingehalten ist
+
+    .mat-select-arrow-wrapper{
+      margin-left: 2px;
+    }
+    &[aria-disabled="true"] .mat-select-arrow {
+      border-width: 7px;
+      margin: 0 2px 0 0;
+      color: luxcommon.$dark-disabled-text;
+    }
+
+    &[aria-disabled="false"] .mat-select-arrow {
+      border-width: 7px;
+      margin: 0 2px 0 0;
+      color: map.get(luxpalette.$lux-palette_primary, 500);
+    }
+  }
+  
+}
+
+// Checkbox wird im Cdk-Overlay dargestellt und hängt nicht unter der Component selbst.
+.lux-select-panel-ac .mat-pseudo-checkbox-checked {
+  background-color: map.get(luxpalette.$lux-palette_primary, 500);
+}
+
+/*
+* Theming für Lux-Checkbox
+*/
+lux-checkbox-ac {
+  label {
+    font-family: global.$app-font-family;
+    font-size: luxcommon.$form-control-font-size;
+    color: luxcommon.$dark-primary-text;
+    cursor: pointer;
+
+    .mat-checkbox-label {
+      -ms-word-break: break-word;
+      word-break: break-word;
+      white-space: normal;
+    }
+  }
+  .mat-checkbox-disabled label {
+    color: luxcommon.$dark-disabled-text;
+  }
+  
+  .mat-checkbox-ripple {
+    display: none;
+  }
+  .mat-checkbox-inner-container {
+    // die Checkbox soll größer sein, als von Material vorgegeben
+    width: 1.25em;
+    height: 1.25em;
+    margin-top: 3px; 
+    //bei mehrzeiligen Labels wird die Checkbox oben und nicht zentriert angezeigt 
+    //dieses wird von material über das Margin gelöst und nicht über align-items o.ä.
+    //da wir die Größe der Box geändert haben mussten wir das Margin ebenfalls anpassen
+  }
+
+}
+
+lux-datepicker-ac, lux-datetimepicker-ac {
+  mat-datepicker-toggle {
+    height: 24px !important;
+    width: 24px !important;
+    .mat-icon-button {
+      height: 24px !important;
+      width: 24px !important;
+      line-height: 1.5;
+      font-size: inherit;
+
+      lux-icon.lux-datepicker-toggle-icon, mat-icon.mat-icon {
+        height: 20px !important;
+        width: 20px !important;
+        padding: 0 !important;
+      }
+
+      &.mat-button-disabled {
+        svg {
+          color: luxcommon.$dark-disabled-text;
+        }
+      }
+    }
+  }
+}
+
+
+/*
+* Theming für lux-Toggle
+*/
+lux-toggle-ac {
+  .mat-slide-toggle {
+    label {
+      color: luxcommon.$dark-primary-text;
+      font-family: global.$app-font-family;
+    }
+
+    .mat-slide-toggle-thumb {
+      @include luxelevations.lux-elevation-z1;
+    }
+
+    &.mat-disabled {
+      label .mat-slide-toggle-content {
+        color: luxcommon.$dark-disabled-text;
+      }
+
+      &.mat-checked {
+        .mat-slide-toggle-bar {
+          background-color: luxcommon.$dark-disabled-text;
+        }
+
+        .mat-slide-toggle-thumb {
+          background-color: #666666 ;
+          // $dark-secondary-text als Hex ohne Transparenz
+        }
+      }
+
+      &:not(.mat-checked) {
+        .mat-slide-toggle-bar {
+          background-color: luxcommon.$dark-disabled-text;
+          //Hintergrund zur Schriftfarbe anpassen
+        }
+      }
+    }
+  }
+}
+
+/*
+ * Theming for LUX-Radio
+ */
+lux-radio-ac {
+  // damit ist der Focus-Indicator rund, wie bei Toggle-Thumb und Chips
+  .mat-radio-container {
+    border-radius: 50%;
+  }
+  .mat-radio-label {
+    color: luxcommon.$dark-primary-text;
+    font-family: global.$app-font-family;
+  }
+
+  .mat-radio-checked {
+    
+    &.mat-radio-disabled label .mat-radio-container {
+      span.mat-radio-inner-circle {
+        background-color: luxcommon.$dark-disabled-text;
+      }
+
+      span.mat-radio-outer-circle {
+        border-color: luxcommon.$dark-disabled-text;
+      }
+    }
+  }
+
+  .mat-radio-disabled label.mat-radio-label {
+    .mat-radio-label-content {
+      color: luxcommon.$dark-disabled-text;
+    }
+
+    .mat-radio-container {
+      span.mat-radio-inner-circle {
+        background-color: luxcommon.$dark-disabled-text;
+      }
+
+      span.mat-radio-outer-circle {
+        border-color: luxcommon.$dark-disabled-text;
+      }
+    }
+  }
+}
+
+/*
+ * Theming for LUX-Input/LUX-Textarea
+*/
+// Umstylen des Standard-Aussehens von Inputs/Textareas
+input, input.mat-input-element,
+textarea {
+  font: inherit;
+  background: 0 0;
+  color: currentColor;
+  border: none;
+  outline: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  vertical-align: bottom;
+  text-align: inherit;
+  font-size: luxcommon.$form-control-font-size;
+}
+
+
+/**
+ * Theming für LUX-Chips
+ */
+ lux-chips-ac {
+  .lux-chips-autocomplete-icon {
+    color: var(--lux-theme-primary-500);
+    font-size: 24px;
+    padding-right: 4px;
+    cursor: pointer;
+
+    &.lux-disabled {
+      color: var(--lux-theme-dark-disabled-text);
+      cursor: default;
+    }
+  }
+  .lux-chips {
+    mat-chip {
+      // Löschicon (luxSelected=true)
+      &.mat-chip-selected .mat-chip-remove {
+        color: luxcommon.$app-data-bg !important;
+        opacity: 1 !important;
+      }
+
+      // Löschicon (luxSelected=false)
+      &:not(.mat-chip-selected) .mat-chip-remove {
+        color: luxcommon.$app-data-bg !important;
+        opacity: 1 !important;
+      }
+
+      &.mat-chip-disabled {
+        background-color: luxcommon.$dark-disabled-text !important;
+        color: luxcommon.$app-data-bg !important;
+        opacity: 1;
+
+        lux-icon {
+          i,
+          mat-icon {
+            color: luxcommon.$app-data-bg;
+          }
+        }
+      }
+    }
+    mat-chip-list {
+      & div.mat-chip-list-wrapper {
+        margin: 0px 0px 0px -4px;
+      }
+    }
+  }
+} 
+.lux-chips-ac-autocomplete-panel {
+  margin-top: -20px;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 4px;
+}
+
+/*
+ * Theming for LUX-Slider
+ */
+lux-slider-ac {
+  mat-slider.lux-slider-ac {
+    &.mat-slider-horizontal {
+      height: 1.5em;
+    }
+  }
+  .lux-show-thumb-label-always {
+    &.mat-slider-disabled {
+      .mat-slider-thumb-label {
+        background-color: luxcommon.$dark-disabled-text;
+      }
+    }
+  }
+}

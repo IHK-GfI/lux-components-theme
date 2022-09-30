@@ -4,8 +4,9 @@
   "description": "",
   "private": false,
   "scripts": {
-    "build": "npm run clean && npm run build-theme-blue && npm run build-theme-green",
+    "build": "npm run clean && npm run build-theme-blue && npm run build-theme-green && npm run build-theme-authentic",
     "clean": "del-cli --force ./prebuilt-themes/*.*",
+    "build-theme-authentic": "sass --style=compressed --load-path=node_modules src/authentic/luxtheme.scss:prebuilt-themes/luxtheme-authentic-min.css && sass --load-path=node_modules src/authentic/luxtheme.scss:prebuilt-themes/luxtheme-authentic.css",
     "build-theme-green": "sass --style=compressed --load-path=node_modules src/green/luxtheme.scss:prebuilt-themes/luxtheme-green-min.css && sass --load-path=node_modules src/green/luxtheme.scss:prebuilt-themes/luxtheme-green.css",
     "build-theme-blue": "sass --style=compressed --load-path=node_modules src/blue/luxtheme.scss:prebuilt-themes/luxtheme-blue-min.css && sass --load-path=node_modules src/blue/luxtheme.scss:prebuilt-themes/luxtheme-blue.css"
   },

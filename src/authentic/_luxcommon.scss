@@ -1,0 +1,122 @@
+@use "sass:map";
+@use "luxpalette";
+
+$app-font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+$app-headline-font: "Blogger Sans";
+
+
+body {
+  color: map.get(luxpalette.$lux-palette_primary , 500);
+  font-family: $app-font-family;
+}
+
+p, div {
+  font-family: $app-font-family;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $app-font-family;
+  color: rgba(black, 0.87);
+  font-weight: normal;
+}
+
+// Allgemein
+$dark-primary-text: rgba(black, 0.87);
+$dark-secondary-text: rgba(black, 0.6);
+$dark-disabled-text: rgba(black, 0.38);
+$dark-dividers: rgba(black, 0.12);
+$dark-focused: rgba(black, 0.12);
+
+
+$light-primary-text: white;
+$light-secondary-text: rgba(white, 0.74);
+$light-disabled-text: rgba(white, 0.38);
+$light-dividers: rgba(white, 0.20);
+$light-focused: rgba(white, 0.12);
+
+// App
+$app-header-bg: map.get(luxpalette.$lux-palette_primary, 50 );
+$app-content-bg: #ffffff;
+$app-footer-bg: map.get(luxpalette.$lux-palette_primary, 50 );
+$app-data-bg: #ffffff;
+$app-gradient: linear-gradient(90deg, #ffffff 0%, #f8fbff 100%);
+$app-gradient-reverse: linear-gradient(270deg, #ffffff 0%, #f8fbff 100%);
+$app-border-color: rgba(black, 0.12);
+
+// Form
+$form-border-color: rgba(0, 0, 0, 0.12);
+$form-control-default-height-not-scalable: 30px;
+$form-control-height: 24px;
+$form-control-height-small: 18px; 
+$form-control-font-size: 16px;
+$form-control-font-size-small: 12px;
+$form-control-label-padding: 2px 0 0 0;
+$form-control-container-padding: 6px 0 0 0;
+$form-control-misc-margin: 4px 0 2px 0;
+$form-control-complete-height: 70px;
+$form-control-buffer: 4px;
+$form-control-margin: 0px;
+
+// Button
+$button-height: 36px;
+$button-font-size: 16px;
+$button-fav-height: 36px;
+
+// Fokus
+$outline-color-bright: #ffffff;
+$outline-color-dark: map.get(luxpalette.$lux-palette-primary, 200);
+$outline-width: 4px; 
+$outline-style: solid;
+
+// Hover
+$lux-hover-color: map.get(luxpalette.$lux-palette-primary, 50);
+$lux-hover-color-for-dark-background: #335c85;
+
+// Selektion
+$lux-selected-border-color: luxpalette.$lux-primary-color;
+$lux-selected-bg-color: #f0f3f6;
+
+// Stepper (large)
+$lux-stepper-large-backdrop-bg: #636d76;
+$lux-stepper-large-completed-fc: #56bd66;
+
+$lux-stepper-large-nav-item-active-fc: #ffffff;
+$lux-stepper-large-nav-item-active-bg: #003366;
+$lux-stepper-large-nav-item-disabled-fg: #003366;
+$lux-stepper-large-nav-item-disabled-bg: #eff3f6;
+$lux-stepper-large-nav-item-completed-fg: #56bd66;
+$lux-stepper-large-nav-item-completed-bg: #ffffff;
+
+// Hintergrundfarben (z.B. Badge oder Progress)
+$componentBgColors: (
+  "red": luxpalette.$lux-warn-color,
+  "green": luxpalette.$lux-accent-color,
+  "purple": #9900B8,
+  "blue": luxpalette.$lux-primary-color,
+  "gray": #666666,
+  "orange": rgba(237, 110, 17, 1),
+  "brown": #783f04,
+  "black": $dark-primary-text,
+  "white": #ffffff,
+  "yellow": rgba(244, 203, 37, 1),
+  "pink": rgba(237, 95, 122, 1),
+  "lightblue":  rgba(63, 155, 218, 1), 
+);
+
+// Vordergrundfarben (z.B. Badge)
+$componentFontColors: (
+  black: #000000,
+  white: #ffffff
+);
+
+// Farben für einen dunklen Hintergrund (z.B. Snackbar).
+$colorsForDarkBg: (
+  "red": #f17474,
+  "green": #53b12b,
+  "purple": #e561ff,
+  "blue": #729eca,
+  "gray": #c8c8c8,
+  "orange": #ec9c1b,
+  "brown": #eb7c05,
+  "white": #ffffff
+);
