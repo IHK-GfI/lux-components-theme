@@ -255,14 +255,14 @@ lux-chips {
 }
 
 .lux-chips-autocomplete-panel {
-  padding: global.$outline-width;
+  padding: luxcommon.$outline-width;
   margin-top: -20px;
   margin-left: 0;
   margin-right: 0;
   border-radius: 4px;
 
   mat-option:not(:last-of-type) {
-    margin-bottom: global.$outline-width;
+    margin-bottom: luxcommon.$outline-width;
   }
 }
 

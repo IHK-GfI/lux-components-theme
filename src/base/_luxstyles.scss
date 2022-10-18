@@ -59,6 +59,8 @@ $paletteNamen: primary, accent, warn;
   --lux-theme-button-fav-height: #{luxcommon.$button-fav-height};
 
   // Fokus
+  --lux-theme-outline-width: #{luxcommon.$outline-width};
+  --lux-theme-outline-style: #{luxcommon.$outline-style};
   --lux-theme-outline-color-bright: #{luxcommon.$outline-color-bright};
   --lux-theme-outline-color-dark: #{luxcommon.$outline-color-dark};
 
@@ -191,23 +193,23 @@ h6 {
 }
 
 .lux-outline-width {
-  outline-width: global.$outline-width;
+  outline-width: luxcommon.$outline-width;
 }
 
 .lux-outline-style {
-  outline-style: global.$outline-style;
+  outline-style: luxcommon.$outline-style;
 }
 
 .lux-outline-light {
   color: luxcommon.$outline-color-bright;
-  outline-width: global.$outline-width;
-  outline-style: global.$outline-style;
+  outline-width: luxcommon.$outline-width;
+  outline-style: luxcommon.$outline-style;
 }
 
 .lux-outline-dark {
   color: luxcommon.$outline-color-dark;
-  outline-width: global.$outline-width;
-  outline-style: global.$outline-style;
+  outline-width: luxcommon.$outline-width;
+  outline-style: luxcommon.$outline-style;
 }
 
 .lux-highlight-section {

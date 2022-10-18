@@ -13,10 +13,7 @@
 
 @use "luxcommon" as themeCommon;
 
-@use "../public/global" with (
-    $outline-width: themeCommon.$outline-width,
-    $outline-style: themeCommon.$outline-style
-);
+@use "../public/global";
 
 @use "../base/luxcommon" with ( 
     // Allgemein
@@ -62,6 +59,8 @@
     $button-font-size: themeCommon.$button-font-size,
 
     // Fokus
+    $outline-width: themeCommon.$outline-width,
+    $outline-style: themeCommon.$outline-style,
     $outline-color-bright: themeCommon.$outline-color-bright,
     $outline-color-dark: themeCommon.$outline-color-dark,
 

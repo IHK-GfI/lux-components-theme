@@ -1,6 +1,5 @@
 @use "../public/global" with (
-    $app-font-family: ("Source Sans Pro", Helvetica, Arial, sans-serif),
-    $outline-width: 1px
+    $app-font-family: ("Source Sans Pro", Helvetica, Arial, sans-serif)
 );
 
 @use "luxpalette" as themePalette;
@@ -61,6 +60,8 @@
     $button-font-size: themeCommon.$button-font-size,
 
     // Fokus
+    $outline-width: themeCommon.$outline-width,
+    $outline-style: themeCommon.$outline-style,
     $outline-color-bright: themeCommon.$outline-color-bright,
     $outline-color-dark: themeCommon.$outline-color-dark,
 

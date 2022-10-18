@@ -10,8 +10,8 @@
 */
 
 // Fokus
-$outline-dark: global.$outline-width global.$outline-style luxcommon.$outline-color-dark !important;
-$outline-bright: global.$outline-width global.$outline-style luxcommon.$outline-color-bright !important;
+$outline-dark: luxcommon.$outline-width luxcommon.$outline-style luxcommon.$outline-color-dark !important;
+$outline-bright: luxcommon.$outline-width luxcommon.$outline-style luxcommon.$outline-color-bright !important;
 
 @mixin focus-dark-mixin {
   outline: $outline-dark;
@@ -21,7 +21,7 @@ $outline-bright: global.$outline-width global.$outline-style luxcommon.$outline-
   // der Focus um Elemente in Panels wird mit negativen Margin nach in das Element verlegt
   // damit wird er nicht mehr am Rand abgeschnitten oder verdeckt
   outline: $outline-dark;
-  outline-offset: -(global.$outline-width);
+  outline-offset: -(luxcommon.$outline-width);
 }
 
 @mixin focus-bright-mixin {
@@ -180,7 +180,7 @@ lux-card mat-card {
 
 /** ########## List ########## **/
 lux-list {
-  border: global.$outline-width dashed transparent;
+  border: luxcommon.$outline-width dashed transparent;
 
   &:focus-visible {
     border: $outline-dark;
@@ -832,8 +832,8 @@ lux-stepper-large {
 
 /** ########## File-Upload ########## **/
 .lux-file-upload-drop-container {
-  margin-left: global.$outline-width;
-  margin-right: global.$outline-width;
+  margin-left: luxcommon.$outline-width;
+  margin-right: luxcommon.$outline-width;
 
   &:focus-visible {
     outline: $outline-dark;
