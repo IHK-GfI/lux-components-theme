@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "luxcommon";
 
 // Tabs außerhalb einer LUX-Card (z.B. Master-Detail)
@@ -5,6 +6,15 @@ lux-tabs {
   .mat-tab-label:not(.mat-tab-disabled) {
     &:hover:not(.mat-tab-disabled) {
       background-color: luxcommon.$app-data-bg !important;
+    }
+  }
+}
+
+// x-Button oben rechts im Dialog-Fenster
+.cdk-overlay-container{
+  .lux-dialog .lux-icon-close { 
+    &:hover {
+      background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%) !important;
     }
   }
 }

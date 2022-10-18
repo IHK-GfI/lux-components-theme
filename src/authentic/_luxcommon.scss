@@ -63,7 +63,9 @@ $button-font-size: 16px;
 $button-fav-height: 36px;
 
 // Fokus
-$outline-width: 4px; 
+$outline-color-bright: #ffffff;
+$outline-color-dark: map.get(luxpalette.$lux-palette-primary, 200);
+$outline-width: 4px;
 $outline-style: solid;
 $outline-color-bright: #ffffff;
 $outline-color-dark: map.get(luxpalette.$lux-palette-primary, 200);

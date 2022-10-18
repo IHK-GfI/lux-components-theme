@@ -715,21 +715,16 @@ lux-list {
     color: luxcommon.$dark-primary-text;
   }
   .mat-card:not([class*="mat-elevation-z"]) {
-    @include luxelevations.lux-elevation-z0;
+    @include luxelevations.lux-elevation-z2;
   }
+  
+  lux-list-item lux-card mat-card {
+    margin: luxcommon.$outline-width;
+  }
+
   .mat-card-content.menu-item-content {
     margin-bottom: 0;
   }
-  .lux-list-item {
-    border: 1px solid luxcommon.$app-border-color;
-    &.lux-list-item-selected {
-      border: 1px solid map.get(luxpalette.$lux-palette-primary, 500);
-      box-shadow: 0 0 0 1px map.get(luxpalette.$lux-palette-primary, 500) inset;
-      background-color: #fff;
-      background-image: luxcommon.$app-gradient;
-    }
-  }
-
 }
 
 /*
@@ -775,14 +770,26 @@ lux-lookup-combobox, lux-lookup-combobox-ac {
 }
 
 /*
-* Styling für das User-Name-Label im Header, da es im Menu-Panel liegt,
-* kann es nicht direkt über den lux-app-header-ac gesetzt werden.
+* Stylings für für Elemente die im Mat-Menu-Panel im cdk-overlay-container liegen 
 */
 .cdk-overlay-container {
+  // spezielles Styling für das neue User-Menu-Label
   .lux-user-name-label.mat-menu-item[disabled] {
     color: luxcommon.$dark-primary-text;
   }
+
+  lux-icon.lux-menu-item-icon {
+    width: 30px;
+    min-width: 30px;
+    max-width: 30px;
+    display: inline-grid;
+
+    mat-icon.mat-icon:not(.lux-lx-icon){
+      font-size: 24px !important;
+    }
+  }
 }
+
 /*
  * Theming for LUX-Master-Detail
  */

@@ -451,7 +451,7 @@ lux-table {
 }
 
 /** ########## Button ########## **/
-lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac) {
+lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-item-btn) {
   button:not([disabled]) {
     .mat-button-focus-overlay {
       display: none;
@@ -461,9 +461,9 @@ lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac) {
       @include focus-dark-mixin;
     }
 
-    &:not(.mat-fab):not(.mat-raised-button):not(.mat-flat-button) {
+    &:not(.mat-fab):not(.mat-raised-button):not(.mat-flat-button), &.mat-stroked-button {
       &:hover {
-        background-color: luxcommon.$lux-hover-color;
+        background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%);
 
         &.mat-accent {
           color: map.get(luxpalette.$lux-palette_accent, 900);
@@ -481,6 +481,7 @@ lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac) {
     &.mat-raised-button:hover,
     &.mat-flat-button:hover {
       background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%) !important; // $lux-hover-color !important;
+      //background-color: luxcommon.$lux-hover-color !important; // $lux-hover-color !important;
 
       &.mat-accent {
         background-color: color.adjust(map.get(luxpalette.$lux-palette_accent, 500), $lightness: 10%) !important;
@@ -710,6 +711,7 @@ lux-file-preview-toolbar lux-button button.lux-icon-button {
 
       &:hover {
         @include lux-hovered-mixin;
+        border-radius: 0px;
       }
     }
   }

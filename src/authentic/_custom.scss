@@ -16,7 +16,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
+
+// Stylings für lux-menu-items im cdk-overlay-panel
 .lux-menu-item {
+  color: luxpalette.$lux-primary-color;
+}
+
+.mat-menu-item .mat-icon-no-color {
   color: luxpalette.$lux-primary-color;
 }
 
@@ -122,12 +128,11 @@ lux-table {
 
 
 /**
- * Theming für LUX-Card
- */
- lux-card {
-  
+* Theming für LUX-Card
+*/
+lux-card {
   .lux-highlight{
-    color: map.get(luxpalette.$lux-palette-primary, 500 );
+    color: map.get(luxpalette.$lux-palette-primary, 500);
   }
   .mat-card.lux-card {
     border: 1px solid rgba(black, 0.12);
@@ -188,7 +193,6 @@ lux-accordion {
 /**
 * Theming für lux-Badge-notification
 */
-
 .lux-badge-notification {
   
   &.mat-badge:not(.mat-badge-disabled).mat-badge-accent .mat-badge-content {
@@ -197,11 +201,11 @@ lux-accordion {
   
   &.mat-badge .mat-badge-content {
     font-family: luxcommon.$app-headline-font, global.$app-font-family;
-    border: 2px solid transparent;
+    border: 1px solid #fff;
   }
 
   &.mat-badge.lux-badge-no-border .mat-badge-content {
-    border: 2px solid transparent;
+    border: 1px solid transparent;
   }
 
   &.lux-badge-color-default {
@@ -229,6 +233,30 @@ lux-accordion {
   }
 }
 
+/*
+ * Theming for LUX-List
+ */
+ lux-list {
+ 
+  .mat-card:not([class*="mat-elevation-z"]) {
+    @include luxelevations.lux-elevation-z0;
+  }
+  .mat-card-content.menu-item-content {
+    margin-bottom: 0;
+  }
+  .lux-list-item {
+    border: 1px solid luxcommon.$app-border-color;
+    &.lux-list-item-selected {
+      border: 1px solid map.get(luxpalette.$lux-palette-primary, 500);
+      box-shadow: 0 0 0 1px map.get(luxpalette.$lux-palette-primary, 500) inset;
+      background-color: #fff;
+      background-image: luxcommon.$app-gradient;
+    }
+    lux-card mat-card {
+      margin: luxcommon.$outline-width 0;
+    }
+  }
+}
 
 /*
  * Theming for LUX-Master-Detail
@@ -264,7 +292,7 @@ lux-master-footer {
 }
 
 /*
- * Theming for LUX-Master-Detail
+ * Theming for LUX-Master-Detail-Light
  */
  .master-light-container {
   height: 100%;
@@ -301,6 +329,9 @@ lux-master-footer {
   }
 }
 
+/*
+ * Theming for LUX-Message-Box
+ */
 lux-message-box {
   border-radius: 4px;
 
@@ -309,19 +340,19 @@ lux-message-box {
   }
   
   .lux-message-box-content{
-
     margin: 0 !important;
   }
 }
 
+/*
+ * Theming for LUX-Button
+ */
 lux-button button.lux-button {
   .lux-button-label{
     font-family: luxcommon.$app-headline-font, global.$app-font-family;
     font-weight: normal;
-  }
-  
+  } 
 }
-
 
 /*
  * Theming for LUX-Form-Controls
