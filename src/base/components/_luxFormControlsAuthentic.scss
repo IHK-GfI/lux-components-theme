@@ -3,7 +3,7 @@
 @use "../luxpalette";
 @use "../../public/global";
 @use "../luxelevations";
-
+@use "../luxfocus";
 
 /*
  * Theming for LUX-Select
@@ -83,11 +83,11 @@ lux-datepicker-ac, lux-datetimepicker-ac {
       line-height: 1.5;
       font-size: inherit;
 
-      lux-icon.lux-datepicker-toggle-icon, mat-icon.mat-icon {
-        height: 20px !important;
-        width: 20px !important;
-        padding: 0 !important;
-      }
+      // lux-icon.lux-datepicker-toggle-icon, mat-icon.mat-icon {
+      //   height: 20px !important;
+      //   width: 20px !important;
+      //   padding: 0 !important;
+      // }
 
       &.mat-button-disabled {
         svg {

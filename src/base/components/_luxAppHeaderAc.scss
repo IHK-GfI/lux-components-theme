@@ -1,3 +1,4 @@
+@use "sass:color";
 @use "sass:map";
 @use "../luxfocus";
 @use "../luxcommon";
@@ -8,125 +9,90 @@
 
 lux-app-header-ac {
   display: block;
+
+  .lux-image {
+    cursor: pointer;
+    padding: 4px;
+    &:focus-visible {
+      @include luxfocus.focus-dark-mixin;
+      border-radius: 4px;
+    }
+    &:hover {
+      @include luxfocus.lux-hovered-mixin;
+    }
+  }
+
+  lux-button {
+    button.lux-button.lux-button-rounded {
+      min-width: 36px; //Weil der Menu-Trigger hier ein andere Min-width setzt- könnte vielleich geändert werden?
+      width: 36px;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+      background-color: transparent;
+      @include luxelevations.lux-elevation-z0;
+
+      &:hover:not([disabled]).mat-fab:hover.mat-primary {
+        background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%);
+      }
+      &:focus-visible {
+        background-color: transparent;
+        @include luxfocus.focus-dark-mixin;
+      }
+
+      lux-icon {
+        color: luxpalette.$lux-primary-color;
+      }
+    }
+
+    &.menu-opened {
+      button.lux-button.lux-button-rounded {
+        background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%);
+      }
+    }
+  }
   
   .lux-app-header-top-bar {
-    padding: 8px 24px;
-    min-height: 60px;
+    padding: 4px 24px;
+    min-height: 52px;
     font-size: 1rem;
     color: luxcommon.$dark-primary-text;
     background-color: #fff;
 
     &.lux-mobile {
-      padding: 8px;
-    }
-    
-    .brand-logo .lux-image {
-      cursor: pointer;
-      height: 3em;
-      &:focus {
-        @include luxfocus.focus-dark-mixin;
-      }
-      &:hover {
-        @include luxfocus.lux-hovered-mixin;
-        
-      }
-    }
-
-    .app-logo lux-button button.mat-button.lux-button {
-      font-size: 16px;
-      height: 3em;
-      width: 3em;
-      padding: 0;
-      lux-icon {
-        i, mat-icon {
-          font-size: 3em !important;
-        }
-      }
-    }
-    .app-logo-container mat-icon {
-      height: 3em !important;
-      width: 3em !important;
-      &:hover {
-        background-color: luxcommon.$lux-hover-color;
-        border-radius: 4px;
-      }
+      padding: 4px;
     }
     
     lux-menu {
       width: unset;
-
       .lux-menu-extended {
         overflow: unset;
       }
-
-
-
-      lux-button {
-        
-        button.lux-button.lux-button-rounded {
-          height: 45px !important;
-          width: 45px !important;
-          background-color: transparent;
-          @include luxelevations.lux-elevation-z0;
-
-          &:hover:not([disabled]).mat-fab:hover.mat-primary {
-            background-color: luxcommon.$lux-hover-color;
-          }
-          &:focus-visible {
-            background-color: transparent;
-            @include luxfocus.focus-dark-mixin;
-          }
-
-          lux-icon {
-            color: #003366;
-          }
-        }
-
-        &.menu-opened {
-          button.lux-button.lux-button-rounded {
-            //background-color: map-get($lux-palette-primary, 50);
-            background-color: luxcommon.$lux-hover-color;
-          }
-        }
-      }
-    }
-    
-
-    
-
-    .user-menu-trigger-mobile {}
-
-    .lux-header-user {
-      .lux-header-user-short { //ToDo
-        margin-right: 5px;
-  
-        > span {
-          display: flex !important;
-          justify-content: center;
-          width: 25px;
-          border: 1px solid;
-          border-radius: 50%;
-          padding: 0 4px;
-        }
-      }
     }
   }
+    
+
   .lux-app-header-nav-bar {
     background-color: map.get(luxpalette.$lux-palette-primary, 50);
-    padding: 8px 24px;
+    padding: 4px 24px;
     min-height: 30px;
     overflow: hidden;
     white-space: nowrap;
 
     &.lux-mobile {
-      padding: 8px;
+      padding: 4px;
     }
 
     .lux-app-title {
       color:luxcommon.$dark-primary-text;
+      padding: 4px;
       font-size: 20px;
-      font-weight: 500;
+      font-weight: 700;
       font-family: luxcommon.$app-headline-font, global.$app-font-family;
+
+      &.lux-mobile {
+        font-size: 16px;
+        font-weight: 500;
+      }
     }
 
     .lux-header-ac-nav-menu {
@@ -136,33 +102,9 @@ lux-app-header-ac {
       }
       lux-button button.lux-button{
         font-size: 16px !important;
-        
       }
       .lux-menu-extended {
         padding: 0;
-      }
-      &.lux-header-ac-nav-menu-mobile {
-        lux-button.lux-menu-trigger-default button.mat-button {
-          margin: 0 4px !important;
-        } 
-      }
-    }
-    
-    
-  }
-
-}
-.lux-header-right-nav { //noch in User-Menu umbenennen
-
-  .lux-menu-panel .lux-menu-item,
-  .lux-menu-item.mat-menu-item { //panel des user-menu
-
-    color: map.get(luxpalette.$lux-palette_primary, 500);
-    font-weight: 500;
-
-    lux-icon {
-      i, mat-icon {
-        color: map.get(luxpalette.$lux_palette_primary, 500);
       }
     }
   }

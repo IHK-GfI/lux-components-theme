@@ -18,3 +18,58 @@ lux-tabs {
     }
   }
 }
+
+lux-button .lux-icon-button {
+ 
+  & lux-icon:not(.lux-button-icon-round) {
+    line-height: 0.5;
+    
+    &.lux-lx-icon {
+      height: 22px !important;
+      width: 22px !important;
+    }
+    
+    i.lux-fa-icon {
+      font-size: 1.5em !important;
+    }
+    mat-icon.mat-icon.lux-material-icon:not(.lux-lx-icon, .lux-lx-icon-no-size) {
+      font-size: 2em !important;
+      padding: 0px !important;
+      height: unset !important;
+      width: unset !important;
+    }
+    mat-icon.mat-icon.lux-lx-icon:not(.lux-fa-icon, .lux-material-icon),
+    mat-icon.mat-icon.lux-lx-icon-no-size:not(.lux-fa-icon, .lux-material-icon) {
+      line-height: 0.5;
+      height: 22px !important;
+      width: 22px !important;
+    }
+  }
+
+
+  &.lux-button-rounded {
+    
+    font-size: luxcommon.$button-font-size;
+    .mat-button-wrapper {
+      height: 100%;
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+    }
+  
+    & lux-icon.lux-button-icon-round {
+      line-height: 1;
+      height: 20px;
+      width: 20px;
+      i,
+      mat-icon.mat-icon:not(.lux-lx-icon, .lux-lx-icon-no-size) {
+        font-size: 20px !important;
+      }
+      mat-icon.mat-icon.lux-lx-icon:not(.lux-fa-icon, .lux-material-icon),
+      mat-icon.mat-icon.lux-lx-icon-no-size:not(.lux-fa-icon, .lux-material-icon) {
+        height: 20px;
+        width: 20px;
+      }
+    }
+  }
+}

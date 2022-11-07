@@ -16,7 +16,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
 }
 
-
 // Stylings für lux-menu-items im cdk-overlay-panel
 .lux-menu-item {
   color: luxpalette.$lux-primary-color;
@@ -125,7 +124,6 @@ lux-table {
     }
   }
 }
-
 
 /**
 * Theming für LUX-Card
@@ -294,29 +292,79 @@ lux-master-footer {
 /*
  * Theming for LUX-Master-Detail-Light
  */
- .master-light-container {
-  height: 100%;
-  position: relative;
-  lux-button.master-light-toggle{
-   position: absolute;
-   right: -18px;
-   top: 18px;
-   z-index: 1000;
-   
-   button.lux-button.lux-button-rounded {
-     @include luxelevations.lux-elevation-z0;  
-     border: 1px solid luxcommon.$app-border-color;
-     color: map.get(luxpalette.$lux-palette-primary, 500);
-     
-     &:not([disabled]):focus:hover{
-       background-color: luxcommon.$lux-hover-color;
-       border-radius: 50%
-     }
-   }
+ .lux-master-detail-ac {
+  max-width: 100%;
+  z-index: 10;
+  .lux-master-ac-container {
+    &.lux-master-closed {
+      border: 1px solid luxcommon.$app-border-color;
+      border-left-style: none;
+      border-radius: 0 4px 4px 0;
+      padding: 0;
+      width: 35px;
+      background-color: #fff;
+    }
+    &.lux-master-ac-container-mobile {
+      background-color: pink;
+    }
+  }
+
+
+  .lux-master-header-ac {
+    z-index: 100;
+    position:relative;
+
+    lux-button.master-light-toggle {
+      position: absolute;
+      right: -18px;
+      top: 28px;
+      z-index: 1000;
+      
+      button.lux-button.lux-button-rounded {
+        @include luxelevations.lux-elevation-z0;  
+        border: 1px solid luxcommon.$app-border-color;
+        color: map.get(luxpalette.$lux-palette-primary, 500);
+        
+        &:not([disabled]):focus:hover{
+          background-color: luxcommon.$lux-hover-color;
+          border-radius: 50%
+        }
+      }
+    }
+  }
+
+  .lux-master-view-ac {
+    margin: 10px 0;
+    z-index: 100;
+    
+    lux-list {
+      border: none !important;
+    }
+    
+    lux-list-item {
+      margin-bottom: 4px;  
+      mat-card.mat-card {
+        margin:0px;
+      }
+    }
+    
+    lux-list-item,
+    lux-list-item-content {
+      display: block;
+    }
+  }
+
+  lux-master-footer-light {
+    padding: 10px 20px;
+    z-index: 100;
+    border: 1px solid luxcommon.$app-border-color;
+    border-radius: 4px;
+  }
+ 
  }
-}
-.detail-button-container{
-  lux-button.back-to-master-button {
+
+
+  lux-button.back-button {
     button.lux-button.lux-button-rounded {
       @include luxelevations.lux-elevation-z0;  
       border: 1px solid luxcommon.$app-border-color;
@@ -327,7 +375,7 @@ lux-master-footer {
     font-size: 16px;
     color: map.get(luxpalette.$lux-palette-primary, 300);
   }
-}
+
 
 /*
  * Theming for LUX-Message-Box
@@ -351,6 +399,7 @@ lux-button button.lux-button {
   .lux-button-label{
     font-family: luxcommon.$app-headline-font, global.$app-font-family;
     font-weight: normal;
+    font-size: luxcommon.$button-font-size;
   } 
 }
 

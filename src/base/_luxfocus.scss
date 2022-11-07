@@ -200,7 +200,7 @@ lux-list {
     lux-card {
       &.lux-list-item-selected {
         mat-card.mat-card.lux-card {
-          @include lux-selected-mixin-ac;
+          @include lux-selected-mixin;
         }
       }
 
@@ -434,7 +434,7 @@ lux-table {
 .lux-select-panel, .lux-select-panel-ac {
   mat-option {
     &.mat-selected.mat-option:not(.mat-option-disabled) {
-      @include lux-selected-mixin-ac;
+      @include lux-selected-mixin;
     }
 
     // Der Focus bei mat-option wird über die Klasse .mat-active gesteuert 
@@ -451,7 +451,7 @@ lux-table {
 }
 
 /** ########## Button ########## **/
-lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-item-btn) {
+lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-item-btn, .nav-menu-trigger-ac) {
   button:not([disabled]) {
     .mat-button-focus-overlay {
       display: none;
@@ -726,7 +726,7 @@ example-root {
       @include lux-selectable-mixin;
 
       &.example-component-list-item-selected {
-        @include lux-selected-mixin-ac;
+        @include lux-selected-mixin;
       }
 
       &:focus-visible {
@@ -760,6 +760,7 @@ lux-message-box {
 
       & button:not([disabled]):hover {
         @include lux-hovered-mixin;
+        border-radius: 50%;
       }
     }
 
@@ -774,7 +775,8 @@ lux-message-box {
 
       & button:not([disabled]):hover {
         @include lux-hovered-mixin;
-        color: luxcommon.$lux-hover-color-for-dark-background;
+        border-radius: 50%;
+        color: luxpalette.$lux-primary-color;
       }
     }
   }

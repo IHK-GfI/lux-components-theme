@@ -102,6 +102,10 @@ lux-form-control-wrapper {
             padding: 0 !important;
             margin: 0;
             font-size: 1.5em !important;
+            &.lux-lx-icon-no-size {
+              width: 1em;
+              height: 1em;
+            }
           }
         }
         

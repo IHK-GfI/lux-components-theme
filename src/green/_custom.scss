@@ -212,6 +212,10 @@ lux-app-header {
       }
     }
   }
+  
+  .lux-menu-trigger-default .mat-button-wrapper {
+    display: block;
+  }
 }
 
 /*
@@ -226,10 +230,6 @@ lux-button button.lux-button {
     border-radius: 18px;
     height: luxcommon.$button-height;
     font-size: $button-font-size;
-
-    .mat-button-wrapper {
-      height: 24px !important;
-    }
   }
 
   &.mat-button.mat-button-disabled,
@@ -240,7 +240,9 @@ lux-button button.lux-button {
     color: luxcommon.$dark-disabled-text;
   }
 
-  &.mat-raised-button.mat-accent:not(.mat-button-disabled), &.mat-flat-button.mat-accent:not(.mat-button-disabled), &.mat-fab.mat-accent:not(.mat-button-disabled) {
+  &.mat-raised-button.mat-accent:not(.mat-button-disabled), 
+  &.mat-flat-button.mat-accent:not(.mat-button-disabled), 
+  &.mat-fab.mat-accent:not(.mat-button-disabled) {
     color: map.get(luxpalette.$lux-palette-primary, 500);
   }
 
@@ -248,17 +250,24 @@ lux-button button.lux-button {
     border-radius: 18px;
     height: luxcommon.$button-height;
 
-    & lux-icon {
-      line-height: 1;
-      i {
-        font-size: 1em;
+    & lux-icon:not(.lux-button-icon-round) {
+      line-height: 0.5;
+      
+      i.lux-fa-icon {
+        font-size: 1em !important;
       }
-      mat-icon.mat-icon:not(.lux-lx-icon) {
+      mat-icon.mat-icon.lux-material-icon:not(.lux-lx-icon, .lux-lx-icon-no-size) {
         font-size: 1.2em !important;
-        line-height: 1;
+        padding: 0px !important;
         height: unset !important;
         width: unset !important;
       }
+    }
+    mat-icon.mat-icon.lux-lx-icon:not(.lux-fa-icon, .lux-material-icon),
+    mat-icon.mat-icon.lux-lx-icon-no-size:not(.lux-fa-icon, .lux-material-icon) {
+      line-height: 0.5;
+      height: 22px;
+      width: 22px;
     }
   }
 
@@ -274,11 +283,18 @@ lux-button button.lux-button {
       line-height: 1;
     }
 
-    & lux-icon {
+    & lux-icon.lux-button-icon-round {
       line-height: 1;
+      height: 22px;
+      width: 22px;
       i,
-      mat-icon.mat-icon:not(.lux-lx-icon) {
-        font-size: 1.2em !important;
+      mat-icon.mat-icon:not(.lux-lx-icon, .lux-lx-icon-no-size) {
+        font-size: 22px !important;
+      }
+      mat-icon.mat-icon.lux-lx-icon:not(.lux-fa-icon, .lux-material-icon),
+      mat-icon.mat-icon.lux-lx-icon-no-size:not(.lux-fa-icon, .lux-material-icon) {
+        height: 22px;
+        width: 22px;
       }
     }
   }
@@ -491,6 +507,15 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
     > * {
       color: luxpalette.$lux-warn-color !important;
     }
+  }
+}
+
+lux-file-input, lux-file-input-ac {
+  lux-button.lux-menu-item,
+  lux-button.lux-menu-trigger-default { 
+    button lux-icon {
+      display: inline;
+    } 
   }
 }
 
@@ -752,6 +777,13 @@ lux-radio {
 /*
  * Theming for LUX-Filter-Form
  */
- lux-filter-form lux-accordion lux-panel mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded {
-  height: 60px !important;
+ lux-filter-form lux-accordion { 
+  lux-menu {
+    .lux-menu-trigger button.mat-button {
+      height: 45px;
+    }
+  }
+  .mat-expansion-panel-header.mat-expanded {
+    height: 60px !important;
+  }
 }
