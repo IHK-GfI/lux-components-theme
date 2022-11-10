@@ -4,3 +4,4 @@ node_modules
 prebuilt-themes/
 *.iml
 .vscode/settings.json
+package-lock.json
