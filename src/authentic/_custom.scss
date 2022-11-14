@@ -302,15 +302,17 @@ lux-master-footer {
       border-radius: 0 4px 4px 0;
       padding: 0;
       width: 35px;
+      min-width: 35px;
+      max-width: 35px;
       background-color: #fff;
     }
     &.lux-master-ac-container-mobile {
-      background-color: pink;
+      border: none;
+      background-color: unset;
     }
   }
-
-
-  .lux-master-header-ac {
+ 
+  .lux-master-header-container-ac  {
     z-index: 100;
     position:relative;
 
@@ -329,6 +331,24 @@ lux-master-footer {
           background-color: luxcommon.$lux-hover-color;
           border-radius: 50%
         }
+      }
+      
+      .lux-button-icon-round.lux-lx-icon.lux-no-size {
+        // optische Anpassung für das "Chevron"-Icon, damit es zentriert im Button sitzt
+        // Anpassung erforderlich, falls das Icon ausgetauscht wird
+        padding-bottom: 2px;
+      }
+    }
+  }
+
+  .lux-empty-master-header {
+    div.lux-master-header-container-ac {
+      border: 1px solid luxcommon.$app-border-color;
+      border-radius: 4px;
+      background-color: #fff;
+      height: 72px;
+      lux-button.master-light-toggle {
+        top: 18px;
       }
     }
   }
@@ -351,7 +371,7 @@ lux-master-footer {
     lux-list-item,
     lux-list-item-content {
       display: block;
-    }
+    }    
   }
 
   lux-master-footer-light {
@@ -359,23 +379,73 @@ lux-master-footer {
     z-index: 100;
     border: 1px solid luxcommon.$app-border-color;
     border-radius: 4px;
+    background-color: #fff;
   }
- 
- }
 
+  .lux-detail-ac-container {
+    position: relative;
+    border: 1px solid luxcommon.$app-border-color;
+    border-radius: 4px;
+    background-color: #fff;
+    .lux-detail-header-ac {
+      mat-card.mat-card.lux-card {
+        border: none;
+      }
+    }
+    .lux-detail-empty {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  
+    .lux-detail-empty-icon,
+    .lux-detail-empty-icon-text {
+      opacity: 0.6;
+      padding: 0 8px;
+    }
+    &.lux-detail-ac-container-mobile {
+      border: none;
+      background-color: unset;
+      .lux-detail-header-ac {
+        mat-card.mat-card.lux-card {
+          border: 2px solid luxpalette.$lux-primary-color;
+        }
+      }
+      .back-to-master-button-container {
+        padding: 4px;
+      
+        &:hover {
+          background-color: luxcommon.$lux-hover-color;
+          cursor: pointer;
+        }
 
-  lux-button.back-button {
-    button.lux-button.lux-button-rounded {
-      @include luxelevations.lux-elevation-z0;  
-      border: 1px solid luxcommon.$app-border-color;
-      color: map.get(luxpalette.$lux-palette-primary, 500);
+        lux-button.back-to-master-button {
+          button.lux-button.lux-button-rounded {
+            @include luxelevations.lux-elevation-z0;  
+            border: 1px solid luxcommon.$app-border-color;
+            color: map.get(luxpalette.$lux-palette-primary, 500);
+          }
+          .lux-button-icon-round.lux-lx-icon.lux-no-size {
+            // optische Anpassung für das "Chevron"-Icon, damit es zentriert im Button sitzt
+            // Anpassung erforderlich, falls das Icon ausgetauscht wird
+            padding-bottom: 2px;
+          }
+        }
+        .back-to-master-label {
+          font-size: 16px;
+          color: map.get(luxpalette.$lux-palette-primary, 300);
+        }
+      }
+      .lux-detail-view-container {
+        border: 1px solid luxcommon.$app-border-color;
+        border-radius: 4px;
+        background-color: #fff;
+      }
     }
   }
-  .back-to-master-label {
-    font-size: 16px;
-    color: map.get(luxpalette.$lux-palette-primary, 300);
-  }
-
+ }
 
 /*
  * Theming for LUX-Message-Box
