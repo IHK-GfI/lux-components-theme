@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "luxcommon";
+@use "../base/luxelevations";
 
 // Tabs außerhalb einer LUX-Card (z.B. Master-Detail)
 lux-tabs {
@@ -73,3 +74,34 @@ lux-button .lux-icon-button {
     }
   }
 }
+
+/*
+ * Theming for LUX-Master-Detail-ac
+ */
+ .lux-master-detail-ac {
+
+  .lux-master-header-container-ac lux-button.master-light-toggle {
+    right: -23px;
+  }
+
+  .lux-detail-header-ac {
+    mat-card.mat-card {
+      @include luxelevations.lux-elevation-z0;
+    }
+  }
+
+  .lux-master-ac-container {
+    padding: 2px 0 2px 2px;
+    &.lux-master-closed {
+      flex: 1 1 30px !important;
+      max-width: 30px !important;
+      min-width: 30px !important;
+    }
+  }
+
+  lux-master-footer-ac {
+    margin-bottom: 4px;
+    border: none;
+    @include luxelevations.lux-elevation-z2
+  }
+ }
