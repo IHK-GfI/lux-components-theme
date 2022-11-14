@@ -13,7 +13,7 @@ jobs:
         with:
           node-version: 16
       - run: |
-          npm ci
+          npm install
           npm run build
           cd prebuilt-themes
           ls -l
@@ -29,7 +29,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - name: Publish NPM
         run: |
-          npm ci
+          npm install
           npm run build
           npm publish --access public
         env:
@@ -47,7 +47,7 @@ jobs:
           scope: '@ihk-gfi'
       - name: Publish Github
         run: |
-          npm ci
+          npm install
           npm run build
           npm publish --access public
         env:
