@@ -1,7 +1,7 @@
 @use "sass:map";
 @use "components/luxAppHeaderAc.scss";
 @use "components/luxLinkPlain.scss";
-@use "components/luxTileAuthentic.scss";
+@use "components/luxTileAc.scss";
 @use "components/luxFormControlWrapper.scss";
 @use "components/luxFormControlsAuthentic.scss";
 @use "luxcommon";
@@ -1515,6 +1515,8 @@ lux-stepper-large {
     .lux-stepper-large-nav-item-complete {
       color: luxcommon.$lux-stepper-large-completed-fc;
       font-size: 23px;
+      height: 23px;
+      width: 23px;
     }
   }
 }

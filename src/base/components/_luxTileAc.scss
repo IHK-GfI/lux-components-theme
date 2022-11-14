@@ -6,8 +6,8 @@
 @use "../luxelevations";
 
 
-lux-tile-authentic {
-  .mat-card.lux-tile-authentic {   
+lux-tile-ac {
+  .mat-card.lux-tile-ac {   
     box-sizing: border-box;
     display: flex;
     height: 100%;
@@ -34,7 +34,7 @@ lux-tile-authentic {
       }
     }
   
-    .lux-tile-header-titel-authentic {
+    .lux-tile-header-titel-ac {
       mat-card-title {
         color: luxcommon.$dark-primary-text;
         font-family: luxcommon.$app-headline-font, global.$app-font-family;
