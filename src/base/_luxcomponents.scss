@@ -178,7 +178,7 @@ lux-button button.lux-button {
   }
   
   lux-icon.lux-button-icon:not(.lux-button-icon-round) {
-    line-height: 1;
+    line-height: 1em;
     &.lux-lx-icon {
       height: luxcommon.$button-font-size;
       width: luxcommon.$button-font-size;
