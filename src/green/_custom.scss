@@ -687,7 +687,7 @@ lux-radio {
       color: map.get(luxpalette.$lux-palette_primary, 500);
     }
 
-    td.mat-calendar-body-cell {
+    td.mat-calendar-body-cell-container {
 
       &:after {
         background-color: white;
@@ -699,18 +699,18 @@ lux-radio {
         color: map.get(luxpalette.$lux-palette_primary, 500);
       }
 
-      & > div {
+      .mat-calendar-body-cell-content.mat-focus-indicator {
+       
         border-radius: 2px;
-        background-color: $light-blue;
         font-size: 18px;
+        background-color: $light-blue;
         color: map.get(luxpalette.$lux-palette_primary, 500);
+       
+        &.mat-calendar-body-selected {
+          background-color: map.get(luxpalette.$lux-palette_primary, 500);
+          color: $light-blue;
+        }
       }
-    }
-
-    .mat-calendar-body-cell-content.mat-focus-indicator.mat-calendar-body-selected {
-      border-radius: 2px;
-      background-color: map.get(luxpalette.$lux-palette_primary, 500);
-      color: $light-blue;
     }
 
     // Ausblenden des zusätzlichen Monatslabels
