@@ -409,7 +409,7 @@ lux-checkbox, lux-toggle, lux-radio, lux-slider {
   color: luxcommon.$dark-secondary-text;
 }
 
-lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datepicker, lux-datetimepicker, lux-chips {
+lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datepicker, lux-datetimepicker, lux-chips, lux-lookup-autocomplete, lux-lookup-combobox {
   & .lux-form-control {
     .lux-form-control-label {
       padding-bottom: $form-control-label-padding-bottom;
@@ -524,7 +524,7 @@ lux-file-input, lux-file-input-ac {
  * Theming für LUX-Layout-Form-Row
  */
 lux-layout-form-row {
-  lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datepicker, lux-datetimepicker, lux-chips {
+  lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datepicker, lux-datetimepicker, lux-chips, lux-lookup-autocomplete, lux-lookup-combobox {
     & .lux-form-control {
       margin-right: 0px;
       margin-left: 0px;
