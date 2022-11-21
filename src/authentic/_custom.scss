@@ -178,12 +178,18 @@ lux-accordion {
   mat-expansion-panel-header.mat-expansion-panel-header, 
   mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded,
   mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded:focus {
-    background-color: map.get(luxpalette.$lux-palette-primary, 50);
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
     font-family: luxcommon.$app-headline-font, global.$app-font-family;
     font-weight: 500;
-    color: luxcommon.$dark-primary-text;
+
+    &[aria-disabled=false] {
+      background-color: map.get(luxpalette.$lux-palette-primary, 50);
+      color: luxcommon.$dark-primary-text;
+      &:hover {
+        background-color: map.get(luxpalette.$lux-palette-primary, 100) !important;
+      }
+    }
   }
 }
 
