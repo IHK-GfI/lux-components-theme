@@ -240,24 +240,61 @@ lux-accordion {
 /*
  * Theming for LUX-List
  */
- lux-list {
- 
+lux-list {
+
   .mat-card:not([class*="mat-elevation-z"]) {
     @include luxelevations.lux-elevation-z0;
   }
   .mat-card-content.menu-item-content {
     margin-bottom: 0;
   }
-  .lux-list-item {
-    border: 1px solid luxcommon.$app-border-color;
-    &.lux-list-item-selected {
-      border: 1px solid map.get(luxpalette.$lux-palette-primary, 500);
-      box-shadow: 0 0 0 1px map.get(luxpalette.$lux-palette-primary, 500) inset;
-      background-color: #fff;
-      background-image: luxcommon.$app-gradient;
+
+  &:focus-visible {
+    border: luxfocus.$outline-dark;
+    border-radius: 4px;
+    outline: none;
+  }
+
+  lux-list-item {
+    &:focus-visible {
+      outline: none;
+
+      mat-card.mat-card.lux-card {
+        @include luxfocus.focus-dark-mixin-inline;
+        background-color: #fff !important;
+      }
     }
-    lux-card mat-card {
-      margin: luxcommon.$outline-width 0;
+
+    lux-card {
+      &.lux-list-item-selected {
+        mat-card.mat-card.lux-card {
+          @include luxfocus.lux-selected-mixin-ac;
+        }
+      }
+
+      mat-card {
+        @include luxfocus.lux-selectable-mixin;
+
+        &:hover {
+          @include luxfocus.lux-hovered-mixin;
+        }
+      }
+    }
+  }
+}
+
+/*
+ * Theming for Side-Nav im Demo
+ */
+example-root {
+  .example-base-components-list {
+
+    mat-expansion-panel-header,
+    .example-component-list-item {
+
+      &.example-component-list-item-selected {
+        @include luxfocus.lux-selected-mixin-ac;
+      }
     }
   }
 }
@@ -348,9 +385,6 @@ lux-stepper {
     &[aria-selected="true"] {
       // background-color: $lux-selected-bg-color;
       @include luxfocus.lux-selected-mixin-ac;
-      &:after {
-        border-left: none;
-      }
     }
     
     &[aria-selected="false"] {
@@ -427,7 +461,7 @@ lux-stepper-large {
     background-color: luxcommon.$app-content-bg;
   }
 
-//Desktop-View
+  //Desktop-View
   .lux-stepper-large-nav-item {
     .lux-stepper-large-nav-item-number-container {
       border-radius: 50%;
@@ -498,7 +532,7 @@ lux-stepper-large {
   }
 }
 
-//Mobile-View
+//Stepper-Large Mobile-View
 .lux-stepper-large-mobile-nav-header {
   div {
     font-family: luxcommon.$app-headline-font, global.$app-font-family;

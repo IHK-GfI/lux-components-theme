@@ -35,9 +35,9 @@ $light-dividers: rgba(white, 0.20);
 $light-focused: rgba(white, 0.12);
 
 // App
-$app-header-bg: map.get(luxpalette.$lux-palette_primary, 50 );
+$app-header-bg: map.get(luxpalette.$lux-palette_primary, 50);
 $app-content-bg: #ffffff;
-$app-footer-bg: map.get(luxpalette.$lux-palette_primary, 50 );
+$app-footer-bg: map.get(luxpalette.$lux-palette_primary, 50);
 $app-data-bg: #ffffff;
 $app-gradient: linear-gradient(90deg, #ffffff 0%, #f8fbff 100%);
 $app-gradient-reverse: linear-gradient(270deg, #ffffff 0%, #f8fbff 100%);
@@ -64,11 +64,9 @@ $button-fav-height: 36px;
 
 // Fokus
 $outline-color-bright: #ffffff;
-$outline-color-dark: map.get(luxpalette.$lux-palette-primary, 200);
+$outline-color-dark: map.get(luxpalette.$lux-palette-primary, A100);
 $outline-width: 4px;
 $outline-style: solid;
-$outline-color-bright: #ffffff;
-$outline-color-dark: map.get(luxpalette.$lux-palette-primary, 200);
 
 // Hover
 $lux-hover-color: map.get(luxpalette.$lux-palette-primary, 50);

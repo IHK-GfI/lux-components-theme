@@ -38,6 +38,10 @@ lux-app-header-ac {
         background-color: transparent;
         @include luxfocus.focus-dark-mixin;
       }
+      
+      .mat-button-focus-overlay {
+        display: none;
+      }
 
       lux-icon {
         color: luxpalette.$lux-primary-color;
@@ -69,7 +73,6 @@ lux-app-header-ac {
       }
     }
   }
-    
 
   .lux-app-header-nav-bar {
     background-color: map.get(luxpalette.$lux-palette-primary, 50);

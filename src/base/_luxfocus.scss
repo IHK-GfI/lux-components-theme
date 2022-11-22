@@ -53,10 +53,15 @@ $outline-bright: luxcommon.$outline-width luxcommon.$outline-style luxcommon.$ou
 
 @mixin lux-selected-mixin-ac {
   background: luxcommon.$app-gradient;
+  background-color: #fff;
   border: 1px solid map.get(luxpalette.$lux-palette-primary, 500);
-  box-shadow: 0 0 0 1px var(--lux-theme-primary-500) inset;
+  box-shadow: 0 0 0 2px var(--lux-theme-primary-500) inset;
   position: relative;
   border-radius: 4px;
+  &:after {
+    width: 0px;
+    border:none;
+  }
 }
 
 @mixin lux-selected-bottom-mixin {
@@ -431,10 +436,29 @@ lux-table {
 
 /** ########## Select ########## **/
 // Class, welche das aufgeklappte Panel referenziert
-.lux-select-panel, .lux-select-panel-ac {
+.lux-select-panel {
   mat-option {
     &.mat-selected.mat-option:not(.mat-option-disabled) {
       @include lux-selected-mixin;
+    }
+
+    // Der Focus bei mat-option wird über die Klasse .mat-active gesteuert 
+    // bisher noch keine Lösung um den mouse-focus auszuschalten
+    &.mat-active:not(.cdk-mouse-focused) {
+      @include focus-dark-mixin-inline;
+      border-radius: 4px;
+    }
+
+    &:hover {
+      @include lux-hovered-mixin;
+    }
+  }
+}
+
+.lux-select-panel-ac {
+  mat-option {
+    &.mat-selected.mat-option:not(.mat-option-disabled) {
+      @include lux-selected-mixin-ac;
     }
 
     // Der Focus bei mat-option wird über die Klasse .mat-active gesteuert 
@@ -707,6 +731,11 @@ lux-file-preview-toolbar lux-button button.lux-icon-button {
     &:not([disabled="true"]) {
       &:focus-visible {
         @include focus-dark-mixin-inline;
+        border-radius: 0;
+        &:after {
+          width: 0px;
+          border:none;
+        }
       }
 
       &:hover {
