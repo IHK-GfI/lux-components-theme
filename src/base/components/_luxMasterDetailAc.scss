@@ -31,7 +31,7 @@
     lux-button.master-light-toggle {
       position: absolute;
       right: -18px;
-      top: 28px;
+      top: 20px;
       z-index: 1000;
       
       button.lux-button.lux-button-rounded {
@@ -50,6 +50,23 @@
         // Anpassung erforderlich, falls das Icon ausgetauscht wird
         padding-bottom: 2px;
       }
+    }
+    .lux-menu-extended {
+      padding: 0px;
+    }
+  }
+
+  lux-filter-form .lux-filter-card,
+  .detail-header-container .lux-detail-header-ac,
+  .lux-master-view-ac lux-list-item {
+    mat-card.mat-card {
+      padding: 12px;
+    }
+    mat-card-title, h2 {
+      font-size: 16px;
+    }
+    mat-card-subtitle.mat-card-subtitle {
+      font-size: 14px;
     }
   }
 
@@ -76,7 +93,17 @@
     lux-list-item {
       margin-bottom: 4px;  
       mat-card.mat-card {
-        margin:0px;
+        margin: 0px;
+
+        lux-list-item-content :last-child {
+          margin-bottom: 0px;
+          padding-bottom: 0px;
+        }
+
+        lux-icon.lux-lx-icon {
+          width: 20px;
+          height: 20px;
+        }
       }
     }
     
@@ -87,11 +114,14 @@
   }
 
   lux-master-footer-ac {
-    padding: 10px 20px;
+    padding: 10px 16px;
     z-index: 100;
     border: 1px solid luxcommon.$app-border-color;
     border-radius: 4px;
     background-color: #fff;
+    .lux-menu-extended {
+      padding: 0;
+    }
   }
 
   .lux-detail-ac-container {
@@ -99,11 +129,13 @@
     border: 1px solid luxcommon.$app-border-color;
     border-radius: 4px;
     background-color: #fff;
+    
     .lux-detail-header-ac {
       mat-card.mat-card.lux-card {
         border: none;
       }
     }
+    
     .lux-detail-empty {
       position: absolute;
       top: 0;

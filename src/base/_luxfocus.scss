@@ -221,10 +221,13 @@ lux-list {
 }
 
 /** ########## Filter-Form ########## **/
-lux-filter-form lux-accordion {
+lux-filter-form {
   lux-menu {
-    .lux-menu-trigger button.mat-button:hover {
-      border: 1px solid luxcommon.$app-border-color;
+    .lux-filter-menu-trigger button:not([disabled]).mat-fab.lux-button-rounded:hover {
+      background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%) !important;
+    }
+    .lux-filter-menu-trigger button:not([disabled]).mat-fab.lux-button-rounded:focus-visible {
+      background-color: transparent !important;
     }
   }
 }
@@ -468,14 +471,14 @@ lux-table {
       border-radius: 4px;
     }
 
-    &:hover {
+    &:hover:not(.invalid, .mat-option-disabled) {
       @include lux-hovered-mixin;
     }
   }
 }
 
 /** ########## Button ########## **/
-lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-item-btn, .nav-menu-trigger-ac) {
+lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-item-btn, .nav-menu-trigger-ac, .lux-filter-menu-trigger) {
   button:not([disabled]) {
     .mat-button-focus-overlay {
       display: none;
@@ -555,7 +558,7 @@ lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-i
       border-radius: 4px;
     }
 
-    &:hover {
+    &:hover:not(.invalid, .mat-option-disabled) {
       @include lux-hovered-mixin;
     }
   }

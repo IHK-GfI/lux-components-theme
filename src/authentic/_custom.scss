@@ -9,8 +9,6 @@
 
 $light-gray: #EFF3F6; //für die Table
 
-
-
 h1, h2, h3, h4, h5, h6 {
   color: rgba(black, 0.87);
   font-weight: normal;
@@ -43,7 +41,6 @@ lux-app-content {
   background-image: luxcommon.$app-gradient;
 }
 
-
 /*
  * Theming for LUX-App-Footer
  */
@@ -52,7 +49,6 @@ lux-app-content {
     border-bottom: 8px solid map.get(luxpalette.$lux-palette_primary, 600);
   }
 }
-
 
 //Tabs außerhalb einer LUX-Card (z.B. Master-Detail)
 lux-tabs {
@@ -65,7 +61,6 @@ lux-tabs {
     }
   }
 }
-
 
 /*
  * Theming for LUX-Table
@@ -112,14 +107,21 @@ lux-table {
         background-color:#ffffff;
       }
     }
-    .mat-paginator {
-      font-size: 15px;
-      color: rgba(black, 0.87);
+    
+    .lux-paginator-xs:not(.lux-hide) {
       .mat-paginator-container {
-        padding: 0;
+        justify-content: flex-end;
       }
-      mat-form-field.mat-paginator-page-size-select span {
-        font-size: 15px;
+      .mat-paginator-range-actions {
+        display: flex;
+        align-items: center;
+        margin-top: 0px;
+        button:first-of-type {
+          margin-left: 0px;
+        }
+      }
+      .mat-paginator-range-label {
+        margin: 0 32px 0 24px;
       }
     }
   }
@@ -140,10 +142,11 @@ lux-card {
       @include luxelevations.lux-elevation-z0;
     }
 
-    mat-card-subtitle {
+    .mat-card-subtitle {
       color: luxcommon.$dark-secondary-text;
       font-size: 16px;
       font-weight: normal;
+      font-family: luxcommon.$app-font-family;
     }
   }
 }

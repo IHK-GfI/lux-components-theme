@@ -10,7 +10,7 @@ lux-link-plain {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
-    color: map.get(luxpalette.$lux-palette-primary, A400);
+    color: map.get(luxpalette.$lux-palette-primary, A700);
     
     .lux-link-plain-text {
       text-decoration: none;
@@ -21,7 +21,7 @@ lux-link-plain {
       vertical-align: middle;
       line-height: 1;
       i, mat-icon {
-        color: map.get(luxpalette.$lux-palette-primary, A400);
+        color: map.get(luxpalette.$lux-palette-primary, A700);
         padding: 0 !important;
       }   
     }

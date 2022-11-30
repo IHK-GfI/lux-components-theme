@@ -141,7 +141,8 @@ lux-form-control-wrapper {
   
     &.lux-form-control-disabled-authentic {
       .lux-form-control-container-authentic,
-      .lux-form-control-label-authentic > * {
+      .lux-form-control-label-authentic,
+      .lux-form-control-misc-authentic > * {
         color: luxcommon.$dark-disabled-text;
       }
     }

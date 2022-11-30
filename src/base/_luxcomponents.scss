@@ -234,6 +234,7 @@ lux-card{
   .lux-card-content-container {
     overflow-x: hidden;
     padding: luxcommon.$form-control-buffer;
+    font-family: luxcommon.$app-font-family;
 
     > * {
       margin-bottom: 0;
@@ -1122,23 +1123,40 @@ lux-spinner {
   }
 }
 
-lux-filter-form lux-accordion {
-  lux-panel-header-title {
-    width: 100%;
-    mat-panel-title.mat-expansion-panel-header-title {
-      align-items: center;
-      justify-content: space-between;
-      margin: 0px;
+lux-filter-form {
+  lux-accordion {
+    lux-panel-header-title {
+      width: 100%;
+      mat-panel-title.mat-expansion-panel-header-title {
+        align-items: center;
+        justify-content: space-between;
+        margin: 0px;
+      }
     }
   }
 
-  lux-menu {
-    .lux-menu-trigger button.mat-button {
+  h2.lux-card-title-container {
+    font-size: 16px;
+  }
+
+  lux-menu.filter-menu {
+    .lux-menu-extended {
+      padding: 0 !important;
+    }
+    .lux-filter-menu-trigger button.lux-button-rounded {
       height: 36px;
+      width: 36px;
+      min-width: 36px;
+      max-width: 36px;
+      background-color: transparent;
+      color: map.get(luxpalette.$lux-palette_primary, 500);
+      padding: 0px !important;
+      //margin: 0px !important;
+
+      @include luxelevations.lux-elevation-z0;
     }
   }
 }
-
 /*
  * Theming for LUX-Stepper
  */
