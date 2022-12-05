@@ -59,12 +59,12 @@ $form-control-margin: 0px;
 
 // Button
 $button-height: 36px;
-$button-font-size: 16px;
+$button-font-size: 14px;
 $button-fav-height: 36px;
 
 // Fokus
 $outline-color-bright: #ffffff;
-$outline-color-dark: map.get(luxpalette.$lux-palette-primary, A100);
+$outline-color-dark: map.get(luxpalette.$lux-palette-primary, A200);
 $outline-width: 4px;
 $outline-style: solid;
 

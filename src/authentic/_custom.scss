@@ -355,10 +355,223 @@ lux-message-box {
  */
 lux-button button.lux-button {
   .lux-button-label{
-    font-family: luxcommon.$app-headline-font, global.$app-font-family;
-    font-weight: normal;
+    font-family: global.$app-font-family;
+    font-weight: 600;
     font-size: luxcommon.$button-font-size;
+    letter-spacing: 1.25px;
   } 
+  //Theming für den Text-Button
+  &.mat-button:not(.mat-button-disabled) {
+    &:hover {
+      color: luxcommon.$dark-secondary-text;
+      background-color: transparent !important;
+    }
+    &:focus-visible:not(:hover) {
+      color: luxcommon.$dark-secondary-text;
+      background-color: transparent !important;
+    }
+    &:active {
+      color: luxcommon.$dark-primary-text !important;
+    }
+
+    &.mat-primary {
+      &:hover {
+        color: map.get(luxpalette.$lux-palette-primary, 300);
+        background-color: transparent !important;
+      }
+      &:focus-visible:not(:hover) {
+        color: map.get(luxpalette.$lux-palette-primary, 700)!important;
+        background-color: transparent !important;
+      }
+      &:active {
+        color: map.get(luxpalette.$lux-palette-primary, 700)!important;
+      }
+    }
+
+    &.mat-accent {
+      &:hover {
+       color: map.get(luxpalette.$lux-palette-accent, 300)!important;
+       background-color: transparent !important;
+      }
+      &:focus-visible:not(:hover) { 
+        background-color: transparent !important;
+      }
+      &:active {
+        color: map.get(luxpalette.$lux-palette-accent, 700)!important;
+      }
+    }
+  
+    &.mat-warn {
+      &:hover {
+        color: map.get(luxpalette.$lux-palette-warn, 300);;
+        background-color: transparent !important;
+      }
+      &:focus-visible:not(:hover) {
+        color: map.get(luxpalette.$lux-palette-warn, 700);
+        background-color: transparent !important;
+      }
+      &:active {
+        color: map.get(luxpalette.$lux-palette-warn, 700)!important;
+      }
+    }
+  }
+
+  //Theming für den Stroked-Button
+  &.mat-stroked-button:not(.mat-button-disabled) {
+    
+    border-color: luxcommon.$dark-secondary-text;
+    
+    &:hover {
+      color: luxcommon.$dark-secondary-text;
+      background-color: transparent !important;
+      border-color: luxcommon.$dark-primary-text;
+    }
+
+    &:focus-visible:not(:hover) {
+      color: luxcommon.$dark-secondary-text;
+      background-color: transparent !important;
+      border-color: luxcommon.$dark-primary-text;
+    }
+    &:active {
+      color: luxcommon.$dark-primary-text;
+      background-color: transparent !important;
+    }
+    &.mat-primary {
+      border-color: map.get(luxpalette.$lux-palette-primary, 400);
+      
+      &:hover {
+        color: map.get(luxpalette.$lux-palette-primary, 300); 
+        background-color: transparent !important;
+        border-color: map.get(luxpalette.$lux-palette-primary, 300);
+      }
+      &:focus-visible:not(:hover) {
+        color: map.get(luxpalette.$lux-palette-primary, 300); 
+        background-color: transparent !important;
+        border-color: map.get(luxpalette.$lux-palette-primary, 700);
+      }
+      &:active {
+        color: map.get(luxpalette.$lux-palette-primary, 700);
+        background-color: transparent !important;
+        border-color: map.get(luxpalette.$lux-palette-primary, 700);
+      }
+    }
+
+    &.mat-accent {
+      color: luxcommon.$dark-primary-text;
+      border-color: map.get(luxpalette.$lux-palette-accent, 400);
+      &:hover {
+        color: luxcommon.$dark-secondary-text !important;
+        background-color: transparent !important;
+        border-color: map.get(luxpalette.$lux-palette-accent, 300);
+      }
+      &:focus-visible:not(:hover) {
+        color: luxcommon.$dark-secondary-text;
+        background-color: transparent !important;
+        border-color: map.get(luxpalette.$lux-palette-accent, 700);
+      }
+      &:active {
+        color: luxcommon.$dark-primary-text !important;
+        background-color: transparent !important;
+        border-color: map.get(luxpalette.$lux-palette-accent, 700);
+      }
+    }
+  
+    &.mat-warn {
+      border-color: map.get(luxpalette.$lux-palette-warn, 500);
+      &:hover {
+        color: map.get(luxpalette.$lux-palette-warn, 300); 
+        background-color: transparent !important;
+        border-color: map.get(luxpalette.$lux-palette-warn, 300);
+      }
+      &:focus-visible:not(:hover) {
+        color: map.get(luxpalette.$lux-palette-warn, 300); 
+        background-color: transparent !important;
+        border-color: map.get(luxpalette.$lux-palette-warn, 700);
+      }
+      &:active {
+        color: map.get(luxpalette.$lux-palette-warn, 700);
+        background-color: transparent !important;
+        border-color: map.get(luxpalette.$lux-palette-warn, 700);
+      }
+    }
+  }
+  &.mat-stroked-button.mat-button-disabled {
+    border-color: luxcommon.$dark-disabled-text;
+    color: luxcommon.$dark-disabled-text;
+  }
+
+  //Theming für den Raised-Button, Flat-Button, Fab(Rounded)-Button
+  &.mat-raised-button:not(.mat-button-disabled), 
+  &.mat-flat-button:not(.mat-button-disabled),
+  &.mat-fab:not(.mat-button-disabled) {
+    &:hover {
+      color: luxcommon.$dark-secondary-text;
+      background-color: #ffffff !important;
+    }
+
+    &:focus-visible:not(:hover) {
+      color: luxcommon.$dark-secondary-text;
+      background-color: #ffffff !important;
+    }
+    &:active {
+      color: luxcommon.$dark-primary-text;
+      background-color: #ffffff !important;
+    }
+    
+    &.mat-primary {
+      &:hover {
+        color: #ffffff;
+        background-color: map.get(luxpalette.$lux-palette-primary, 300) !important;
+      }
+      &:focus-visible:not(:hover) {
+        color: #ffffff;
+        background-color: map.get(luxpalette.$lux-palette-primary, 700)!important;
+      }
+      &:active {
+        background-color: map.get(luxpalette.$lux-palette-primary, 700) !important;
+      }
+    }
+
+    &.mat-accent {
+      color: luxcommon.$dark-primary-text;
+      &:hover {
+        background-color: map.get(luxpalette.$lux-palette-accent, 300) !important;
+      }
+      &:focus-visible:not(:hover) {
+        background-color: map.get(luxpalette.$lux-palette-accent, 700) !important;
+      }
+      &:active {
+        background-color: map.get(luxpalette.$lux-palette-accent, 700) !important;
+      }
+    }
+  
+    &.mat-warn {
+      &:hover {
+        color: #ffffff;
+        background-color: map.get(luxpalette.$lux-palette-warn, 300) !important;
+      }
+      &:focus-visible:not(:hover) {
+        color: #ffffff;
+        background-color: map.get(luxpalette.$lux-palette-warn, 700) !important;
+      }
+      &:active {
+        background-color: map.get(luxpalette.$lux-palette-warn, 700) !important;
+      }
+    }
+  }
+  &.mat-button.mat-button-disabled,
+  &.mat-raised-button.mat-button-disabled, 
+  &.mat-flat-button.mat-button-disabled,
+  &.mat-fab.mat-button-disabled {
+    color: luxcommon.$dark-disabled-text;
+    background-color: luxcommon.$dark-disabled-text !important;
+  }
+
+  //Mat-Fab soll in Authentic flat sein
+  &.mat-fab,
+  &.mat-fab:not(.mat-button-disabled):active {
+    @include luxelevations.lux-elevation-z0;
+  }
 }
 
 /*
@@ -374,7 +587,6 @@ lux-button button.lux-button {
    font-size: 14px;
     input, textarea {
       font-size: 14px !important;
-
     }
   }
 }
