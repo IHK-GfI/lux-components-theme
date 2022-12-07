@@ -29,6 +29,7 @@ lux-form-control-wrapper {
   
     .lux-form-control-label-authentic {
       @include form-label;
+      color: map.get(luxpalette.$lux-palette_primary, 500);
       margin: 0 calc(0.5em + 1px) 0.25em calc(0.5em + 1px);
       > * {
         @include crop;
