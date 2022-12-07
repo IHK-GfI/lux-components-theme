@@ -30,27 +30,33 @@ lux-app-header-ac {
       padding-right: 0px !important;
       background-color: transparent;
       @include luxelevations.lux-elevation-z0;
-
-      &:hover:not([disabled]).mat-fab:hover.mat-primary {
-        background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%);
-      }
-      &:focus-visible {
-        background-color: transparent;
-        @include luxfocus.focus-dark-mixin;
-      }
       
-      .mat-button-focus-overlay {
-        display: none;
-      }
-
       lux-icon {
         color: luxpalette.$lux-primary-color;
       }
+
+      &:hover:not([disabled]).mat-fab:hover.mat-primary {
+        lux-icon { color: #ffffff !important; }
+        
+      }
+      &:focus-visible:not([disabled]).mat-fab.mat-primary.cdk-focused.cdk-keyboard-focused {
+        background-color: transparent !important;
+        lux-icon {
+          color: map.get(luxpalette.$lux-palette_primary, 700) !important;
+        }
+        @include luxfocus.focus-dark-mixin;
+
+      }
+      
+  
     }
 
     &.menu-opened {
       button.lux-button.lux-button-rounded {
-        background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%);
+        background-color: map.get(luxpalette.$lux-palette_primary, 300);
+        lux-icon {
+          color: #ffffff !important;
+        }
       }
     }
   }
@@ -99,13 +105,17 @@ lux-app-header-ac {
     }
 
     .lux-header-ac-nav-menu {
-      lux-button.nav-item-selected button.lux-button .lux-button-label{
-        font-weight: bold;
-        font-stretch: condensed;
+      lux-button.lux-menu-item {
+        button.lux-button .lux-button-label {
+          font-size: 16px !important;
+          letter-spacing: 0.15;
+        }
+
+        &.nav-item-selected  button.lux-button .lux-button-label {
+          font-weight: 600;
+        }
       }
-      lux-button button.lux-button{
-        font-size: 16px !important;
-      }
+
       .lux-menu-extended {
         padding: 0;
       }

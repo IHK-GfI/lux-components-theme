@@ -22,6 +22,12 @@ h1, h2, h3, h4, h5, h6 {
 .mat-menu-item .mat-icon-no-color {
   color: luxpalette.$lux-primary-color;
 }
+lux-menu {
+  .lux-menu-extended lux-button.lux-menu-item .lux-button-label {
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+}
 
 // Optionen werden im Cdk-Overlay dargestellt und hängen nicht unter der Component selbst.
 // eigentlich nur für select-panel nötig
@@ -559,18 +565,30 @@ lux-button button.lux-button {
       }
     }
   }
-  &.mat-button.mat-button-disabled,
+  
   &.mat-raised-button.mat-button-disabled, 
   &.mat-flat-button.mat-button-disabled,
   &.mat-fab.mat-button-disabled {
     color: luxcommon.$dark-disabled-text;
     background-color: luxcommon.$dark-disabled-text !important;
   }
+  &.mat-button.mat-button-disabled {
+    color: luxcommon.$dark-disabled-text;
+  }
 
   //Mat-Fab soll in Authentic flat sein
   &.mat-fab,
   &.mat-fab:not(.mat-button-disabled):active {
     @include luxelevations.lux-elevation-z0;
+  }
+}
+
+/*
+*Theming für Lux-menu
+*/
+.lux-menu-trigger-default {
+  button.mat-button {
+    color: map.get(luxpalette.$lux-palette_primary, 500);
   }
 }
 
