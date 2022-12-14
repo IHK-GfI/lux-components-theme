@@ -10,7 +10,7 @@
  */
  lux-select-ac {
   mat-select {
-    font-family: global.$app-font-family;
+    font-family: luxcommon.$app-font-family;
     height: calc( 1.5em - 1px) !important;
     // bisher noch nicht klar, warum das mat-select einen Pixel an Höhe mehr beansprucht, als es tatsächlich Hoch ist
     // daher wird hier die Höhe korrigiert, damit die Baseline eingehalten ist
@@ -43,7 +43,7 @@
 */
 lux-checkbox-ac {
   label {
-    font-family: global.$app-font-family;
+    font-family: luxcommon.$app-font-family;
     font-size: luxcommon.$form-control-font-size;
     color: luxcommon.$dark-primary-text;
     cursor: pointer;
@@ -107,7 +107,7 @@ lux-toggle-ac {
   .mat-slide-toggle {
     label {
       color: luxcommon.$dark-primary-text;
-      font-family: global.$app-font-family;
+      font-family: luxcommon.$app-font-family;
     }
 
     .mat-slide-toggle-thumb {
@@ -150,7 +150,7 @@ lux-radio-ac {
   }
   .mat-radio-label {
     color: luxcommon.$dark-primary-text;
-    font-family: global.$app-font-family;
+    font-family: luxcommon.$app-font-family;
   }
 
   .mat-radio-checked {

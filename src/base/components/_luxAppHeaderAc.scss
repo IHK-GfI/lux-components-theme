@@ -59,6 +59,22 @@ lux-app-header-ac {
         }
       }
     }
+
+    &.lux-menu-trigger-default {
+      button.mat-button.lux-button {
+        &:hover {
+          background-color: map.get(luxpalette.$lux-palette-primary, 300) !important;
+          color: #ffffff !important;
+        }
+        &:focus-visible:not(:hover) {
+          color: map.get(luxpalette.$lux-palette-primary, 700)!important;
+          background-color: transparent !important;
+        }
+        &:active {
+          color: map.get(luxpalette.$lux-palette-primary, 700)!important;
+        }
+      }
+    }
   }
   
   .lux-app-header-top-bar {
@@ -96,7 +112,7 @@ lux-app-header-ac {
       padding: 4px;
       font-size: 20px;
       font-weight: 700;
-      font-family: luxcommon.$app-headline-font, global.$app-font-family;
+      font-family: luxcommon.$app-headline-font, luxcommon.$app-font-family;
 
       &.lux-mobile {
         font-size: 16px;
@@ -108,7 +124,7 @@ lux-app-header-ac {
       lux-button.lux-menu-item {
         button.lux-button .lux-button-label {
           font-size: 16px !important;
-          letter-spacing: 0.15;
+          letter-spacing: 0px;
         }
 
         &.nav-item-selected  button.lux-button .lux-button-label {

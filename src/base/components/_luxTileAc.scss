@@ -37,7 +37,7 @@ lux-tile-ac {
     .lux-tile-header-titel-ac {
       mat-card-title {
         color: luxcommon.$dark-primary-text;
-        font-family: luxcommon.$app-headline-font, global.$app-font-family;
+        font-family: luxcommon.$app-headline-font, luxcommon.$app-font-family;
         font-size: 20px;
         margin-bottom: 8px;
       }

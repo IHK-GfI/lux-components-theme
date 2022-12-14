@@ -14,15 +14,15 @@ $dark-green: #2E8533;
 
 body {
   color: #003366;
-  font-family: global.$app-font-family;
+  font-family: luxcommon.$app-font-family;
 }
 
-p, div {
-  font-family: global.$app-font-family;
+p, div, span {
+  font-family: luxcommon.$app-font-family;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Korb, global.$app-font-family;
+  font-family: Korb, luxcommon.$app-font-family;
 }
 
 lux-card .mat-card {
@@ -225,6 +225,7 @@ lux-app-header {
 lux-button button.lux-button {
 
   font-weight: normal !important;
+  font-family: luxcommon.$app-font-family;
   align-items: center;
   
   &.mat-button, &.mat-raised-button,  &.mat-flat-button,  &.mat-stroked-button  {

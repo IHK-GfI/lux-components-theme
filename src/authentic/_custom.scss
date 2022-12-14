@@ -12,31 +12,41 @@ $light-gray: #EFF3F6; //für die Table
 h1, h2, h3, h4, h5, h6 {
   color: rgba(black, 0.87);
   font-weight: normal;
+  font-family: luxcommon.$app-headline-font, luxcommon.$app-font-family;
+}
+
+div, span, p, label {
+  font-family: luxcommon.$app-font-family;
 }
 
 // Stylings für lux-menu-items im cdk-overlay-panel
-.lux-menu-item {
-  color: luxpalette.$lux-primary-color;
-}
+.mat-menu-panel{
+  border: 2px solid luxpalette.$lux-primary-color;
+  box-shadow: none !important;
+  
+  .lux-menu-item {
+    color: luxpalette.$lux-primary-color;
+  }
 
-.mat-menu-item .mat-icon-no-color {
-  color: luxpalette.$lux-primary-color;
+  .mat-menu-item .mat-icon-no-color {
+    color: luxpalette.$lux-primary-color;
+  }
 }
 lux-menu {
   .lux-menu-extended lux-button.lux-menu-item .lux-button-label {
     font-weight: 400;
     letter-spacing: 1px;
+    font-family: luxcommon.$app-font-family;
   }
 }
 
 // Optionen werden im Cdk-Overlay dargestellt und hängen nicht unter der Component selbst.
 // eigentlich nur für select-panel nötig
-.lux-autocomplete-panel-ac, .lux-select-panel-ac {
+.lux-autocomplete-panel-ac, .lux-select-panel-ac, .lux-select-panel-ac-multiple {
   .mat-option {
-    font-family: global.$app-font-family;
     &.invalid {
-      border-radius: 4px;
-      box-shadow: 0 0 0 2px luxpalette.$lux-warn-color inset;
+      color: luxpalette.$lux-warn-color;
+      font-weight: 300;
     }
   }
 }
@@ -72,7 +82,7 @@ lux-tabs {
  * Theming for LUX-Table
  */
 lux-table {
-  
+  font-family: luxcommon.$app-font-family;
   .lux-table {
     th, .lux-table-header-no-data th {
       vertical-align: middle;
@@ -133,6 +143,17 @@ lux-table {
   }
 }
 
+lux-filter-form {
+  lux-menu {
+    .lux-filter-menu-trigger button:not([disabled]).mat-fab.lux-button-rounded:hover {
+      background-color: luxcommon.$lux-hover-color !important;
+    }
+    .lux-filter-menu-trigger button:not([disabled]).mat-fab.lux-button-rounded:focus-visible {
+      background-color: transparent !important;
+    }
+  }
+}
+
 /**
 * Theming für LUX-Card
 */
@@ -189,7 +210,7 @@ lux-accordion {
   mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded:focus {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    font-family: luxcommon.$app-headline-font, global.$app-font-family;
+    font-family: luxcommon.$app-headline-font, luxcommon.$app-font-family;
     font-weight: 500;
 
     &[aria-disabled=false] {
@@ -213,7 +234,7 @@ lux-accordion {
   }
   
   &.mat-badge .mat-badge-content {
-    font-family: luxcommon.$app-headline-font, global.$app-font-family;
+    font-family: luxcommon.$app-headline-font, luxcommon.$app-font-family;
     border: 1px solid #fff;
   }
 
@@ -238,7 +259,7 @@ lux-accordion {
 .lux-dialog {
   .lux-dialog-title.mat-dialog-title {
     color: luxcommon.$dark-primary-text;
-    font-family: luxcommon.$app-headline-font, global.$app-font-family;
+    font-family: luxcommon.$app-headline-font, luxcommon.$app-font-family;
   }
   .mat-dialog-container {
     @include luxelevations.lux-elevation-z24;
@@ -360,12 +381,10 @@ lux-message-box {
  * Theming for LUX-Button
  */
 lux-button button.lux-button {
-  .lux-button-label{
-    font-family: global.$app-font-family;
-    font-weight: 600;
-    font-size: luxcommon.$button-font-size;
-    letter-spacing: 1.25px;
-  } 
+  //font-family: luxcommon.$app-font-family;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1.25px;
   //Theming für den Text-Button
   &.mat-button:not(.mat-button-disabled) {
     &:hover {
@@ -768,7 +787,7 @@ lux-stepper-large {
 //Stepper-Large Mobile-View
 .lux-stepper-large-mobile-nav-header {
   div {
-    font-family: luxcommon.$app-headline-font, global.$app-font-family;
+    font-family: luxcommon.$app-headline-font, luxcommon.$app-font-family;
   }
 }
 .lux-stepper-large-mobile-nav-item {
