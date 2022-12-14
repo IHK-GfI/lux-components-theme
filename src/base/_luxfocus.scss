@@ -462,21 +462,73 @@ lux-table {
   }
 }
 
-.lux-select-panel-ac {
+/** ########## Select-AC ########## **/
+@mixin lux-option-highlight-mixin {
+  background-color: map-get(luxpalette.$lux-palette_primary, 300);
+  color: #ffffff;
+  .mat-pseudo-checkbox {
+    color: #ffffff;
+  }
+  .mat-pseudo-checkbox-checked {
+    background-color: #ffffff;
+  } 
+  .mat-pseudo-checkbox-checked::after {
+    border-color: map.get(luxpalette.$lux-palette_primary, 500) !important;
+  } 
+}
+
+.lux-select-panel-ac, .lux-select-panel-ac-multiple {
   mat-option {
     &.mat-selected.mat-option:not(.mat-option-disabled) {
-      @include lux-selected-mixin-ac;
+      color: map-get(luxpalette.$lux-palette_primary, 500);
+      background-color: #ffffff;
+      font-weight: 600;
+
+      &:hover {
+        @include lux-option-highlight-mixin;
+        &::after {
+          background-color: #fff;
+        }
+      }
+
+      &.mat-active:not(.cdk-mouse-focused) {
+        @include focus-dark-mixin-inline;
+        @include lux-option-highlight-mixin;
+        &::after {
+          background-color: #fff;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        right: 0;
+        margin: 0 10px 0 4px;
+        background-color: luxpalette.$lux-primary-color;
+        -webkit-mask: url('/assets/svg/lux-icons/Icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: cover;
+        mask: url('/assets/svg/lux-icons/Icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: cover;
+      }
     }
 
-    // Der Focus bei mat-option wird über die Klasse .mat-active gesteuert 
-    // bisher noch keine Lösung um den mouse-focus auszuschalten
+    // Der Focus bei mat-option wird über die Klasse .mat-active gesteuert
     &.mat-active:not(.cdk-mouse-focused) {
       @include focus-dark-mixin-inline;
-      border-radius: 4px;
+      @include lux-option-highlight-mixin;
     }
 
     &:hover:not(.invalid, .mat-option-disabled) {
-      @include lux-hovered-mixin;
+      @include lux-option-highlight-mixin;
+      .mat-pseudo-checkbox {
+        color: #ffffff;
+      }
     }
   }
 }
