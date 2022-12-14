@@ -45,10 +45,7 @@ lux-app-header-ac {
           color: map.get(luxpalette.$lux-palette_primary, 700) !important;
         }
         @include luxfocus.focus-dark-mixin;
-
-      }
-      
-  
+      }  
     }
 
     &.menu-opened {
@@ -137,4 +134,54 @@ lux-app-header-ac {
       }
     }
   }
+}
+.cdk-overlay-pane {
+  button.lux-menu-item {
+    margin: 0px;
+    font-size: luxcommon.$app-font-family;
+
+    &.lux-selected-item-ac {
+      font-weight: 600;
+      &::after {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        right: 0;
+        margin: 0 10px 0 4px;
+        background-color: luxpalette.$lux-primary-color;
+        -webkit-mask: url('/assets/svg/lux-icons/Icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: cover;
+        mask: url('/assets/svg/lux-icons/Icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: cover;
+      }
+    }
+
+    &:not([disabled=true]):hover {
+      background-color: map-get(luxpalette.$lux-palette_primary, 300) !important;
+      color: #ffffff;
+      &::after {
+        background-color: #ffffff;
+      }
+    }
+    
+    &:not([disabled=true]):focus-visible {
+      background-color: map-get(luxpalette.$lux-palette_primary, 300);
+      color: #ffffff;
+
+      @include luxfocus.focus-dark-mixin-inline;
+      &::after {
+        width: 16px;
+        background-color: #ffffff;
+      }
+    }
+    &.cdk-focused, &.cdk-program-focused, &.mat-focus-indicator {
+      background-color: transparent !important;
+    }
+  }
+  
 }

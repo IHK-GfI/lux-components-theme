@@ -69,12 +69,48 @@ lux-app-content {
 //Tabs außerhalb einer LUX-Card (z.B. Master-Detail)
 lux-tabs {
   div.lux-tab-title {
-    font-size: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: luxpalette.$lux-primary-color;
   }
+
   .mat-tab-label:not(.mat-tab-disabled) {
     &:hover:not(.mat-tab-disabled) {
       background-color: luxcommon.$app-data-bg !important;
     }
+  }
+}
+
+lux-tabs, mat-card lux-tabs {
+
+  .mat-tab-label:not(.mat-tab-disabled) {
+    font-size: 14px;
+    font-weight: 600;
+    color: luxpalette.$lux-primary-color;
+    min-height: unset !important;
+
+    &:focus-visible {
+      @include luxfocus.focus-dark-mixin-inline;
+      border-radius: 4px;
+      background-color: luxcommon.$lux-hover-color !important;
+      color: #fff !important;
+      .lux-tab-title {
+        color: #fff !important;
+      }
+    }
+    
+    &:hover:not(.mat-tab-disabled) {
+      background-color: luxcommon.$lux-hover-color;
+      color: #fff !important;
+      .lux-tab-title {
+        color: #fff !important;
+      }
+    } 
+  }
+  
+  lux-icon.lux-tab-icon mat-icon.lux-lx-icon {
+    width: 24px !important;
+    height: 24px !important;
   }
 }
 
@@ -217,7 +253,7 @@ lux-accordion {
       background-color: map.get(luxpalette.$lux-palette-primary, 50);
       color: luxcommon.$dark-primary-text;
       &:hover {
-        background-color: map.get(luxpalette.$lux-palette-primary, 100) !important;
+        background-color: luxcommon.$lux-hover-color !important;
       }
     }
   }
@@ -323,8 +359,19 @@ example-root {
     .example-component-list-item {
 
       &.example-component-list-item-selected {
-        @include luxfocus.lux-selected-mixin-ac;
+        font-weight: 600;
+        color: luxpalette.$lux-primary-color;
+        border: none;
+        background-color: #fff !important;
+        &::after {
+          display: none;
+        }
       }
+      &:hover {
+        color: #fff;
+        border-radius: 0;
+      }
+
     }
   }
 }
