@@ -55,6 +55,7 @@ lux-form-control-wrapper {
       &.lux-no-input-row {
         // lux-toggel-ac, lux-checkbox-ac, lux-slider-ac, lux-radio-ac werden auf der Baseline ausgerichtet
         // haben aber nicht den Rahmen, den die Input-Elemente haben
+        background-color: transparent;
         border: none;
         padding: 0.75em 0em;
       }

@@ -37,9 +37,14 @@ lux-link-plain {
     }
 
     &:hover:not(.lux-disabled) {
-      @include luxfocus.lux-hovered-mixin;
+      color: luxcommon.$lux-hover-color;
       text-decoration: underline;
       cursor: pointer;
+      lux-icon {
+        i, mat-icon {
+          color: luxcommon.$lux-hover-color;
+        }
+      }
     }
     
     &:focus:not(.lux-disabled, :hover) {

@@ -17,9 +17,6 @@ lux-app-header-ac {
       @include luxfocus.focus-dark-mixin;
       border-radius: 4px;
     }
-    &:hover {
-      @include luxfocus.lux-hovered-mixin;
-    }
   }
 
   lux-button {
@@ -164,6 +161,9 @@ lux-app-header-ac {
     &:not([disabled=true]):hover {
       background-color: map-get(luxpalette.$lux-palette_primary, 300) !important;
       color: #ffffff;
+      .mat-icon-no-color {
+        color: #ffffff;
+      }
       &::after {
         background-color: #ffffff;
       }
@@ -172,15 +172,14 @@ lux-app-header-ac {
     &:not([disabled=true]):focus-visible {
       background-color: map-get(luxpalette.$lux-palette_primary, 300);
       color: #ffffff;
-
+      .mat-icon-no-color {
+        color: #ffffff;
+      }
       @include luxfocus.focus-dark-mixin-inline;
       &::after {
         width: 16px;
         background-color: #ffffff;
       }
-    }
-    &.cdk-focused, &.cdk-program-focused, &.mat-focus-indicator {
-      background-color: transparent !important;
     }
   }
   

@@ -55,7 +55,7 @@ $outline-bright: luxcommon.$outline-width luxcommon.$outline-style luxcommon.$ou
   background: luxcommon.$app-gradient;
   background-color: #fff;
   border: 1px solid map.get(luxpalette.$lux-palette-primary, 500);
-  box-shadow: 0 0 0 2px var(--lux-theme-primary-500) inset;
+  box-shadow: 0 0 0 1px var(--lux-theme-primary-500) inset;
   position: relative;
   border-radius: 4px;
   &:after {
@@ -175,7 +175,7 @@ lux-side-nav {
 /** ########## Card ########## **/
 lux-card mat-card {
   &[class~=lux-cursor]:focus-visible {
-    @include focus-dark-mixin;
+    @include focus-dark-mixin-inline;
   }
 
   &[class~=lux-cursor]:hover {
@@ -196,10 +196,6 @@ lux-list {
   lux-list-item {
     &:focus-visible {
       outline: none;
-
-      mat-card {
-        @include focus-dark-mixin-inline;
-      }
     }
 
     lux-card {
@@ -291,7 +287,7 @@ lux-form-control {
    }
 }
 /** ########## Datepicker ########## **/
-lux-datepicker, lux-datepicker-ac {
+lux-datepicker {
   mat-datepicker-toggle {
     button:focus-visible {
       @include focus-dark-mixin;
@@ -301,6 +297,25 @@ lux-datepicker, lux-datepicker-ac {
     button:hover { 
       @include lux-hovered-mixin();
       border-radius: 4px;
+    }
+    .mat-button-focus-overlay {
+      display: none;
+    }
+  }
+}
+lux-datepicker-ac, lux-datetimepicker-ac {
+  mat-datepicker-toggle {
+    button:focus-visible {
+      @include focus-dark-mixin;
+      border-radius: 4px;
+    }
+
+    button:hover {
+      background-color: #fff;
+      border-radius: 4px;
+      lux-icon.lux-datepicker-toggle-icon.lux-color-blue {
+        color: luxcommon.$lux-hover-color;
+      }
     }
     .mat-button-focus-overlay {
       display: none;
@@ -342,7 +357,7 @@ lux-datepicker, lux-datepicker-ac {
 }
 
 /** ########## Datetimepicker ########## **/
-lux-datetimepicker, lux-datetimepicker-ac {
+lux-datetimepicker {
   mat-datepicker-toggle {
     button:focus-visible {
       @include focus-dark-mixin;
@@ -473,15 +488,16 @@ lux-table {
   } 
 }
 
-.lux-select-panel-ac, .lux-select-panel-ac-multiple {
+.lux-select-panel-ac, .lux-select-panel-ac-multiple, .lux-autocomplete-panel-ac {
   mat-option {
-    &.mat-selected.mat-option:not(.mat-option-disabled) {
+    &.mat-selected.mat-option:not(.mat-option-disabled):not(:hover):not(.mat-active) {
       color: map-get(luxpalette.$lux-palette_primary, 500);
       background-color: #ffffff;
       font-weight: 600;
 
       &:hover {
         @include lux-option-highlight-mixin;
+        border-radius: 0px !important;
         &::after {
           background-color: #fff;
         }
@@ -494,6 +510,27 @@ lux-table {
           background-color: #fff;
         }
       }
+    }
+
+    // Der Focus bei mat-option wird über die Klasse .mat-active gesteuert
+    &.mat-active:not(.cdk-mouse-focused) {
+      @include focus-dark-mixin-inline;
+      @include lux-option-highlight-mixin;
+    }
+
+    &:hover:not(.invalid, .mat-option-disabled) {
+      @include lux-option-highlight-mixin;
+      border-radius: 0px !important;
+      .mat-pseudo-checkbox {
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.lux-select-panel-ac {
+  mat-option {
+    &.mat-selected.mat-option:not(.mat-option-disabled) {
 
       &::after {
         content: '';
@@ -511,19 +548,6 @@ lux-table {
         mask-repeat: no-repeat;
         mask-position: center;
         mask-size: cover;
-      }
-    }
-
-    // Der Focus bei mat-option wird über die Klasse .mat-active gesteuert
-    &.mat-active:not(.cdk-mouse-focused) {
-      @include focus-dark-mixin-inline;
-      @include lux-option-highlight-mixin;
-    }
-
-    &:hover:not(.invalid, .mat-option-disabled) {
-      @include lux-option-highlight-mixin;
-      .mat-pseudo-checkbox {
-        color: #ffffff;
       }
     }
   }
@@ -725,7 +749,6 @@ lux-panel {
       @include focus-dark-mixin-inline;
     }
     
-
     &:hover {
       @include lux-hovered-mixin;
     }
