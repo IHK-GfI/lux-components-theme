@@ -57,8 +57,9 @@ lux-tile-ac {
       @include luxfocus.focus-dark-mixin;
     }
     &[class~=lux-cursor]:hover {
-      background-color: luxcommon.$lux-hover-color;
-      background-image: unset;
+      background-image: luxcommon.$app-gradient-reverse;
+      background-color: #fff;
+      border-color: luxpalette.$lux-primary-color;
     }
   }
 }

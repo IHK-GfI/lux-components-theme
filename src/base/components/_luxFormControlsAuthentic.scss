@@ -50,7 +50,7 @@
 // Checkbox wird im Cdk-Overlay dargestellt und hängt nicht unter der Component selbst.
 .lux-select-panel-ac .mat-pseudo-checkbox-checked,
 .lux-select-panel-ac-multiple .mat-pseudo-checkbox-checked {
-  background-color: map.get(luxpalette.$lux-palette_primary, 500);
+  background-color: luxpalette.$lux-primary-color;
 }
 .cdk-overlay-pane {
   .mat-option {
@@ -62,12 +62,12 @@
     min-width: calc(100% + 15px) !important;
     max-width: calc(100% + 15px) !important;
     margin: 34px 6px;
-    border: 2px solid map.get(luxpalette.$lux-palette_primary, 500);
+    border: 2px solid luxpalette.$lux-primary-color;
     border-radius: 4px;
     box-shadow: none !important;
-
+    
     .mat-pseudo-checkbox {
-      color: map-get(luxpalette.$lux-palette_primary, 500);
+      color: luxpalette.$lux-primary-color;
     }
   }
   .mat-select-panel.lux-select-panel-ac-multiple {
@@ -77,13 +77,9 @@
     min-width: calc(100% + 14px) !important;
     max-width: calc(100% + 14px) !important;
     margin: 13px -9px;
-    border: 2px solid map.get(luxpalette.$lux-palette_primary, 500);
+    border: 2px solid luxpalette.$lux-primary-color;
     border-radius: 4px;
     box-shadow: none !important;
-
-    .mat-pseudo-checkbox {
-      color: map-get(luxpalette.$lux-palette_primary, 500);
-    }
   }
 }
 
@@ -103,10 +99,7 @@ lux-checkbox-ac {
       white-space: normal;
     }
   }
-  .mat-checkbox-disabled label {
-    color: luxcommon.$dark-disabled-text;
-  }
-  
+
   .mat-checkbox-ripple {
     display: none;
   }
@@ -118,8 +111,19 @@ lux-checkbox-ac {
     //bei mehrzeiligen Labels wird die Checkbox oben und nicht zentriert angezeigt 
     //dieses wird von material über das Margin gelöst und nicht über align-items o.ä.
     //da wir die Größe der Box geändert haben mussten wir das Margin ebenfalls anpassen
+    .mat-checkbox-frame {
+      border-color: luxpalette.$lux-primary-color;
+    }
   }
 
+  & .mat-checkbox-disabled {
+    label {
+      color: luxcommon.$dark-disabled-text;
+    }
+    .mat-checkbox-inner-container .mat-checkbox-frame {
+      border-color: luxcommon.$dark-disabled-text;
+    }
+  }
 }
 
 lux-datepicker-ac, lux-datetimepicker-ac {
