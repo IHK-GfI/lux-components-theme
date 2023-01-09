@@ -9,6 +9,16 @@
  * Theming for LUX-Select
  */
  lux-select-ac {
+  
+  & .lux-panel-opened {
+    //duch das Verschieben des Panels, verdeckt ein Teil der Overlay-Pane das Selectfeld 
+    // dieses ist damit als Trigger zum Schließen des Panels nicht mehr erreichbar
+    // daher wird temporär der z-index erhöht
+    .lux-form-control-container-authentic {
+      z-index: 10000;
+    }
+  }
+  
   mat-select {
     font-family: luxcommon.$app-font-family;
     height: calc( 1.5em - 1px) !important;
@@ -59,9 +69,9 @@
   .mat-autocomplete-panel.lux-autocomplete-panel-ac,
   .mat-select-panel.lux-select-panel-ac,
   .mat-select-panel.lux-select-panel-ac-multiple {
-    min-width: calc(100% + 15px) !important;
-    max-width: calc(100% + 15px) !important;
-    margin: 34px 6px;
+    min-width: calc(100% + 14px) !important;
+    max-width: calc(100% + 14px) !important;
+    margin: 34px 7px;
     border: 2px solid luxpalette.$lux-primary-color;
     border-radius: 4px;
     box-shadow: none !important;

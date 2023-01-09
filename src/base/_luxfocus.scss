@@ -492,46 +492,6 @@ lux-table {
   } 
 }
 
-.lux-select-panel-ac, .lux-select-panel-ac-multiple, .lux-autocomplete-panel-ac {
-  mat-option {
-    &.mat-selected.mat-option:not(.mat-option-disabled):not(:hover):not(.mat-active) {
-      color: map-get(luxpalette.$lux-palette_primary, 500);
-      background-color: #ffffff;
-      font-weight: 600;
-
-      &:hover {
-        @include lux-option-highlight-mixin;
-        border-radius: 0px !important;
-        &::after {
-          background-color: #fff;
-        }
-      }
-
-      &.mat-active:not(.cdk-mouse-focused) {
-        @include focus-dark-mixin-inline;
-        @include lux-option-highlight-mixin;
-        &::after {
-          background-color: #fff;
-        }
-      }
-    }
-
-    // Der Focus bei mat-option wird über die Klasse .mat-active gesteuert
-    &.mat-active:not(.cdk-mouse-focused) {
-      @include focus-dark-mixin-inline;
-      @include lux-option-highlight-mixin;
-    }
-
-    &:hover:not(.invalid, .mat-option-disabled) {
-      @include lux-option-highlight-mixin;
-      border-radius: 0px !important;
-      .mat-pseudo-checkbox {
-        color: #ffffff;
-      }
-    }
-  }
-}
-
 .lux-select-panel-ac {
   mat-option {
     &.mat-selected.mat-option:not(.mat-option-disabled) {
@@ -552,6 +512,37 @@ lux-table {
         mask-repeat: no-repeat;
         mask-position: center;
         mask-size: cover;
+      }
+    }
+  }
+}
+
+.lux-select-panel-ac, .lux-select-panel-ac-multiple, .lux-autocomplete-panel-ac {
+  &.mat-select-panel mat-option,
+  &.mat-autocomplete-panel mat-option {
+    &.mat-selected.mat-option:not(.mat-option-disabled):not(:hover):not(.mat-active) {
+      color: map-get(luxpalette.$lux-palette_primary, 500);
+      background-color: #ffffff;
+      font-weight: 600;
+    }
+
+    // Der Focus bei mat-option wird über die Klasse .mat-active gesteuert
+    &.mat-option.mat-active:not(.cdk-mouse-focused) {
+      @include focus-dark-mixin-inline;
+      @include lux-option-highlight-mixin;
+      &::after {
+        background-color: #fff;
+      }
+    }
+
+    &:hover:not(.invalid, .mat-option-disabled) {
+      @include lux-option-highlight-mixin;
+      border-radius: 0px !important;
+      .mat-pseudo-checkbox {
+        color: #ffffff;
+      }
+      &::after {
+        background-color: #fff;
       }
     }
   }
