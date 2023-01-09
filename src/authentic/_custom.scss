@@ -56,6 +56,9 @@ lux-menu {
     &.invalid {
       color: luxpalette.$lux-warn-color;
       font-weight: 300;
+      .mat-pseudo-checkbox {
+        color: luxcommon.$dark-disabled-text;
+      }
     }
   }
 }

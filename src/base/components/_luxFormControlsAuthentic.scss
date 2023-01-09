@@ -83,6 +83,7 @@
   .mat-select-panel.lux-select-panel-ac-multiple {
     margin: 34px 31px;
   }
+
   .mat-autocomplete-panel.lux-autocomplete-panel-ac {
     min-width: calc(100% + 14px) !important;
     max-width: calc(100% + 14px) !important;
@@ -90,6 +91,17 @@
     border: 2px solid luxpalette.$lux-primary-color;
     border-radius: 4px;
     box-shadow: none !important;
+  }
+}
+
+lux-lookup-combobox-ac {
+  & .lux-panel-opened {
+    //duch das Verschieben des Panels, verdeckt ein Teil der Overlay-Pane das Selectfeld 
+    // dieses ist damit als Trigger zum Schließen des Panels nicht mehr erreichbar
+    // daher wird temporär der z-index erhöht
+    .lux-form-control-container-authentic {
+      z-index: 10000;
+    }
   }
 }
 
