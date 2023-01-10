@@ -490,15 +490,15 @@ lux-table {
 
 .lux-select-panel-ac {
   mat-option {
-    &.mat-selected.mat-option:not(.mat-option-disabled) {
-
+    &.mat-selected.mat-option:not(.mat-option-disabled) .mat-option-text {
+      position: relative;
       &::after {
         content: '';
         position: absolute;
-        width: 16px;
-        height: 16px;
-        right: 0;
-        margin: 0 10px 0 4px;
+        width: 18px;
+        height: 18px;
+        top: 14px;
+        margin: 0 6px;
         background-color: luxpalette.$lux-primary-color;
         -webkit-mask: url('/assets/icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
         -webkit-mask-repeat: no-repeat;
@@ -513,7 +513,7 @@ lux-table {
   }
 }
 
-.lux-select-panel-ac, .lux-select-panel-ac-multiple, .lux-autocomplete-panel-ac {
+.lux-select-panel-ac, .lux-select-panel-ac-multiple, .lux-autocomplete-panel-ac, .lux-chips-ac-autocomplete-panel {
   &.mat-select-panel mat-option,
   &.mat-autocomplete-panel mat-option {
     &.mat-selected.mat-option:not(.mat-option-disabled):not(:hover):not(.mat-active) {
@@ -526,7 +526,7 @@ lux-table {
     &.mat-option.mat-active:not(.cdk-mouse-focused) {
       @include focus-dark-mixin-inline;
       @include lux-option-highlight-mixin;
-      &::after {
+      & .mat-option-text::after {
         background-color: #fff;
       }
     }
@@ -537,7 +537,7 @@ lux-table {
       .mat-pseudo-checkbox {
         color: #ffffff;
       }
-      &::after {
+      & .mat-option-text::after {
         background-color: #fff;
       }
     }

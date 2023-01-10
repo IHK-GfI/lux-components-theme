@@ -8,7 +8,7 @@
 /*
  * Theming for LUX-Select
  */
- lux-select-ac {
+ lux-select-ac, lux-lookup-combobox-ac {
   
   & .lux-panel-opened {
     //duch das Verschieben des Panels, verdeckt ein Teil der Overlay-Pane das Selectfeld 
@@ -94,17 +94,6 @@
   }
 }
 
-lux-lookup-combobox-ac {
-  & .lux-panel-opened {
-    //duch das Verschieben des Panels, verdeckt ein Teil der Overlay-Pane das Selectfeld 
-    // dieses ist damit als Trigger zum Schließen des Panels nicht mehr erreichbar
-    // daher wird temporär der z-index erhöht
-    .lux-form-control-container-authentic {
-      z-index: 10000;
-    }
-  }
-}
-
 /*
 * Theming für Lux-Checkbox
 */
@@ -173,7 +162,17 @@ lux-datepicker-ac, lux-datetimepicker-ac {
     }
   }
 }
+.cdk-overlay-pane .mat-datepicker-content,
+.lux-datetimepicker-overlay .mat-card.lux-card {
+  border: 2px solid luxpalette.$lux-primary-color;
+  box-shadow: none !important;
+  margin: 13px -9px;
 
+  & .mat-calendar-header button:hover {
+    background-color: #fff !important;
+    color: map-get(luxpalette.$lux-palette_primary, 300);
+  }
+}
 
 /*
 * Theming für lux-Toggle
@@ -328,11 +327,14 @@ textarea {
     }
   }
 } 
-.lux-chips-ac-autocomplete-panel {
-  margin-top: -20px;
+.lux-chips-ac-autocomplete-panel.mat-autocomplete-panel {
+  margin-top: -21px;
   margin-left: 0;
   margin-right: 0;
   border-radius: 4px;
+
+  box-shadow: none !important;
+  border: 2px solid luxpalette.$lux-primary-color;
 }
 
 /*
