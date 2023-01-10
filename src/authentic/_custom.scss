@@ -252,6 +252,32 @@ lux-accordion {
     color: map.get(luxpalette.$lux-palette-primary, 500);
   }
 
+  .mat-expansion-panel-header .mat-expansion-indicator {
+    position: relative;
+    transform-origin: center;
+    width: 16px;
+    height: 16px;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      margin: 0px;
+      padding: 0px;
+      border: none;
+      transform: rotate(0deg);
+      background-color: luxpalette.$lux-primary-color;
+      -webkit-mask: url('/assets/icons/Interface-Essentials/Arrows/interface-arrows-button-down--arrow-down-keyboard.svg');
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      -webkit-mask-size: cover;
+      mask: url('/assets/icons/Interface-Essentials/Arrows/interface-arrows-button-down--arrow-down-keyboard.svg');
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: cover;
+    }
+  }
+
   mat-expansion-panel-header.mat-expansion-panel-header, 
   mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded,
   mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded:focus {
@@ -313,6 +339,21 @@ lux-accordion {
     border:1px solid luxcommon.$dark-disabled-text;
   }
 }
+lux-dialog-structure {
+  // x-Button oben rechts im Dialog-Fenster
+  .lux-icon-close { 
+    &:hover {
+      background-color: #fff !important;      
+      mat-icon.mat-icon-no-color {
+        color: luxcommon.$lux-hover-color;
+      }
+    }
+    &:focus-visible {
+      @include luxfocus.focus-dark-mixin;
+      border-radius: 4px;
+    }
+  }
+}
 
 /*
  * Theming for LUX-List
@@ -369,13 +410,37 @@ example-root {
 
     mat-expansion-panel-header {
       font-weight: 600;
-      .mat-expansion-indicator::after {
-        color: luxpalette.$lux-primary-color;
+      .mat-expansion-indicator {
+        position: relative;
+        transform-origin: center;
+        width: 16px;
+        height: 16px;
+        &::after {
+          content: '';
+          position: absolute;
+          width: 16px;
+          height: 16px;
+          margin: 0px;
+          padding: 0px;
+          border: none;
+          transform: rotate(0deg);
+          background-color: luxpalette.$lux-primary-color;
+          -webkit-mask: url('/assets/icons/Interface-Essentials/Arrows/interface-arrows-button-down--arrow-down-keyboard.svg');
+          -webkit-mask-repeat: no-repeat;
+          -webkit-mask-position: center;
+          -webkit-mask-size: cover;
+          mask: url('/assets/icons/Interface-Essentials/Arrows/interface-arrows-button-down--arrow-down-keyboard.svg');
+          mask-repeat: no-repeat;
+          mask-position: center;
+          mask-size: cover;
+        }
       }
+      
       &:hover {
         background-color: #fff !important;
       }
     }
+
     .example-component-list-item {
 
       &.example-component-list-item-selected {
