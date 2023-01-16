@@ -33,8 +33,9 @@ lux-app-header-ac {
       }
 
       &:hover:not([disabled]).mat-fab:hover.mat-primary {
-        lux-icon { color: #ffffff !important; }
-        
+        lux-icon { 
+          color: #ffffff !important; 
+        }
       }
       &:focus-visible:not([disabled]).mat-fab.mat-primary.cdk-focused.cdk-keyboard-focused {
         background-color: transparent !important;
