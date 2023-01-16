@@ -89,7 +89,7 @@ lux-app-content {
 
 lux-tabs, mat-card lux-tabs {
 
-  .mat-tab-label:not(.mat-tab-disabled) {
+  .mat-tab-label-container .mat-tab-label:not(.mat-tab-disabled) {
     font-size: 14px;
     font-weight: 600;
     color: luxpalette.$lux-primary-color;
@@ -98,18 +98,18 @@ lux-tabs, mat-card lux-tabs {
     &:focus-visible {
       @include luxfocus.focus-dark-mixin-inline;
       border-radius: 4px;
-      background-color: luxcommon.$lux-hover-color !important;
-      color: #fff !important;
+      background-color: transparent !important;
+      color: luxcommon.$lux-hover-color !important;
       .lux-tab-title {
-        color: #fff !important;
+        color: luxcommon.$lux-hover-color !important;
       }
     }
     
     &:hover:not(.mat-tab-disabled) {
-      background-color: luxcommon.$lux-hover-color;
-      color: #fff !important;
+      background-color: transparent;
+      color: luxcommon.$lux-hover-color !important;
       .lux-tab-title {
-        color: #fff !important;
+        color: luxcommon.$lux-hover-color !important;
       }
     } 
   }

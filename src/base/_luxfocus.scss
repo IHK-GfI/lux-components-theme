@@ -660,7 +660,8 @@ lux-tabs {
     
   
     &:hover:not(.mat-tab-disabled) {
-      @include lux-hovered-mixin;
+      background-color: luxcommon.$lux-hover-color;
+      border-radius: 4px;
     } 
   }
 
@@ -682,7 +683,8 @@ mat-card lux-tabs {
     }
 
     &:hover:not(.mat-tab-disabled) {
-      @include lux-hovered-mixin;
+      background-color: luxcommon.$lux-hover-color;
+      border-radius: 4px;
     }
   }
 
