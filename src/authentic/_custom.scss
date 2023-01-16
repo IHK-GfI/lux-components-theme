@@ -186,11 +186,9 @@ lux-table {
 }
 
 lux-table {
-
   tr:hover {
     > td,
     > th {
-      // Wir nutzen hier die hover-Farbe ohne Alpha-Wert, da bei Sticky-Columns sonst unschöne Überlagerungen entstehen können
       background-color: unset !important;
       border-radius: 0;
     }
@@ -200,10 +198,16 @@ lux-table {
 lux-filter-form {
   lux-menu {
     .lux-filter-menu-trigger button:not([disabled]).mat-fab.lux-button-rounded:hover {
-      background-color: luxcommon.$lux-hover-color !important;
+      background-color: #fff !important;
+      color: luxcommon.$lux-hover-color;
     }
-    .lux-filter-menu-trigger button:not([disabled]).mat-fab.lux-button-rounded:focus-visible {
+    .lux-filter-menu-trigger button:not([disabled]).mat-fab.lux-button-rounded:focus-visible {  
+      @include luxfocus.focus-dark-mixin-inline;
+      background-color: #fff !important; 
+    }
+    .lux-filter-menu-trigger button:not([disabled]).mat-fab.lux-button-rounded:active {
       background-color: transparent !important;
+      color: map-get(luxpalette.$lux-palette_primary, 700);
     }
   }
 }
@@ -401,8 +405,8 @@ lux-list {
         @include luxfocus.lux-selectable-mixin;
 
         &:hover {
-          background-image: luxcommon.$app-gradient-reverse;
-          background-color: #fff;
+          border: 1px solid luxcommon.$lux-hover-color;
+          background-color: #fff !important;
         }
       }
     }

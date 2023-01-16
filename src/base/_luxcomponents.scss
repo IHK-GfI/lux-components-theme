@@ -1149,7 +1149,7 @@ lux-filter-form {
       background-color: transparent;
       color: map.get(luxpalette.$lux-palette_primary, 500);
       padding: 0px !important;
-      //margin: 0px !important;
+      margin: 0px 4px !important;
 
       @include luxelevations.lux-elevation-z0;
     }
