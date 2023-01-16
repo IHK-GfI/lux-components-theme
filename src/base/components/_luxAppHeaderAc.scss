@@ -135,16 +135,16 @@ lux-app-header-ac {
 .cdk-overlay-pane {
   button.lux-menu-item {
     margin: 0px;
-    font-size: luxcommon.$app-font-family;
 
     &.lux-selected-item-ac {
       font-weight: 600;
-      &::after {
+      & .lux-button-label::after {
         content: '';
         position: absolute;
-        width: 16px;
-        height: 16px;
+        width: 20px;
+        height: 20px;
         right: 0;
+        top: 14px;
         margin: 0 10px 0 4px;
         background-color: luxpalette.$lux-primary-color;
         -webkit-mask: url('/assets/icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
