@@ -40,6 +40,13 @@ div, span, p, label {
   .mat-menu-content:not(:empty){
     padding: 0;
   }
+  
+  .lux-menu-item:not([disabled=true]):hover {
+    @include lux-hovered-mixin-ac;
+    & .mat-icon-no-color {
+      color: #fff;
+    }
+  }
 }
 lux-menu {
   .lux-menu-extended lux-button.lux-menu-item .lux-button-label {
