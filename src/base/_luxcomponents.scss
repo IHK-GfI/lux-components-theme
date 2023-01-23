@@ -1431,7 +1431,7 @@ lux-stepper-large {
   flex-direction: column;
   flex: 0 1 30%;
   gap: 12px;
-  padding: 12px;
+  padding: 12px 33px 12px 12px;
 
   overflow-y: auto;
   min-width: 400px;
@@ -1470,6 +1470,25 @@ lux-stepper-large {
 
       a {
         color: #2E8533;
+        position: relative;
+      }
+
+      a::after {
+        content: '';
+        position: absolute;
+        display: inline-block;
+        width: 23px;
+        height: 23px;
+        margin: 5px 10px 0px;
+        background-color: #2E8533;
+        -webkit-mask: url('/assets/icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: cover;
+        mask: url('/assets/icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: cover;
       }
     }
 
@@ -1707,5 +1726,11 @@ lux-stepper-large {
       color: luxcommon.$lux-stepper-large-completed-fc;
       font-size: 18px;
     }
+  }
+
+  &.lux-stepper-large-nav-item.lux-touched:not(.lux-disabled).lux-completed:not(.lux-active) a::after{
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
   }
 }
