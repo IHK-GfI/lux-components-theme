@@ -9,6 +9,7 @@
 @use "luxpalette";
 @use "../public/global";
 @use "luxelevations";
+@use "../base/luxSvgIcons" as luxicons;
 
 
 /*
@@ -1501,11 +1502,11 @@ lux-stepper-large {
         height: 23px;
         margin: 5px 10px 0px;
         background-color: #2E8533;
-        -webkit-mask: url('/assets/icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
+        -webkit-mask: url(luxicons.$checkmark);
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-position: center;
         -webkit-mask-size: cover;
-        mask: url('/assets/icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
+        mask: url(luxicons.$checkmark);
         mask-repeat: no-repeat;
         mask-position: center;
         mask-size: cover;
