@@ -5,6 +5,7 @@
 @use "../public/global";
 @use "luxcommon";
 @use "luxpalette";
+@use "../base/luxSvgIcons" as luxicons;
 
 
 $light-gray: #EFF3F6; //für die Table
@@ -278,11 +279,11 @@ lux-accordion {
       border: none;
       transform: rotate(0deg);
       background-color: luxpalette.$lux-primary-color;
-      -webkit-mask: url('/assets/icons/Interface-Essentials/Arrows/interface-arrows-button-down--arrow-down-keyboard.svg');
+      -webkit-mask: url(luxicons.$arrow-button-down);
       -webkit-mask-repeat: no-repeat;
       -webkit-mask-position: center;
       -webkit-mask-size: cover;
-      mask: url('/assets/icons/Interface-Essentials/Arrows/interface-arrows-button-down--arrow-down-keyboard.svg');
+      mask: url(luxicons.$arrow-button-down);
       mask-repeat: no-repeat;
       mask-position: center;
       mask-size: cover;
@@ -436,11 +437,11 @@ example-root {
           border: none;
           transform: rotate(0deg);
           background-color: luxpalette.$lux-primary-color;
-          -webkit-mask: url('/assets/icons/Interface-Essentials/Arrows/interface-arrows-button-down--arrow-down-keyboard.svg');
+          -webkit-mask: url(luxicons.$arrow-button-down);
           -webkit-mask-repeat: no-repeat;
           -webkit-mask-position: center;
           -webkit-mask-size: cover;
-          mask: url('/assets/icons/Interface-Essentials/Arrows/interface-arrows-button-down--arrow-down-keyboard.svg');
+          mask: url(luxicons.$arrow-button-down);
           mask-repeat: no-repeat;
           mask-position: center;
           mask-size: cover;
@@ -470,11 +471,11 @@ example-root {
           bottom: auto;
           margin: 2px 5px;
           background-color: luxpalette.$lux-primary-color;
-          -webkit-mask: url('/assets/icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
+          -webkit-mask: url(luxicons.$checkmark);
           -webkit-mask-repeat: no-repeat;
           -webkit-mask-position: center;
           -webkit-mask-size: cover;
-          mask: url('/assets/icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
+          mask: url(luxicons.$checkmark);
           mask-repeat: no-repeat;
           mask-position: center;
           mask-size: cover;

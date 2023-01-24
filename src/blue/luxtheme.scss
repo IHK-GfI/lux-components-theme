@@ -92,7 +92,7 @@
     // Farben für einen dunklen Hintergrund (z.B. Snackbar).
     $colorsForDarkBg: themeCommon.$colorsForDarkBg
 );
-
+@use "../base/luxSvgIcons";
 @use "../base/luxelevations";
 @use "../base/luxcomponents";
 @use "../base/luxfocus";
