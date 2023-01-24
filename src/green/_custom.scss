@@ -7,21 +7,28 @@
 @use "luxpalette";
 
 $button-font-size: 22px;
-$light-green: #E4F1E4;
-$light-gray: #EFF3F6;
-$light-blue: #E3EBF5;
-$dark-green: #2E8533;
+$light-green: #e4f1e4;
+$light-gray: #eff3f6;
+$light-blue: #e3ebf5;
+$dark-green: #2e8533;
 
 body {
   color: #003366;
   font-family: luxcommon.$app-font-family;
 }
 
-p, div, span {
+p,
+div,
+span {
   font-family: luxcommon.$app-font-family;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: Korb, luxcommon.$app-font-family;
 }
 
@@ -30,7 +37,9 @@ lux-card .mat-card {
 }
 
 lux-panel {
-  & .mat-expansion-panel, .mat-expansion-panel-header-title, .mat-expansion-panel-header-description {
+  & .mat-expansion-panel,
+  .mat-expansion-panel-header-title,
+  .mat-expansion-panel-header-description {
     color: #003366;
   }
 }
@@ -72,7 +81,6 @@ lux-app-header {
     div.lux-header-action {
       lux-button {
         button {
-
           &:not(.mat-accent):not(.mat-warn):not(.mat-primary):not(.mat-button-disabled) {
             color: map.get(luxpalette.$lux-palette-primary, 500);
           }
@@ -110,7 +118,8 @@ lux-app-header {
     }
   }
 
-  .lux-side-nav-header, .lux-side-nav-footer {
+  .lux-side-nav-header,
+  .lux-side-nav-footer {
     color: map.get(luxpalette.$lux-palette_primary, A400);
   }
 
@@ -121,7 +130,9 @@ lux-app-header {
   }
 
   .lux-side-nav .lux-side-nav-content {
-    lux-button, .lux-menu-item, .lux-action-nav-menu lux-button {
+    lux-button,
+    .lux-menu-item,
+    .lux-action-nav-menu lux-button {
       color: map.get(luxpalette.$lux-palette_primary, 500);
     }
   }
@@ -208,12 +219,13 @@ lux-app-header {
     &:hover {
       @include lux-hovered-mixin-green;
 
-      & lux-icon, .lux-header-username {
+      & lux-icon,
+      .lux-header-username {
         color: #003366 !important;
       }
     }
   }
-  
+
   .lux-menu-trigger-default .mat-button-wrapper {
     display: block;
   }
@@ -223,12 +235,14 @@ lux-app-header {
  * Theming for LUX-Button
  */
 lux-button button.lux-button {
-
   font-weight: normal !important;
   font-family: luxcommon.$app-font-family;
   align-items: center;
-  
-  &.mat-button, &.mat-raised-button,  &.mat-flat-button,  &.mat-stroked-button  {
+
+  &.mat-button,
+  &.mat-raised-button,
+  &.mat-flat-button,
+  &.mat-stroked-button {
     border-radius: 18px;
     height: luxcommon.$button-height;
     font-size: $button-font-size;
@@ -242,8 +256,8 @@ lux-button button.lux-button {
     color: luxcommon.$dark-disabled-text;
   }
 
-  &.mat-raised-button.mat-accent:not(.mat-button-disabled), 
-  &.mat-flat-button.mat-accent:not(.mat-button-disabled), 
+  &.mat-raised-button.mat-accent:not(.mat-button-disabled),
+  &.mat-flat-button.mat-accent:not(.mat-button-disabled),
   &.mat-fab.mat-accent:not(.mat-button-disabled) {
     color: map.get(luxpalette.$lux-palette-primary, 500);
   }
@@ -253,8 +267,6 @@ lux-button button.lux-button {
     height: luxcommon.$button-height;
 
     & lux-icon:not(.lux-button-icon-round) {
-      line-height: 0.5;
-      
       i.lux-fa-icon {
         font-size: 1em !important;
       }
@@ -267,7 +279,6 @@ lux-button button.lux-button {
     }
     mat-icon.mat-icon.lux-lx-icon:not(.lux-fa-icon, .lux-material-icon),
     mat-icon.mat-icon.lux-lx-icon-no-size:not(.lux-fa-icon, .lux-material-icon) {
-      line-height: 0.5;
       height: 22px;
       width: 22px;
     }
@@ -322,7 +333,6 @@ lux-button button.lux-button {
  * Theming for LUX-Tile
  */
 lux-tile {
-
   .lux-notification-new {
     background-color: #56bd66;
   }
@@ -344,13 +354,11 @@ lux-tile {
 }
 
 lux-tile {
-
   .lux-highlight:hover {
-    color: #56BD66;
+    color: #56bd66;
   }
 
-  mat-card[class~=lux-cursor] {
-
+  mat-card[class~="lux-cursor"] {
     &:focus {
       @include luxfocus.focus-dark-mixin;
     }
@@ -367,16 +375,13 @@ lux-tile {
   }
 }
 
-
 /* 
  * Theming for LUX-badge-notification
  */
 .lux-badge-notification {
-
   &.mat-badge:not(.mat-badge-disabled).mat-badge-accent .mat-badge-content {
     background-color: map.get(luxpalette.$lux-palette_accent, 500);
   }
-  
 }
 
 /*
@@ -386,7 +391,10 @@ $form-control-label-padding-bottom: 4px;
 $form-control-border-radius: 4px;
 $form-control-old-border-bottom: 0px;
 
-lux-checkbox, lux-toggle, lux-radio, lux-slider {
+lux-checkbox,
+lux-toggle,
+lux-radio,
+lux-slider {
   & .lux-form-control {
     .lux-form-control-label {
       padding-bottom: $form-control-label-padding-bottom;
@@ -397,7 +405,8 @@ lux-checkbox, lux-toggle, lux-radio, lux-slider {
     }
   }
 
-  .lux-form-control:not(.lux-form-control-disabled), .lux-form-control:not(.lux-form-control-disabled).lux-focused {
+  .lux-form-control:not(.lux-form-control-disabled),
+  .lux-form-control:not(.lux-form-control-disabled).lux-focused {
     .lux-form-control-label {
       > * {
         color: luxcommon.$dark-secondary-text;
@@ -410,7 +419,16 @@ lux-checkbox, lux-toggle, lux-radio, lux-slider {
   color: luxcommon.$dark-secondary-text;
 }
 
-lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datepicker, lux-datetimepicker, lux-chips, lux-lookup-autocomplete, lux-lookup-combobox {
+lux-input,
+lux-select,
+lux-file-input,
+lux-textarea,
+lux-autocomplete,
+lux-datepicker,
+lux-datetimepicker,
+lux-chips,
+lux-lookup-autocomplete,
+lux-lookup-combobox {
   & .lux-form-control {
     .lux-form-control-label {
       padding-bottom: $form-control-label-padding-bottom;
@@ -426,7 +444,9 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
       }
     }
 
-    .lux-label, mat-hint, mat-error {
+    .lux-label,
+    mat-hint,
+    mat-error {
       color: luxcommon.$dark-secondary-text;
     }
   }
@@ -441,7 +461,7 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
     .lux-form-control-container {
       border-color: luxcommon.$lux-selected-border-color !important;
       box-shadow: 0 0 0 2px luxpalette.$lux-warn-color, 0 0 4px 2px luxpalette.$lux-warn-color;
-      
+
       &:after {
         border-bottom: $form-control-old-border-bottom;
       }
@@ -512,12 +532,16 @@ lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datep
   }
 }
 
-lux-file-input, lux-file-input-ac {
+lux-file-input,
+lux-file-input-ac {
   lux-button.lux-menu-item,
-  lux-button.lux-menu-trigger-default { 
+  lux-button.lux-menu-trigger-default {
     button lux-icon {
       display: inline;
-    } 
+      mat-icon {
+        vertical-align: unset;
+      }
+    }
   }
 }
 
@@ -525,7 +549,16 @@ lux-file-input, lux-file-input-ac {
  * Theming für LUX-Layout-Form-Row
  */
 lux-layout-form-row {
-  lux-input, lux-select, lux-file-input, lux-textarea, lux-autocomplete, lux-datepicker, lux-datetimepicker, lux-chips, lux-lookup-autocomplete, lux-lookup-combobox {
+  lux-input,
+  lux-select,
+  lux-file-input,
+  lux-textarea,
+  lux-autocomplete,
+  lux-datepicker,
+  lux-datetimepicker,
+  lux-chips,
+  lux-lookup-autocomplete,
+  lux-lookup-combobox {
     & .lux-form-control {
       margin-right: 0px;
       margin-left: 0px;
@@ -537,8 +570,7 @@ lux-layout-form-row {
  * Theming für LUX-Checkbox
  */
 lux-checkbox {
-
-  .mat-checkbox-disabled .mat-checkbox-inner-container{
+  .mat-checkbox-disabled .mat-checkbox-inner-container {
     border: 1px solid luxcommon.$dark-disabled-text;
   }
 
@@ -563,7 +595,6 @@ lux-checkbox {
  * Theming für LUX-Table
  */
 lux-table {
-
   table.mat-table.cdk-table.mat-sort.lux-multiselect-table {
     border-spacing: 0px 0px !important;
   }
@@ -571,11 +602,11 @@ lux-table {
   .mat-header-row:not(.lux-table-header-no-data) {
     background-color: $light-green;
   }
-  .mat-row:nth-child(even){
+  .mat-row:nth-child(even) {
     background-color: $light-gray;
   }
-  .mat-row:nth-child(odd){
-    background-color:#ffffff;
+  .mat-row:nth-child(odd) {
+    background-color: #ffffff;
   }
   .lux-multiselect-td,
   .lux-multiselect-tf:not(.lux-ignore-multiselect-tf) {
@@ -610,15 +641,14 @@ mat-card lux-tabs {
  * Theming für LUX-Radio-Buttons
  */
 lux-radio {
-
-  .mat-radio-outer-circle{
+  .mat-radio-outer-circle {
     border: 1.5px solid map.get(luxpalette.$lux-palette_primary, 500);
   }
 
-  .mat-radio-inner-circle{
+  .mat-radio-inner-circle {
     // Checkmark-Symbol mit css gezeichnet, anstatt des inneren Kreises
-    border-radius:2px;
-    background-color: transparent!important;
+    border-radius: 2px;
+    background-color: transparent !important;
     border-bottom: 5px solid white;
     border-right: 5px solid white;
     height: 32px;
@@ -664,13 +694,13 @@ lux-radio {
     }
   }
 
-  .mat-radio-checked .mat-radio-inner-circle{
+  .mat-radio-checked .mat-radio-inner-circle {
     transform: rotate(45deg) scale(0.4);
   }
 
-  .mat-radio-button .mat-radio-ripple{
+  .mat-radio-button .mat-radio-ripple {
     height: 20px; /*double of your required circle radius*/
-    width: 20px;  /*double of your required circle radius*/
+    width: 20px; /*double of your required circle radius*/
     left: calc(50% - 10px); /*'10px'-same as your required circle radius*/
     top: calc(50% - 10px); /*'10px'-same as your required circle radius */
   }
@@ -682,31 +712,29 @@ lux-radio {
 @mixin datepicker-content {
   .mat-calendar-content {
     padding: 0px 10px 10px 10px;
-    
+
     th {
       font-size: 18px;
       color: map.get(luxpalette.$lux-palette_primary, 500);
     }
 
     td.mat-calendar-body-cell-container {
-
       &:after {
         background-color: white;
       }
 
       &:hover > div {
         border-radius: 2px;
-        background-color:map.get(luxpalette.$lux-palette_accent, 300) !important;
+        background-color: map.get(luxpalette.$lux-palette_accent, 300) !important;
         color: map.get(luxpalette.$lux-palette_primary, 500);
       }
 
       .mat-calendar-body-cell-content.mat-focus-indicator {
-       
         border-radius: 2px;
         font-size: 18px;
         background-color: $light-blue;
         color: map.get(luxpalette.$lux-palette_primary, 500);
-       
+
         &.mat-calendar-body-selected {
           background-color: map.get(luxpalette.$lux-palette_primary, 500);
           color: $light-blue;
@@ -719,8 +747,9 @@ lux-radio {
       visibility: hidden;
     }
 
-    .mat-calendar-body-label:last-of-type, th.mat-calendar-table-header-divider {
-        display: none;
+    .mat-calendar-body-label:last-of-type,
+    th.mat-calendar-table-header-divider {
+      display: none;
     }
   }
 }
@@ -734,7 +763,8 @@ lux-radio {
   justify-content: space-between;
   padding: 10px 10px 18px 10px;
 
-  button, .mat-icon-button {
+  button,
+  .mat-icon-button {
     font-size: 18px;
     color: map.get(luxpalette.$lux-palette_primary, 500);
 
@@ -756,22 +786,18 @@ lux-radio {
 * Theming für Lux-Datepicker 
 */
 .lux-datepicker-panel {
-
-  .mat-calendar.mat-datepicker-content  {
+  .mat-calendar.mat-datepicker-content {
     min-height: 350px;
   }
   @include datepicker-content();
 }
 
-
-
 /*
 * Theming für Lux-Datetime-Picker 
 */
 .lux-datetime-overlay-content {
-  
   .mat-calendar.lux-datetime-overlay-calendar {
-    min-height: 340px ;
+    min-height: 340px;
   }
   @include datepicker-content();
 }
@@ -779,7 +805,7 @@ lux-radio {
 /*
  * Theming for LUX-Filter-Form
  */
- lux-filter-form lux-accordion { 
+lux-filter-form lux-accordion {
   lux-menu {
     .lux-menu-trigger button.mat-button {
       height: 45px;
@@ -793,8 +819,7 @@ lux-radio {
 /*
  * Theming for LUX-Master-Detail-ac
  */
- .lux-master-detail-ac {
-
+.lux-master-detail-ac {
   .lux-master-header-container-ac lux-button.master-light-toggle {
     right: -23px;
   }
@@ -817,6 +842,257 @@ lux-radio {
   lux-master-footer-ac {
     margin-bottom: 4px;
     border: none;
-    @include luxelevations.lux-elevation-z2
+    @include luxelevations.lux-elevation-z2;
   }
- }
+}
+
+/**
+* Theming für Lux-Formcontrols-AC
+*/
+lux-form-control-wrapper .lux-form-control-wrapper {
+  margin: 2px 0px;
+
+  .lux-form-control-label-authentic {
+    margin: 0 0 4px 0;
+    font-size: luxcommon.$form-control-font-size-small;
+    height: 15px;
+  }
+
+  .lux-form-control-misc-authentic {
+    margin: 4px 0 0 0;
+    min-height: 17px;
+    font-size: luxcommon.$form-control-font-size-small;
+    mat-hint {
+      color: luxpalette.$lux-primary-color;
+    }
+  }
+
+  .lux-form-control-container-authentic {
+    padding: 10px 5px;
+    line-height: 1;
+    border-color: luxcommon.$form-border-color;
+
+    .lux-input-row-authentic {
+      min-height: unset;
+      height: 18px;
+      color: luxpalette.$lux-primary-color;
+    }
+
+    &.lux-no-input-row {
+      font-size: luxcommon.$form-control-font-size;
+      font-family: luxcommon.$app-font-family;
+      padding: 8px 0;
+      height: 40px;
+    }
+  }
+
+  // Definitionen der einzelnen States der Form-Controls
+  &:hover:not(.lux-form-control-disabled-authentic):not(.lux-focused-authentic):not(.lux-form-control-error-authentic) {
+    .lux-form-control-container-authentic:not(.lux-no-input-row) {
+      box-shadow: none;
+    }
+  }
+  &.lux-focused-authentic {
+    .lux-form-control-label-authentic > * {
+      color: luxpalette.$lux-primary-color;
+    }
+    .lux-form-control-container-authentic:not(.lux-no-input-row) {
+      border-color: luxcommon.$lux-selected-border-color;
+      box-shadow: 0 0 0 2px luxcommon.$lux-selected-border-color, 0 0 4px 2px luxcommon.$lux-selected-border-color;
+    }
+  }
+
+  &.lux-form-control-error-authentic:not(.lux-form-control-disabled-authentic) {
+    .lux-form-control-label-authentic > * {
+      color: map.get(luxpalette.$lux-palette_warn, 500);
+    }
+    .lux-form-control-container-authentic:not(.lux-no-input-row) {
+      border-color: luxpalette.$lux-warn-color;
+      box-shadow: 0 0 0 2px luxpalette.$lux-warn-color, 0 0 4px 2px luxpalette.$lux-warn-color;
+    }
+  }
+
+  &.lux-form-control-disabled-authentic {
+    .lux-form-control-container-authentic,
+    .lux-form-control-label-authentic,
+    .lux-form-control-misc-authentic > * {
+      color: luxcommon.$dark-disabled-text;
+    }
+
+    .lux-form-control-container-authentic:not(.lux-no-input-row) {
+      border-style: dashed;
+      border-color: luxcommon.$dark-disabled-text;
+      .mat-input-element::placeholder {
+        color: luxcommon.$dark-disabled-text;
+      }
+    }
+  }
+
+  &.lux-form-control-readonly-authentic,
+  &.lux-form-control-disabled-authentic {
+    pointer-events: none;
+  }
+}
+
+/*
+* Theming für LUX-Checkbox-ac
+*/
+lux-checkbox-ac {
+  .mat-checkbox-inner-container {
+    .mat-checkbox-frame {
+      border-radius: 4px;
+      border: 1px solid map.get(luxpalette.$lux-palette_primary, 500);
+    }
+
+    .mat-checkbox-background,
+    .mat-checkbox-checkmark {
+      border-radius: 4px;
+    }
+  }
+}
+
+/*
+* Theming für LUX-Radio-ac
+*/
+lux-radio-ac {
+  & lux-form-control-wrapper .lux-form-control-wrapper .lux-form-control-container-authentic.lux-no-input-row {
+    padding: 10px 0;
+    height: auto;
+  }
+
+  .mat-radio-outer-circle {
+    border: 1.5px solid map.get(luxpalette.$lux-palette_primary, 500);
+  }
+
+  .mat-radio-inner-circle {
+    // Checkmark-Symbol mit css gezeichnet, anstatt des inneren Kreises
+    border-radius: 2px;
+    background-color: transparent !important;
+    border-bottom: 5px solid white;
+    border-right: 5px solid white;
+    height: 32px;
+    width: 14px;
+    margin-top: -8px;
+    margin-left: 3px;
+  }
+
+  .mat-radio-checked {
+    .mat-radio-outer-circle {
+      background: map.get(luxpalette.$lux-palette_primary, 500);
+    }
+
+    &.mat-radio-disabled .mat-radio-outer-circle {
+      background: luxcommon.$dark-disabled-text;
+      border: none;
+    }
+  }
+
+  .mat-radio-checked .mat-radio-inner-circle {
+    transform: rotate(45deg) scale(0.4);
+  }
+
+  .mat-radio-button {
+    .mat-radio-label-content {
+      line-height: normal;
+    }
+    .mat-radio-ripple {
+      height: 20px; /*double of your required circle radius*/
+      width: 20px; /*double of your required circle radius*/
+      left: calc(50% - 10px); /*'10px'-same as your required circle radius*/
+      top: calc(50% - 10px); /*'10px'-same as your required circle radius */
+    }
+  }
+}
+
+/*
+* Theming für LUX-datepicker-ac und LUX-datetimepicker-ac
+*/
+lux-datepicker-ac,
+lux-datetimepicker-ac {
+  mat-datepicker-toggle {
+    height: 18px !important;
+    width: 18px !important;
+
+    .mat-icon-button {
+      height: 18px !important;
+      width: 18px !important;
+      line-height: 1.5;
+      font-size: inherit;
+
+      lux-icon.lux-datepicker-toggle-icon,
+      mat-icon.mat-icon {
+        height: 18px !important;
+        width: 18px !important;
+        padding: 0px !important;
+      }
+
+      &.mat-button-disabled {
+        svg {
+          color: luxcommon.$dark-disabled-text;
+        }
+      }
+    }
+
+    button:hover lux-icon.lux-datepicker-toggle-icon.lux-color-blue {
+      color: map-get(luxpalette.$lux-palette_primary, 300);
+    }
+  }
+}
+
+.cdk-overlay-pane .mat-datepicker-content,
+.lux-datetimepicker-overlay .mat-card.lux-card {
+  margin: 11px -6px;
+}
+
+/*
+* Theming für LUX-select-ac und LUX-lookup-combobox-ac
+*/
+lux-select-ac,
+lux-lookup-combobox-ac {
+  mat-select {
+    height: 18px !important;
+  }
+  .mat-select-value {
+    line-height: normal;
+  }
+}
+
+/*
+* Theming für LUX-file-input und LUX-file-input-ac
+*/
+lux-file-input,
+lux-file-input-ac {
+  .lux-menu-extended {
+    gap: 4px;
+    lux-button button.lux-button lux-icon.lux-button-icon:not(.lux-button-icon-round).lux-lx-icon {
+      height: 14px;
+      width: 14px;
+      font-size: 14px;
+    }
+  }
+}
+
+/*
+* Theming für LUX-file-list
+*/
+lux-file-list {
+  .lux-menu-extended {
+    gap: 4px;
+    .lux-menu-item,
+    .lux-menu-trigger {
+      lux-icon mat-icon.lux-lx-icon-no-size {
+        font-size: 16px !important;
+      }
+    }
+  }
+}
+
+/*
+* Theming für LUX-textarea-ac
+*/
+lux-textarea-ac {
+  textarea {
+    min-height: 18px;
+    line-height: normal;
+  }
+}
