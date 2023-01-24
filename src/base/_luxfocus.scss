@@ -41,7 +41,7 @@ $outline-bright: luxcommon.$outline-width luxcommon.$outline-style luxcommon.$ou
   border-radius: 4px;
 
   &:after {
-    content: '';
+    content: "";
     left: 0;
     width: 6px;
     top: 0;
@@ -61,7 +61,7 @@ $outline-bright: luxcommon.$outline-width luxcommon.$outline-style luxcommon.$ou
   border-radius: 4px;
   &:after {
     width: 0px;
-    border:none;
+    border: none;
   }
 }
 
@@ -69,7 +69,7 @@ $outline-bright: luxcommon.$outline-width luxcommon.$outline-style luxcommon.$ou
   position: relative;
 
   &:after {
-    content: '';
+    content: "";
     left: 0;
     top: 0;
     bottom: 0;
@@ -145,7 +145,8 @@ lux-app-header {
     &:hover {
       @include lux-hovered-mixin;
 
-      & lux-icon, .lux-header-username {
+      & lux-icon,
+      .lux-header-username {
         color: luxcommon.$lux-hover-color-for-dark-background !important;
       }
     }
@@ -175,11 +176,11 @@ lux-side-nav {
 
 /** ########## Card ########## **/
 lux-card mat-card {
-  &[class~=lux-cursor]:focus-visible {
+  &[class~="lux-cursor"]:focus-visible {
     @include focus-dark-mixin-inline;
   }
 
-  &[class~=lux-cursor]:hover {
+  &[class~="lux-cursor"]:hover {
     @include lux-hovered-mixin;
   }
 }
@@ -230,11 +231,13 @@ lux-filter-form {
 }
 
 /** ########## Chips ########## **/
-lux-chips, lux-chips-ac {
+lux-chips,
+lux-chips-ac {
   & .mat-standard-chip:focus-visible {
     @include focus-dark-mixin;
   }
-  .mat-chip.mat-standard-chip:after { //mat-overlay für focus deaktivieren
+  .mat-chip.mat-standard-chip:after {
+    //mat-overlay für focus deaktivieren
     background-color: unset;
   }
 }
@@ -256,7 +259,7 @@ lux-form-control {
     }
 
     .lux-form-control-container:after {
-      content: '';
+      content: "";
       display: block;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
@@ -267,7 +270,7 @@ lux-form-control {
       height: 2px;
       border-bottom: 2px solid luxcommon.$lux-selected-border-color;
     }
-     
+
     &.lux-form-control-error {
       .lux-form-control-container:after {
         border-bottom: 2px solid luxpalette.$lux-warn-color;
@@ -278,13 +281,13 @@ lux-form-control {
 
 .lux-form-control-wrapper {
   &.lux-focused-authentic .cdk-keyboard-focused {
-    .mat-radio-container,  
+    .mat-radio-container,
     .mat-checkbox-inner-container,
     .mat-slide-toggle-thumb {
       position: relative;
       @include focus-dark-mixin;
     }
-   }
+  }
 }
 
 lux-icon.lux-error-icon:focus-visible {
@@ -299,7 +302,7 @@ lux-datepicker {
       border-radius: 4px;
     }
 
-    button:hover { 
+    button:hover {
       @include lux-hovered-mixin();
       border-radius: 4px;
     }
@@ -308,16 +311,16 @@ lux-datepicker {
     }
   }
 }
-lux-datepicker-ac, lux-datetimepicker-ac {
+lux-datepicker-ac,
+lux-datetimepicker-ac {
   mat-datepicker-toggle {
     button:focus-visible {
       @include focus-dark-mixin;
-      border-radius: 4px;
+      outline-offset: 2px;
+      border-radius: 2px;
     }
 
     button:hover {
-      background-color: #fff;
-      border-radius: 4px;
       lux-icon.lux-datepicker-toggle-icon.lux-color-blue {
         color: luxcommon.$lux-hover-color;
       }
@@ -369,7 +372,7 @@ lux-datetimepicker {
       border-radius: 4px;
     }
 
-    button:hover { 
+    button:hover {
       @include lux-hovered-mixin();
       border-radius: 4px;
     }
@@ -415,7 +418,7 @@ lux-datetimepicker {
 /** ########## Lux-Dialog ########## **/
 lux-dialog-structure {
   // x-Button oben rechts im Dialog-Fenster
-  .lux-icon-close { 
+  .lux-icon-close {
     &:hover {
       @include lux-hovered-mixin;
       cursor: pointer;
@@ -428,7 +431,6 @@ lux-dialog-structure {
 }
 /** ########## Table ########## **/
 lux-table {
-
   tr:hover {
     > td,
     > th {
@@ -439,7 +441,8 @@ lux-table {
     }
   }
 
-  tr:focus-visible, td:focus-visible {
+  tr:focus-visible,
+  td:focus-visible {
     @include focus-dark-mixin-inline;
   }
 
@@ -465,7 +468,7 @@ lux-table {
       @include lux-selected-mixin;
     }
 
-    // Der Focus bei mat-option wird über die Klasse .mat-active gesteuert 
+    // Der Focus bei mat-option wird über die Klasse .mat-active gesteuert
     // bisher noch keine Lösung um den mouse-focus auszuschalten
     &.mat-active:not(.cdk-mouse-focused) {
       @include focus-dark-mixin-inline;
@@ -487,10 +490,10 @@ lux-table {
   }
   .mat-pseudo-checkbox-checked {
     background-color: #ffffff;
-  } 
+  }
   .mat-pseudo-checkbox-checked::after {
     border-color: map.get(luxpalette.$lux-palette_primary, 500) !important;
-  } 
+  }
 }
 
 .lux-select-panel-ac {
@@ -498,7 +501,7 @@ lux-table {
     &.mat-selected.mat-option:not(.mat-option-disabled) .mat-option-text {
       position: relative;
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         width: 18px;
         height: 18px;
@@ -518,7 +521,10 @@ lux-table {
   }
 }
 
-.lux-select-panel-ac, .lux-select-panel-ac-multiple, .lux-autocomplete-panel-ac, .lux-chips-ac-autocomplete-panel {
+.lux-select-panel-ac,
+.lux-select-panel-ac-multiple,
+.lux-autocomplete-panel-ac,
+.lux-chips-ac-autocomplete-panel {
   &.mat-select-panel mat-option,
   &.mat-autocomplete-panel mat-option {
     &.mat-selected.mat-option:not(.mat-option-disabled):not(:hover):not(.mat-active) {
@@ -555,12 +561,13 @@ lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-i
     .mat-button-focus-overlay {
       display: none;
     }
-    
-    &:focus-visible{
+
+    &:focus-visible {
       @include focus-dark-mixin;
     }
 
-    &:not(.mat-fab):not(.mat-raised-button):not(.mat-flat-button), &.mat-stroked-button {
+    &:not(.mat-fab):not(.mat-raised-button):not(.mat-flat-button),
+    &.mat-stroked-button {
       &:hover {
         background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%);
 
@@ -617,9 +624,9 @@ lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-i
 
 /** ########## Autocomplete ########## **/
 // Class, welche das aufgeklappte Panel referenziert
-.lux-autocomplete-panel, .lux-chips-autocomplete-panel, .lux-autocomplete-panel-ac {
+.lux-autocomplete-panel,
+.lux-chips-autocomplete-panel {
   mat-option {
-
     &:focus-visible {
       @include focus-dark-mixin-inline;
       border-radius: 4px;
@@ -654,16 +661,15 @@ lux-tabs {
   }
 
   .mat-tab-label:not(.mat-tab-disabled) {
-     &:focus-visible{
+    &:focus-visible {
       @include focus-dark-mixin-inline;
       border-radius: 4px;
     }
-    
-  
+
     &:hover:not(.mat-tab-disabled) {
       background-color: luxcommon.$lux-hover-color;
       border-radius: 4px;
-    } 
+    }
   }
 
   mat-ink-bar.mat-ink-bar {
@@ -678,7 +684,7 @@ mat-card lux-tabs {
   }
 
   .mat-tab-label:not(.mat-tab-disabled) {
-     &:focus-visible {
+    &:focus-visible {
       @include focus-dark-mixin-inline;
       border-radius: 4px;
     }
@@ -716,7 +722,6 @@ lux-stepper {
     @include lux-selected-bottom-mixin;
     background-color: transparent;
   }
-
 }
 
 /** ########## Html ########## **/
@@ -741,12 +746,12 @@ lux-tile {
 
 /** ########## Panel ########## **/
 lux-panel {
-  mat-expansion-panel-header:not([aria-disabled='true']) {
+  mat-expansion-panel-header:not([aria-disabled="true"]) {
     &:focus-visible {
       //background-color: white !important;
       @include focus-dark-mixin-inline;
     }
-    
+
     &:hover {
       @include lux-hovered-mixin;
     }
@@ -810,7 +815,7 @@ lux-file-preview-toolbar lux-button button.lux-icon-button {
         border-radius: 0;
         &:after {
           width: 0px;
-          border:none;
+          border: none;
         }
       }
 
@@ -825,7 +830,6 @@ lux-file-preview-toolbar lux-button button.lux-icon-button {
 /** ########## Example-Root ########## **/
 example-root {
   .example-base-components-list {
-
     mat-expansion-panel-header,
     .example-component-list-item {
       @include lux-selectable-mixin;
@@ -847,9 +851,7 @@ example-root {
 
 /** ########## Message-Box ########## **/
 lux-message-box {
-
   & div.lux-message-box-content {
-
     &:focus-visible {
       @include focus-dark-mixin;
     }
@@ -890,7 +892,6 @@ lux-message-box {
 /** ########## Stepper large ########## **/
 lux-stepper-large {
   .lux-stepper-large-nav-item {
-
     // Links allgemein
     a {
       &:focus-visible {
@@ -920,21 +921,21 @@ lux-stepper-large {
         .lux-stepper-large-nav-item-label-container {
           a.lux-stepper-large-nav-item-label-link {
             &:hover {
-              color: #2E8533;
+              color: #2e8533;
             }
           }
         }
       }
 
-        &.lux-completed {
-          .lux-stepper-large-nav-item-label-container {
-            a.lux-stepper-large-nav-item-label-link {
-              &:hover {
-                color: #56BD66;
-              }
+      &.lux-completed {
+        .lux-stepper-large-nav-item-label-container {
+          a.lux-stepper-large-nav-item-label-link {
+            &:hover {
+              color: #56bd66;
             }
           }
         }
+      }
     }
   }
 }

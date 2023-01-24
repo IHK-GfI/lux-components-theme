@@ -4,19 +4,19 @@
 @use "../luxcommon";
 @use "../luxpalette";
 
-
-
 @mixin crop {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
 @mixin form-label {
   min-height: 1.2em;
   font-size: 0.75em;
   line-height: 1.2em;
   color: luxcommon.$dark-secondary-text;
 }
+
 lux-form-control-wrapper {
   width: 100%;
 
@@ -26,7 +26,7 @@ lux-form-control-wrapper {
     font-size: luxcommon.$form-control-font-size;
     color: luxcommon.$dark-primary-text;
     margin: 0.25em 0;
-  
+
     .lux-form-control-label-authentic {
       @include form-label;
       color: map.get(luxpalette.$lux-palette_primary, 500);
@@ -42,7 +42,7 @@ lux-form-control-wrapper {
         }
       }
     }
-  
+
     .lux-form-control-container-authentic {
       box-sizing: border-box;
       padding: 0.75em 0.5em;
@@ -60,26 +60,26 @@ lux-form-control-wrapper {
         padding: 0.75em 0em;
       }
     }
-  
+
     .lux-form-control-misc-authentic {
       box-sizing: border-box;
       margin: 0.25em calc(0.5em + 1px) 0 calc(0.5em + 1px);
-   
+
       @include form-label;
       word-wrap: break-word;
-   
+
       .lux-form-control-character-counter-authentic {
         min-width: 40px;
         margin-left: 2px;
         color: luxcommon.$dark-secondary-text !important;
         text-align: end;
-  
+
         &:only-child {
           width: 100%;
         }
       }
     }
-  
+
     // zusätzlicher Container für Elemente, die einen input-prefix/input-suffix haben
     // aktuell: lux-autocomplete-ac und lux-input-ac
     .lux-input-row-authentic {
@@ -92,8 +92,7 @@ lux-form-control-wrapper {
         white-space: nowrap;
         display: inline-block;
         max-height: 1.5em;
-        
-      
+
         lux-icon {
           i {
             padding: 0 !important;
@@ -110,37 +109,33 @@ lux-form-control-wrapper {
             }
           }
         }
-        
       }
     }
-    
+
     // Definitionen der einzelnen States der Form-Controls
     &:hover:not(.lux-form-control-disabled-authentic):not(.lux-focused-authentic):not(.lux-form-control-error-authentic) {
       .lux-form-control-container-authentic:not(.lux-no-input-row) {
-        border-color: black;
-        box-shadow: 0 0 0 1px black inset;   
+        border-color: luxcommon.$dark-primary-text;
       }
     }
-    &.lux-focused-authentic{
+    &.lux-focused-authentic {
       .lux-form-control-label-authentic > * {
         color: map.get(luxpalette.$lux-palette_primary, 400);
       }
       .lux-form-control-container-authentic:not(.lux-no-input-row) {
         border-color: map.get(luxpalette.$lux-palette_primary, 500);
-        box-shadow: 0 0 0 1px  map.get(luxpalette.$lux-palette_primary, 500) inset;   
+        box-shadow: 0 0 0 1px map.get(luxpalette.$lux-palette_primary, 500) inset;
       }
     }
-  
     &.lux-form-control-error-authentic:not(.lux-form-control-disabled-authentic) {
       .lux-form-control-label-authentic > * {
         color: map.get(luxpalette.$lux-palette_warn, 500);
       }
       .lux-form-control-container-authentic:not(.lux-no-input-row) {
         border-color: map.get(luxpalette.$lux-palette_warn, 500);
-        box-shadow: 0 0 0 1px map.get(luxpalette.$lux-palette_warn, 500) inset;   
+        box-shadow: 0 0 0 1px map.get(luxpalette.$lux-palette_warn, 500) inset;
       }
     }
-  
     &.lux-form-control-disabled-authentic {
       .lux-form-control-container-authentic,
       .lux-form-control-label-authentic,
@@ -148,18 +143,15 @@ lux-form-control-wrapper {
         color: luxcommon.$dark-disabled-text;
       }
     }
-  
-    &.lux-form-control-readonly-authentic, 
+    &.lux-form-control-readonly-authentic,
     &.lux-form-control-disabled-authentic {
       pointer-events: none;
     }
-  
-
   }
 
   /* Change Autocomplete styles in Chrome*/
   input:-webkit-autofill,
-  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:hover,
   input:-webkit-autofill:focus,
   textarea:-webkit-autofill,
   textarea:-webkit-autofill:hover,

@@ -9,19 +9,19 @@
 /*
  * Theming for LUX-Select
  */
- lux-select-ac, lux-lookup-combobox-ac {
-  
+lux-select-ac,
+lux-lookup-combobox-ac {
   mat-select {
     font-family: luxcommon.$app-font-family;
-    height: calc( 1.5em - 1px) !important;
+    height: calc(1.5em - 1px) !important;
     // bisher noch nicht klar, warum das mat-select einen Pixel an Höhe mehr beansprucht, als es tatsächlich Hoch ist
     // daher wird hier die Höhe korrigiert, damit die Baseline eingehalten ist
 
-    .mat-select-arrow-wrapper{
+    .mat-select-arrow-wrapper {
       margin-left: 2px;
       height: 24px;
       width: 24px;
-      
+
       .mat-select-arrow {
         border: none;
         width: 100%;
@@ -38,7 +38,7 @@
         mask-size: cover;
       }
     }
-    
+
     &[aria-disabled="true"] .mat-select-arrow {
       background-color: luxcommon.$dark-disabled-text;
     }
@@ -64,7 +64,7 @@
     border: 2px solid luxpalette.$lux-primary-color;
     border-radius: 4px;
     box-shadow: none !important;
-    
+
     .mat-pseudo-checkbox {
       color: luxpalette.$lux-primary-color;
     }
@@ -73,7 +73,7 @@
   .mat-autocomplete-panel.lux-autocomplete-panel-ac {
     min-width: calc(100% + 14px) !important;
     max-width: calc(100% + 14px) !important;
-    margin: 13px -9px;
+    margin: 13px -9px 0px;
     border: 2px solid luxpalette.$lux-primary-color;
     border-radius: 4px;
     box-shadow: none !important;
@@ -104,9 +104,12 @@ lux-checkbox-ac {
     // die Checkbox soll größer sein, als von Material vorgegeben
     width: 1.25em;
     height: 1.25em;
-    margin-top: 3px; 
-    //bei mehrzeiligen Labels wird die Checkbox oben und nicht zentriert angezeigt 
-    //dieses wird von material über das Margin gelöst und nicht über align-items o.ä.
+    margin-top: 0.125em;
+    .mat-checkbox-frame {
+      border-color: luxpalette.$lux-primary-color;
+    }
+    //bei mehrzeiligen Labels soll die Checkbox oben und nicht zentriert angezeigt werden
+    //Deswegen wird hier das Margin-top: auto überschrieben
     //da wir die Größe der Box geändert haben mussten wir das Margin ebenfalls anpassen
     .mat-checkbox-frame {
       border-color: luxpalette.$lux-primary-color;
@@ -123,7 +126,8 @@ lux-checkbox-ac {
   }
 }
 
-lux-datepicker-ac, lux-datetimepicker-ac {
+lux-datepicker-ac,
+lux-datetimepicker-ac {
   mat-datepicker-toggle {
     height: 24px !important;
     width: 24px !important;
@@ -134,7 +138,8 @@ lux-datepicker-ac, lux-datetimepicker-ac {
       line-height: 1.5;
       font-size: inherit;
 
-      lux-icon.lux-datepicker-toggle-icon, mat-icon.mat-icon {
+      lux-icon.lux-datepicker-toggle-icon,
+      mat-icon.mat-icon {
         height: 24px !important;
         width: 24px !important;
         padding: 0px !important;
@@ -169,7 +174,9 @@ lux-toggle-ac {
       color: luxcommon.$dark-primary-text;
       font-family: luxcommon.$app-font-family;
     }
-
+    &.mat-checked .mat-slide-toggle-bar {
+      background-color: map-get(luxpalette.$lux-palette_primary, 50);
+    }
     .mat-slide-toggle-thumb {
       @include luxelevations.lux-elevation-z1;
     }
@@ -185,7 +192,7 @@ lux-toggle-ac {
         }
 
         .mat-slide-toggle-thumb {
-          background-color: #666666 ;
+          background-color: #666666;
           // $dark-secondary-text als Hex ohne Transparenz
         }
       }
@@ -204,9 +211,13 @@ lux-toggle-ac {
  * Theming for LUX-Radio
  */
 lux-radio-ac {
-  // damit ist der Focus-Indicator rund, wie bei Toggle-Thumb und Chips
   .mat-radio-container {
+    // damit ist der Focus-Indicator rund, wie bei Toggle-Thumb und Chips
     border-radius: 50%;
+
+    span.mat-radio-outer-circle {
+      border-color: luxpalette.$lux-primary-color;
+    }
   }
   .mat-radio-label {
     color: luxcommon.$dark-primary-text;
@@ -214,7 +225,6 @@ lux-radio-ac {
   }
 
   .mat-radio-checked {
-    
     &.mat-radio-disabled label .mat-radio-container {
       span.mat-radio-inner-circle {
         background-color: luxcommon.$dark-disabled-text;
@@ -224,6 +234,10 @@ lux-radio-ac {
         border-color: luxcommon.$dark-disabled-text;
       }
     }
+  }
+
+  .mat-radio-group.lux-horizontal {
+    row-gap: 0.75em;
   }
 
   .mat-radio-disabled label.mat-radio-label {
@@ -247,7 +261,8 @@ lux-radio-ac {
  * Theming for LUX-Input/LUX-Textarea
 */
 // Umstylen des Standard-Aussehens von Inputs/Textareas
-input, input.mat-input-element,
+input,
+input.mat-input-element,
 textarea {
   font: inherit;
   background: 0 0;
@@ -263,11 +278,10 @@ textarea {
   font-size: luxcommon.$form-control-font-size;
 }
 
-
 /**
  * Theming für LUX-Chips
  */
- lux-chips-ac {
+lux-chips-ac {
   .lux-chips-autocomplete-icon {
     color: var(--lux-theme-primary-500);
     font-size: 24px;
@@ -312,7 +326,7 @@ textarea {
       }
     }
   }
-} 
+}
 .lux-chips-ac-autocomplete-panel.mat-autocomplete-panel {
   margin-top: -21px;
   margin-left: 0;

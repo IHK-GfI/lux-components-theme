@@ -1,5 +1,6 @@
 @use "sass:color";
 @use "luxcommon";
+@use "luxpalette";
 @use "../base/luxelevations";
 
 // Tabs außerhalb einer LUX-Card (z.B. Master-Detail)
@@ -12,8 +13,8 @@ lux-tabs {
 }
 
 // x-Button oben rechts im Dialog-Fenster
-.cdk-overlay-container{
-  .lux-dialog .lux-icon-close { 
+.cdk-overlay-container {
+  .lux-dialog .lux-icon-close {
     &:hover {
       background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%) !important;
     }
@@ -24,15 +25,14 @@ lux-button button.lux-button {
   font-family: luxcommon.$app-font-family;
 
   &.lux-icon-button {
-  
     & lux-icon:not(.lux-button-icon-round) {
       line-height: 0.5;
-      
+
       &.lux-lx-icon {
         height: 22px !important;
         width: 22px !important;
       }
-      
+
       i.lux-fa-icon {
         font-size: 1.5em !important;
       }
@@ -51,7 +51,6 @@ lux-button button.lux-button {
     }
 
     &.lux-button-rounded {
-      
       font-size: luxcommon.$button-font-size;
       .mat-button-wrapper {
         height: 100%;
@@ -59,7 +58,7 @@ lux-button button.lux-button {
         align-items: center;
         line-height: 1;
       }
-    
+
       & lux-icon.lux-button-icon-round {
         line-height: 1;
         height: 20px;
@@ -81,8 +80,7 @@ lux-button button.lux-button {
 /*
  * Theming for LUX-Master-Detail-ac
  */
- .lux-master-detail-ac {
-
+.lux-master-detail-ac {
   .lux-master-header-container-ac lux-button.master-light-toggle {
     right: -23px;
   }
@@ -105,6 +103,18 @@ lux-button button.lux-button {
   lux-master-footer-ac {
     margin-bottom: 4px;
     border: none;
-    @include luxelevations.lux-elevation-z2
+    @include luxelevations.lux-elevation-z2;
   }
- }
+}
+
+/*
+* Theming für lux-datepicker-ac/lux-datetimepicker-ac
+*/
+lux-datepicker-ac,
+lux-datetimepicker-ac {
+  mat-datepicker-toggle {
+    button:hover lux-icon.lux-datepicker-toggle-icon.lux-color-blue {
+      color: map-get(luxpalette.$lux-palette_primary, 300);
+    }
+  }
+}
