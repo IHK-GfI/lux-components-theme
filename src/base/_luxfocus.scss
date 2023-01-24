@@ -3,6 +3,7 @@
 @use "luxcommon";
 @use "luxpalette";
 @use "../public/global";
+@use "../base/luxSvgIcons" as luxicons;
 
 /*
   Dieses Partial-SCSS dient der Verwaltung der Styles für Fokus, Hover und Selected für die LUX-Components und
@@ -504,11 +505,11 @@ lux-table {
         top: 14px;
         margin: 0 6px;
         background-color: luxpalette.$lux-primary-color;
-        -webkit-mask: url('/assets/icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
+        -webkit-mask: url(luxicons.$checkmark);
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-position: center;
         -webkit-mask-size: cover;
-        mask: url('/assets/icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
+        mask: url(luxicons.$checkmark);
         mask-repeat: no-repeat;
         mask-position: center;
         mask-size: cover;

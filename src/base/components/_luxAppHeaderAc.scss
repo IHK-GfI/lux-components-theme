@@ -5,7 +5,7 @@
 @use "../luxpalette";
 @use "../../public/global";
 @use "../luxelevations";
-
+@use "../luxSvgIcons" as luxicons;
 
 lux-app-header-ac {
   display: block;
@@ -148,11 +148,11 @@ lux-app-header-ac {
         top: 14px;
         margin: 0 10px 0 4px;
         background-color: luxpalette.$lux-primary-color;
-        -webkit-mask: url('/assets/icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
+        -webkit-mask: url(luxicons.$checkmark);
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-position: center;
         -webkit-mask-size: cover;
-        mask: url('/assets/icons/Interface-Essentials/Validation/interface-validation-check--check-form-validation-checkmark-success-add-addition.svg');
+        mask: url(luxicons.$checkmark);
         mask-repeat: no-repeat;
         mask-position: center;
         mask-size: cover;
