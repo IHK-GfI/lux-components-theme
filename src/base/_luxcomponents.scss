@@ -733,7 +733,7 @@ lux-file-progress {
     }
   }
 
-  .lux-form-control-misc {
+  .lux-form-control-misc div {
     > * {
       color: luxpalette.$lux-warn-color !important;
     }
@@ -746,6 +746,26 @@ lux-file-progress {
 
     &:after {
       border-bottom: 1px dashed luxcommon.$dark-disabled-text;
+    }
+  }
+}
+
+lux-icon.lux-error-icon {
+  font-size: 12px;
+  max-height: 12px;
+  max-width: 12px;
+  padding: 0 4px 0 4px;
+
+  mat-icon {
+    padding: 0 !important;
+    min-width: 12px;
+    max-width: 12px;
+    min-height: 12px;
+    max-height: 12px;
+    color: luxpalette.$lux-warn-color;
+
+    &:hover {
+      cursor: pointer;
     }
   }
 }
