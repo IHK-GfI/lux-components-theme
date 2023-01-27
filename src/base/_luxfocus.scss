@@ -284,9 +284,13 @@ lux-form-control {
       position: relative;
       @include focus-dark-mixin;
     }
-    
    }
 }
+
+lux-icon.lux-error-icon:focus-visible {
+  @include focus-dark-mixin;
+}
+
 /** ########## Datepicker ########## **/
 lux-datepicker {
   mat-datepicker-toggle {
