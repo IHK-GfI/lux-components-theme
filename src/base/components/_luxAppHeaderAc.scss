@@ -35,6 +35,9 @@ lux-app-header-ac {
       &.mat-fab .mat-button-wrapper {
         line-height: 20px;
         max-height: 20px;
+        .lux-no-size {
+          display: block;
+        }
       }
 
       lux-icon {
