@@ -1,5 +1,6 @@
 # Version 14.1.0
 ## New
+- **allgemein**: Verbesserungen fürs Authentic-Themes.
 - **lux-file-input**: Dateifehlermeldungen (z.B. Überschreitung der erlaubten Dateigröße) können über einen Button entfernt werden. [Issue 247](https://github.com/IHK-GfI/lux-components/issues/247)
 - **lux-file-list**: Dateifehlermeldungen (z.B. Überschreitung der erlaubten Dateigröße) können über einen Button entfernt werden. [Issue 247](https://github.com/IHK-GfI/lux-components/issues/247)
 
