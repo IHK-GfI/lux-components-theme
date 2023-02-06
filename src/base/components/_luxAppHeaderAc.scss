@@ -12,7 +12,7 @@ lux-app-header-ac {
 
   .lux-image {
     cursor: pointer;
-    padding: 4px;
+    padding: 0px;
     &:focus-visible {
       @include luxfocus.focus-dark-mixin;
       border-radius: 4px;
@@ -55,7 +55,7 @@ lux-app-header-ac {
           color: map.get(luxpalette.$lux-palette_primary, 700) !important;
         }
         @include luxfocus.focus-dark-mixin;
-      }  
+      } 
     }
 
     &.menu-opened {
@@ -85,8 +85,8 @@ lux-app-header-ac {
   }
   
   .lux-app-header-top-bar {
-    padding: 4px 24px;
-    min-height: 52px;
+    padding: 10px 24px;
+    min-height: 64px;
     font-size: 1rem;
     color: luxcommon.$dark-primary-text;
     background-color: #fff;
@@ -99,6 +99,11 @@ lux-app-header-ac {
       width: unset;
       .lux-menu-extended {
         overflow: unset;
+        padding: 0px;
+      }
+      button.mat-button.lux-button {
+        margin-top: 0px;
+        margin-bottom: 0px;
       }
     }
   }
@@ -116,9 +121,8 @@ lux-app-header-ac {
 
     .lux-app-title {
       color:luxcommon.$dark-primary-text;
-      padding: 4px;
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 400;
       font-family: luxcommon.$app-headline-font, luxcommon.$app-font-family;
 
       &.lux-mobile {
@@ -195,5 +199,4 @@ lux-app-header-ac {
       }
     }
   }
-  
 }
