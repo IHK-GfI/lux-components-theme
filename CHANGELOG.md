@@ -1,3 +1,7 @@
+# Version 14.2.0
+## New
+- **lux-app-header-ac**: Icon-Buttons im Header wurden neu zentriert [Issue 32](https://github.com/IHK-GfI/lux-components-theme/issues/32), Styleanpassungen für das neue Appicon und Brandlogo. [Issue 269](https://github.com/IHK-GfI/lux-components/issues/269)
+
 # Version 14.1.0
 ## New
 - **allgemein**: Verbesserungen fürs Authentic-Themes.
