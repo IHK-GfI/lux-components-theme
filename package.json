@@ -8,14 +8,19 @@
     "clean": "del-cli --force ./prebuilt-themes/*.*",
     "build-theme-authentic": "sass --style=compressed --load-path=node_modules src/authentic/luxtheme.scss:prebuilt-themes/luxtheme-authentic-min.css && sass --load-path=node_modules src/authentic/luxtheme.scss:prebuilt-themes/luxtheme-authentic.css",
     "build-theme-green": "sass --style=compressed --load-path=node_modules src/green/luxtheme.scss:prebuilt-themes/luxtheme-green-min.css && sass --load-path=node_modules src/green/luxtheme.scss:prebuilt-themes/luxtheme-green.css",
-    "build-theme-blue": "sass --style=compressed --load-path=node_modules src/blue/luxtheme.scss:prebuilt-themes/luxtheme-blue-min.css && sass --load-path=node_modules src/blue/luxtheme.scss:prebuilt-themes/luxtheme-blue.css"
+    "build-theme-blue": "sass --style=compressed --load-path=node_modules src/blue/luxtheme.scss:prebuilt-themes/luxtheme-blue-min.css && sass --load-path=node_modules src/blue/luxtheme.scss:prebuilt-themes/luxtheme-blue.css",
+    "smoketest": "npm run build",
+    "husky-init": "husky install"
   },
   "author": "Thomas Dickhut",
   "license": "IHK-GfI Open-Source-Lizenz",
   "devDependencies": {
     "@angular/material": "14.2.5",
-    "sass": "1.53.0",
-    "del-cli": "3.0.1"
+    "del-cli": "3.0.1",
+    "husky": "8.0.3",
+    "prettier": "2.6.2",
+    "pretty-quick": "3.1.3",
+    "sass": "1.53.0"
   },
   "peerDependencies": {},
   "files": [
