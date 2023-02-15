@@ -1,9 +1,14 @@
+# Version 14.3.0
+
+## New
+
+- **allgemein**: Die Webfonts werden nun über lux-components-icons-and-fonts eingebunden. [Issue 277](https://github.com/IHK-GfI/lux-components/issues/277)
+
 # Version 14.2.0
 
 ## New
 
 - **lux-app-header-ac**: Icon-Buttons im Header wurden neu zentriert [Issue 32](https://github.com/IHK-GfI/lux-components-theme/issues/32), Styleanpassungen für das neue Appicon und Brandlogo. [Issue 269](https://github.com/IHK-GfI/lux-components/issues/269)
-- **allgemein**: Die Webfonts werden nun über lux-components-icons-and-fonts eingebunden. [Issue 277](https://github.com/IHK-GfI/lux-components/issues/277)
 
 ## Bug Fixes
 
