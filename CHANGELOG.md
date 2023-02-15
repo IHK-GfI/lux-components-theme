@@ -1,69 +1,94 @@
 # Version 14.2.0
+
 ## New
+
 - **lux-app-header-ac**: Icon-Buttons im Header wurden neu zentriert [Issue 32](https://github.com/IHK-GfI/lux-components-theme/issues/32), Styleanpassungen für das neue Appicon und Brandlogo. [Issue 269](https://github.com/IHK-GfI/lux-components/issues/269)
+- **allgemein**: Die Webfonts werden nun über lux-components-icons-and-fonts eingebunden. [Issue 277](https://github.com/IHK-GfI/lux-components/issues/277)
 
 ## Bug Fixes
+
 - **lux-select-ac**, **lux-lookup-combobox-ac**: Auswahlbox bei lux-select-ac im Theme authentic ungünstig positioniert. [Issue 271](https://github.com/IHK-GfI/lux-components/issues/271)
 
 # Version 14.1.0
+
 ## New
+
 - **allgemein**: Verbesserungen fürs Authentic-Themes.
 - **lux-file-input**: Dateifehlermeldungen (z.B. Überschreitung der erlaubten Dateigröße) können über einen Button entfernt werden. [Issue 247](https://github.com/IHK-GfI/lux-components/issues/247)
 - **lux-file-list**: Dateifehlermeldungen (z.B. Überschreitung der erlaubten Dateigröße) können über einen Button entfernt werden. [Issue 247](https://github.com/IHK-GfI/lux-components/issues/247)
 
 # Version 14.0.0
+
 ## New
+
 - **allgemein**: Update auf Angular 14
 - **allgemein**: Umstellung auf das neue Modulsystem von Sass. [Issue 30](https://github.com/IHK-GfI/lux-components-theme/issues/30)
 
 # Version 13.0.0
+
 ## New
+
 -**allgemein**: die Version für @angular/material und sass, analog zu denen der Lux-Components aktualisiert. [Issue 28](https://github.com/IHK-GfI/lux-components-theme/issues/28)
 
 # Version 11.13.0
+
 ## New
+
 - **chips**: Vorschlagsliste soll so breit wie die Chips-Komponente sein. [Issue 20](https://github.com/IHK-GfI/lux-components-theme/issues/20)
 - **stepper-large**: Farben und Hover-Effekte ändern. [Issue 22](https://github.com/IHK-GfI/lux-components-theme/issues/22)
 - **lux-autocomplete**, **lux-chips**, **lux-lookup-autocomplete**: Mehrzeilige Mat-Option im Dropdown-Menü eingeführt. [Issue 177](https://github.com/IHK-GfI/lux-components/issues/177)
 
 ## New - Theme "green"
+
 - **select**: Schriftfarbe anpasse. [Issue 21](https://github.com/IHK-GfI/lux-components-theme/issues/21)
 
 # Version 11.12.0
+
 - **file-upload**: Styles für die neue Dateiupload-Komponente (lux-file-upload) entwickeln. [Issue 19](https://github.com/IHK-GfI/lux-components-theme/issues/19)
 
 # Version 11.11.0
+
 - **allgemein**: Die Font Awesome- und Material-Icons sollen nicht über die Server von Google und Font Awesome direkt importiert werden. [Issue 17](https://github.com/IHK-GfI/lux-components-theme/issues/17)
 - **stepper-large**: lux-stepper-larger - Der Inhaltscontainer soll sich automatisch der Größe seines Containers anpassen. [Issue 18](https://github.com/IHK-GfI/lux-components-theme/issues/18)
 
 # Version 11.10.0
+
 ## New - Theme "green"
+
 - **stepper-large**: Styles für den neuen Stepper (lux-stepper-large) entwickeln. [Issue 16](https://github.com/IHK-GfI/lux-components-theme/issues/16)
 
 # Version 11.9.0
+
 - **allgemein**: Die folgenden neuen CSS-Klassen wurden eingeführt: [Issue 15](https://github.com/IHK-GfI/lux-components-theme/issues/15)
   - lux-display-none-important
   - lux-hidden-important
- 
+
 # Version 11.8.0
+
 ## New - Theme "green"
+
 - **tabs**: Die Schrift der Tablabels soll auf die Schrift "Korb (700) 22px" umgestellt werden. [Issue 14](https://github.com/IHK-GfI/lux-components-theme/issues/14)
 - **tabs**: Die Hover- und Active-Farbe soll auf den Wert "E3EBF5" eingestellt werden. [Issue 14](https://github.com/IHK-GfI/lux-components-theme/issues/14)
 
 # Version 11.7.1
+
 ## Bug Fixes - Theme "green"
+
 - **checkbox**: Deaktivierte Checkbox wird nicht angezeigt. [Issue 13](https://github.com/IHK-GfI/lux-components-theme/issues/13)
 
 # Version 11.7.0
+
 ## New
+
 - **allgemein**: Die folgenden neuen CSS-Variablen wurden eingeführt: [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
- - `--lux-theme-form-control-default-height-not-scalable` 
- - `--lux-theme-form-control-height`
- - `--lux-theme-form-control-height-small`
- - `--lux-theme-form-control-font-size`
- - `--lux-theme-form-control-font-size-small`
+- `--lux-theme-form-control-default-height-not-scalable`
+- `--lux-theme-form-control-height`
+- `--lux-theme-form-control-height-small`
+- `--lux-theme-form-control-font-size`
+- `--lux-theme-form-control-font-size-small`
 
 ## New - Theme "green"
+
 - **checkbox**: Checkboxen abgerundet darstellen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
 - **radio**: Aktivierte Radio-Buttons mit Haken-Icon darstellen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
 - **form-fields**: Eingabefelder mit abgerundetem Rahmen und Label darstellen. [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
@@ -75,33 +100,48 @@
 - **datepicker**: Monatsname unterhalb der Tagesspaltenköpfe soll entfallen (falls möglich). [Issue 12](https://github.com/IHK-GfI/lux-components-theme/issues/12)
 
 # Version 11.6.1
+
 ## Bug Fixes
+
 - **table**: Falsche Fokusdarstellung bei den Tabellenzellen (td-Tags) [Issue 11](https://github.com/IHK-GfI/lux-components-theme/issues/11)
 
 # Version 11.6.0
+
 ## New
+
 - **badge-notification**: Accent-Farbe noch ans Theme anpassen [Issue 7](https://github.com/IHK-GfI/lux-components-theme/issues/7)
 - **allgemein**: Themefarben auch als Css-Variablen zur Verfügung stellen [Issue 8](https://github.com/IHK-GfI/lux-components-theme/issues/8)
 
 # Version 11.5.0
+
 ## New
+
 - **green**: Die Buttons und Schriften im Theme "green" überarbeiten. [Issue 6](https://github.com/IHK-GfI/lux-components-theme/issues/6)
 
 ## Bug Fixes
+
 - **button**: Unterschiedliche Buttonhöhen (mit/ohne Icons) korrigieren [Issue 5](https://github.com/IHK-GfI/lux-components-theme/issues/5)
 
 # Version 11.4.0
+
 ## New
+
 - **lux-datetimepicker**: Styles für den neuen Datetimepicker inklusive Uhrzeit bereitstellen. [Issue 4](https://github.com/IHK-GfI/lux-components/issues/4)
 
 # Version 11.3.0
+
 ## New
+
 - **green**: Theme "green" vollständig überarbeiten. [Issue 3](https://github.com/IHK-GfI/lux-components-theme/issues/3)
 
 # Version 11.2.1
+
 ## Bug Fixes
+
 - **tab-notification**: "Tab Notification"-Icons haben fälschlicherweise einen roten Rand. [Issue 2](https://github.com/IHK-GfI/lux-components-theme/issues/2)
 
 # Version 11.2.0
+
 ## New
+
 - **tooltip**: Schriftgröße erhöhen. [Issue 1](https://github.com/IHK-GfI/lux-components-theme/issues/1)
