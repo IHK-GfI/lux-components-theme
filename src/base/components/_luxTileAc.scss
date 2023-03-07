@@ -5,9 +5,8 @@
 @use "../../public/global";
 @use "../luxelevations";
 
-
 lux-tile-ac {
-  .mat-card.lux-tile-ac {   
+  .mat-card.lux-tile-ac {
     box-sizing: border-box;
     display: flex;
     height: 100%;
@@ -16,10 +15,10 @@ lux-tile-ac {
     background-image: luxcommon.$app-gradient;
     border: 1px solid rgba(black, 0.12);
     font-size: 16px;
-    
+
     .lux-tile-icon {
       color: map.get(luxpalette.$lux-palette-primary, 500);
-      lux-icon {  
+      lux-icon {
         width: 2em;
         height: 2em;
         i,
@@ -33,7 +32,7 @@ lux-tile-ac {
         }
       }
     }
-  
+
     .lux-tile-header-titel-ac {
       mat-card-title {
         color: luxcommon.$dark-primary-text;
@@ -41,23 +40,23 @@ lux-tile-ac {
         font-size: 20px;
         margin-bottom: 8px;
       }
-      mat-card-subtitle.mat-card-subtitle:not(:first-child){
+      mat-card-subtitle.mat-card-subtitle:not(:first-child) {
         color: luxcommon.$dark-secondary-text;
         font-size: 14px;
         font-weight: normal;
         margin-top: 0px;
       }
     }
-    
+
     &:not([class*="mat-elevation-z"]) {
       @include luxelevations.lux-elevation-z2;
     }
 
-    &[class~=lux-cursor]:focus-visible {
+    &[class~="lux-cursor"]:focus-visible {
       @include luxfocus.focus-dark-mixin;
     }
-    &[class~=lux-cursor]:hover {
-      border-color: luxpalette.$lux-primary-color;
+    &[class~="lux-cursor"]:hover {
+      border-color: luxcommon.$dark-primary-text;
     }
   }
 }
