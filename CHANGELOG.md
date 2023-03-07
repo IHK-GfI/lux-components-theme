@@ -1,10 +1,16 @@
+# Version 14.4.0
+
+## New
+
+- **lux-form-controls-ac**: Theming für das Green-Theme für alle Formcontrols und die Lookup-Komponenten erstellt. [Issue 280](https://github.com/IHK-GfI/lux-components/issues/280)
+- **lux-datepicker-ac**, **lux-datetimepicker-ac**: hover für den mat-datepicker-toggle in Blue-Theme angepasst. [Issue 280](https://github.com/IHK-GfI/lux-components/issues/280)
+- **lux-card**: Hover-Effekt der LUX-Cards ohne luxCardActions im Theme-Authentic anpassen. [Issue 287](https://github.com/IHK-GfI/lux-components/issues/287)
+
 # Version 14.3.0
 
 ## New
 
 - **allgemein**: Die Webfonts werden nun über lux-components-icons-and-fonts eingebunden. [Issue 277](https://github.com/IHK-GfI/lux-components/issues/277)
-- **lux-form-controls-ac**: Theming für das Green-Theme für alle Formcontrols und die Lookup-Komponenten erstellt. [Issue 280](https://github.com/IHK-GfI/lux-components/issues/280)
-- **lux-datepicker-ac**, **lux-datetimepicker-ac**: hover für den mat-datepicker-toggle in Blue-Theme angepasst. [Issue 280](https://github.com/IHK-GfI/lux-components/issues/280)
 
 # Version 14.2.0
 
