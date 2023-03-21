@@ -1,3 +1,9 @@
+# Version 14.5.0
+
+## New
+
+-**lux-link-plain**: Neue Property "luxCustomClass" hinzugefügt, hover-color für blue- und green-Theme angepasst. [Issue 284](https://github.com/IHK-GfI/lux-components/issues/284)
+
 # Version 14.4.0
 
 ## New

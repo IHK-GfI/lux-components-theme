@@ -3,59 +3,73 @@
 @use "../luxcommon";
 @use "../luxpalette";
 
-
 lux-link-plain {
+  display: inline-flex;
+  align-items: baseline;
   .link-wrapper {
-    display: inline-block;
+    display: flex;
+    gap: 0.25em;
+    align-items: baseline;
     font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit;
-    color: map.get(luxpalette.$lux-palette-primary, A700);
-    
     .lux-link-plain-text {
-      text-decoration: none;
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: inherit;
+      text-decoration: inherit;
+      color: inherit;
+      display: flex;
     }
 
     lux-icon {
       font-size: inherit;
-      vertical-align: middle;
-      line-height: 1;
-      i, mat-icon {
-        color: map.get(luxpalette.$lux-palette-primary, A700);
-        padding: 0 !important;
-      }   
-    }
-
-    &.lux-disabled {
-      color: luxcommon.$dark-disabled-text;
-      cursor: text;
-      lux-icon {
-        i, mat-icon {
-          color: luxcommon.$dark-disabled-text;
-        }
+      display: flex;
+      mat-icon.mat-icon.lux-lx-icon-no-size {
+        padding: 0px !important;
+        width: 0.8em;
+        height: 0.8em;
+        overflow: visible;
       }
     }
 
-    &:hover:not(.lux-disabled) {
-      color: luxcommon.$lux-hover-color;
-      text-decoration: underline;
-      cursor: pointer;
-      lux-icon {
-        i, mat-icon {
-          color: luxcommon.$lux-hover-color;
-        }
-      }
-    }
-    
-    &:focus:not(.lux-disabled, :hover) {
+    &:focus-visible:not(.lux-disabled) {
       @include luxfocus.focus-dark-mixin;
       border-radius: 2px;
     }
   }
-  &.breadcrump-item .link-wrapper{
-    color: inherit;
-    lux-icon mat-icon {
-      color: inherit;
+
+  &.default-style {
+    color: map.get(luxpalette.$lux-palette-primary, A700);
+    font-family: inherit;
+    lux-icon {
+      i,
+      mat-icon {
+        color: map.get(luxpalette.$lux-palette-primary, A700);
+      }
+    }
+  }
+
+  &.lux-disabled,
+  .link-wrapper.lux-disabled {
+    color: luxcommon.$dark-disabled-text;
+    cursor: text;
+    text-decoration: none;
+    lux-icon {
+      i,
+      mat-icon {
+        color: luxcommon.$dark-disabled-text;
+      }
+    }
+  }
+
+  &:hover:not(.lux-disabled) {
+    color: map.get(luxpalette.$lux-palette-primary, 300);
+    text-decoration: underline;
+    cursor: pointer;
+    lux-icon {
+      i,
+      mat-icon {
+        color: map.get(luxpalette.$lux-palette-primary, 300);
+      }
     }
   }
 }
