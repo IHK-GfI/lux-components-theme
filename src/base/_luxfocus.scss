@@ -524,7 +524,9 @@ lux-table {
 .lux-select-panel-ac,
 .lux-select-panel-ac-multiple,
 .lux-autocomplete-panel-ac,
-.lux-chips-ac-autocomplete-panel {
+.lux-autocomplete-panel-dense-ac,
+.lux-chips-ac-autocomplete-panel,
+.lux-chips-ac-autocomplete-panel-dense {
   &.mat-select-panel mat-option,
   &.mat-autocomplete-panel mat-option {
     &.mat-selected.mat-option:not(.mat-option-disabled):not(:hover):not(.mat-active) {
