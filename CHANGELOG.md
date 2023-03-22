@@ -2,7 +2,9 @@
 
 ## New
 
--**lux-link-plain**: Neue Property "luxCustomClass" hinzugefügt, hover-color für blue- und green-Theme angepasst. [Issue 284](https://github.com/IHK-GfI/lux-components/issues/284)
+- **lux-link-plain**: Neue Property "luxCustomClass" hinzugefügt, hover-color für blue- und green-Theme angepasst. [Issue 284](https://github.com/IHK-GfI/lux-components/issues/284)
+- **lux-form-controls-ac**: Neue Property "luxDense" für alle AC-Formular-Komponenten eingeführt. [Issue 288](https://github.com/IHK-GfI/lux-components/issues/288).
+- **lux-table**: AC-Formular-Komponenten werden innerhalb der Tabelle mit der geringeren Höhe angezeigt. (Nur im Theme Authentic) [Issue 288](https://github.com/IHK-GfI/lux-components/issues/288).
 
 # Version 14.4.0
 

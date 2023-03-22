@@ -59,6 +59,7 @@ lux-lookup-combobox-ac {
     font-family: luxcommon.$app-font-family;
   }
   .mat-autocomplete-panel.lux-autocomplete-panel-ac,
+  .mat-autocomplete-panel.lux-autocomplete-panel-dense-ac,
   .mat-select-panel.lux-select-panel-ac,
   .mat-select-panel.lux-select-panel-ac-multiple {
     border: 2px solid luxpalette.$lux-primary-color;
@@ -70,13 +71,14 @@ lux-lookup-combobox-ac {
     }
   }
 
-  .mat-autocomplete-panel.lux-autocomplete-panel-ac {
+  .mat-autocomplete-panel.lux-autocomplete-panel-ac,
+  .mat-autocomplete-panel.lux-autocomplete-panel-dense-ac {
     min-width: calc(100% + 14px) !important;
     max-width: calc(100% + 14px) !important;
     margin: 13px -9px 0px;
-    border: 2px solid luxpalette.$lux-primary-color;
-    border-radius: 4px;
-    box-shadow: none !important;
+  }
+  .mat-autocomplete-panel.lux-autocomplete-panel-dense-ac {
+    margin-top: 7px;
   }
 }
 
@@ -157,7 +159,7 @@ lux-datetimepicker-ac {
 .lux-datetimepicker-overlay .mat-card.lux-card {
   border: 2px solid luxpalette.$lux-primary-color;
   box-shadow: none !important;
-  margin: 13px -9px;
+  margin: 13px -9px 0;
 
   & .mat-calendar-header button:hover {
     background-color: #fff !important;
@@ -277,6 +279,9 @@ textarea {
   text-align: inherit;
   font-size: luxcommon.$form-control-font-size;
 }
+lux-textarea-ac text-area {
+  line-height: normal;
+}
 
 /**
  * Theming für LUX-Chips
@@ -327,14 +332,18 @@ lux-chips-ac {
     }
   }
 }
-.lux-chips-ac-autocomplete-panel.mat-autocomplete-panel {
-  margin-top: -21px;
+.lux-chips-ac-autocomplete-panel.mat-autocomplete-panel,
+.lux-chips-ac-autocomplete-panel-dense.mat-autocomplete-panel {
+  margin-top: -22px;
   margin-left: 0;
   margin-right: 0;
   border-radius: 4px;
 
   box-shadow: none !important;
   border: 2px solid luxpalette.$lux-primary-color;
+}
+.lux-chips-ac-autocomplete-panel-dense.mat-autocomplete-panel {
+  margin-top: -18px;
 }
 
 /*

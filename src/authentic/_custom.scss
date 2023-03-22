@@ -159,8 +159,14 @@ lux-table {
 
       table {
         border-spacing: 0 !important;
-        td .lux-form-control-container-authentic {
-          padding: 0.25em 0.5em; // bei den Form-Controls in einer Tabellen-Zelle wird die Höhe reduziert
+        td .lux-form-control-wrapper {
+          margin: 0;
+          .lux-form-control-container-authentic {
+            padding: 0.25em 0.5em; // bei den Form-Controls in einer Tabellen-Zelle wird die Höhe reduziert
+            &.lux-no-input-row {
+              padding: 0.25em 0em;
+            }
+          }
         }
       }
 
