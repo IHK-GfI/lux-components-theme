@@ -5,12 +5,12 @@
 @use "components/luxFormControlWrapper.scss";
 @use "components/luxFormControlsAuthentic.scss";
 @use "components/luxMasterDetailAc.scss";
+@use "components/luxCheckboxContainerAc.scss";
 @use "luxcommon";
 @use "luxpalette";
 @use "../public/global";
 @use "luxelevations";
 @use "../base/luxSvgIcons" as luxicons;
-
 
 /*
  * Theming for LUX-App-Content
@@ -92,7 +92,8 @@ lux-app-header {
     }
   }
 
-  .lux-side-nav-header, .lux-side-nav-footer {
+  .lux-side-nav-header,
+  .lux-side-nav-footer {
     color: map.get(luxpalette.$lux-palette_primary, A400);
   }
 
@@ -103,7 +104,9 @@ lux-app-header {
   }
 
   .lux-side-nav .lux-side-nav-content {
-    lux-button, .lux-menu-item, .lux-action-nav-menu lux-button {
+    lux-button,
+    .lux-menu-item,
+    .lux-action-nav-menu lux-button {
       color: map.get(luxpalette.$lux-palette_primary, 500);
       font-weight: 600;
     }
@@ -123,7 +126,10 @@ lux-button button.lux-button {
   font-size: luxcommon.$button-font-size;
   font-weight: 600;
 
-  &.mat-button, &.mat-raised-button, &.mat-stroked-button, &.mat-flat-button {
+  &.mat-button,
+  &.mat-raised-button,
+  &.mat-stroked-button,
+  &.mat-flat-button {
     height: luxcommon.$button-height;
   }
 
@@ -131,13 +137,13 @@ lux-button button.lux-button {
   &.mat-raised-button.mat-button-disabled,
   &.mat-flat-button.mat-button-disabled,
   &.mat-stroked-button.mat-button-disabled,
-  &.mat-raised-button.mat-button-disabled:not([class*=mat-elevation-z]),
+  &.mat-raised-button.mat-button-disabled:not([class*="mat-elevation-z"]),
   &.mat-fab.mat-button-disabled {
     color: luxcommon.$dark-disabled-text;
     @include luxelevations.lux-elevation-z0;
   }
 
-  &.mat-raised-button:not([class*=mat-elevation-z]) {
+  &.mat-raised-button:not([class*="mat-elevation-z"]) {
     @include luxelevations.lux-elevation-z2;
   }
 
@@ -151,7 +157,6 @@ lux-button button.lux-button {
   &.lux-button-rounded {
     height: luxcommon.$button-fav-height;
     width: luxcommon.$button-fav-height;
-    
 
     @include luxelevations.lux-elevation-z2;
 
@@ -175,7 +180,7 @@ lux-button button.lux-button {
       }
     }
   }
-  
+
   lux-icon.lux-button-icon:not(.lux-button-icon-round) {
     line-height: 1em;
     &.lux-lx-icon {
@@ -197,7 +202,7 @@ lux-button button.lux-button {
       height: unset !important;
       width: unset !important;
     }
-    mat-icon.lux-lx-icon-no-size{
+    mat-icon.lux-lx-icon-no-size {
       height: luxcommon.$button-font-size;
       width: luxcommon.$button-font-size;
     }
@@ -224,8 +229,7 @@ lux-checkbox {
 /**
  * Theming für LUX-Card
  */
-lux-card{
-
+lux-card {
   .lux-card-content-container mat-tab-group.lux-tab-group .lux-tabs-notification-icon {
     border-color: luxcommon.$app-data-bg;
   }
@@ -389,7 +393,8 @@ lux-divider {
 lux-file-list .lux-file-list {
   margin: luxcommon.$form-control-margin;
 
-  .lux-file-list-entry-label, .lux-file-list-entry-icon {
+  .lux-file-list-entry-label,
+  .lux-file-list-entry-icon {
     color: luxcommon.$dark-secondary-text;
   }
 
@@ -419,7 +424,7 @@ lux-file-list .lux-file-list {
       }
     }
   }
-  
+
   &.lux-file-list-error {
     mat-card-title .lux-card-title-container {
       color: luxpalette.$lux-warn-color;
@@ -478,7 +483,8 @@ lux-file-progress {
       padding: 24px 48px;
     }
 
-    .lux-file-upload-drop-container-progress, .lux-file-upload-drop-container-no-progress{
+    .lux-file-upload-drop-container-progress,
+    .lux-file-upload-drop-container-no-progress {
       height: 8px;
     }
 
@@ -626,7 +632,6 @@ lux-file-progress {
               height: 24px;
             }
           }
-          
         }
       }
     }
@@ -691,14 +696,13 @@ lux-file-progress {
   }
 }
 
-
 /*
  * Theming for LUX-Form-Controls
  */
 .lux-form-control {
   margin: luxcommon.$form-control-margin;
   min-height: luxcommon.$form-control-complete-height;
-  
+
   .lux-label,
   mat-hint,
   mat-error {
@@ -708,7 +712,8 @@ lux-file-progress {
   .lux-form-control-container {
     padding: 6px 0 0 0;
 
-    input, textarea {
+    input,
+    textarea {
       &:required {
         @include luxelevations.lux-elevation-z0;
       }
@@ -729,7 +734,8 @@ lux-file-progress {
 
   .lux-form-control-container {
     $lux-selected-border-color: luxpalette.$lux-warn-color !important;
-    &:after { // inaktives form-control hat auch eine rote Linie (anstatt schwarz)
+    &:after {
+      // inaktives form-control hat auch eine rote Linie (anstatt schwarz)
       border-bottom: 1px solid luxpalette.$lux-warn-color;
     }
   }
@@ -800,7 +806,7 @@ lux-list {
   .mat-card:not([class*="mat-elevation-z"]) {
     @include luxelevations.lux-elevation-z2;
   }
-  
+
   lux-list-item lux-card mat-card {
     margin: luxcommon.$outline-width;
   }
@@ -813,7 +819,8 @@ lux-list {
 /*
  * Theming for LUX-Lookup-Components
  */
-lux-lookup-combobox, lux-lookup-combobox-ac {
+lux-lookup-combobox,
+lux-lookup-combobox-ac {
   mat-select {
     &[aria-disabled="true"] .mat-select-arrow {
       border-width: 7px;
@@ -830,7 +837,8 @@ lux-lookup-combobox, lux-lookup-combobox-ac {
 }
 
 // Optionen werden im Cdk-Overlay dargestellt und hängen nicht unter der Component selbst.
-.lux-autocomplete-panel, .lux-select-panel {
+.lux-autocomplete-panel,
+.lux-select-panel {
   .mat-option {
     border-left: none;
 
@@ -867,7 +875,7 @@ lux-lookup-combobox, lux-lookup-combobox-ac {
     max-width: 30px;
     display: inline-grid;
 
-    mat-icon.mat-icon:not(.lux-lx-icon){
+    mat-icon.mat-icon:not(.lux-lx-icon) {
       font-size: 24px !important;
     }
     &.lux-lx-icon.lux-no-size {
@@ -936,16 +944,14 @@ lux-message-box {
   &.mat-elevation-z4 {
     @include luxelevations.lux-elevation-z4();
   }
-  
+
   .lux-message-container lux-button {
-    button.mat-fab.lux-icon-button.lux-button-rounded:not([class*=mat-elevation-z]) {
+    button.mat-fab.lux-icon-button.lux-button-rounded:not([class*="mat-elevation-z"]) {
       color: #fff;
       background-color: transparent;
       height: 36px;
       width: 36px;
       @include luxelevations.lux-elevation-z0();
-      
-    
     }
     .mat-button-ripple,
     .mat-button-focus-overlay {
@@ -1180,7 +1186,8 @@ lux-filter-form {
  * Theming for LUX-Stepper
  */
 lux-stepper {
-  .mat-stepper-horizontal, .mat-stepper-vertical {
+  .mat-stepper-horizontal,
+  .mat-stepper-vertical {
     background-color: transparent;
   }
 
@@ -1188,7 +1195,7 @@ lux-stepper {
   .lux-ignore-mat-step-icons {
     mat-step-header {
       color: luxcommon.$dark-secondary-text;
-    
+
       &.lux-step-header-touched {
         .lux-stepper-edited-icon,
         .lux-stepper-normal-icon {
@@ -1220,9 +1227,9 @@ lux-stepper {
   // luxUseCustomIcons=false
   .mat-step-header {
     lux-step-header {
-      color: luxcommon.$dark-secondary-text;;
+      color: luxcommon.$dark-secondary-text;
     }
-    
+
     &.lux-step-header-touched {
       .mat-step-icon {
         color: luxcommon.$app-data-bg;
@@ -1264,14 +1271,14 @@ lux-table {
   }
 
   table td {
-   div.lux-form-control {
-     min-height: luxcommon.$form-control-height-small;
+    div.lux-form-control {
+      min-height: luxcommon.$form-control-height-small;
 
-     .lux-form-control-label,
-     .lux-form-control-misc {
-       display: none;
-     }
-   }
+      .lux-form-control-label,
+      .lux-form-control-misc {
+        display: none;
+      }
+    }
   }
 }
 
@@ -1403,18 +1410,16 @@ mat-expansion-panel.mat-expansion-panel:not([class*="mat-elevation-z"]) {
   @include luxelevations.lux-elevation-z2;
 }
 
-
 /*
  * Theming for LUX-Errorpage
  */
- lux-error-page {
+lux-error-page {
   lux-card:not(.lux-error-page-desktop) {
-      .mat-card:not([class*="mat-elevation-z"]) {
-        @include luxelevations.lux-elevation-z0;
-      }
-      
-    } 
- }
+    .mat-card:not([class*="mat-elevation-z"]) {
+      @include luxelevations.lux-elevation-z0;
+    }
+  }
+}
 
 /*
 * Theming für Lux-Stepper-Large
@@ -1490,18 +1495,18 @@ lux-stepper-large {
       }
 
       a {
-        color: #2E8533;
+        color: #2e8533;
         position: relative;
       }
 
       a::after {
-        content: '';
+        content: "";
         position: absolute;
         display: inline-block;
         width: 23px;
         height: 23px;
         margin: 5px 10px 0px;
-        background-color: #2E8533;
+        background-color: #2e8533;
         -webkit-mask: url(luxicons.$checkmark);
         -webkit-mask-repeat: no-repeat;
         -webkit-mask-position: center;
@@ -1749,7 +1754,7 @@ lux-stepper-large {
     }
   }
 
-  &.lux-stepper-large-nav-item.lux-touched:not(.lux-disabled).lux-completed:not(.lux-active) a::after{
+  &.lux-stepper-large-nav-item.lux-touched:not(.lux-disabled).lux-completed:not(.lux-active) a::after {
     width: 18px;
     height: 18px;
     margin-top: 4px;

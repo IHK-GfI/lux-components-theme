@@ -1096,3 +1096,15 @@ lux-textarea-ac {
     line-height: normal;
   }
 }
+
+lux-checkbox-container-ac {
+  .lux-checkbox-container {
+    row-gap: 6px;
+  }
+  .lux-label-container {
+    margin: 0 0 0.25em 0;
+  }
+  lux-checkbox-ac lux-form-control-wrapper .lux-form-control-wrapper .lux-form-control-container-authentic.lux-no-input-row {
+    height: auto;
+  }
+}
