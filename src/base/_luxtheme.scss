@@ -2,10 +2,22 @@
 @use "luxpalette";
 
 @include mat.core();
+@include mat.legacy-core();
 
 $lux-primary: mat.define-palette(luxpalette.$lux-palette_primary);
 $lux-accent: mat.define-palette(luxpalette.$lux-palette_accent);
 $lux-warn: mat.define-palette(luxpalette.$lux-palette_warn);
-$lux-theme: mat.define-light-theme($lux-primary, $lux-accent, $lux-warn);
+$lux-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $lux-primary,
+      accent: $lux-accent,
+      warn: $lux-warn
+    ),
+    typography: mat.define-typography-config(),
+    density: 0
+  )
+);
 
 @include mat.all-component-themes($lux-theme);
+@include mat.all-legacy-component-themes($lux-theme);
