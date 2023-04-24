@@ -31,7 +31,7 @@ lux-app-header-ac {
       align-items: center;
 
       @include luxelevations.lux-elevation-z0;
-      
+
       &.mat-fab .mat-button-wrapper {
         line-height: 20px;
         max-height: 20px;
@@ -45,8 +45,8 @@ lux-app-header-ac {
       }
 
       &:hover:not([disabled]).mat-fab:hover.mat-primary {
-        lux-icon { 
-          color: #ffffff !important; 
+        lux-icon {
+          color: #ffffff !important;
         }
       }
       &:focus-visible:not([disabled]).mat-fab.mat-primary.cdk-focused.cdk-keyboard-focused {
@@ -55,7 +55,7 @@ lux-app-header-ac {
           color: map.get(luxpalette.$lux-palette_primary, 700) !important;
         }
         @include luxfocus.focus-dark-mixin;
-      } 
+      }
     }
 
     &.menu-opened {
@@ -74,16 +74,16 @@ lux-app-header-ac {
           color: #ffffff !important;
         }
         &:focus-visible:not(:hover) {
-          color: map.get(luxpalette.$lux-palette-primary, 700)!important;
+          color: map.get(luxpalette.$lux-palette-primary, 700) !important;
           background-color: transparent !important;
         }
         &:active {
-          color: map.get(luxpalette.$lux-palette-primary, 700)!important;
+          color: map.get(luxpalette.$lux-palette-primary, 700) !important;
         }
       }
     }
   }
-  
+
   .lux-app-header-top-bar {
     padding: 10px 24px;
     min-height: 64px;
@@ -94,7 +94,7 @@ lux-app-header-ac {
     &.lux-mobile {
       padding: 4px;
     }
-    
+
     lux-menu {
       width: unset;
       .lux-menu-extended {
@@ -120,7 +120,7 @@ lux-app-header-ac {
     }
 
     .lux-app-title {
-      color:luxcommon.$dark-primary-text;
+      color: luxcommon.$dark-primary-text;
       font-size: 20px;
       font-weight: 400;
       font-family: luxcommon.$app-headline-font, luxcommon.$app-font-family;
@@ -138,7 +138,7 @@ lux-app-header-ac {
           letter-spacing: 0px;
         }
 
-        &.nav-item-selected  button.lux-button .lux-button-label {
+        &.nav-item-selected button.lux-button .lux-button-label {
           font-weight: 600;
         }
       }
@@ -155,27 +155,30 @@ lux-app-header-ac {
 
     &.lux-selected-item-ac {
       font-weight: 600;
-      & .lux-button-label::after {
-        content: '';
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        right: 0;
-        top: 14px;
-        margin: 0 10px 0 4px;
-        background-color: luxpalette.$lux-primary-color;
-        -webkit-mask: url(luxicons.$checkmark);
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-position: center;
-        -webkit-mask-size: cover;
-        mask: url(luxicons.$checkmark);
-        mask-repeat: no-repeat;
-        mask-position: center;
-        mask-size: cover;
+      & .lux-button-label {
+        padding-right: 24px;
+        &::after {
+          content: "";
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          right: 0;
+          top: 14px;
+          margin: 0 10px 0 4px;
+          background-color: luxpalette.$lux-primary-color;
+          -webkit-mask: url(luxicons.$checkmark);
+          -webkit-mask-repeat: no-repeat;
+          -webkit-mask-position: center;
+          -webkit-mask-size: cover;
+          mask: url(luxicons.$checkmark);
+          mask-repeat: no-repeat;
+          mask-position: center;
+          mask-size: cover;
+        }
       }
     }
 
-    &:not([disabled=true]):hover {
+    &:not([disabled="true"]):hover {
       background-color: map-get(luxpalette.$lux-palette_primary, 300) !important;
       color: #ffffff;
       .mat-icon-no-color {
@@ -185,8 +188,8 @@ lux-app-header-ac {
         background-color: #ffffff;
       }
     }
-    
-    &:not([disabled=true]):focus-visible {
+
+    &:not([disabled="true"]):focus-visible {
       background-color: map-get(luxpalette.$lux-palette_primary, 300);
       color: #ffffff;
       .mat-icon-no-color {
