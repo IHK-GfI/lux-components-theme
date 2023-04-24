@@ -1,3 +1,9 @@
+# Version 14.6.0
+
+## Bug Fix
+
+- **lux-menu**: Lange Labels im Menu-Panel werden automatisch mit "Text-overflow: ellipsis" gekürzt. [Issue 312](https://github.com/IHK-GfI/lux-components/issues/312)
+
 # Version 14.5.0
 
 ## New

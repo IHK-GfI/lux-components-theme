@@ -937,6 +937,20 @@ lux-master-header {
   }
 }
 
+/* Menu-Overlay-Panel anpassen */
+.lux-menu-panel {
+  .lux-menu-item {
+    font-size: 16px;
+    display: block;
+  }
+  .lux-menu-item-icon {
+    vertical-align: middle;
+    mat-icon {
+      margin: 0;
+    }
+  }
+}
+
 /*
  * Theming for LUX-Message-Box
  */

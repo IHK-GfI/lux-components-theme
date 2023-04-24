@@ -45,10 +45,6 @@ label {
     color: luxpalette.$lux-primary-color;
   }
 
-  .mat-menu-content:not(:empty) {
-    padding: 0;
-  }
-
   .lux-menu-item:not([disabled="true"]):hover {
     @include lux-hovered-mixin-ac;
     & .mat-icon-no-color {
