@@ -1,5 +1,9 @@
 # Version 14.6.0
 
+## New
+
+- **lux-textbox**: Neue Komponente "lux-textbox" hinzugefügt. [Issue 292](https://github.com/IHK-GfI/lux-components/issues/292)
+
 ## Bug Fix
 
 - **lux-menu**: Lange Labels im Menu-Panel werden automatisch mit "Text-overflow: ellipsis" gekürzt. [Issue 312](https://github.com/IHK-GfI/lux-components/issues/312)
