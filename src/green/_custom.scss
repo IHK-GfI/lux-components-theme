@@ -1013,7 +1013,7 @@ lux-datetimepicker-ac {
     height: 18px !important;
     width: 18px !important;
 
-    .mat-icon-button {
+    .mdc-icon-button.mat-mdc-icon-button.mat-mdc-button-base {
       height: 18px !important;
       width: 18px !important;
       line-height: 1.5;
@@ -1021,9 +1021,15 @@ lux-datetimepicker-ac {
 
       lux-icon.lux-datepicker-toggle-icon,
       mat-icon.mat-icon {
+        display: inline-flex;
         height: 18px !important;
         width: 18px !important;
         padding: 0px !important;
+      }
+
+      svg {
+        height: 18px;
+        width: 18px;
       }
 
       &.mat-button-disabled {
