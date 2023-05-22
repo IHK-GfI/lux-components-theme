@@ -231,7 +231,6 @@ lux-filter-form {
 }
 
 /** ########## Chips ########## **/
-lux-chips,
 lux-chips-ac {
   & .mat-standard-chip:focus-visible {
     @include focus-dark-mixin;
@@ -243,42 +242,6 @@ lux-chips-ac {
 }
 
 /** ########## Form-Control ########## **/
-lux-form-control {
-  .lux-form-control:not(.lux-form-control-disabled).lux-focused {
-    .lux-form-control-label {
-      > * {
-        color: luxcommon.$lux-selected-border-color;
-      }
-    }
-
-    .cdk-keyboard-focused .mat-radio-container,
-    .cdk-keyboard-focused .mat-checkbox-inner-container,
-    .cdk-keyboard-focused .mat-slide-toggle-thumb {
-      position: relative;
-      @include focus-dark-mixin;
-    }
-
-    .lux-form-control-container:after {
-      content: "";
-      display: block;
-      -webkit-box-sizing: border-box;
-      -moz-box-sizing: border-box;
-      box-sizing: border-box;
-      left: 0;
-      right: 0;
-      position: absolute;
-      height: 2px;
-      border-bottom: 2px solid luxcommon.$lux-selected-border-color;
-    }
-
-    &.lux-form-control-error {
-      .lux-form-control-container:after {
-        border-bottom: 2px solid luxpalette.$lux-warn-color;
-      }
-    }
-  }
-}
-
 .lux-form-control-wrapper {
   &.lux-focused-authentic .cdk-keyboard-focused {
     .mat-radio-container,
@@ -295,22 +258,6 @@ lux-icon.lux-error-icon:focus-visible {
 }
 
 /** ########## Datepicker ########## **/
-lux-datepicker {
-  mat-datepicker-toggle {
-    button:focus-visible {
-      @include focus-dark-mixin;
-      border-radius: 4px;
-    }
-
-    button:hover {
-      @include lux-hovered-mixin();
-      border-radius: 4px;
-    }
-    .mat-button-focus-overlay {
-      display: none;
-    }
-  }
-}
 lux-datepicker-ac,
 lux-datetimepicker-ac {
   mat-datepicker-toggle {
@@ -365,23 +312,6 @@ lux-datetimepicker-ac {
 }
 
 /** ########## Datetimepicker ########## **/
-lux-datetimepicker {
-  mat-datepicker-toggle {
-    button:focus-visible {
-      @include focus-dark-mixin;
-      border-radius: 4px;
-    }
-
-    button:hover {
-      @include lux-hovered-mixin();
-      border-radius: 4px;
-    }
-    .mat-button-focus-overlay {
-      display: none;
-    }
-  }
-}
-
 // Class, welche das aufgeklappte Panel referenziert
 .lux-datetimepicker-overlay {
   .mat-calendar-header {
@@ -624,27 +554,6 @@ lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-i
   }
 }
 
-/** ########## Autocomplete ########## **/
-// Class, welche das aufgeklappte Panel referenziert
-.lux-autocomplete-panel,
-.lux-chips-autocomplete-panel {
-  mat-option {
-    &:focus-visible {
-      @include focus-dark-mixin-inline;
-      border-radius: 4px;
-    }
-
-    &.mat-active {
-      @include focus-dark-mixin-inline;
-      border-radius: 4px;
-    }
-
-    &:hover:not(.invalid, .mat-option-disabled) {
-      @include lux-hovered-mixin;
-    }
-  }
-}
-
 /** ########## Tabs ########## **/
 @mixin tab-label-mixin {
   color: map.get(luxpalette.$lux-palette_primary, 400) !important;
@@ -768,20 +677,6 @@ lux-button.lux-master-toggle button:not([disabled]):focus {
 
   &:hover {
     @include lux-hovered-mixin;
-  }
-}
-
-lux-master-detail {
-  lux-master-header {
-    .lux-master-header-collapse {
-      button.lux-button {
-        // Wir benötigen hier die spezielle CSS-Abfrage um die für die Buttons zu überschreiben
-        // Wir nutzen $lux-hover-color, weil sich die normale lux-focus-color hier nicht genug abhebt
-        &:not(.mat-fab):not(.mat-raised-button):focus-visible {
-          background-color: luxcommon.$lux-hover-color !important;
-        }
-      }
-    }
   }
 }
 

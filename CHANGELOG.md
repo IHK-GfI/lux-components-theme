@@ -1,3 +1,9 @@
+# Version 15.0.0
+
+## New
+
+- **Blue-Theme**: Das Theme wurde zugunsten des Authentic-Themes gelöscht. [Issue 316](https://github.com/IHK-GfI/lux-components/issues/316)
+
 # Version 14.6.0
 
 ## New
