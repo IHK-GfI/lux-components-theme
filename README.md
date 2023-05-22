@@ -1,15 +1,18 @@
 # Theme
 
-- [Installation](#installation)
-- [LUX-Theme](#lux-theme)
-  - [Allgemeine Css-Variablen](#allgemeine-css-variablen)
-  - [Allgemeine Css-Klassen](#allgemeine-css-klassen)
-  - [Beispiele einer Farbpalette](#beispiel-einer-farbpalette)
-    - [Css-Variablen](#css-variablen)
-    - [Css-Klassen](#css-klassen)
-  - [Code-Beispiele](#code-beispiele)
-    - [Css-Variable](#css-variable)
-    - [Css-Klasse](#css-klasse)
+- [Theme](#theme)
+  - [Installation](#installation)
+  - [LUX-Theme](#lux-theme)
+    - [Allgemeine Css-Variablen](#allgemeine-css-variablen)
+    - [Allgemeine Css-Klassen](#allgemeine-css-klassen)
+    - [Beispiel einer Farbpalette](#beispiel-einer-farbpalette)
+      - [Css-Variablen](#css-variablen)
+      - [Css-Klassen](#css-klassen)
+    - [Code-Beispiele](#code-beispiele)
+      - [Css-Variable](#css-variable)
+      - [Css-Klasse](#css-klasse)
+- [Lizenzhinweis - Icons](#lizenzhinweis---icons)
+- [Lizenzhinweis - Fonts](#lizenzhinweis---fonts)
 
 ## Installation
 
@@ -46,17 +49,9 @@ Alles zusammen bildet die Grundlage für das Theming der eigenen Komponenten auf
 - `--lux-theme-light-dividers`
 - `--lux-theme-light-focused`
 - `--lux-theme-form-border-color`
-- `--lux-theme-form-control-default-height-not-scalable`
-- `--lux-theme-form-control-height`
-- `--lux-theme-form-control-height-small`
 - `--lux-theme-form-control-font-size`
 - `--lux-theme-form-control-font-size-small`
-- `--lux-theme-form-control-label-padding`
-- `--lux-theme-form-control-container-padding`
-- `--lux-theme-form-control-misc-margin`
-- `--lux-theme-form-control-complete-height`
 - `--lux-theme-form-control-buffer`
-- `--lux-theme-form-control-margin`
 - `--lux-theme-button-height`
 - `--lux-theme-button-fav-height`
 - `--lux-theme-outline-color-bright`

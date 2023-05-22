@@ -5,15 +5,21 @@ $app-font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
 $app-headline-font: "Blogger Sans";
 
 body {
-  color: map.get(luxpalette.$lux-palette_primary , 500);
+  color: map.get(luxpalette.$lux-palette_primary, 500);
   font-family: $app-font-family;
 }
 
-p, div {
+p,
+div {
   font-family: $app-font-family;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: $app-font-family;
   color: rgba(black, 0.87);
   font-weight: normal;
@@ -33,11 +39,10 @@ $dark-disabled-text: rgba(black, 0.38);
 $dark-dividers: rgba(black, 0.12);
 $dark-focused: rgba(black, 0.12);
 
-
 $light-primary-text: white;
 $light-secondary-text: rgba(white, 0.74);
 $light-disabled-text: rgba(white, 0.38);
-$light-dividers: rgba(white, 0.20);
+$light-dividers: rgba(white, 0.2);
 $light-focused: rgba(white, 0.12);
 
 // App
@@ -51,17 +56,9 @@ $app-border-color: rgba(black, 0.12);
 
 // Form
 $form-border-color: rgba(0, 0, 0, 0.38);
-$form-control-default-height-not-scalable: 30px;
-$form-control-height: 24px;
-$form-control-height-small: 18px; 
 $form-control-font-size: 16px;
 $form-control-font-size-small: 12px;
-$form-control-label-padding: 2px 0 0 0;
-$form-control-container-padding: 6px 0 0 0;
-$form-control-misc-margin: 4px 0 2px 0;
-$form-control-complete-height: 70px;
 $form-control-buffer: 4px;
-$form-control-margin: 0px;
 
 // Button
 $button-height: 36px;
@@ -84,20 +81,20 @@ $lux-selected-bg-color: #f0f3f6;
 
 // Stepper (large)
 $lux-stepper-large-backdrop-bg: #636d76;
-$lux-stepper-large-completed-fc: #2E8533;
+$lux-stepper-large-completed-fc: #2e8533;
 
 $lux-stepper-large-nav-item-active-fc: #ffffff;
 $lux-stepper-large-nav-item-active-bg: #003366;
 $lux-stepper-large-nav-item-disabled-fg: #003366;
 $lux-stepper-large-nav-item-disabled-bg: #eff3f6;
-$lux-stepper-large-nav-item-completed-fg: #2E8533;
+$lux-stepper-large-nav-item-completed-fg: #2e8533;
 $lux-stepper-large-nav-item-completed-bg: #ffffff;
 
 // Hintergrundfarben (z.B. Badge oder Progress)
 $componentBgColors: (
   "red": luxpalette.$lux-warn-color,
   "green": luxpalette.$lux-accent-color,
-  "purple": #9900B8,
+  "purple": #9900b8,
   "blue": luxpalette.$lux-primary-color,
   "gray": #666666,
   "orange": rgba(237, 110, 17, 1),
@@ -106,7 +103,7 @@ $componentBgColors: (
   "white": #ffffff,
   "yellow": rgba(244, 203, 37, 1),
   "pink": rgba(237, 95, 122, 1),
-  "lightblue":  rgba(63, 155, 218, 1), 
+  "lightblue": rgba(63, 155, 218, 1)
 );
 
 // Vordergrundfarben (z.B. Badge)

@@ -13,7 +13,11 @@ $paletteNamen: primary, accent, warn;
   @for $i from 1 through 3 {
     @each $size in $sizes {
       --lux-theme-#{list.nth($paletteNamen, $i)}-#{string.to-lower-case("" + $size)}: #{map.get(list.nth($paletten, $i), $size)};
-      --lux-theme-#{list.nth($paletteNamen, $i)}-#{string.to-lower-case("" + $size)}-contrast: #{map.get(list.nth($paletten, $i), contrast, $size)};
+      --lux-theme-#{list.nth($paletteNamen, $i)}-#{string.to-lower-case("" + $size)}-contrast: #{map.get(
+          list.nth($paletten, $i),
+          contrast,
+          $size
+        )};
     }
   }
 
@@ -41,17 +45,9 @@ $paletteNamen: primary, accent, warn;
 
   // Form
   --lux-theme-form-border-color: #{luxcommon.$form-border-color};
-  --lux-theme-form-control-default-height-not-scalable: #{luxcommon.$form-control-default-height-not-scalable};
-  --lux-theme-form-control-height: #{luxcommon.$form-control-height};
-  --lux-theme-form-control-height-small: #{luxcommon.$form-control-height-small};
   --lux-theme-form-control-font-size: #{luxcommon.$form-control-font-size};
   --lux-theme-form-control-font-size-small: #{luxcommon.$form-control-font-size-small};
-  --lux-theme-form-control-label-padding: #{luxcommon.$form-control-label-padding};
-  --lux-theme-form-control-container-padding: #{luxcommon.$form-control-container-padding};
-  --lux-theme-form-control-misc-margin: #{luxcommon.$form-control-misc-margin};
-  --lux-theme-form-control-complete-height: #{luxcommon.$form-control-complete-height};
   --lux-theme-form-control-buffer: #{luxcommon.$form-control-buffer};
-  --lux-theme-form-control-margin: #{luxcommon.$form-control-margin};
 
   // Button
   --lux-theme-button-font-size: #{luxcommon.$button-font-size};
@@ -97,7 +93,12 @@ body,
   height: 100%;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: luxcommon.$app-headline-font, global.$app-font-family;
 }
 
@@ -221,7 +222,7 @@ h6 {
   border: 1px solid luxcommon.$dark-dividers;
   display: flex;
   word-break: break-word;
-  
+
   &.column {
     flex-direction: column;
     gap: 16px;
@@ -495,19 +496,19 @@ lux-button.lux-uppercase {
 }
 
 @each $colorName, $colorNameHex in luxcommon.$componentBgColors {
-  .lux-color-#{''+$colorName+''} {
+  .lux-color-#{"" + $colorName + ""} {
     color: $colorNameHex;
   }
 }
 
 @each $colorName, $colorNameHex in luxcommon.$componentBgColors {
-  .lux-bg-color-#{''+$colorName+''} {
+  .lux-bg-color-#{"" + $colorName + ""} {
     background: $colorNameHex;
   }
 }
 
 @each $colorName, $colorNameHex in luxcommon.$componentFontColors {
-  .lux-font-color-#{''+$colorName+''} {
+  .lux-font-color-#{"" + $colorName + ""} {
     color: $colorNameHex;
   }
 }
@@ -587,7 +588,7 @@ lux-button.lux-uppercase {
     }
 
     .lux-column-rule-color-#{list.nth($paletteNamen, $i)}-#{string.to-lower-case("" + $size)} {
-     column-rule-color: map.get(list.nth($paletten, $i), $size);
+      column-rule-color: map.get(list.nth($paletten, $i), $size);
     }
 
     .lux-column-rule-color-#{list.nth($paletteNamen, $i)}-#{string.to-lower-case("" + $size)}-contrast {
