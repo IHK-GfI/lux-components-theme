@@ -882,7 +882,7 @@ lux-form-control-wrapper .lux-form-control-wrapper {
       font-size: luxcommon.$form-control-font-size;
       font-family: luxcommon.$app-font-family;
       padding: 8px 0;
-      height: 40px;
+      min-height: 40px;
     }
   }
 
