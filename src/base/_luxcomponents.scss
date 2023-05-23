@@ -266,7 +266,7 @@ lux-divider {
  * Theming for LUX-File-List
  */
 lux-file-list .lux-file-list {
-  margin: luxcommon.$form-control-margin;
+  margin: 0px;
 
   .lux-file-list-entry-label,
   .lux-file-list-entry-icon {
@@ -649,30 +649,6 @@ lux-lookup-combobox-ac {
   }
 }
 
-// Optionen werden im Cdk-Overlay dargestellt und hängen nicht unter der Component selbst.
-.lux-autocomplete-panel,
-.lux-select-panel {
-  .mat-option {
-    border-left: none;
-
-    &.invalid {
-      border-left: 2px solid luxpalette.$lux-warn-color;
-    }
-  }
-}
-
-/* 
- * Eineheitliche Elevation für die Components auf Cdk-Overlay-Pane
- */
-.cdk-overlay-pane {
-  & > .mat-autocomplete-panel:not([class*="mat-elevation-z"]),
-  .mat-datepicker-content,
-  .mat-select-panel:not([class*="mat-elevation-z"]),
-  .mat-menu-panel {
-    @include luxelevations.lux-elevation-z4;
-  }
-}
-
 /*
 * Stylings für für Elemente die im Mat-Menu-Panel im cdk-overlay-container liegen 
 */
@@ -802,11 +778,6 @@ lux-progress {
       }
     }
   }
-}
-
-// Checkbox wird im Cdk-Overlay dargestellt und hängt nicht unter der Component selbst.
-.lux-select-panel .mat-pseudo-checkbox-checked {
-  background-color: map.get(luxpalette.$lux-palette_primary, 500);
 }
 
 /*
@@ -980,17 +951,6 @@ lux-table {
 
   .lux-row-selected {
     background-color: luxcommon.$lux-selected-bg-color;
-  }
-
-  table td {
-    div.lux-form-control {
-      min-height: luxcommon.$form-control-height-small;
-
-      .lux-form-control-label,
-      .lux-form-control-misc {
-        display: none;
-      }
-    }
   }
 }
 

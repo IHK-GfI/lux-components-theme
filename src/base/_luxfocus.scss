@@ -390,27 +390,6 @@ lux-table {
   }
 }
 
-/** ########## Select ########## **/
-// Class, welche das aufgeklappte Panel referenziert
-.lux-select-panel {
-  mat-option {
-    &.mat-selected.mat-option:not(.mat-option-disabled) {
-      @include lux-selected-mixin;
-    }
-
-    // Der Focus bei mat-option wird über die Klasse .mat-active gesteuert
-    // bisher noch keine Lösung um den mouse-focus auszuschalten
-    &.mat-active:not(.cdk-mouse-focused) {
-      @include focus-dark-mixin-inline;
-      border-radius: 4px;
-    }
-
-    &:hover {
-      @include lux-hovered-mixin;
-    }
-  }
-}
-
 /** ########## Select-AC ########## **/
 @mixin lux-option-highlight-mixin {
   background-color: map-get(luxpalette.$lux-palette_primary, 300);
@@ -666,17 +645,6 @@ lux-panel {
     &:hover {
       @include lux-hovered-mixin;
     }
-  }
-}
-
-/** ########## Master-Detail ########## **/
-lux-button.lux-master-toggle button:not([disabled]):focus {
-  &:focus-visible {
-    @include focus-bright-mixin;
-  }
-
-  &:hover {
-    @include lux-hovered-mixin;
   }
 }
 

@@ -50,8 +50,8 @@ lux-lookup-combobox-ac {
 }
 
 // Checkbox wird im Cdk-Overlay dargestellt und hängt nicht unter der Component selbst.
-.lux-select-panel-ac .mat-pseudo-checkbox-checked,
-.lux-select-panel-ac-multiple .mat-pseudo-checkbox-checked {
+.lux-select-panel-ac .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-full,
+.lux-select-panel-ac-multiple .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-full {
   background-color: luxpalette.$lux-primary-color;
 }
 .cdk-overlay-pane {
@@ -183,7 +183,14 @@ lux-toggle-ac {
     }
 
     &.mat-disabled {
-      label .mat-slide-toggle-content {
+      //von Material wird beim gesamten Element die Opacity auf 0.38 gesetzt.
+      //wir wollen aber nur den "Schalter" änderen, das Label wird bei uns über die Color gesteuert
+      opacity: 1;
+      .mat-slide-toggle-bar {
+        opacity: 0.38;
+      }
+
+      .lux-form-label {
         color: luxcommon.$dark-disabled-text;
       }
 

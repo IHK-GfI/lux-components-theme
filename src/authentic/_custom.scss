@@ -512,39 +512,6 @@ example-root {
 }
 
 /*
- * Theming for LUX-Master-Detail
- */
-.lux-master-container {
-  height: 100%;
-  lux-button.lux-master-toggle {
-    position: absolute;
-    right: -18px;
-    top: 18px;
-    z-index: 1000;
-
-    button.lux-button.lux-button-rounded {
-      @include luxelevations.lux-elevation-z0;
-      border: 1px solid luxcommon.$app-border-color;
-      color: map.get(luxpalette.$lux-palette-primary, 500);
-
-      &:not([disabled]):focus:hover {
-        background-color: luxcommon.$lux-hover-color;
-        border-radius: 50%;
-      }
-    }
-  }
-}
-lux-master-header {
-  @include luxelevations.lux-elevation-z0;
-}
-lux-master-footer {
-  border: 1px solid luxcommon.$app-border-color;
-  border-radius: 4px;
-  background-color: luxcommon.$app-data-bg;
-  @include luxelevations.lux-elevation-z0;
-}
-
-/*
  * Theming for LUX-Message-Box
  */
 lux-message-box {
@@ -808,24 +775,6 @@ lux-button button.lux-button {
 .lux-menu-trigger-default {
   button.mat-button {
     color: map.get(luxpalette.$lux-palette_primary, 500);
-  }
-}
-
-/*
- * Theming for LUX-Form-Controls
- * Übergangsweise wird hier nur die Schriftgröße angepasst, damit die Schrift vollständig im Input etc angezeigt wird
- * gilt bis die alten Form-Controls abgelöst sind 
- */
-.lux-form-control {
-  margin: luxcommon.$form-control-margin;
-  min-height: luxcommon.$form-control-complete-height;
-
-  .lux-form-control-container {
-    font-size: 14px;
-    input,
-    textarea {
-      font-size: 14px !important;
-    }
   }
 }
 
