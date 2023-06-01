@@ -21,11 +21,6 @@ lux-tile-ac {
       lux-icon {
         width: 2em;
         height: 2em;
-        i,
-        mat-icon:not(.lux-lx-icon, .lux-lx-icon-no-size) {
-          padding: 0 !important;
-          font-size: 2em !important;
-        }
         mat-icon.lux-lx-icon-no-size {
           width: 2em;
           height: 2em;
