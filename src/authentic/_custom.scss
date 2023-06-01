@@ -851,7 +851,6 @@ lux-stepper {
     &[aria-selected="false"] {
       .lux-stepper-edited-icon,
       .lux-stepper-normal-icon {
-        i,
         mat-icon {
           color: luxpalette.$lux-primary-color;
           background-color: #fff;
@@ -862,7 +861,6 @@ lux-stepper {
     &[aria-selected="true"] {
       .lux-stepper-edited-icon,
       .lux-stepper-normal-icon {
-        i,
         mat-icon {
           color: #fff;
           background-color: luxpalette.$lux-primary-color;
@@ -877,7 +875,6 @@ lux-stepper {
       &[aria-selected="true"] {
         .lux-stepper-edited-icon,
         .lux-stepper-normal-icon {
-          i,
           mat-icon {
             background-color: luxcommon.$lux-hover-color;
             color: #fff;

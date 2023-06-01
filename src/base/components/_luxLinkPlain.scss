@@ -41,7 +41,6 @@ lux-link-plain {
     color: map.get(luxpalette.$lux-palette-primary, A700);
     font-family: inherit;
     lux-icon {
-      i,
       mat-icon {
         color: map.get(luxpalette.$lux-palette-primary, A700);
       }
@@ -54,7 +53,6 @@ lux-link-plain {
     cursor: text;
     text-decoration: none;
     lux-icon {
-      i,
       mat-icon {
         color: luxcommon.$dark-disabled-text;
       }
@@ -66,7 +64,6 @@ lux-link-plain {
     text-decoration: underline;
     cursor: pointer;
     lux-icon {
-      i,
       mat-icon {
         color: map.get(luxpalette.$lux-palette-primary, 300);
       }

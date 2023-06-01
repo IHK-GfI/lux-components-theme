@@ -3,6 +3,7 @@
 ## New
 
 - **Blue-Theme**: Das Theme wurde zugunsten des Authentic-Themes gelöscht. [Issue 316](https://github.com/IHK-GfI/lux-components/issues/316)
+- **lux-icon**: Material- und FA-Icons entfernt. [Issue 322](https://github.com/IHK-GfI/lux-components/issues/322)
 
 # Version 14.6.0
 
