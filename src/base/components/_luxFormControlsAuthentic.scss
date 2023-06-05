@@ -146,7 +146,7 @@ lux-datetimepicker-ac {
         padding: 0px !important;
       }
 
-      &.mat-button-disabled {
+      &[disabled="true"] {
         svg {
           color: luxcommon.$dark-disabled-text;
         }
