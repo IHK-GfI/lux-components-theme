@@ -208,6 +208,20 @@ lux-button button.lux-button {
       width: luxcommon.$button-font-size;
     }
   }
+
+  .lux-button-badge {
+    color: #fff;
+    border-radius: 4px;
+    padding: 1px 4px;
+    font-size: 11px;
+    line-height: normal;
+    max-width: 38px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
 }
 
 /**
@@ -943,6 +957,35 @@ lux-master-header {
   .lux-menu-item {
     font-size: 16px;
     display: block;
+    &.with-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      width: 100%;
+      max-width: 100%;
+    }
+    .lux-button-label.with-badge {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .lux-button-badge {
+      color: #fff;
+      border-radius: 4px;
+      padding: 1px 4px;
+      font-size: 11px;
+      line-height: normal;
+      min-width: 15px;
+      max-width: 38px;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      box-sizing: border-box;
+      letter-spacing: 1.25px;
+    }
   }
   .lux-menu-item-icon {
     vertical-align: middle;

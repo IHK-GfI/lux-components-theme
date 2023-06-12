@@ -311,6 +311,13 @@ lux-button button.lux-button {
       }
     }
   }
+
+  .lux-button-badge {
+    border-radius: 8px;
+    padding: 2px 8px;
+    font-size: 14px;
+    max-width: 48px;
+  }
 }
 
 /*

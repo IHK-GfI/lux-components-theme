@@ -1,3 +1,9 @@
+# Version 14.7.0
+
+## New
+
+-**lux-button, lux-menu-item, lux-app-header-ac-nav-menu-item**: Neue Properties luxButtonBadge, luxButtonBadgeColor eingeführt. [Issue 305](https://github.com/IHK-GfI/lux-components/issues/305)
+
 # Version 14.6.0
 
 ## New
