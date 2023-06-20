@@ -155,6 +155,7 @@ lux-app-header-ac {
 
     &.lux-selected-item-ac {
       font-weight: 600;
+      color: luxpalette.$lux-primary-color;
       & .lux-button-label {
         padding-right: 24px;
         &::after {
