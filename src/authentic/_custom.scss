@@ -36,12 +36,14 @@ label {
   border: 2px solid luxpalette.$lux-primary-color;
   box-shadow: none !important;
 
-  .lux-menu-item {
-    color: luxpalette.$lux-primary-color;
-  }
+  .mat-menu-item:not([disabled="true"]) {
+    &.lux-menu-item {
+      color: luxpalette.$lux-primary-color;
+    }
 
-  .mat-menu-item .mat-icon-no-color {
-    color: luxpalette.$lux-primary-color;
+    .mat-icon-no-color {
+      color: luxpalette.$lux-primary-color;
+    }
   }
 
   .lux-menu-item:not([disabled="true"]):hover {
