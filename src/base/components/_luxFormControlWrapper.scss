@@ -92,16 +92,17 @@ lux-form-control-wrapper {
         white-space: nowrap;
         display: inline-block;
         max-height: 1.5em;
+        align-items: center;
+
+        lux-input-ac-suffix,
+        lux-input-ac-prefix {
+          display: inline-flex;
+        }
 
         lux-icon {
-          mat-icon {
-            padding: 0 !important;
-            margin: 0;
-            font-size: 1.5em !important;
-            &.lux-lx-icon-no-size {
-              width: 1em;
-              height: 1em;
-            }
+          mat-icon.lux-icon {
+            box-sizing: border-box;
+            padding: 0px !important;
           }
         }
       }

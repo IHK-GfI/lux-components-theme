@@ -18,13 +18,10 @@ lux-tile-ac {
 
     .lux-tile-icon {
       color: map.get(luxpalette.$lux-palette-primary, 500);
-      lux-icon {
-        width: 2em;
-        height: 2em;
-        mat-icon.lux-lx-icon-no-size {
-          width: 2em;
-          height: 2em;
-        }
+      mat-icon.lux-icon {
+        padding: 0px !important;
+        height: 32px;
+        width: 32px;
       }
     }
 

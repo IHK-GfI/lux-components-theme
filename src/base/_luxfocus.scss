@@ -29,6 +29,12 @@ $outline-bright: luxcommon.$outline-width luxcommon.$outline-style luxcommon.$ou
   outline: $outline-bright;
 }
 
+@mixin lux-button-focus {
+  $width: calc(#{luxcommon.$outline-width} - 1px);
+  outline: $width luxcommon.$outline-style luxcommon.$outline-color-dark !important;
+  outline-offset: 1px;
+}
+
 @mixin lux-selectable-mixin {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -461,73 +467,6 @@ lux-table {
       }
       & .mat-option-text::after {
         background-color: #fff;
-      }
-    }
-  }
-}
-
-/** ########## Button ########## **/
-lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-item-btn, .nav-menu-trigger-ac, .lux-filter-menu-trigger) {
-  button:not([disabled]) {
-    .mat-button-focus-overlay {
-      display: none;
-    }
-
-    &:focus-visible {
-      @include focus-dark-mixin;
-    }
-
-    &:not(.mat-fab):not(.mat-raised-button):not(.mat-flat-button),
-    &.mat-stroked-button {
-      &:hover {
-        background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%);
-
-        &.mat-accent {
-          color: map.get(luxpalette.$lux-palette_accent, 900);
-        }
-
-        &.mat-warn {
-        }
-
-        &.mat-primary {
-        }
-      }
-    }
-
-    &.mat-fab:hover,
-    &.mat-raised-button:hover,
-    &.mat-flat-button:hover {
-      background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%) !important; // $lux-hover-color !important;
-      //background-color: luxcommon.$lux-hover-color !important; // $lux-hover-color !important;
-
-      &.mat-accent {
-        background-color: color.adjust(map.get(luxpalette.$lux-palette_accent, 500), $lightness: 10%) !important;
-      }
-
-      &.mat-warn {
-        background-color: color.adjust(map.get(luxpalette.$lux-palette_warn, 500), $lightness: 10%) !important;
-      }
-
-      &.mat-primary {
-        background-color: color.adjust(map.get(luxpalette.$lux-palette_primary, 500), $lightness: 10%) !important;
-      }
-    }
-
-    &.mat-fab:focus-visible:not(:hover),
-    &.mat-raised-button:focus-visible:not(:hover),
-    &.mat-flat-button:focus-visible:not(:hover) {
-      background-color: white !important;
-
-      &.mat-accent {
-        background-color: color.adjust(map.get(luxpalette.$lux-palette_accent, 500), $lightness: 5%) !important;
-      }
-
-      &.mat-warn {
-        background-color: color.adjust(map.get(luxpalette.$lux-palette_warn, 500), $lightness: 5%) !important;
-      }
-
-      &.mat-primary {
-        background-color: color.adjust(map.get(luxpalette.$lux-palette_primary, 500), $lightness: 5%) !important;
       }
     }
   }

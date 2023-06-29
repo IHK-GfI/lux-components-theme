@@ -1,0 +1,143 @@
+@use "sass:map";
+@use "sass:color";
+@use "../luxpalette";
+@use "../luxcommon";
+@use "../luxelevations";
+@use "../luxfocus";
+@use "../../public/global";
+
+/*
+ * Styling for LUX-Button
+ */
+lux-button button.lux-button {
+  font-family: global.$app-font-family;
+  font-size: luxcommon.$button-font-size;
+  font-weight: 600;
+  height: luxcommon.$button-height;
+
+  .lux-button-content-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+  }
+
+  &.mat-button.mat-button-disabled,
+  &.mat-raised-button.mat-button-disabled,
+  &.mat-flat-button.mat-button-disabled,
+  &.mat-stroked-button.mat-button-disabled,
+  &.mat-raised-button.mat-button-disabled:not([class*="mat-elevation-z"]),
+  &.mat-fab.mat-button-disabled {
+    color: luxcommon.$dark-disabled-text;
+    @include luxelevations.lux-elevation-z0;
+  }
+
+  &.mat-raised-button:not([class*="mat-elevation-z"]) {
+    @include luxelevations.lux-elevation-z2;
+  }
+
+  &.lux-button-rounded {
+    height: luxcommon.$button-fav-height;
+    width: luxcommon.$button-fav-height;
+
+    @include luxelevations.lux-elevation-z2;
+
+    .mat-button-wrapper {
+      padding: 0;
+      height: 100%;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    lux-icon.lux-button-icon-round {
+      line-height: 1;
+    }
+  }
+
+  lux-icon.lux-button-icon:not(.lux-button-icon-round) {
+    line-height: 1;
+  }
+
+  .lux-button-badge {
+    color: #fff;
+    border-radius: 4px;
+    padding: 1px 4px;
+    font-size: 11px;
+    line-height: normal;
+    max-width: 38px;
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+  }
+}
+
+/*
+ * Focus / Hover / Disabled
+ */
+lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-item-btn, .nav-menu-trigger-ac, .lux-filter-menu-trigger) {
+  button:not([disabled]) {
+    .mat-button-focus-overlay {
+      display: none;
+    }
+
+    &:focus-visible {
+      @include luxfocus.focus-dark-mixin;
+    }
+
+    &:not(.mat-fab):not(.mat-raised-button):not(.mat-flat-button),
+    &.mat-stroked-button {
+      &:hover {
+        background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%);
+
+        &.mat-accent {
+          color: map.get(luxpalette.$lux-palette_accent, 900);
+        }
+
+        &.mat-warn {
+        }
+
+        &.mat-primary {
+        }
+      }
+    }
+
+    &.mat-fab:hover,
+    &.mat-raised-button:hover,
+    &.mat-flat-button:hover {
+      background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%) !important;
+
+      &.mat-accent {
+        background-color: color.adjust(map.get(luxpalette.$lux-palette_accent, 500), $lightness: 10%) !important;
+      }
+
+      &.mat-warn {
+        background-color: color.adjust(map.get(luxpalette.$lux-palette_warn, 500), $lightness: 10%) !important;
+      }
+
+      &.mat-primary {
+        background-color: color.adjust(map.get(luxpalette.$lux-palette_primary, 500), $lightness: 10%) !important;
+      }
+    }
+
+    &.mat-fab:focus-visible:not(:hover),
+    &.mat-raised-button:focus-visible:not(:hover),
+    &.mat-flat-button:focus-visible:not(:hover) {
+      background-color: white !important;
+
+      &.mat-accent {
+        background-color: color.adjust(map.get(luxpalette.$lux-palette_accent, 500), $lightness: 5%) !important;
+      }
+
+      &.mat-warn {
+        background-color: color.adjust(map.get(luxpalette.$lux-palette_warn, 500), $lightness: 5%) !important;
+      }
+
+      &.mat-primary {
+        background-color: color.adjust(map.get(luxpalette.$lux-palette_primary, 500), $lightness: 5%) !important;
+      }
+    }
+  }
+}
