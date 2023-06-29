@@ -118,11 +118,6 @@ mat-card lux-tabs {
       }
     }
   }
-
-  lux-icon.lux-tab-icon mat-icon.lux-lx-icon {
-    width: 24px !important;
-    height: 24px !important;
-  }
 }
 
 /*
@@ -549,10 +544,8 @@ lux-message-box {
  * Theming for LUX-Button
  */
 lux-button button.lux-button {
-  //font-family: luxcommon.$app-font-family;
-  font-weight: 600;
-  font-size: 15px;
   letter-spacing: 1.25px;
+
   //Theming für den Text-Button
   &.mat-button:not(.mat-button-disabled) {
     &:hover {
@@ -560,8 +553,8 @@ lux-button button.lux-button {
       background-color: transparent !important;
     }
     &:focus-visible:not(:hover) {
-      color: luxcommon.$dark-secondary-text;
       background-color: transparent !important;
+      @include luxfocus.lux-button-focus;
     }
     &:active {
       color: luxcommon.$dark-primary-text !important;
@@ -573,8 +566,8 @@ lux-button button.lux-button {
         background-color: transparent !important;
       }
       &:focus-visible:not(:hover) {
-        color: map.get(luxpalette.$lux-palette-primary, 700) !important;
         background-color: transparent !important;
+        @include luxfocus.lux-button-focus;
       }
       &:active {
         color: map.get(luxpalette.$lux-palette-primary, 700) !important;
@@ -588,6 +581,7 @@ lux-button button.lux-button {
       }
       &:focus-visible:not(:hover) {
         background-color: transparent !important;
+        @include luxfocus.lux-button-focus;
       }
       &:active {
         color: map.get(luxpalette.$lux-palette-accent, 700) !important;
@@ -600,8 +594,9 @@ lux-button button.lux-button {
         background-color: transparent !important;
       }
       &:focus-visible:not(:hover) {
-        color: map.get(luxpalette.$lux-palette-warn, 700);
+        color: map.get(luxpalette.$lux-palette-warn, 500);
         background-color: transparent !important;
+        @include luxfocus.lux-button-focus;
       }
       &:active {
         color: map.get(luxpalette.$lux-palette-warn, 700) !important;
@@ -620,9 +615,10 @@ lux-button button.lux-button {
     }
 
     &:focus-visible:not(:hover) {
-      color: luxcommon.$dark-secondary-text;
+      color: luxcommon.$dark-primary-text;
       background-color: transparent !important;
       border-color: luxcommon.$dark-primary-text;
+      @include luxfocus.lux-button-focus;
     }
     &:active {
       color: luxcommon.$dark-primary-text;
@@ -637,9 +633,10 @@ lux-button button.lux-button {
         border-color: map.get(luxpalette.$lux-palette-primary, 300);
       }
       &:focus-visible:not(:hover) {
-        color: map.get(luxpalette.$lux-palette-primary, 300);
+        color: map.get(luxpalette.$lux-palette-primary, 500);
         background-color: transparent !important;
-        border-color: map.get(luxpalette.$lux-palette-primary, 700);
+        border-color: map.get(luxpalette.$lux-palette-primary, 500);
+        @include luxfocus.lux-button-focus;
       }
       &:active {
         color: map.get(luxpalette.$lux-palette-primary, 700);
@@ -657,9 +654,10 @@ lux-button button.lux-button {
         border-color: map.get(luxpalette.$lux-palette-accent, 300);
       }
       &:focus-visible:not(:hover) {
-        color: luxcommon.$dark-secondary-text;
+        color: luxcommon.$dark-primary-text;
         background-color: transparent !important;
-        border-color: map.get(luxpalette.$lux-palette-accent, 700);
+        border-color: map.get(luxpalette.$lux-palette-accent, 500);
+        @include luxfocus.lux-button-focus;
       }
       &:active {
         color: luxcommon.$dark-primary-text !important;
@@ -676,9 +674,10 @@ lux-button button.lux-button {
         border-color: map.get(luxpalette.$lux-palette-warn, 300);
       }
       &:focus-visible:not(:hover) {
-        color: map.get(luxpalette.$lux-palette-warn, 300);
+        color: map.get(luxpalette.$lux-palette-warn, 500);
         background-color: transparent !important;
-        border-color: map.get(luxpalette.$lux-palette-warn, 700);
+        border-color: map.get(luxpalette.$lux-palette-warn, 500);
+        @include luxfocus.lux-button-focus;
       }
       &:active {
         color: map.get(luxpalette.$lux-palette-warn, 700);
@@ -702,8 +701,9 @@ lux-button button.lux-button {
     }
 
     &:focus-visible:not(:hover) {
-      color: luxcommon.$dark-secondary-text;
+      color: luxcommon.$dark-primary-text;
       background-color: #ffffff !important;
+      @include luxfocus.lux-button-focus;
     }
     &:active {
       color: luxcommon.$dark-primary-text;
@@ -717,7 +717,8 @@ lux-button button.lux-button {
       }
       &:focus-visible:not(:hover) {
         color: #ffffff;
-        background-color: map.get(luxpalette.$lux-palette-primary, 700) !important;
+        background-color: map.get(luxpalette.$lux-palette-primary, 500) !important;
+        @include luxfocus.lux-button-focus;
       }
       &:active {
         background-color: map.get(luxpalette.$lux-palette-primary, 700) !important;
@@ -730,7 +731,8 @@ lux-button button.lux-button {
         background-color: map.get(luxpalette.$lux-palette-accent, 300) !important;
       }
       &:focus-visible:not(:hover) {
-        background-color: map.get(luxpalette.$lux-palette-accent, 700) !important;
+        background-color: map.get(luxpalette.$lux-palette-accent, 500) !important;
+        @include luxfocus.lux-button-focus;
       }
       &:active {
         background-color: map.get(luxpalette.$lux-palette-accent, 700) !important;
@@ -744,7 +746,8 @@ lux-button button.lux-button {
       }
       &:focus-visible:not(:hover) {
         color: #ffffff;
-        background-color: map.get(luxpalette.$lux-palette-warn, 700) !important;
+        background-color: map.get(luxpalette.$lux-palette-warn, 500) !important;
+        @include luxfocus.lux-button-focus;
       }
       &:active {
         background-color: map.get(luxpalette.$lux-palette-warn, 700) !important;
@@ -1052,5 +1055,20 @@ lux-stepper-large {
       color: luxcommon.$lux-stepper-large-completed-fc;
       font-size: 18px;
     }
+  }
+}
+
+lux-file-upload {
+  .lux-file-upload-view-item-delete-button button.lux-button.mat-button {
+    color: luxpalette.$lux-primary-color;
+
+    &:hover {
+      color: luxcommon.$lux-hover-color;
+    }
+  }
+
+  .lux-file-upload-container .lux-file-upload-view-item-container {
+    margin-left: luxcommon.$outline-width;
+    margin-right: luxcommon.$outline-width;
   }
 }
