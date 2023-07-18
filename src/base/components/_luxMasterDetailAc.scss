@@ -23,24 +23,24 @@
       background-color: unset;
     }
   }
- 
-  .lux-master-header-container-ac  {
+
+  .lux-master-header-container-ac {
     z-index: 100;
-    position:relative;
+    position: relative;
 
     lux-button.master-ac-toggle {
       position: absolute;
       right: -18px;
       top: 17px;
       z-index: 1000;
-      
+
       button.lux-button.lux-button-rounded {
-        @include luxelevations.lux-elevation-z0;  
+        @include luxelevations.lux-elevation-z0;
         border: 1px solid luxcommon.$app-border-color;
         color: map.get(luxpalette.$lux-palette-primary, 500);
         background-color: #fff !important;
       }
-      
+
       .lux-button-icon-round.lux-lx-icon.lux-no-size {
         // optische Anpassung für das "Chevron"-Icon, damit es zentriert im Button sitzt
         // Anpassung erforderlich, falls das Icon ausgetauscht wird
@@ -50,9 +50,9 @@
       }
     }
     button.lux-button.lux-button-rounded {
-      &:hover:not([disabled]){
+      &:hover:not([disabled]) {
         color: luxcommon.$lux-hover-color;
-        border-radius: 50%
+        border-radius: 50%;
       }
       &:active:not([disabled]) {
         color: map.get(luxpalette.$lux-palette-primary, 700);
@@ -62,7 +62,8 @@
     .lux-menu-extended {
       padding: 0px;
     }
-    mat-card-title, h2 {
+    mat-card-title,
+    h2 {
       font-size: 16px;
     }
     mat-card-subtitle.mat-card-subtitle {
@@ -76,7 +77,8 @@
     mat-card.mat-card {
       padding: 12px;
     }
-    mat-card-title, h2 {
+    mat-card-title,
+    h2 {
       font-size: 16px;
     }
     mat-card-subtitle.mat-card-subtitle {
@@ -99,13 +101,13 @@
   .lux-master-view-ac {
     margin: 10px 0;
     z-index: 100;
-    
+
     lux-list {
       border: none !important;
     }
-    
+
     lux-list-item {
-      margin-bottom: 4px;  
+      margin-bottom: 4px;
       mat-card.mat-card {
         margin: 0px;
 
@@ -120,11 +122,11 @@
         }
       }
     }
-    
+
     lux-list-item,
     lux-list-item-content {
       display: block;
-    }    
+    }
   }
 
   lux-master-footer-ac {
@@ -143,21 +145,25 @@
     border: 1px solid luxcommon.$app-border-color;
     border-radius: 4px;
     background-color: #fff;
-    
+
     .lux-detail-header-ac {
       mat-card.mat-card.lux-card {
         border: none;
       }
     }
-    
+
     .lux-detail-empty {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
+
+      &.lux-mobile {
+        top: 60px;
+      }
     }
-  
+
     .lux-detail-empty-icon,
     .lux-detail-empty-icon-text {
       opacity: 0.6;
@@ -173,7 +179,7 @@
       }
       .back-to-master-button-container {
         padding: 4px;
-      
+
         &:hover {
           background-color: luxcommon.$lux-hover-color;
           cursor: pointer;
@@ -181,7 +187,7 @@
 
         lux-button.back-to-master-button {
           button.lux-button.lux-button-rounded {
-            @include luxelevations.lux-elevation-z0;  
+            @include luxelevations.lux-elevation-z0;
             border: 1px solid luxcommon.$app-border-color;
             color: map.get(luxpalette.$lux-palette-primary, 500);
           }
@@ -203,4 +209,4 @@
       }
     }
   }
- }
+}
