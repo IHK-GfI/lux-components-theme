@@ -2,7 +2,11 @@
 
 ## New
 
--**lux-button, lux-menu-item, lux-app-header-ac-nav-menu-item**: Neue Properties luxButtonBadge, luxButtonBadgeColor eingeführt. [Issue 305](https://github.com/IHK-GfI/lux-components/issues/305)
+- **lux-button, lux-menu-item, lux-app-header-ac-nav-menu-item**: Neue Properties luxButtonBadge, luxButtonBadgeColor eingeführt. [Issue 305](https://github.com/IHK-GfI/lux-components/issues/305)
+
+## Bug Fixes
+
+- **lux-master-detail-ac**: In der mobilen Ansicht wird initial die Detailansicht anstatt der Liste angezeigt. [Issue 338](https://github.com/IHK-GfI/lux-components/issues/338)
 
 # Version 14.6.0
 
@@ -10,7 +14,7 @@
 
 - **lux-textbox**: Neue Komponente "lux-textbox" hinzugefügt. [Issue 292](https://github.com/IHK-GfI/lux-components/issues/292)
 
-## Bug Fix
+## Bug Fixes
 
 - **lux-menu**: Lange Labels im Menu-Panel werden automatisch mit "Text-overflow: ellipsis" gekürzt. [Issue 312](https://github.com/IHK-GfI/lux-components/issues/312)
 
