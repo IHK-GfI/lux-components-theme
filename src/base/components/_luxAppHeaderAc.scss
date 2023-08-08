@@ -141,6 +141,7 @@ lux-app-header-ac {
 
         &.nav-item-selected button.lux-button .lux-button-label {
           font-weight: 600;
+          height: 33px !important; //Sonst verschiebt sich die Höhe des Labels!
         }
       }
 
