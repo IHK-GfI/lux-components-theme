@@ -1,3 +1,9 @@
+# Version 15.1.0
+
+## Bug Fixes
+
+-**lux-app-header-ac**: Das Selected-Nav-Item wurde neue Positioniert. [Issue 349](https://github.com/IHK-GfI/lux-components/issues/349)
+
 # Version 15.0.0
 
 ## New
