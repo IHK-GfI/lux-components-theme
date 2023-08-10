@@ -336,6 +336,12 @@ lux-chips-ac {
       }
     }
   }
+
+  .lux-hide-input-border .lux-form-control-container-authentic {
+    border: none;
+    padding: 0;
+    box-shadow: none !important; // den Focus-indicator für das Inputausblenden
+  }
 }
 .lux-chips-ac-autocomplete-panel.mat-autocomplete-panel,
 .lux-chips-ac-autocomplete-panel-dense.mat-autocomplete-panel {
