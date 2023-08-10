@@ -2,7 +2,11 @@
 
 ## Bug Fixes
 
--**lux-app-header-ac**: Das Selected-Nav-Item wurde neue Positioniert. [Issue 349](https://github.com/IHK-GfI/lux-components/issues/349)
+- **lux-app-header-ac**: Das Selected-Nav-Item wurde neue Positioniert. [Issue 349](https://github.com/IHK-GfI/lux-components/issues/349)
+
+## New
+
+- **lux-chips-ac**: Neue Property luxHideBorder eingeführt. [Issue 351](https://github.com/IHK-GfI/lux-components/issues/351)
 
 # Version 15.0.0
 
