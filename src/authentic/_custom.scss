@@ -392,16 +392,8 @@ lux-list {
     margin-bottom: 0;
   }
 
-  &:focus-visible {
-    border: luxfocus.$outline-dark;
-    border-radius: 4px;
-    outline: none;
-  }
-
   lux-list-item {
     &:focus-visible {
-      outline: none;
-
       mat-card.mat-card.lux-card {
         @include luxfocus.focus-dark-mixin-inline;
         background-color: #fff !important;
@@ -420,6 +412,7 @@ lux-list {
 
         &:hover {
           border: 1px solid luxcommon.$lux-hover-color;
+          background: luxcommon.$app-gradient-reverse;
           background-color: #fff !important;
         }
       }

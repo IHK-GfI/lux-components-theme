@@ -9,6 +9,7 @@
 @use "components/luxTextbox.scss";
 @use "components/luxIcon";
 @use "components/luxButton";
+@use "components/luxList";
 @use "luxcommon";
 @use "luxpalette";
 @use "../public/global";
@@ -484,27 +485,6 @@ lux-layout-card-row {
 lux-layout-form-row {
   .row-title {
     color: luxcommon.$dark-primary-text;
-  }
-}
-
-/*
- * Theming for LUX-List
- */
-lux-list {
-  .lux-list-empty-icon,
-  .lux-list-empty-icon-text {
-    color: luxcommon.$dark-primary-text;
-  }
-  .mat-card:not([class*="mat-elevation-z"]) {
-    @include luxelevations.lux-elevation-z2;
-  }
-
-  lux-list-item lux-card mat-card {
-    margin: luxcommon.$outline-width;
-  }
-
-  .mat-card-content.menu-item-content {
-    margin-bottom: 0;
   }
 }
 

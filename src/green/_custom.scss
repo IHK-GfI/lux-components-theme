@@ -543,16 +543,22 @@ lux-filter-form lux-accordion {
   }
 
   .lux-master-ac-container {
-    padding: 2px 0 2px 2px;
+    padding: 3px 0 3px 3px;
     &.lux-master-closed {
       flex: 1 1 30px !important;
       max-width: 30px !important;
       min-width: 30px !important;
     }
+    lux-list {
+      padding: 0 3px;
+    }
+    lux-master-header-ac {
+      margin: 3px;
+    }
   }
 
   lux-master-footer-ac {
-    margin-bottom: 4px;
+    margin: 0 3px 4px 3px;
     border: none;
     @include luxelevations.lux-elevation-z2;
   }
