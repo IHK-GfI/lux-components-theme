@@ -191,39 +191,6 @@ lux-card mat-card {
   }
 }
 
-/** ########## List ########## **/
-lux-list {
-  border: luxcommon.$outline-width dashed transparent;
-
-  &:focus-visible {
-    border: $outline-dark;
-    border-radius: 4px;
-    outline: none;
-  }
-
-  lux-list-item {
-    &:focus-visible {
-      outline: none;
-    }
-
-    lux-card {
-      &.lux-list-item-selected {
-        mat-card.mat-card.lux-card {
-          @include lux-selected-mixin;
-        }
-      }
-
-      mat-card {
-        @include lux-selectable-mixin;
-
-        &:hover {
-          @include lux-hovered-mixin;
-        }
-      }
-    }
-  }
-}
-
 /** ########## Filter-Form ########## **/
 lux-filter-form {
   lux-menu {

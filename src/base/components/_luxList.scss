@@ -1,0 +1,66 @@
+@use "sass:map";
+@use "../luxfocus";
+@use "../luxcommon";
+@use "../luxpalette";
+@use "../luxelevations";
+
+/*
+ * Theming for LUX-List
+ */
+lux-list {
+  border-radius: 4px;
+
+  .lux-list-empty-icon,
+  .lux-list-empty-icon-text {
+    color: luxcommon.$dark-primary-text;
+  }
+  .mat-card:not([class*="mat-elevation-z"]) {
+    @include luxelevations.lux-elevation-z0;
+  }
+
+  lux-list-item:not(:last-of-type) lux-card {
+    margin-bottom: 4px;
+  }
+
+  .mat-card-content.menu-item-content {
+    margin-bottom: 0;
+  }
+
+  /** ########## FOCUS ########## **/
+
+  &:focus-visible {
+    outline: none; //Browser-Default verhindern
+    .lux-list-empty-icon-text {
+      // bei einer Leeren Liste soll das Label unter dem "Empty-Icon" focusiert werden
+      // dieses Label wird auch vom Screenreader verwendet
+      @include luxfocus.focus-dark-mixin;
+      border-radius: 4px;
+    }
+  }
+
+  lux-list-item {
+    &:focus-visible {
+      outline: none;
+      lux-card mat-card {
+        @include luxfocus.focus-dark-mixin-inline;
+      }
+    }
+
+    lux-card {
+      &.lux-list-item-selected {
+        mat-card.mat-card.lux-card {
+          @include luxfocus.lux-selected-mixin;
+        }
+      }
+
+      mat-card {
+        @include luxfocus.lux-selectable-mixin;
+
+        &:hover {
+          @include luxfocus.lux-hovered-mixin;
+          background: luxcommon.$app-gradient-reverse;
+        }
+      }
+    }
+  }
+}

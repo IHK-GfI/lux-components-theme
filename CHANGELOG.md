@@ -7,6 +7,8 @@
 ## New
 
 - **lux-chips-ac**: Neue Property luxHideBorder eingeführt. [Issue 351](https://github.com/IHK-GfI/lux-components/issues/351)
+- **lux-master-detail-ac**: FxLayout wurde durch css ersetzt. [Issue 350](https://github.com/IHK-GfI/lux-components/issues/350)
+- **lux-list-ac**: Der Keyboard-Focus wurde überarbeitet. [Issue 350](https://github.com/IHK-GfI/lux-components/issues/350)
 
 # Version 15.0.0
 
