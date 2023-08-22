@@ -817,8 +817,9 @@ lux-stepper {
  * Theming for LUX-Table
  */
 lux-table {
-  font-family: global.$app-font-family;
-
+  table.mat-table {
+    font-family: luxcommon.$app-font-family;
+  }
   .lux-row-selected {
     background-color: luxcommon.$lux-selected-bg-color;
   }
