@@ -18,8 +18,15 @@ lux-textbox {
 
     background-color: #ffffff;
 
-    h3.lux-textbox-title {
+    h1.lux-textbox-title,
+    h2.lux-textbox-title,
+    h3.lux-textbox-title,
+    h4.lux-textbox-title,
+    h5.lux-textbox-title,
+    h6.lux-textbox-title {
       margin: 0;
+      font-size: 20px;
+      font-weight: 500;
     }
 
     .lux-textbox-icon {

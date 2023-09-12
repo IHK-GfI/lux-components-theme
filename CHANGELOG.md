@@ -1,3 +1,9 @@
+# Version 15.2.0
+
+## New
+
+-**lux-textbox**: Die Textbox hat eine neue Property luxHeading erhalten. [Issue 360](https://github.com/IHK-GfI/lux-components/issues/360)
+
 # Version 15.1.0
 
 ## New
