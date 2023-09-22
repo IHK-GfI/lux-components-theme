@@ -17,6 +17,8 @@
   color: luxcommon.$dark-secondary-text;
 }
 
+$light-red: rgb(255, 228, 231); //lux-warn-50 mit opacity: 0.5
+
 lux-form-control-wrapper {
   width: 100%;
 
@@ -64,7 +66,6 @@ lux-form-control-wrapper {
     .lux-form-control-misc-authentic {
       box-sizing: border-box;
       margin: 0.25em calc(0.5em + 1px) 0 calc(0.5em + 1px);
-
       @include form-label;
       word-wrap: break-word;
 
@@ -98,7 +99,6 @@ lux-form-control-wrapper {
         lux-input-ac-prefix {
           display: inline-flex;
         }
-
         lux-icon {
           mat-icon.lux-icon {
             box-sizing: border-box;
@@ -119,11 +119,13 @@ lux-form-control-wrapper {
     }
 
     // Definitionen der einzelnen States der Form-Controls
+    // HOVER
     &:hover:not(.lux-form-control-disabled-authentic):not(.lux-focused-authentic):not(.lux-form-control-error-authentic) {
       .lux-form-control-container-authentic:not(.lux-no-input-row) {
         border-color: luxcommon.$dark-primary-text;
       }
     }
+    // FOCUS
     &.lux-focused-authentic {
       .lux-form-control-label-authentic > * {
         color: map.get(luxpalette.$lux-palette_primary, 400);
@@ -133,15 +135,29 @@ lux-form-control-wrapper {
         box-shadow: 0 0 0 1px map.get(luxpalette.$lux-palette_primary, 500) inset;
       }
     }
+    // ERROR
     &.lux-form-control-error-authentic:not(.lux-form-control-disabled-authentic) {
-      .lux-form-control-label-authentic > * {
-        color: map.get(luxpalette.$lux-palette_warn, 500);
-      }
       .lux-form-control-container-authentic:not(.lux-no-input-row) {
         border-color: map.get(luxpalette.$lux-palette_warn, 500);
         box-shadow: 0 0 0 1px map.get(luxpalette.$lux-palette_warn, 500) inset;
       }
+      .lux-form-control-misc-authentic {
+        .lux-alert-icon {
+          color: map-get(luxpalette.$lux-palette_warn, 900);
+          mat-icon.mat-icon {
+            box-sizing: border-box;
+          }
+        }
+        .mat-error {
+          background-color: $light-red;
+          border-radius: 4px;
+          padding-right: 2px;
+          color: map-get(luxpalette.$lux-palette_warn, 900) !important;
+          box-shadow: -18px 0px 0 0 $light-red, -18px -1px 0 0 $light-red, 0 -1px 0 0 $light-red;
+        }
+      }
     }
+    // Disabled
     &.lux-form-control-disabled-authentic {
       .lux-form-control-container-authentic,
       .lux-form-control-label-authentic,
@@ -149,6 +165,7 @@ lux-form-control-wrapper {
         color: luxcommon.$dark-disabled-text;
       }
     }
+    // READONLY
     &.lux-form-control-readonly-authentic,
     &.lux-form-control-disabled-authentic {
       pointer-events: none;
