@@ -328,6 +328,16 @@ lux-card.lux-card-grow {
   visibility: hidden !important;
 }
 
+.lux-sr-only {
+  // sr=screen-reader vgl. https://webaim.org/techniques/css/invisiblecontent/
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .lux-nowrap {
   white-space: nowrap;
 }

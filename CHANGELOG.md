@@ -1,3 +1,9 @@
+# Version 15.3.0
+
+## New
+
+- **styles**: In luxstyles wurde eine neue Klasse "lux-sr-only" ergänzt. [Issue 372](https://github.com/IHK-GfI/lux-components/issues/372)
+
 # Version 15.2.0
 
 ## New
