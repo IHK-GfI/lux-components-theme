@@ -1,14 +1,9 @@
-# Version 15.3.0
-
-## New
-
-- **styles**: In luxstyles wurde eine neue Klasse "lux-sr-only" ergänzt. [Issue 372](https://github.com/IHK-GfI/lux-components/issues/372)
-
 # Version 15.2.0
 
 ## New
 
--**lux-textbox**: Die Textbox hat eine neue Property luxHeading erhalten. [Issue 360](https://github.com/IHK-GfI/lux-components/issues/360)
+- **lux-textbox**: Die Textbox hat eine neue Property luxHeading erhalten. [Issue 360](https://github.com/IHK-GfI/lux-components/issues/360)
+- **styles**: In luxstyles wurde eine neue Klasse "lux-sr-only" ergänzt. [Issue 372](https://github.com/IHK-GfI/lux-components/issues/372)
 
 ## Bug Fixes
 
