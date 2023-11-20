@@ -46,6 +46,19 @@ lux-lookup-combobox-ac {
     &[aria-disabled="false"] .mat-select-arrow {
       background-color: luxpalette.$lux-primary-color;
     }
+
+    &[aria-readonly="true"] {
+      .mat-select-arrow {
+        background-color: luxcommon.$dark-disabled-text;
+      }
+      .mat-select-trigger {
+        cursor: text;
+      }
+    }
+
+    &[aria-readonly="false"] .mat-select-arrow {
+      background-color: luxpalette.$lux-primary-color;
+    }
   }
 }
 
