@@ -120,13 +120,15 @@ lux-form-control-wrapper {
 
     // Definitionen der einzelnen States der Form-Controls
     // HOVER
-    &:hover:not(.lux-form-control-disabled-authentic):not(.lux-focused-authentic):not(.lux-form-control-error-authentic) {
+    &:hover:not(.lux-form-control-disabled-authentic):not(.lux-focused-authentic):not(.lux-form-control-error-authentic):not(
+        .lux-form-control-readonly-authentic
+      ) {
       .lux-form-control-container-authentic:not(.lux-no-input-row) {
         border-color: luxcommon.$dark-primary-text;
       }
     }
     // FOCUS
-    &.lux-focused-authentic {
+    &.lux-focused-authentic:not(.lux-form-control-readonly-authentic) {
       .lux-form-control-label-authentic > * {
         color: map.get(luxpalette.$lux-palette_primary, 400);
       }
@@ -166,7 +168,6 @@ lux-form-control-wrapper {
       }
     }
     // READONLY
-    &.lux-form-control-readonly-authentic,
     &.lux-form-control-disabled-authentic {
       pointer-events: none;
     }

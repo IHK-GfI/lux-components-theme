@@ -1,3 +1,9 @@
+# Version 15.3.0
+
+## Bug Fixes
+
+- **lux-form**: Readonly mit Kopiermöglichkeit für alle Formularcontrols. [Issue 389](https://github.com/IHK-GfI/lux-components/issues/389)
+
 # Version 15.2.0
 
 ## New
