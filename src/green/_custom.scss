@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:color";
 @use "@angular/material" as mat;
 @use "../base/luxfocus";
 @use "../base/luxelevations";
@@ -32,8 +33,16 @@ h6 {
   font-family: Korb, luxcommon.$app-font-family;
 }
 
-lux-card .mat-card {
-  color: #003366;
+/*
+ * Theming for LUX-Card
+ */
+lux-card {
+  .mat-card:not([class*="mat-elevation-z"]) {
+    @include luxelevations.lux-elevation-z1;
+  }
+  .mat-card {
+    color: #003366;
+  }
 }
 
 lux-panel {
@@ -54,6 +63,7 @@ lux-panel {
  */
 lux-app-footer {
   .lux-app-footer {
+    border-bottom: 8px solid map.get(luxpalette.$lux-palette_primary, 500);
     .lux-menu-extended {
       > lux-button {
         button {
@@ -63,171 +73,6 @@ lux-app-footer {
         }
       }
     }
-  }
-}
-
-lux-app-header {
-  .lux-app-header {
-    background-color: luxcommon.$app-header-bg;
-
-    .lux-show-border {
-      border-left: 1px solid #003366;
-    }
-
-    .lux-header-title {
-      color: map.get(luxpalette.$lux-palette-primary, 500);
-    }
-
-    div.lux-header-action {
-      lux-button {
-        button {
-          &:not(.mat-accent):not(.mat-warn):not(.mat-primary):not(.mat-button-disabled) {
-            color: map.get(luxpalette.$lux-palette-primary, 500);
-          }
-
-          &:not(.mat-accent):not(.mat-warn):not(.mat-primary).mat-button-disabled {
-            color: luxcommon.$dark-disabled-text;
-          }
-
-          &.mat-accent:not(.mat-button-disabled) {
-            color: map.get(luxpalette.$lux-palette_accent, A100);
-          }
-
-          &.mat-warn:not(.mat-button-disabled) {
-            color: map.get(luxpalette.$lux-palette_warn, A100);
-          }
-
-          &.mat-primary:not(.mat-button-disabled) {
-            color: map.get(luxpalette.$lux-palette_primary, A100);
-          }
-        }
-      }
-    }
-
-    button:not(.mat-primary):not(.mat-warn):not(.mat-accent):not(.lux-button-rounded) {
-      color: map.get(luxpalette.$lux-palette-primary, 500);
-    }
-
-    .lux-header-user {
-      .lux-header-user-short {
-        > span {
-          color: map.get(luxpalette.$lux-palette_primary, 500);
-          background-color: map.get(map.get(luxpalette.$lux-palette-primary, contrast), 500);
-        }
-      }
-    }
-  }
-
-  .lux-side-nav-header,
-  .lux-side-nav-footer {
-    color: map.get(luxpalette.$lux-palette_primary, A400);
-  }
-
-  .lux-header-side-nav {
-    .lux-side-nav-trigger-active {
-      background-color: luxcommon.$dark-focused;
-    }
-  }
-
-  .lux-side-nav .lux-side-nav-content {
-    lux-button,
-    .lux-menu-item,
-    .lux-action-nav-menu lux-button {
-      color: map.get(luxpalette.$lux-palette_primary, 500);
-    }
-  }
-}
-
-lux-app-header {
-  .lux-app-header-title-label {
-    &:focus {
-      @include luxfocus.focus-dark-mixin;
-    }
-
-    &:hover {
-      @include lux-hovered-mixin-green;
-      color: #003366 !important;
-    }
-  }
-
-  & .lux-side-nav-trigger button:not([disabled]) {
-    &:focus {
-      @include luxfocus.focus-dark-mixin;
-    }
-
-    &:hover {
-      background-color: luxcommon.$lux-hover-color !important;
-      color: #003366 !important;
-    }
-
-    &:hover lux-icon {
-      background-color: luxcommon.$lux-hover-color;
-      color: #003366 !important;
-    }
-  }
-
-  & .lux-header-action button:not([disabled]) {
-    &:focus {
-      @include luxfocus.focus-dark-mixin;
-    }
-
-    color: #003366 !important;
-
-    &.mat-accent lux-icon {
-      color: map.get(luxpalette.$lux-palette_accent, 500) !important;
-    }
-
-    &.mat-warn lux-icon {
-      color: map.get(luxpalette.$lux-palette_warn, 500) !important;
-    }
-
-    &.mat-primary lux-icon {
-      color: map.get(luxpalette.$lux-palette_primary, 500) !important;
-    }
-
-    &:hover {
-      color: #003366 !important;
-      background-color: luxcommon.$lux-hover-color !important;
-
-      &.mat-accent lux-icon {
-        color: map.get(luxpalette.$lux-palette_accent, 500) !important;
-      }
-
-      &.mat-warn lux-icon {
-        color: map.get(luxpalette.$lux-palette_warn, 500) !important;
-      }
-
-      &.mat-primary lux-icon {
-        color: map.get(luxpalette.$lux-palette_primary, 500) !important;
-      }
-    }
-  }
-
-  & lux-image:focus {
-    @include luxfocus.focus-dark-mixin;
-  }
-
-  & lux-icon:focus {
-    @include luxfocus.focus-dark-mixin;
-  }
-
-  lux-menu-trigger button.lux-right-nav-trigger {
-    &:focus {
-      @include luxfocus.focus-dark-mixin;
-    }
-
-    &:hover {
-      @include lux-hovered-mixin-green;
-
-      & lux-icon,
-      .lux-header-username {
-        color: #003366 !important;
-      }
-    }
-  }
-
-  .lux-menu-trigger-default .mat-button-wrapper {
-    display: block;
   }
 }
 
@@ -309,52 +154,6 @@ lux-button button.lux-button {
   }
 }
 
-/*
- * Theming for LUX-Tile
- */
-lux-tile {
-  .lux-notification-new {
-    background-color: #56bd66;
-  }
-
-  h2 {
-    color: #003366;
-  }
-
-  .lux-highlight {
-    color: #003366;
-  }
-
-  .lux-tile-label {
-    flex-shrink: 1;
-    flex-grow: 0;
-    min-height: 70px;
-    max-height: 70px;
-  }
-}
-
-lux-tile {
-  .lux-highlight:hover {
-    color: #56bd66;
-  }
-
-  mat-card[class~="lux-cursor"] {
-    &:focus {
-      @include luxfocus.focus-dark-mixin;
-    }
-
-    &:hover {
-      background-color: white !important;
-      // farbiger Schatten beim Hover
-      @include mat.elevation(2, $dark-green, 1);
-
-      h2 {
-        color: #56bd66;
-      }
-    }
-  }
-}
-
 /* 
  * Theming for LUX-badge-notification
  */
@@ -375,10 +174,6 @@ $form-control-old-border-bottom: 0px;
  * Theming für LUX-Table
  */
 lux-table {
-  table.mat-table.cdk-table.mat-sort.lux-multiselect-table {
-    border-spacing: 0px 0px !important;
-  }
-
   .mat-header-row:not(.lux-table-header-no-data) {
     background-color: $light-green;
   }
@@ -392,28 +187,112 @@ lux-table {
   .lux-multiselect-tf:not(.lux-ignore-multiselect-tf) {
     border-right: 1px solid rgba(0, 0, 0, 0.12);
   }
+
+  .lux-table .lux-table-content table td .lux-form-control-wrapper .lux-form-control-container-authentic.lux-no-input-row {
+    padding: 0.625em 0;
+  }
+
+  tr:hover {
+    > td,
+    > th {
+      @include luxfocus.lux-hovered-mixin;
+      // Wir nutzen hier die hover-Farbe ohne Alpha-Wert, da bei Sticky-Columns sonst unschöne Überlagerungen entstehen können
+      background-color: luxcommon.$lux-hover-color !important;
+      border-radius: 0;
+    }
+  }
 }
 
 /*
- * Theming für LUX-Tabs.
+ * Theming für LUX-List
  */
-// Tabs außerhalb einer LUX-Card (z.B. Master-Detail)
-lux-tabs {
-  .mat-tab-label-active:not(.mat-tab-disabled) {
-    background-color: luxcommon.$lux-hover-color-for-dark-background;
+lux-list lux-list-item lux-card {
+  &.lux-list-item-selected {
+    mat-card.mat-card.lux-card {
+      @include luxfocus.lux-selected-mixin;
+      background: unset;
+      box-shadow: unset;
+      border: 1px solid luxcommon.$app-border-color;
+    }
+  }
+  &:not(.lux-list-item-selected) {
+    mat-card[class~="lux-cursor"]:not([class*="mat-elevation-z"]) {
+      &:hover {
+        background: unset;
+        border: 1px solid luxpalette.$lux-primary-color;
+        background-color: #fff !important;
+      }
+    }
+  }
+}
+
+lux-stepper {
+  lux-stepper-vertical mat-step-header[aria-selected="true"] {
+    @include luxfocus.lux-selected-mixin;
+    background-image: none;
+    background-color: $light-blue;
+    border: none;
+    box-shadow: none;
+  }
+
+  lux-stepper-horizontal mat-step-header[aria-selected="true"] {
+    @include luxfocus.lux-selected-bottom-mixin;
+    background-color: transparent;
+  }
+  mat-step-header,
+  .lux-ignore-mat-step-icons mat-step-header {
+    &:hover {
+      @include luxfocus.lux-hovered-mixin;
+      &[aria-selected="false"] {
+        div.mat-step-icon.mat-step-icon-state-number,
+        div.mat-step-icon.mat-step-icon-state-edit,
+        .lux-stepper-normal-icon mat-icon {
+          background-color: transparent;
+          color: luxpalette.$lux-primary-color;
+          border-color: luxcommon.$app-border-color;
+        }
+        div.mat-step-label lux-step-header {
+          color: luxpalette.$lux-primary-color;
+        }
+      }
+      &[aria-selected="true"] {
+        div.mat-step-icon.mat-step-icon-state-number,
+        div.mat-step-icon.mat-step-icon-state-edit,
+        .lux-stepper-normal-icon mat-icon {
+          background-color: luxpalette.$lux-primary-color;
+          color: #fff;
+          border-color: luxpalette.$lux-primary-color;
+        }
+        div.mat-step-label lux-step-header {
+          color: luxpalette.$lux-primary-color;
+        }
+      }
+    }
+  }
+}
+
+/*
+ * Theming für LUX-Tabs
+ */
+lux-tabs,
+mat-card lux-tabs {
+  mat-tab-group div[role="tab"]:not(.mat-tab-disabled) {
+    &.mat-tab-label-active {
+      background-color: luxcommon.$lux-hover-color;
+      border-radius: 4px;
+    }
+
+    &:hover:not(.mat-tab-label-active) {
+      color: luxpalette.$lux-primary-color;
+      background-color: luxcommon.$lux-hover-color;
+      border-radius: 4px;
+    }
   }
 
   div.lux-tab-title {
     font-family: Korb, "Source Code Pro", Helvetica, Arial, sans-serif;
-    font-size: 22px;
+    font-size: 1.375rem;
     font-weight: 700;
-  }
-}
-
-// Tabs innerhalb einer LUX-Card
-mat-card lux-tabs {
-  .mat-tab-label-active:not(.mat-tab-disabled) {
-    background-color: luxcommon.$lux-hover-color-for-dark-background;
   }
 }
 
@@ -517,14 +396,25 @@ mat-card lux-tabs {
 /*
  * Theming for LUX-Filter-Form
  */
-lux-filter-form lux-accordion {
-  lux-menu {
-    .lux-menu-trigger button.mat-button {
-      height: 45px;
+lux-filter-form {
+  lux-accordion {
+    lux-menu {
+      .lux-menu-trigger button.mat-button {
+        height: 45px;
+      }
+    }
+    .mat-expansion-panel-header.mat-expanded {
+      height: 60px !important;
     }
   }
-  .mat-expansion-panel-header.mat-expanded {
-    height: 60px !important;
+  lux-menu {
+    .lux-filter-menu-trigger button:not([disabled]).mat-fab.lux-button-rounded:hover {
+      background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%) !important;
+      color: luxpalette.$lux-primary-color;
+    }
+    .lux-filter-menu-trigger button:not([disabled]).mat-fab.lux-button-rounded:focus-visible {
+      background-color: transparent !important;
+    }
   }
 }
 

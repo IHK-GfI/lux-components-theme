@@ -1,0 +1,232 @@
+@use "../luxcommon";
+@use "../luxpalette";
+@use "../luxfocus";
+@use "../luxbreakpoints";
+@use "sass:map";
+
+lux-table {
+  display: flex;
+  height: 100%;
+
+  table.mat-table {
+    font-family: luxcommon.$app-font-family;
+  }
+  .lux-row-selected {
+    background-color: luxcommon.$lux-selected-bg-color;
+  }
+
+  .lux-table {
+    // äusserstes div
+    height: 100%;
+    flex: 0 0 100%;
+
+    .lux-table-progress-container {
+      flex: 0 0 15px;
+      min-height: 15px;
+      max-height: 15px;
+      box-sizing: border-box;
+    }
+
+    th,
+    .lux-table-header-no-data th {
+      vertical-align: middle;
+      height: 30px;
+    }
+
+    td,
+    th {
+      padding: 8px 16px;
+    }
+    th {
+      padding-top: 16px;
+    }
+    tr.mat-header-row {
+      height: auto;
+    }
+
+    th.mat-header-cell,
+    td.mat-cell {
+      border: none;
+    }
+    td.mat-footer-cell {
+      border: none;
+      border-top: 1px solid luxcommon.$app-border-color;
+      font-size: 15px;
+      color: luxcommon.$dark-primary-text;
+      padding-bottom: 16px;
+    }
+
+    .lux-table-filter {
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .lux-table-content {
+      position: relative;
+      overflow: auto;
+      height: 100%;
+      width: 100%;
+      border: 1px solid luxcommon.$app-border-color;
+      border-radius: 4px;
+
+      table {
+        width: 100%;
+        border-spacing: 0 !important;
+        td .lux-form-control-wrapper {
+          margin: 0;
+          .lux-form-control-container-authentic {
+            padding: 0.25em 0.5em; // bei den Form-Controls in einer Tabellen-Zelle wird die Höhe reduziert
+            &.lux-no-input-row {
+              padding: 0em;
+            }
+          }
+        }
+        tbody tr:last-of-type td {
+          border-bottom: none;
+        }
+
+        .mat-footer-row > td {
+          border-top: 1px solid rgba(0, 0, 0, 0.12);
+        }
+        .lux-header-title,
+        .lux-moved-header-title {
+          font-size: 12px;
+          margin-top: 4px;
+
+          &:first-of-type {
+            margin-top: 8px;
+          }
+        }
+      }
+
+      thead th {
+        font-size: 16px;
+        color: luxcommon.$dark-primary-text;
+        font-weight: 700;
+      }
+
+      .mat-row:nth-child(odd) {
+        background-color: map.get(luxpalette.$lux-palette_primary, 50);
+      }
+      .mat-row:nth-child(even) {
+        background-color: #ffffff;
+      }
+
+      &.lux-hide-borders {
+        td,
+        th,
+        .lux-multiselect-td,
+        .lux-multiselect-tf {
+          border: unset !important;
+        }
+      }
+
+      th.lux-table-column-header-empty {
+        display: none;
+      }
+    }
+
+    .lux-table-overlay {
+      -webkit-transition: opacity 1s;
+      -moz-transition: opacity 1s;
+      -ms-transition: opacity 1s;
+      -o-transition: opacity 1s;
+      transition: opacity 1s;
+      position: absolute;
+    }
+
+    .lux-table-overlay-active {
+      pointer-events: none;
+      z-index: 1003;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      opacity: 0;
+    }
+
+    .lux-hide {
+      display: none !important;
+    }
+    .lux-multiselect-th,
+    .lux-multiselect-td,
+    .lux-multiselect-tf {
+      max-width: 70px;
+      min-width: 70px;
+      width: 70px;
+    }
+
+    .lux-multiselect-th {
+      width: 1% !important;
+
+      span {
+        text-align: start;
+      }
+    }
+
+    .lux-table-header-no-data th {
+      border: unset !important;
+    }
+
+    .lux-multiselect-toggle-all-wrapper {
+      position: relative;
+      height: 100%;
+      min-height: 100%;
+      min-width: 100%;
+      width: 100%;
+    }
+
+    .lux-aria-visible {
+      position: absolute;
+      font-size: 0;
+      color: transparent;
+      width: 0;
+      height: 0;
+    }
+
+    .reset-icon {
+      display: inline-block;
+
+      &:hover {
+        border-radius: 50%;
+        background-color: luxcommon.$lux-hover-color;
+        cursor: pointer;
+      }
+    }
+    lux-checkbox-ac .mat-checkbox-inner-container {
+      margin: 0px;
+    }
+
+    @include luxbreakpoints.xs {
+      .lux-table-filter {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .lux-form-control-readonly-authentic {
+    // damit die Events der eigentliche Checkbox nicht zusätzlich gezählt werden
+    pointer-events: none;
+  }
+}
+
+/** ########## HOVER / FOCUS ########## **/
+lux-table {
+  tr:focus-visible,
+  td:focus-visible {
+    @include luxfocus.focus-dark-mixin-inline;
+  }
+
+  .lux-row-selected:focus-visible {
+    background-color: luxcommon.$lux-hover-color !important;
+    outline: none;
+  }
+
+  th.cdk-focused div.mat-sort-header-container {
+    @include luxfocus.focus-dark-mixin;
+  }
+
+  th.cdk-keyboard-focused div.mat-sort-header-container {
+    border: none !important;
+  }
+}
