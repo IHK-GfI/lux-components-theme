@@ -277,6 +277,7 @@ div {
   background-color: luxcommon.$app-content-bg !important;
 }
 
+// für Demo
 lux-card.lux-card-grow {
   display: flex;
   flex: 1 1 auto;
@@ -294,6 +295,15 @@ lux-card.lux-card-grow {
     flex: 1 1 auto;
     min-width: 0;
   }
+}
+// Demo
+
+.lux-container {
+  margin: 0 auto;
+  padding: 8px;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
 
 .lux-crop {
@@ -320,6 +330,14 @@ lux-card.lux-card-grow {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+.lux-border-box {
+  box-sizing: border-box;
+}
+
+.lux-content-box {
+  box-sizing: content-box;
 }
 
 .lux-nowrap {
@@ -382,14 +400,6 @@ lux-card.lux-card-grow {
 }
 
 /* <MARGINS / PADDINGS> */
-
-.lux-p-footer {
-  padding: 8px;
-}
-
-.lux-p-header {
-  padding: 8px;
-}
 
 .lux-snackbar {
   position: relative;

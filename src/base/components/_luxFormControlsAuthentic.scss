@@ -67,6 +67,7 @@ lux-lookup-combobox-ac {
 .lux-select-panel-ac-multiple .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-full {
   background-color: luxpalette.$lux-primary-color;
 }
+
 .cdk-overlay-pane {
   .mat-option {
     font-family: luxcommon.$app-font-family;
@@ -143,6 +144,9 @@ lux-checkbox-ac {
 
 lux-datepicker-ac,
 lux-datetimepicker-ac {
+  lux-form-control-wrapper .lux-form-control-wrapper .lux-form-control-container-authentic {
+    display: block;
+  }
   mat-datepicker-toggle {
     height: 24px;
     width: 24px;
@@ -257,8 +261,28 @@ lux-radio-ac {
     }
   }
 
-  .mat-radio-group.lux-horizontal {
-    row-gap: 0.75em;
+  .mat-radio-group {
+    display: flex;
+    box-sizing: border-box;
+    gap: 0.75em;
+    place-content: stretch flex-start;
+    align-items: stretch;
+
+    &.lux-horizontal {
+      row-gap: 0.75em;
+      flex-direction: row;
+      flex-flow: wrap;
+      max-height: 100%;
+    }
+    &.lux-vertical {
+      flex-direction: column;
+      max-width: 100%;
+    }
+
+    .mat-radio-button {
+      flex: 0 0 auto;
+      box-sizing: border-box;
+    }
   }
 
   .mat-radio-disabled label.mat-radio-label {
@@ -358,7 +382,7 @@ lux-chips-ac {
 }
 .lux-chips-ac-autocomplete-panel.mat-autocomplete-panel,
 .lux-chips-ac-autocomplete-panel-dense.mat-autocomplete-panel {
-  margin-top: -22px;
+  margin-top: -18px;
   margin-left: 0;
   margin-right: 0;
   border-radius: 4px;
