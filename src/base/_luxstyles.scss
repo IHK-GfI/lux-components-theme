@@ -312,22 +312,6 @@ lux-card.lux-card-grow {
   font-size: 12px;
 }
 
-.lux-display-none {
-  display: none;
-}
-
-.lux-display-none-important {
-  display: none !important;
-}
-
-.lux-hidden {
-  visibility: hidden;
-}
-
-.lux-hidden-important {
-  visibility: hidden !important;
-}
-
 .lux-sr-only {
   // sr=screen-reader vgl. https://webaim.org/techniques/css/invisiblecontent/
   position: absolute;
@@ -420,52 +404,6 @@ lux-card.lux-card-grow {
 .mat-snack-bar-handset .lux-snackbar {
   left: 8px;
   width: auto !important;
-}
-
-/*
-  Berechnet das Quadrat einer Zahl und gibt das Ergebnis mit
-  einer Einheit (z.B. px) zurueck.
-*/
-@function pow($number, $exponent, $unit) {
-  $value: 0;
-
-  @if $exponent > 0 {
-    $value: 1;
-    @for $i from 1 through $exponent {
-      $value: ($value * $number);
-    }
-  }
-
-  @return $value + $unit;
-}
-
-/*
-  Zum Anpassen der Schritte einfach pxStep erhoehen oder fuer Weitere CSS-Klassen
-  steps um zusaetzliche Eintraege ergaenzen (z.B. 1,2,4, etc.).
-
-  Generiert fuer Padding: lux-p[t,b,l,r]-xx
-  Generiert fuer Margin: lux-m[t,b,l,r]-xx
- */
-$directions: "t", "b", "l", "r";
-$directionsLong: "top", "bottom", "left", "right";
-$pxStep: 2;
-$steps: 0, 1, 2, 3, 4, 5, 6;
-
-@for $i from 1 through list.length($directions) {
-  @each $step in $steps {
-    .lux-m-#{$step} {
-      margin: pow($pxStep, $step, px);
-    }
-    .lux-m#{list.nth($directions, $i)}-#{$step} {
-      margin-#{list.nth($directionsLong, $i)}: pow($pxStep, $step, px);
-    }
-    .lux-p-#{$step} {
-      padding: pow($pxStep, $step, px);
-    }
-    .lux-p#{list.nth($directions, $i)}-#{$step} {
-      padding-#{list.nth($directionsLong, $i)}: pow($pxStep, $step, px);
-    }
-  }
 }
 
 /*
