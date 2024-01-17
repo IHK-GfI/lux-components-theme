@@ -526,15 +526,6 @@ lux-side-nav {
 }
 
 /*
- * Theming for LUX-Spinner
- */
-lux-spinner {
-  .mat-progress-spinner > svg > circle {
-    stroke: map.get(luxpalette.$lux-palette_primary, A400);
-  }
-}
-
-/*
  * Theming for LUX-Tooltip
  */
 mat-tooltip-component .mat-tooltip {
