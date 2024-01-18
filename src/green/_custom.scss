@@ -734,3 +734,28 @@ lux-checkbox-container-ac {
     height: auto;
   }
 }
+
+/*
+* Theming für LUX-Message-Box
+*/
+
+lux-message-box {
+  .lux-message-box-content {
+    margin: var(--lux-theme-outline-width);
+
+    & .lux-message-container {
+      &.lux-bg-color-white {
+        border-color: transparent;
+        & button.mat-fab.lux-button-rounded.lux-icon-button:not([disabled]) {
+          color: luxpalette.$lux-primary-color;
+          &:hover {
+            color: luxpalette.$lux-primary-color;
+          }
+        }
+      }
+    }
+  }
+  &.mat-elevation-z4 {
+    @include luxelevations.lux-elevation-z4();
+  }
+}
