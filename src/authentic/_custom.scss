@@ -151,35 +151,6 @@ lux-accordion {
 }
 
 /*
- * Theming for LUX-Dialog
- */
-.lux-dialog {
-  .lux-dialog-title.mat-dialog-title {
-    color: luxcommon.$dark-primary-text;
-    font-family: luxcommon.$app-headline-font, luxcommon.$app-font-family;
-  }
-  .mat-dialog-container {
-    @include luxelevations.lux-elevation-z24;
-    border: 1px solid luxcommon.$dark-disabled-text;
-  }
-}
-lux-dialog-structure {
-  // x-Button oben rechts im Dialog-Fenster
-  .lux-icon-close {
-    &:hover {
-      background-color: #fff !important;
-      mat-icon.mat-icon-no-color {
-        color: luxcommon.$lux-hover-color;
-      }
-    }
-    &:focus-visible {
-      @include luxfocus.focus-dark-mixin;
-      border-radius: 4px;
-    }
-  }
-}
-
-/*
  * Theming for Side-Nav im Demo
  */
 example-root {
