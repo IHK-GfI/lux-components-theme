@@ -266,13 +266,6 @@ div {
   font-family: global.$app-font-family;
 }
 
-.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
-  &.lux-file-preview-backdrop {
-    background: #000;
-    opacity: 0.8 !important;
-  }
-}
-
 .mat-dialog-container {
   background-color: luxcommon.$app-content-bg !important;
 }
