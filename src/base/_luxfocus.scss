@@ -332,12 +332,6 @@ lux-file-list {
   }
 }
 
-lux-file-preview-toolbar lux-button button.lux-icon-button {
-  &:focus-visible {
-    @include focus-bright-mixin;
-  }
-}
-
 /** ########## Example-Root ########## **/
 example-root {
   .example-base-components-list {
