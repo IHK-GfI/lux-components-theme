@@ -3,6 +3,7 @@
 @use "sass:string";
 @use "luxcommon";
 @use "luxpalette";
+@use "luxbreakpoints";
 @use "../public/global";
 
 $sizes: 50, 100, 200, 300, 400, 500, 600, 700, 800, 900, A100, A200, A400, A700;
@@ -295,8 +296,28 @@ lux-card.lux-card-grow {
   margin: 0 auto;
   padding: 8px;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1400px;
   box-sizing: border-box;
+  @include luxbreakpoints.xs {
+    max-width: 590px;
+  }
+  @include luxbreakpoints.sm {
+    max-width: 910px;
+  }
+  @include luxbreakpoints.md {
+    max-width: 1200px;
+  }
+}
+
+.lux-container-full {
+  margin: 0 8px;
+  padding: 8px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  @include luxbreakpoints.xs {
+    margin: 0 4px;
+  }
 }
 
 .lux-crop {
