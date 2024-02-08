@@ -53,6 +53,23 @@ lux-button button.lux-button {
     lux-icon.lux-button-icon-round {
       line-height: 1;
     }
+
+    &.lux-stroked {
+      color: luxpalette.$lux-primary-color;
+      border: 1px solid luxcommon.$app-border-color;
+      background-color: transparent;
+      &.mat-primary {
+        border-color: luxpalette.$lux-primary-color;
+      }
+      &.mat-accent {
+        color: luxcommon.$dark-disabled-text;
+        border-color: luxpalette.$lux-accent-color;
+      }
+      &.mat-warn {
+        color: luxpalette.$lux-warn-color;
+        border-color: luxpalette.$lux-warn-color;
+      }
+    }
   }
 
   lux-icon.lux-button-icon:not(.lux-button-icon-round) {
