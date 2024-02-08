@@ -693,30 +693,53 @@ lux-button button.lux-button {
     &:hover {
       color: luxcommon.$dark-secondary-text;
       background-color: #ffffff !important;
+      &.lux-stroked {
+        color: map.get(luxpalette.$lux-palette-primary, 300);
+        background-color: transparent !important;
+      }
     }
 
     &:focus-visible:not(:hover) {
       color: luxcommon.$dark-primary-text;
       background-color: #ffffff !important;
       @include luxfocus.lux-button-focus;
+      &.lux-stroked {
+        background-color: transparent !important;
+      }
     }
     &:active {
       color: luxcommon.$dark-primary-text;
       background-color: #ffffff !important;
+      &.lux-stroked {
+        color: map.get(luxpalette.$lux-palette-primary, 700);
+        background-color: transparent !important;
+      }
     }
 
     &.mat-primary {
       &:hover {
         color: #ffffff;
         background-color: map.get(luxpalette.$lux-palette-primary, 300) !important;
+        &.lux-stroked {
+          color: map.get(luxpalette.$lux-palette-primary, 300);
+          background-color: transparent !important;
+        }
       }
       &:focus-visible:not(:hover) {
         color: #ffffff;
         background-color: map.get(luxpalette.$lux-palette-primary, 500) !important;
         @include luxfocus.lux-button-focus;
+        &.lux-stroked {
+          color: luxpalette.$lux-primary-color;
+          background-color: transparent !important;
+        }
       }
       &:active {
         background-color: map.get(luxpalette.$lux-palette-primary, 700) !important;
+        &.lux-stroked {
+          color: map.get(luxpalette.$lux-palette-primary, 700);
+          background-color: transparent !important;
+        }
       }
     }
 
@@ -724,13 +747,24 @@ lux-button button.lux-button {
       color: luxcommon.$dark-primary-text;
       &:hover {
         background-color: map.get(luxpalette.$lux-palette-accent, 300) !important;
+        &.lux-stroked {
+          color: luxcommon.$dark-secondary-text;
+          background-color: transparent !important;
+        }
       }
       &:focus-visible:not(:hover) {
         background-color: map.get(luxpalette.$lux-palette-accent, 500) !important;
         @include luxfocus.lux-button-focus;
+        &.lux-stroked {
+          background-color: transparent !important;
+        }
       }
       &:active {
         background-color: map.get(luxpalette.$lux-palette-accent, 700) !important;
+        &.lux-stroked {
+          color: map.get(luxpalette.$lux-palette-accent, 700) !important;
+          background-color: transparent !important;
+        }
       }
     }
 
@@ -738,14 +772,26 @@ lux-button button.lux-button {
       &:hover {
         color: #ffffff;
         background-color: map.get(luxpalette.$lux-palette-warn, 300) !important;
+        &.lux-stroked {
+          color: map.get(luxpalette.$lux-palette-warn, 300);
+          background-color: transparent !important;
+        }
       }
       &:focus-visible:not(:hover) {
         color: #ffffff;
         background-color: map.get(luxpalette.$lux-palette-warn, 500) !important;
         @include luxfocus.lux-button-focus;
+        &.lux-stroked {
+          color: luxpalette.$lux-warn-color;
+          background-color: transparent !important;
+        }
       }
       &:active {
         background-color: map.get(luxpalette.$lux-palette-warn, 700) !important;
+        &.lux-stroked {
+          color: map.get(luxpalette.$lux-palette-warn, 700);
+          background-color: transparent !important;
+        }
       }
     }
   }
@@ -755,6 +801,11 @@ lux-button button.lux-button {
   &.mat-fab.mat-button-disabled {
     color: luxcommon.$dark-disabled-text;
     background-color: luxcommon.$dark-disabled-text !important;
+    &.lux-stroked {
+      color: luxcommon.$dark-disabled-text;
+      border-color: luxcommon.$dark-disabled-text;
+      background-color: transparent !important;
+    }
   }
   &.mat-button.mat-button-disabled {
     color: luxcommon.$dark-disabled-text;

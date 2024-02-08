@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:color";
 @use "@angular/material" as mat;
 @use "../base/luxfocus";
 @use "../base/luxelevations";
@@ -253,12 +254,19 @@ lux-button button.lux-button {
   &.mat-stroked-button.mat-button-disabled,
   &.mat-flat-button.mat-button-disabled {
     color: luxcommon.$dark-disabled-text;
+    &.lux-stroked {
+      color: luxcommon.$dark-disabled-text;
+      border-color: luxcommon.$dark-disabled-text;
+    }
   }
 
   &.mat-raised-button.mat-accent:not(.mat-button-disabled),
   &.mat-flat-button.mat-accent:not(.mat-button-disabled),
   &.mat-fab.mat-accent:not(.mat-button-disabled) {
     color: map.get(luxpalette.$lux-palette-primary, 500);
+    &.lux-stroked {
+      color: luxpalette.$lux-accent-color;
+    }
   }
 
   &.lux-icon-button {
@@ -271,7 +279,7 @@ lux-button button.lux-button {
     }
   }
 
-  &.lux-button-rounded {
+  &.mat-fab.lux-button-rounded {
     border-radius: 16px !important;
     height: luxcommon.$button-fav-height;
     width: luxcommon.$button-fav-height;
@@ -281,6 +289,20 @@ lux-button button.lux-button {
       mat-icon.mat-icon.lux-icon {
         height: 22px !important;
         width: 22px !important;
+      }
+    }
+    &.lux-stroked {
+      border-color: luxcommon.$app-border-color !important;
+      &:hover:not(.mat-button-disabled) {
+        background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%) !important;
+      }
+      &:focus-visible:not(.mat-button-disabled, :hover) {
+        background-color: transparent !important;
+      }
+      @include luxelevations.lux-elevation-z0;
+
+      &:active {
+        @include luxelevations.lux-elevation-z2;
       }
     }
   }

@@ -1,3 +1,9 @@
+# Version 15.4.0
+
+## New
+
+- **lux-button**: Neue Variante "Rounded+Stroked" eingeführt. [Issue 415](https://github.com/IHK-GfI/lux-components/issues/415)
+
 # Version 15.3.0
 
 ## Bug Fixes
