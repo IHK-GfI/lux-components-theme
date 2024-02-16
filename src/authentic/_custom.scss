@@ -261,40 +261,6 @@ example-root {
 }
 
 /*
- * Theming for LUX-Message-Box
- */
-lux-message-box {
-  border-radius: 4px;
-
-  &.mat-elevation-z4 {
-    @include luxelevations.lux-elevation-z0();
-  }
-
-  & div.lux-message-box-content {
-    margin: 0 !important;
-
-    & div.lux-message-container.lux-bg-color-white {
-      border: 1px solid luxpalette.$lux-primary-color;
-      box-sizing: border-box;
-      & button.mat-fab.lux-button-rounded.lux-icon-button:not([disabled]) {
-        color: luxpalette.$lux-primary-color;
-        &:hover {
-          color: #fff;
-        }
-      }
-    }
-
-    & div.lux-message-container:not(.lux-bg-color-white) {
-      & button:not([disabled]):hover {
-        .mat-icon-no-color {
-          color: #fff;
-        }
-      }
-    }
-  }
-}
-
-/*
  * Theming for LUX-Button
  */
 lux-button button.lux-button {

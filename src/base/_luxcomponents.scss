@@ -19,6 +19,7 @@
 @use "components/luxMenu";
 @use "components/luxTable";
 @use "components/luxFilter";
+@use "components/luxMessagebox";
 @use "luxcommon";
 @use "luxpalette";
 @use "../public/global";
@@ -406,38 +407,6 @@ lux-lookup-combobox-ac {
 }
 
 /*
- * Theming for LUX-Message-Box
- */
-lux-message-box {
-  &.mat-elevation-z4 {
-    @include luxelevations.lux-elevation-z4();
-  }
-
-  .lux-message-container lux-button {
-    button.mat-fab.lux-icon-button.lux-button-rounded:not([class*="mat-elevation-z"]) {
-      color: #fff;
-      background-color: transparent;
-      height: 36px;
-      width: 36px;
-      @include luxelevations.lux-elevation-z0();
-    }
-    .mat-button-ripple,
-    .mat-button-focus-overlay {
-      display: none;
-    }
-  }
-
-  .lux-message-container lux-icon:not(.lux-button-icon, .lux-button-icon-round) {
-    display: contents;
-
-    mat-icon.lux-icon {
-      width: 20px;
-      height: 20px;
-    }
-  }
-}
-
-/*
  * Theming for LUX-Snackbar
  */
 @each $colorName, $colorNameHex in luxcommon.$colorsForDarkBg {
@@ -523,15 +492,6 @@ lux-side-nav {
 
 .lux-side-nav-overlay {
   background-color: luxcommon.$dark-focused;
-}
-
-/*
- * Theming for LUX-Spinner
- */
-lux-spinner {
-  .mat-progress-spinner > svg > circle {
-    stroke: map.get(luxpalette.$lux-palette_primary, A400);
-  }
 }
 
 /*
