@@ -3,6 +3,7 @@
 ## New
 
 - **Theme**: Es wurden neue Layout-Klassen und Mediaquerries ergänzt, um Flex-Layout abzulösen. [Issue 348](https://github.com/IHK-GfI/lux-components/issues/348)
+- **Theme**: Es wurden zusätzliche Styling-Klassen für width,height, max/min-width, max/min-height ergänzt. [Issue 419](https://github.com/IHK-GfI/lux-components/issues/419)
 - **Module lux-layout**: Aus den Komponenten des Layout-Moduls wurde Flex-Layout entfernt. [Issue 388](https://github.com/IHK-GfI/lux-components/issues/388)
 - **lux-menu**: Aus der Komponente lux-menu wurde Flex-Layout entfernt. [Issue 394](https://github.com/IHK-GfI/lux-components/issues/394)
 - **lux-table**: Aus der Komponente lux-table wurde Flex-Layout entfernt. [Issue 395](https://github.com/IHK-GfI/lux-components/issues/395)
