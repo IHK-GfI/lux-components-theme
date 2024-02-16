@@ -219,21 +219,6 @@ lux-datetimepicker-ac {
   }
 }
 
-/** ########## Lux-Dialog ########## **/
-lux-dialog-structure {
-  // x-Button oben rechts im Dialog-Fenster
-  .lux-icon-close {
-    &:hover {
-      @include lux-hovered-mixin;
-      cursor: pointer;
-    }
-    &:focus-visible {
-      @include focus-dark-mixin;
-      border-radius: 4px;
-    }
-  }
-}
-
 /** ########## Select-AC ########## **/
 @mixin lux-option-highlight-mixin {
   background-color: map-get(luxpalette.$lux-palette_primary, 300);

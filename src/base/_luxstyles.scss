@@ -401,21 +401,6 @@ lux-card.lux-card-grow {
 
 /* <MARGINS / PADDINGS> */
 
-.lux-snackbar {
-  position: relative;
-  margin: 0 !important;
-  min-width: unset !important;
-  // Die Snackbar wird durch die App umpositioniert, bevor sie sichtbar geschaltet wird.
-  // Würde man die Snackbar nicht verstecken, würde sie von der initialen Position zur neuen
-  // springen.
-  visibility: hidden;
-}
-
-.mat-snack-bar-handset .lux-snackbar {
-  left: 8px;
-  width: auto !important;
-}
-
 /*
   Erstellt die Layout-Gaps (Margin-Abstände für Children von fxLayouts).
   Um weitere Steps hinzufuegen die Variable gapSteps um die entsprechenden Werte ergaenzen.

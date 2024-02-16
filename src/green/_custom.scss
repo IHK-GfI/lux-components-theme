@@ -757,6 +757,22 @@ lux-checkbox-container-ac {
 }
 
 /*
+* Theming für  LUX-Dialog
+*/
+lux-dialog-structure {
+  // x-Button oben rechts im Dialog-Fenster
+  .lux-icon-close {
+    &:hover {
+      @include luxfocus.lux-hovered-mixin;
+    }
+
+    &:focus-visible {
+      @include luxfocus.focus-dark-mixin;
+      border-radius: 4px;
+    }
+  }
+}
+/*
 * Theming für LUX-Message-Box
 */
 
