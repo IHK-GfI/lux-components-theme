@@ -311,7 +311,8 @@ lux-panel {
     }
 
     &:hover {
-      @include lux-hovered-mixin;
+      color: luxcommon.$lux-hover-color !important;
+      background-color: #fff !important;
     }
   }
 }
