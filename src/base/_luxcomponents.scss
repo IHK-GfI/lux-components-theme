@@ -352,24 +352,6 @@ lux-file-progress {
 }
 
 /*
- * Theming for LUX-Layout-Card-Row
- */
-lux-layout-card-row {
-  .row-title {
-    color: luxcommon.$dark-primary-text;
-  }
-}
-
-/*
- * Theming for LUX-Layout-Form-Row
- */
-lux-layout-form-row {
-  .row-title {
-    color: luxcommon.$dark-primary-text;
-  }
-}
-
-/*
  * Theming for LUX-Lookup-Components
  */
 lux-lookup-combobox-ac {
@@ -684,6 +666,7 @@ lux-stepper-large {
       display: flex;
       flex: 1 1 auto;
       justify-content: center;
+      align-items: center;
     }
   }
 
@@ -721,6 +704,7 @@ lux-stepper-large {
       min-width: 45px;
       display: flex;
       justify-content: center;
+      align-items: center;
     }
   }
 }
