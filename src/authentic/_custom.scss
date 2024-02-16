@@ -7,8 +7,6 @@
 @use "luxpalette";
 @use "../base/luxSvgIcons" as luxicons;
 
-$light-gray: #eff3f6; //für die Table
-
 h1,
 h2,
 h3,
@@ -24,41 +22,6 @@ span,
 p,
 label {
   font-family: luxcommon.$app-font-family;
-}
-
-@mixin lux-hovered-mixin-ac {
-  color: #fff;
-  background-color: luxcommon.$lux-hover-color;
-}
-
-// Stylings für lux-menu-items im cdk-overlay-panel
-.mat-menu-panel {
-  border: 2px solid luxpalette.$lux-primary-color;
-  box-shadow: none !important;
-
-  .mat-menu-item:not([disabled="true"]) {
-    &.lux-menu-item {
-      color: luxpalette.$lux-primary-color;
-    }
-
-    .mat-icon-no-color {
-      color: luxpalette.$lux-primary-color;
-    }
-  }
-
-  .lux-menu-item:not([disabled="true"]):hover {
-    @include lux-hovered-mixin-ac;
-    & .mat-icon-no-color {
-      color: #fff;
-    }
-  }
-}
-lux-menu {
-  .lux-menu-extended lux-button.lux-menu-item .lux-button-label {
-    font-weight: 400;
-    letter-spacing: 1px;
-    font-family: luxcommon.$app-font-family;
-  }
 }
 
 // Optionen werden im Cdk-Overlay dargestellt und hängen nicht unter der Component selbst.
@@ -81,176 +44,6 @@ lux-menu {
 lux-app-content {
   background-color: #fff; //Fallback
   background-image: luxcommon.$app-gradient;
-}
-
-/*
- * Theming for LUX-App-Footer
- */
-lux-app-footer {
-  .lux-app-footer {
-    border-bottom: 8px solid map.get(luxpalette.$lux-palette_primary, 600);
-  }
-}
-
-//Tabs außerhalb einer LUX-Card (z.B. Master-Detail)
-
-lux-tabs,
-mat-card lux-tabs {
-  .mat-tab-label-container .mat-tab-label:not(.mat-tab-disabled) {
-    font-size: 14px;
-    font-weight: 600;
-    color: luxpalette.$lux-primary-color;
-    min-height: unset !important;
-
-    &:focus-visible {
-      @include luxfocus.focus-dark-mixin-inline;
-      border-radius: 4px;
-      background-color: transparent !important;
-      color: luxcommon.$lux-hover-color !important;
-      .lux-tab-title {
-        color: luxcommon.$lux-hover-color !important;
-      }
-    }
-
-    &:hover:not(.mat-tab-disabled) {
-      background-color: transparent;
-      color: luxcommon.$lux-hover-color !important;
-      .lux-tab-title {
-        color: luxcommon.$lux-hover-color !important;
-      }
-    }
-  }
-}
-
-/*
- * Theming for LUX-Table
- */
-lux-table {
-  font-family: luxcommon.$app-font-family;
-  .lux-table {
-    th,
-    .lux-table-header-no-data th {
-      vertical-align: middle;
-    }
-
-    th.mat-header-cell,
-    td.mat-cell {
-      border: none;
-    }
-    td.mat-footer-cell {
-      border: none;
-      border-top: 1px solid luxcommon.$app-border-color;
-      font-size: 15px;
-      color: luxcommon.$dark-primary-text;
-      padding-bottom: 16px;
-    }
-
-    .lux-table-content {
-      border: 1px solid luxcommon.$app-border-color;
-      border-radius: 4px;
-
-      table {
-        border-spacing: 0 !important;
-        td .lux-form-control-wrapper {
-          margin: 0;
-          .lux-form-control-container-authentic {
-            padding: 0.25em 0.5em; // bei den Form-Controls in einer Tabellen-Zelle wird die Höhe reduziert
-            &.lux-no-input-row {
-              padding: 0.25em 0em;
-            }
-          }
-        }
-      }
-
-      thead th {
-        font-size: 16px;
-        color: luxcommon.$dark-primary-text;
-        font-weight: 700;
-      }
-
-      .mat-row:nth-child(odd) {
-        background-color: $light-gray;
-      }
-      .mat-row:nth-child(even) {
-        background-color: #ffffff;
-      }
-    }
-
-    .lux-paginator-xs:not(.lux-hide) {
-      .mat-paginator-container {
-        justify-content: flex-end;
-      }
-      .mat-paginator-range-actions {
-        display: flex;
-        align-items: center;
-        margin-top: 0px;
-        button:first-of-type {
-          margin-left: 0px;
-        }
-      }
-      .mat-paginator-range-label {
-        margin: 0 32px 0 24px;
-      }
-    }
-  }
-}
-
-lux-table {
-  tr:hover {
-    > td,
-    > th {
-      background-color: unset !important;
-      border-radius: 0;
-    }
-  }
-}
-
-lux-filter-form {
-  lux-menu {
-    .lux-filter-menu-trigger button:not([disabled]).mat-fab.lux-button-rounded:hover {
-      background-color: #fff !important;
-      color: luxcommon.$lux-hover-color;
-    }
-    .lux-filter-menu-trigger button:not([disabled]).mat-fab.lux-button-rounded:focus-visible {
-      @include luxfocus.focus-dark-mixin-inline;
-      background-color: #fff !important;
-    }
-    .lux-filter-menu-trigger button:not([disabled]).mat-fab.lux-button-rounded:active {
-      background-color: transparent !important;
-      color: map-get(luxpalette.$lux-palette_primary, 700);
-    }
-  }
-}
-
-/**
-* Theming für LUX-Card
-*/
-lux-card {
-  .lux-highlight {
-    color: map.get(luxpalette.$lux-palette-primary, 500);
-  }
-  .mat-card.lux-card {
-    border: 1px solid rgba(black, 0.12);
-    background-color: #fff;
-
-    &:not([class*="mat-elevation-z"]) {
-      @include luxelevations.lux-elevation-z0;
-    }
-
-    .mat-card-subtitle {
-      color: luxcommon.$dark-secondary-text;
-      font-size: 16px;
-      font-weight: normal;
-      font-family: luxcommon.$app-font-family;
-    }
-  }
-  mat-card {
-    &[class~="lux-cursor"]:hover {
-      background-image: luxcommon.$app-gradient;
-      background-color: #ffffff;
-      border-color: luxcommon.$dark-primary-text;
-    }
-  }
 }
 
 /*
@@ -311,8 +104,13 @@ lux-accordion {
   mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded:focus {
     border-bottom-left-radius: 0px;
     border-bottom-right-radius: 0px;
-    font-family: luxcommon.$app-headline-font, luxcommon.$app-font-family;
-    font-weight: 500;
+    .mat-expansion-panel-header-title,
+    .mat-expansion-panel-header-description {
+      font-family: luxcommon.$app-headline-font, luxcommon.$app-font-family;
+    }
+    .mat-expansion-panel-header-title {
+      font-weight: 500;
+    }
 
     &[aria-disabled="false"] {
       background-color: map.get(luxpalette.$lux-palette-primary, 50);
@@ -377,45 +175,6 @@ lux-dialog-structure {
     &:focus-visible {
       @include luxfocus.focus-dark-mixin;
       border-radius: 4px;
-    }
-  }
-}
-
-/*
- * Theming for LUX-List
- */
-lux-list {
-  .mat-card:not([class*="mat-elevation-z"]) {
-    @include luxelevations.lux-elevation-z0;
-  }
-  .mat-card-content.menu-item-content {
-    margin-bottom: 0;
-  }
-
-  lux-list-item {
-    &:focus-visible {
-      mat-card.mat-card.lux-card {
-        @include luxfocus.focus-dark-mixin-inline;
-        background-color: #fff !important;
-      }
-    }
-
-    lux-card {
-      &.lux-list-item-selected {
-        mat-card.mat-card.lux-card {
-          @include luxfocus.lux-selected-mixin-ac;
-        }
-      }
-
-      mat-card[class~="lux-cursor"]:not([class*="mat-elevation-z"]) {
-        @include luxfocus.lux-selectable-mixin;
-
-        &:hover {
-          border: 1px solid luxcommon.$lux-hover-color;
-          background: luxcommon.$app-gradient-reverse;
-          background-color: #fff !important;
-        }
-      }
     }
   }
 }
@@ -815,126 +574,6 @@ lux-button button.lux-button {
   &.mat-fab,
   &.mat-fab:not(.mat-button-disabled):active {
     @include luxelevations.lux-elevation-z0;
-  }
-}
-
-/*
-*Theming für Lux-menu
-*/
-.lux-menu-trigger-default {
-  button.mat-button {
-    color: map.get(luxpalette.$lux-palette_primary, 500);
-  }
-}
-
-/*
-* Theming für Stepper
-*/
-lux-stepper {
-  mat-step-header {
-    &:hover {
-      background-color: transparent !important;
-
-      &[aria-selected="false"],
-      &[aria-selected="true"] {
-        div.mat-step-icon.mat-step-icon-state-number,
-        div.mat-step-icon.mat-step-icon-state-edit {
-          background-color: luxcommon.$lux-hover-color;
-          color: #fff;
-          border-color: luxcommon.$lux-hover-color;
-        }
-        div.mat-step-label lux-step-header {
-          color: luxcommon.$lux-hover-color;
-        }
-      }
-    }
-  }
-
-  mat-step-header[tabindex="0"]:focus-visible {
-    background-color: transparent !important;
-    border-radius: 4px;
-  }
-
-  lux-stepper-vertical mat-step-header {
-    &[aria-selected="true"] {
-      @include luxfocus.lux-selected-mixin-ac;
-    }
-
-    &[aria-selected="false"] {
-      div.mat-step-icon.mat-step-icon-state-number,
-      div.mat-step-icon.mat-step-icon-state-edit {
-        background-color: #fff;
-        color: luxpalette.$lux-primary-color;
-        border: 1px solid luxcommon.$app-border-color;
-      }
-      div.mat-step-label lux-step-header {
-        color: luxpalette.$lux-primary-color;
-      }
-    }
-  }
-
-  lux-stepper-horizontal mat-step-header {
-    &[aria-selected="true"] {
-      div.mat-step-label.mat-step-label-active.mat-step-label-selected lux-step-header {
-        font-weight: 500;
-      }
-      &:after {
-        border-bottom: none;
-      }
-    }
-
-    &[aria-selected="false"] {
-      div.mat-step-icon.mat-step-icon-state-number,
-      div.mat-step-icon.mat-step-icon-state-edit {
-        background-color: #fff;
-        color: luxpalette.$lux-primary-color;
-        border: 1px solid luxcommon.$app-border-color;
-      }
-      div.mat-step-label lux-step-header {
-        color: luxpalette.$lux-primary-color;
-      }
-    }
-  }
-
-  .lux-ignore-mat-step-icons mat-step-header {
-    &[aria-selected="false"] {
-      .lux-stepper-edited-icon,
-      .lux-stepper-normal-icon {
-        mat-icon {
-          color: luxpalette.$lux-primary-color;
-          background-color: #fff;
-          border: 1px solid luxcommon.$app-border-color;
-        }
-      }
-    }
-    &[aria-selected="true"] {
-      .lux-stepper-edited-icon,
-      .lux-stepper-normal-icon {
-        mat-icon {
-          color: #fff;
-          background-color: luxpalette.$lux-primary-color;
-          border: 1px solid luxcommon.$app-border-color;
-        }
-      }
-    }
-    &:hover {
-      background-color: transparent !important;
-
-      &[aria-selected="false"],
-      &[aria-selected="true"] {
-        .lux-stepper-edited-icon,
-        .lux-stepper-normal-icon {
-          mat-icon {
-            background-color: luxcommon.$lux-hover-color;
-            color: #fff;
-            border-color: luxcommon.$lux-hover-color;
-          }
-        }
-      }
-      div.mat-step-label lux-step-header {
-        color: luxcommon.$lux-hover-color;
-      }
-    }
   }
 }
 

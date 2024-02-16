@@ -25,9 +25,9 @@ lux-form-control-wrapper {
   .lux-form-control-wrapper {
     display: flex;
     box-sizing: border-box;
+    flex-direction: column;
     font-size: luxcommon.$form-control-font-size;
     color: luxcommon.$dark-primary-text;
-    margin: 0.25em 0;
 
     .lux-form-control-label-authentic {
       @include form-label;
@@ -46,6 +46,7 @@ lux-form-control-wrapper {
     }
 
     .lux-form-control-container-authentic {
+      flex: 1 1 auto;
       box-sizing: border-box;
       padding: 0.75em 0.5em;
       font-size: luxcommon.$form-control-font-size;
@@ -64,11 +65,18 @@ lux-form-control-wrapper {
     }
 
     .lux-form-control-misc-authentic {
+      display: flex;
+      place-content: flex-start space-between;
+      align-items: flex-start;
       box-sizing: border-box;
       margin: 0.25em calc(0.5em + 1px) 0 calc(0.5em + 1px);
       @include form-label;
       word-wrap: break-word;
 
+      .lux-form-control-error-container {
+        display: flex;
+        box-sizing: border-box;
+      }
       .lux-form-control-character-counter-authentic {
         min-width: 40px;
         margin-left: 2px;
@@ -84,6 +92,11 @@ lux-form-control-wrapper {
     // zusätzlicher Container für Elemente, die einen input-prefix/input-suffix haben
     // aktuell: lux-autocomplete-ac und lux-input-ac
     .lux-input-row-authentic {
+      display: flex;
+      flex-direction: row;
+      box-sizing: border-box;
+      place-content: center flex-start;
+      align-items: center;
       font-size: luxcommon.$form-control-font-size;
       min-height: 1.5em;
 
@@ -92,6 +105,7 @@ lux-form-control-wrapper {
         width: auto;
         white-space: nowrap;
         display: inline-block;
+        flex: 1 1 auto;
         max-height: 1.5em;
         align-items: center;
 

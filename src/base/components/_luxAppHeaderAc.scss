@@ -9,6 +9,9 @@
 
 lux-app-header-ac {
   display: block;
+  box-sizing: border-box;
+  max-width: 100%;
+  z-index: 999;
 
   .lux-image {
     cursor: pointer;
@@ -32,17 +35,9 @@ lux-app-header-ac {
 
       @include luxelevations.lux-elevation-z0;
 
-      &.mat-fab .mat-button-wrapper {
-        line-height: 20px;
-        max-height: 20px;
-        .lux-no-size {
-          display: block;
-          font-size: 20px;
-        }
-      }
-
       lux-icon {
         color: luxpalette.$lux-primary-color;
+        box-sizing: border-box;
       }
 
       &:hover:not([disabled]).mat-fab:hover.mat-primary {
@@ -87,24 +82,32 @@ lux-app-header-ac {
 
   .lux-app-header-top-bar {
     padding: 8px 24px;
-    min-height: 64px;
+    height: 64px;
     font-size: 1rem;
     color: luxcommon.$dark-primary-text;
     background-color: #fff;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 40px 1fr;
+    align-items: center;
+
+    .header-menu-container {
+      gap: 8px;
+    }
 
     &.lux-mobile {
       padding: 4px;
+      grid-template-columns: auto 1fr;
+      height: 50px;
+      .header-menu-container {
+        gap: 4px;
+      }
     }
 
     lux-menu {
       width: unset;
       .lux-menu-extended {
-        overflow: unset;
-        padding: 0px;
-      }
-      button.mat-button.lux-button {
-        margin-top: 0px;
-        margin-bottom: 0px;
+        overflow: visible;
       }
     }
   }
@@ -112,26 +115,29 @@ lux-app-header-ac {
   .lux-app-header-nav-bar {
     background-color: map.get(luxpalette.$lux-palette-primary, 50);
     padding: 4px 24px;
-    min-height: 30px;
+    height: 44px;
     overflow: hidden;
     white-space: nowrap;
-
+    z-index: 10000;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1em;
+    align-items: center;
     &.lux-mobile {
       padding: 4px;
     }
 
     .lux-app-title {
       color: luxcommon.$dark-primary-text;
-      font-size: 20px;
+      font-size: 1.5rem;
       font-weight: 400;
       font-family: luxcommon.$app-headline-font, luxcommon.$app-font-family;
 
       &.lux-mobile {
-        font-size: 16px;
-        font-weight: 500;
+        font-size: 1.25rem;
+        font-weight: 400;
       }
     }
-
     .lux-header-ac-nav-menu {
       lux-button.lux-menu-item {
         button.lux-button .lux-button-label {
@@ -143,10 +149,6 @@ lux-app-header-ac {
           font-weight: 600;
           height: 33px !important; //Sonst verschiebt sich die Höhe des Labels!
         }
-      }
-
-      .lux-menu-extended {
-        padding: 0;
       }
     }
   }
