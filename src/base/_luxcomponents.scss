@@ -652,6 +652,14 @@ lux-progress {
   }
 }
 
+.spinner-padding {
+  padding: 6px;
+}
+
+lux-input-ac-suffix div.spinner-padding {
+  padding: 0 0 0 6px;
+}
+
 /*
  * Theming for LUX-Side-Nav
  */
