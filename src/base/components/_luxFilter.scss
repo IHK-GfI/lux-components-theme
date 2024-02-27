@@ -16,6 +16,10 @@ lux-filter-form {
   .filter-item {
     .mat-standard-chip {
       min-height: 24px;
+
+      &.mat-chip-with-trailing-icon {
+        padding-right: 4px;
+      }
     }
 
     div.lux-form-control-label-authentic {
