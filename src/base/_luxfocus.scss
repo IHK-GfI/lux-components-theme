@@ -375,46 +375,6 @@ example-root {
   }
 }
 
-/** ########## Message-Box ########## **/
-lux-message-box {
-  & div.lux-message-box-content {
-    &:focus-visible {
-      @include focus-dark-mixin;
-    }
-
-    & div.lux-message-container.lux-bg-color-white {
-      & div.lux-message-text p:focus-visible {
-        @include focus-dark-mixin;
-      }
-
-      & button:not([disabled]):focus-visible {
-        @include focus-dark-mixin;
-      }
-
-      & button:not([disabled]):hover {
-        @include lux-hovered-mixin;
-        border-radius: 50%;
-      }
-    }
-
-    & div.lux-message-container:not(.lux-bg-color-white) {
-      & div.lux-message-text p:focus-visible {
-        @include focus-bright-mixin;
-      }
-
-      & button:not([disabled]):focus-visible {
-        @include focus-bright-mixin;
-      }
-
-      & button:not([disabled]):hover {
-        @include lux-hovered-mixin;
-        border-radius: 50%;
-        color: luxpalette.$lux-primary-color;
-      }
-    }
-  }
-}
-
 /** ########## Stepper large ########## **/
 lux-stepper-large {
   .lux-stepper-large-nav-item {
