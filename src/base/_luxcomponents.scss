@@ -19,6 +19,8 @@
 @use "components/luxMenu";
 @use "components/luxTable";
 @use "components/luxFilter";
+@use "components/luxDialog";
+@use "components/luxSnackbar";
 @use "components/luxMessagebox";
 @use "luxcommon";
 @use "luxpalette";
@@ -39,18 +41,6 @@ lux-app-content {
 lux-card {
   .lux-card-content-container mat-tab-group.lux-tab-group .lux-tabs-notification-icon {
     border-color: luxcommon.$app-data-bg;
-  }
-}
-
-/*
- * Theming for LUX-Dialog
- */
-.lux-dialog {
-  .lux-dialog-title {
-    color: luxcommon.$dark-primary-text;
-  }
-  .mat-dialog-container {
-    @include luxelevations.lux-elevation-z24;
   }
 }
 
@@ -403,24 +393,6 @@ lux-lookup-combobox-ac {
   // spezielles Styling für das neue User-Menu-Label
   .lux-user-name-label.mat-menu-item[disabled] {
     color: luxcommon.$dark-primary-text;
-  }
-}
-
-/*
- * Theming for LUX-Snackbar
- */
-@each $colorName, $colorNameHex in luxcommon.$colorsForDarkBg {
-  .lux-snackbar-content .lux-bg-color-#{"" + $colorName + ""} {
-    color: $colorNameHex;
-    background-color: transparent;
-  }
-}
-snack-bar-container.mat-snack-bar-container {
-  @include luxelevations.lux-elevation-z6();
-
-  mat-icon.mat-icon.lux-icon {
-    width: 2em;
-    height: 2em;
   }
 }
 
