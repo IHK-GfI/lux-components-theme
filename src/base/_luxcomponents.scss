@@ -1,7 +1,11 @@
 @use "sass:map";
 @use "components/luxAppHeaderAc.scss";
+@use "components/luxAppHeader.scss";
+@use "components/luxAppFooter.scss";
 @use "components/luxLinkPlain.scss";
 @use "components/luxTileAc.scss";
+@use "components/luxTile.scss";
+@use "components/luxCard.scss";
 @use "components/luxFormControlWrapper.scss";
 @use "components/luxFormControlsAuthentic.scss";
 @use "components/luxMasterDetailAc.scss";
@@ -10,6 +14,11 @@
 @use "components/luxIcon";
 @use "components/luxButton";
 @use "components/luxList";
+@use "components/luxTabs";
+@use "components/luxStepper";
+@use "components/luxMenu";
+@use "components/luxTable";
+@use "components/luxFilter";
 @use "luxcommon";
 @use "luxpalette";
 @use "../public/global";
@@ -23,133 +32,12 @@ lux-app-content {
   background-color: luxcommon.$app-content-bg;
 }
 
-/*
- * Theming for LUX-App-Footer
- */
-lux-app-footer {
-  .lux-app-footer {
-    background-color: luxcommon.$app-footer-bg;
-  }
-
-  .footerFont {
-    font-family: global.$app-font-family;
-  }
-}
-
-/*
- * Theming for LUX-App-Header
- */
-lux-app-header {
-  .lux-app-header {
-    background-color: luxcommon.$app-header-bg;
-    @include luxelevations.lux-elevation-z6();
-
-    .lux-show-border {
-      border-left: 1px solid luxcommon.$light-dividers;
-    }
-
-    .lux-header-title {
-      color: map.get(map.get(luxpalette.$lux-palette-primary, contrast), 500);
-    }
-
-    div.lux-header-action {
-      lux-button {
-        button {
-          &:not(.mat-accent):not(.mat-warn):not(.mat-primary):not(.mat-button-disabled) {
-            color: map.get(map.get(luxpalette.$lux-palette-primary, contrast), 500);
-          }
-
-          &:not(.mat-accent):not(.mat-warn):not(.mat-primary).mat-button-disabled {
-            color: luxcommon.$dark-disabled-text;
-          }
-
-          &.mat-accent:not(.mat-button-disabled) {
-            color: map.get(luxpalette.$lux-palette_accent, A100);
-          }
-
-          &.mat-warn:not(.mat-button-disabled) {
-            color: map.get(luxpalette.$lux-palette_warn, A100);
-          }
-
-          &.mat-primary:not(.mat-button-disabled) {
-            color: map.get(luxpalette.$lux-palette_primary, A100);
-          }
-
-          &.lux-button-rounded {
-            @include luxelevations.lux-elevation-z0;
-          }
-        }
-      }
-    }
-
-    button:not(.mat-primary):not(.mat-warn):not(.mat-accent):not(.lux-button-rounded) {
-      color: map.get(map.get(luxpalette.$lux-palette-primary, contrast), 500);
-    }
-
-    .lux-header-user {
-      .lux-header-user-short {
-        > span {
-          color: map.get(luxpalette.$lux-palette_primary, 500);
-          background-color: map.get(map.get(luxpalette.$lux-palette-primary, contrast), 500);
-        }
-      }
-    }
-  }
-
-  .lux-side-nav-header,
-  .lux-side-nav-footer {
-    color: map.get(luxpalette.$lux-palette_primary, A400);
-  }
-
-  .lux-header-side-nav {
-    .lux-side-nav-trigger-active {
-      background-color: luxcommon.$dark-focused;
-    }
-  }
-
-  .lux-side-nav .lux-side-nav-content {
-    lux-button,
-    .lux-menu-item,
-    .lux-action-nav-menu lux-button {
-      color: map.get(luxpalette.$lux-palette_primary, 500);
-      font-weight: 600;
-    }
-  }
-}
-
-// Menü wird im Cdk-Overlay dargestellt und hängt nicht unter dem LUX-APP-HEADER selbst.
-.lux-right-nav-menu .lux-menu-item {
-  color: map.get(luxpalette.$lux-palette_primary, 500);
-}
-
 /**
- * Theming für LUX-Card
+ * Theming für LUX-Card in einem Tab soll es keine border haben.
  */
 lux-card {
   .lux-card-content-container mat-tab-group.lux-tab-group .lux-tabs-notification-icon {
     border-color: luxcommon.$app-data-bg;
-  }
-
-  .lux-card-content-container {
-    overflow-x: hidden;
-    padding: luxcommon.$form-control-buffer;
-    font-family: luxcommon.$app-font-family;
-
-    > * {
-      margin-bottom: 0;
-    }
-  }
-
-  .lux-highlight {
-    color: luxcommon.$dark-primary-text;
-  }
-
-  .lux-card-content-expanded {
-    background: luxcommon.$app-data-bg;
-  }
-
-  .mat-card:not([class*="mat-elevation-z"]) {
-    @include luxelevations.lux-elevation-z1;
   }
 }
 
@@ -518,63 +406,6 @@ lux-lookup-combobox-ac {
 }
 
 /*
- * Theming for LUX-Menu
- */
-.lux-menu-extended,
-.lux-menu-trigger {
-  > lux-button {
-    button {
-      padding-left: 8px;
-      padding-right: 8px;
-      min-width: 36px;
-    }
-  }
-}
-
-/* Menu-Overlay-Panel anpassen */
-.lux-menu-panel {
-  .lux-menu-item {
-    font-size: 16px;
-    display: block;
-    &.with-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-wrap: nowrap;
-      width: 100%;
-      max-width: 100%;
-    }
-    .lux-button-label.with-badge {
-      display: inline-block;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .lux-button-badge {
-      color: #fff;
-      border-radius: 4px;
-      padding: 1px 4px;
-      font-size: 11px;
-      line-height: normal;
-      min-width: 15px;
-      max-width: 38px;
-      display: inline-block;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      box-sizing: border-box;
-      letter-spacing: 1.25px;
-    }
-  }
-  .lux-menu-item-icon {
-    vertical-align: middle;
-    mat-icon {
-      margin: 0;
-    }
-  }
-}
-
-/*
  * Theming for LUX-Message-Box
  */
 lux-message-box {
@@ -708,182 +539,6 @@ lux-side-nav {
 lux-spinner {
   .mat-progress-spinner > svg > circle {
     stroke: map.get(luxpalette.$lux-palette_primary, A400);
-  }
-}
-
-lux-filter-form {
-  lux-accordion {
-    lux-panel-header-title {
-      width: 100%;
-      mat-panel-title.mat-expansion-panel-header-title {
-        align-items: center;
-        justify-content: space-between;
-        margin: 0px;
-      }
-    }
-  }
-
-  h2.lux-card-title-container {
-    font-size: 16px;
-  }
-
-  lux-menu.filter-menu {
-    .lux-menu-extended {
-      padding: 0 !important;
-    }
-    .lux-filter-menu-trigger button.lux-button-rounded {
-      height: 36px;
-      width: 36px;
-      min-width: 36px;
-      max-width: 36px;
-      background-color: transparent;
-      color: map.get(luxpalette.$lux-palette_primary, 500);
-      padding: 0px !important;
-      margin: 0px 4px !important;
-
-      @include luxelevations.lux-elevation-z0;
-    }
-  }
-}
-/*
- * Theming for LUX-Stepper
- */
-lux-stepper {
-  .mat-stepper-horizontal,
-  .mat-stepper-vertical {
-    background-color: transparent;
-  }
-
-  // luxUseCustomIcons=true
-  .lux-ignore-mat-step-icons {
-    mat-step-header {
-      color: luxcommon.$dark-secondary-text;
-
-      &.lux-step-header-touched {
-        .lux-stepper-edited-icon,
-        .lux-stepper-normal-icon {
-          mat-icon {
-            color: luxcommon.$app-data-bg;
-            background-color: map.get(luxpalette.$lux-palette_primary, 500);
-          }
-        }
-
-        lux-step-header {
-          color: map.get(luxpalette.$lux-palette_primary, 500);
-        }
-      }
-
-      &:not(.lux-step-header-touched) {
-        .lux-stepper-edited-icon,
-        .lux-stepper-normal-icon {
-          mat-icon {
-            color: luxcommon.$app-data-bg;
-            background-color: luxcommon.$dark-secondary-text;
-          }
-        }
-      }
-    }
-  }
-
-  // luxUseCustomIcons=false
-  .mat-step-header {
-    lux-step-header {
-      color: luxcommon.$dark-secondary-text;
-    }
-
-    &.lux-step-header-touched {
-      .mat-step-icon {
-        color: luxcommon.$app-data-bg;
-        background-color: map.get(luxpalette.$lux-palette_primary, 500);
-      }
-
-      .mat-step-icon-selected {
-        color: luxcommon.$app-data-bg;
-        background-color: map.get(luxpalette.$lux-palette_primary, 500);
-      }
-
-      lux-step-header {
-        color: map.get(luxpalette.$lux-palette_primary, 500);
-      }
-    }
-
-    &:not(.lux-step-header-touched) {
-      .mat-step-icon {
-        color: luxcommon.$app-data-bg;
-        background-color: luxcommon.$dark-secondary-text;
-      }
-
-      .mat-step-icon-selected {
-        color: luxcommon.$app-data-bg;
-        background-color: map.get(luxpalette.$lux-palette_primary, 500);
-      }
-    }
-  }
-}
-
-/*
- * Theming for LUX-Table
- */
-lux-table {
-  table.mat-table {
-    font-family: luxcommon.$app-font-family;
-  }
-  .lux-row-selected {
-    background-color: luxcommon.$lux-selected-bg-color;
-  }
-}
-
-/*
- * Theming for LUX-Tabs
- */
-lux-tabs {
-  .mat-tab-nav-bar,
-  .mat-tab-header {
-    border-color: rgba(black, 0.38);
-    font-size: 16px;
-  }
-
-  mat-tab-group div[role="tab"]:not(.mat-tab-disabled) {
-    color: map.get(luxpalette.$lux-palette_primary, 500);
-  }
-
-  .lux-notification-new {
-    background-color: map.get(luxcommon.$componentBgColors, "green");
-  }
-
-  .lux-tabs-notification-icon {
-    border: 2px solid luxcommon.$app-content-bg;
-  }
-
-  .lux-tabs-show-border {
-    border: 1px solid luxcommon.$app-border-color;
-    border-radius: 4px;
-  }
-}
-
-/*
- * Theming for LUX-Tile
- */
-lux-tile {
-  .lux-notification-new {
-    background-color: map.get(luxpalette.$lux-palette_accent, 500);
-  }
-
-  .lux-highlight {
-    color: map.get(luxpalette.$lux-palette_primary, A400);
-  }
-
-  .mat-card:not([class*="mat-elevation-z"]) {
-    @include luxelevations.lux-elevation-z2;
-  }
-
-  .lux-tile-label {
-    margin: 0;
-    display: flex;
-    flex-shrink: 1;
-    flex-grow: 0;
-    min-height: 65px;
-    max-height: 65px;
   }
 }
 

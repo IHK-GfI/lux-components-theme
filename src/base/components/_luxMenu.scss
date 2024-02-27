@@ -1,0 +1,130 @@
+@use "sass:map";
+@use "../luxcommon";
+@use "../luxpalette";
+@use "../luxfocus";
+
+lux-menu {
+  display: block;
+  width: 100%;
+
+  .lux-menu-extended,
+  .lux-menu-trigger {
+    > lux-button {
+      button {
+        padding-left: 8px;
+        padding-right: 8px;
+        min-width: 36px;
+      }
+    }
+  }
+}
+
+// Container für die Buttons und den Trigger ausserhalb des Menu-Panels
+.lux-menu-extended {
+  overflow: hidden;
+  min-width: 0;
+  padding: 4px 0;
+  position: relative;
+
+  > lux-button {
+    margin-right: 8px;
+    &.lux-menu-item .lux-button-label {
+      font-weight: 400;
+      letter-spacing: 1px;
+      font-family: luxcommon.$app-font-family;
+    }
+  }
+}
+
+// Container für den Menu-Trigger-button
+.lux-menu-trigger {
+  display: flex;
+  flex: 0 0 auto;
+  margin: 0 4px;
+  align-self: center;
+  box-sizing: border-box;
+}
+
+.lux-menu-trigger-default {
+  button.mat-button {
+    color: map.get(luxpalette.$lux-palette_primary, 500);
+  }
+}
+
+/* Menu-Overlay-Panel anpassen */
+.lux-menu-panel {
+  border: 2px solid luxpalette.$lux-primary-color;
+  box-shadow: none !important;
+
+  .lux-menu-item {
+    font-size: 16px;
+    display: block;
+    color: luxpalette.$lux-primary-color;
+    margin-top: luxcommon.$outline-width;
+    margin-bottom: luxcommon.$outline-width;
+
+    .mat-icon-no-color {
+      color: luxpalette.$lux-primary-color;
+    }
+
+    &.with-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-wrap: nowrap;
+      width: 100%;
+      max-width: 100%;
+    }
+    .lux-button-label.with-badge {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .lux-button-badge {
+      color: #fff;
+      border-radius: 4px;
+      padding: 1px 4px;
+      font-size: 11px;
+      line-height: normal;
+      min-width: 15px;
+      max-width: 38px;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      box-sizing: border-box;
+      letter-spacing: 1.25px;
+    }
+  }
+  .lux-menu-item-icon {
+    vertical-align: middle;
+    mat-icon {
+      margin: 0;
+    }
+  }
+}
+
+/** ########## Hover / Focus ########## **/
+// Class, welche das aufgeklappte Panel referenziert
+.lux-menu-panel {
+  .lux-menu-item {
+    &:not([disabled="true"]) {
+      &:focus-visible {
+        @include luxfocus.focus-dark-mixin-inline;
+        border-radius: 0;
+        &:after {
+          width: 0px;
+          border: none;
+        }
+      }
+
+      &:hover {
+        @include luxfocus.lux-hovered-mixin-inverted;
+        & .mat-icon-no-color {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

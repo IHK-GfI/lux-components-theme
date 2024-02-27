@@ -3,11 +3,15 @@
 @use "luxbreakpoints" as luxbp;
 
 // display flex,....
-$display-values: block, flex, grid, inline-flex, inline-block, none;
+$display-values: block, flex, grid, inline-flex, inline-block, inline-grid, none;
 @each $val in $display-values {
   .lux-#{$val} {
     display: $val;
   }
+}
+
+.lux-display-none {
+  display: none;
 }
 
 .lux-display-none-important {
@@ -70,6 +74,8 @@ $steps: 0, 1, 2, 3, 4, 5, 6;
 }
 
 // Flex - Basis
+// die Zahl geteilt durch 4 ergibt den rem-Wert also lux-flex-basis-4 entspricht 1rem
+// bei den Brüchen wird der enstprechende %-Wert gesetzt
 $basis: (
   "0": 0px,
   "1": 0.25rem,
@@ -82,6 +88,24 @@ $basis: (
   "8": 2rem,
   "9": 2.25rem,
   "10": 2.5rem,
+  "11": 2.75rem,
+  "12": 3rem,
+  "16": 4rem,
+  "20": 5rem,
+  "24": 6rem,
+  "28": 7rem,
+  "32": 8rem,
+  "36": 9rem,
+  "40": 10rem,
+  "44": 11rem,
+  "48": 12rem,
+  "52": 13rem,
+  "56": 14rem,
+  "60": 15rem,
+  "64": 16rem,
+  "72": 18rem,
+  "80": 20rem,
+  "96": 24rem,
   "auto": auto,
   "1/2": 50%,
   "1/3": 33.333333%,
@@ -178,7 +202,7 @@ $justify-values: (
 }
 
 // Justify items, controlling how grid items are aligned along their inline axis
-// Klassw für den container
+// Klasse für den container
 $justify-items-values: (
   "start": start,
   "end": end,
@@ -256,8 +280,8 @@ $align-self-values: (
 // Place - Content
 $place-content-values: (
   "center": center,
-  "start": start,
-  "end": end,
+  "start": flex-start,
+  "end": flex-end,
   "between": space-between,
   "around": space-around,
   "evenly": space-evenly,
@@ -298,13 +322,38 @@ $place-self-values: (
   }
 }
 
-//  Gutters between grid und flexbox-items
+// Gutters between grid und flexbox-items
+// die Zahl geteilt durch 4 ergibt den rem-Wert also lux-flex-basis-4 entspricht 1rem
 $grid-gaps: (
   "0": 0px,
-  "1": 10px,
-  "2": 20px,
-  "3": 30px,
-  "4": 40px
+  "1": 0.25rem,
+  "2": 0.5rem,
+  "3": 0.75rem,
+  "4": 1rem,
+  "5": 1.25rem,
+  "6": 1.5rem,
+  "7": 1.75rem,
+  "8": 2rem,
+  "9": 2.25rem,
+  "10": 2.5rem,
+  "11": 2.75rem,
+  "12": 3rem,
+  "16": 4rem,
+  "20": 5rem,
+  "24": 6rem,
+  "28": 7rem,
+  "32": 8rem,
+  "36": 9rem,
+  "40": 10rem,
+  "44": 11rem,
+  "48": 12rem,
+  "52": 13rem,
+  "56": 14rem,
+  "60": 15rem,
+  "64": 16rem,
+  "72": 18rem,
+  "80": 20rem,
+  "96": 24rem
 );
 @each $key, $val in $grid-gaps {
   .lux-gap-#{$key} {
@@ -416,6 +465,18 @@ $row-steps: 1, 2, 3, 4, 5, 6;
 .lux-auto-cols-fr {
   grid-auto-columns: minmax(0, 1fr);
 }
+.lux-auto-rows-auto {
+  grid-auto-rows: auto;
+}
+.lux-auto-rows-min {
+  grid-auto-rows: min-content;
+}
+.lux-auto-rows-max {
+  grid-auto-rows: max-content;
+}
+.lux-auto-rows-fr {
+  grid-auto-rows: minmax(0, 1fr);
+}
 
 //// Responsivität ////
 
@@ -443,6 +504,10 @@ $row-steps: 1, 2, 3, 4, 5, 6;
     .#{$bp}\:lux-#{$val} {
       display: $val;
     }
+  }
+
+  .#{$bp}\:lux-display-none {
+    display: none;
   }
 
   .#{$bp}\:lux-display-none-important {
@@ -611,6 +676,78 @@ $row-steps: 1, 2, 3, 4, 5, 6;
   }
   .#{$bp}\:lux-col-end-auto {
     grid-column-end: auto;
+  }
+
+  @each $row in $row-steps {
+    .#{$bp}\:lux-grid-rows-#{$row} {
+      grid-template-rows: repeat($row, minmax(0, 1fr));
+    }
+    .#{$bp}\:lux-row-span-#{$row} {
+      grid-row: span #{$row} / span #{$row};
+    }
+    .#{$bp}\:lux-row-start-#{$row} {
+      grid-row-start: $row;
+    }
+    .#{$bp}\:lux-row-end-#{$row} {
+      grid-row-end: $row;
+    }
+  }
+  .#{$bp}\:lux-grid-rows-none {
+    grid-template-rows: none;
+  }
+  .#{$bp}\:lux-row-span-full {
+    grid-row: 1/ -1;
+  }
+  .#{$bp}\:lux-row-start-auto {
+    grid-row-start: auto;
+  }
+  .#{$bp}\:lux-row-end-auto {
+    grid-row-end: auto;
+  }
+  .#{$bp}\:lux-row-start-7 {
+    grid-row-start: 7;
+  }
+  .#{$bp}\:lux-row-end-7 {
+    grid-row-end: 7;
+  }
+  .#{$bp}\:lux-grid-flow-row {
+    grid-auto-flow: row;
+  }
+  .#{$bp}\:lux-grid-flow-col {
+    grid-auto-flow: column;
+  }
+  .#{$bp}\:lux-grid-flow-dense {
+    grid-auto-flow: dense;
+  }
+  .#{$bp}\:lux-grid-flow-row-dense {
+    grid-auto-flow: row dense;
+  }
+  .#{$bp}\:lux-grid-flow-col-dense {
+    grid-auto-flow: column dense;
+  }
+  .#{$bp}\:lux-auto-cols-auto {
+    grid-auto-columns: auto;
+  }
+  .#{$bp}\:lux-auto-cols-min {
+    grid-auto-columns: min-content;
+  }
+  .#{$bp}\:lux-auto-cols-max {
+    grid-auto-columns: max-content;
+  }
+  .#{$bp}\:lux-auto-cols-fr {
+    grid-auto-columns: minmax(0, 1fr);
+  }
+  .#{$bp}\:lux-auto-rows-auto {
+    grid-auto-rows: auto;
+  }
+  .#{$bp}\:lux-auto-rows-min {
+    grid-auto-rows: min-content;
+  }
+  .#{$bp}\:lux-auto-rows-max {
+    grid-auto-rows: max-content;
+  }
+  .#{$bp}\:lux-auto-rows-fr {
+    grid-auto-rows: minmax(0, 1fr);
   }
 }
 
