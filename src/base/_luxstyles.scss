@@ -47,7 +47,6 @@ $paletteNamen: primary, accent, warn;
   // Form
   --lux-theme-form-border-color: #{luxcommon.$form-border-color};
   --lux-theme-form-control-font-size: #{luxcommon.$form-control-font-size};
-  --lux-theme-form-control-font-size-small: #{luxcommon.$form-control-font-size-small};
   --lux-theme-form-control-buffer: #{luxcommon.$form-control-buffer};
 
   // Button
@@ -104,45 +103,45 @@ h6 {
 }
 
 h1 {
-  font-size: 24px;
+  font-size: 2rem;
   font-weight: 600;
   margin-block-start: 1.2em;
-  margin-block-end: 14px;
+  margin-block-end: 0.8rem;
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 500;
   margin-block-start: 1.2em;
-  margin-block-end: 14px;
+  margin-block-end: 0.8rem;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 500;
   margin-block-start: 1.2em;
-  margin-block-end: 14px;
+  margin-block-end: 0.8rem;
 }
 
 h4 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   margin-block-start: 1.2em;
-  margin-block-end: 14px;
+  margin-block-end: 0.8rem;
 }
 
 h5 {
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   margin-block-start: 2em;
-  margin-block-end: 14px;
+  margin-block-end: 0.8rem;
 }
 
 h6 {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 700;
   margin-block-start: 2em;
-  margin-block-end: 14px;
+  margin-block-end: 0.8rem;
 }
 
 .lux-app-header-bg {
@@ -328,12 +327,12 @@ lux-card.lux-card-grow {
 
 .lux-label {
   color: luxcommon.$dark-secondary-text;
-  font-size: 75%;
+  font-size: 0.75rem;
 }
 
 .lux-hint {
   color: luxcommon.$dark-secondary-text;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .lux-sr-only {

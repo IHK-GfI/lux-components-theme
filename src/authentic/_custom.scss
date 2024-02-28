@@ -190,7 +190,7 @@ example-root {
 
     .example-component-list-item {
       &.example-component-list-item-selected {
-        font-weight: 600;
+        text-shadow: 0 0 0.65px #003366, 0 0 0.65px #003366;
         color: luxpalette.$lux-primary-color;
         border: none;
         background-color: #fff !important;
@@ -528,17 +528,28 @@ lux-stepper-large {
 
   //Desktop-View
   .lux-stepper-large-nav-item {
+    font-size: 1rem;
+    font-weight: 400;
+
     .lux-stepper-large-nav-item-number-container {
       border-radius: 50%;
+      font-weight: 600;
+      max-width: 36px;
+      max-height: 36px;
+      box-sizing: border-box;
+      padding: 6px 9px;
+      background-color: #fff;
     }
 
     &.lux-active:not(.lux-disabled) {
       a {
-        font-weight: 500;
+        font-weight: 600;
+        text-decoration-thickness: 2px;
       }
       .lux-stepper-large-nav-item-number-container {
         color: luxcommon.$lux-stepper-large-nav-item-active-fc;
         background-color: luxcommon.$lux-stepper-large-nav-item-active-bg;
+        border: 1px solid luxcommon.$lux-stepper-large-nav-item-active-bg;
       }
 
       .lux-stepper-large-nav-item-label {
@@ -546,10 +557,10 @@ lux-stepper-large {
       }
     }
 
-    &.lux-touched:not(.lux-disabled) {
+    &.lux-touched:not(.lux-disabled, .lux-active) {
       a {
         text-decoration: underline;
-        font-weight: 500;
+        font-weight: 600;
       }
 
       &.lux-completed:not(.lux-active) {
@@ -558,14 +569,23 @@ lux-stepper-large {
         }
 
         a {
-          font-weight: 400;
+          font-weight: 600;
+          &::after {
+            width: 16px;
+            height: 16px;
+            margin-top: 2px;
+          }
         }
       }
 
       &:not(.lux-completed):not(.lux-active) {
         .lux-stepper-large-nav-item-number-container {
-          color: luxcommon.$lux-stepper-large-nav-item-completed-fg;
+          color: luxpalette.$lux_primary-color;
           background-color: luxcommon.$lux-stepper-large-nav-item-completed-bg;
+          border: 1px solid luxcommon.$app-border-color;
+        }
+        .lux-stepper-large-nav-item-label-container a.lux-stepper-large-nav-item-label-link:hover {
+          color: luxcommon.$lux-hover-color;
         }
       }
     }
@@ -606,7 +626,7 @@ lux-stepper-large {
   justify-content: flex-start;
   align-items: center;
 
-  font-size: 18px;
+  font-size: 1.125rem;
 
   .lux-stepper-large-mobile-nav-item-number-container {
     border-radius: 50%;
@@ -614,7 +634,7 @@ lux-stepper-large {
 
   &.lux-active:not(.lux-disabled) {
     a {
-      font-weight: 500;
+      font-weight: 600;
     }
     .lux-stepper-large-mobile-nav-item-number-container {
       color: luxcommon.$lux-stepper-large-nav-item-active-fc;
@@ -629,7 +649,7 @@ lux-stepper-large {
   &.lux-touched:not(.lux-disabled) {
     a {
       text-decoration: underline;
-      font-weight: 500;
+      font-weight: 400;
     }
 
     &.lux-completed:not(.lux-active) {
@@ -644,8 +664,9 @@ lux-stepper-large {
 
     &:not(.lux-completed):not(.lux-active) {
       .lux-stepper-large-mobile-nav-item-number-container {
-        color: luxcommon.$lux-stepper-large-nav-item-completed-fg;
+        color: luxpalette.$lux-primary-color;
         background-color: luxcommon.$lux-stepper-large-nav-item-completed-bg;
+        border: 1px solid luxcommon.$app-border-color;
       }
     }
   }
@@ -675,7 +696,7 @@ lux-stepper-large {
   .lux-stepper-large-mobile-nav-item-label-container {
     .lux-stepper-large-mobile-nav-item-complete {
       color: luxcommon.$lux-stepper-large-completed-fc;
-      font-size: 18px;
+      font-size: 1.125rem;
     }
   }
 }

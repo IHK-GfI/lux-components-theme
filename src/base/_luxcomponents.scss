@@ -462,7 +462,7 @@ lux-side-nav {
  * Theming for LUX-Tooltip
  */
 mat-tooltip-component .mat-tooltip {
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 /*
@@ -694,7 +694,7 @@ lux-stepper-large {
   align-items: center;
   margin-top: 2px;
 
-  font-size: 12px;
+  font-size: 0.75rem;
 
   .lux-stepper-large-mobile-header-label {
     display: flex;
@@ -751,7 +751,7 @@ lux-stepper-large {
 
   div {
     font-family: Korb, global.$app-font-family;
-    font-size: 28px;
+    font-size: 1.75rem;
   }
 }
 
@@ -770,7 +770,7 @@ lux-stepper-large {
   justify-content: flex-start;
   align-items: center;
 
-  font-size: 18px;
+  font-size: 1.125rem;
 
   &.lux-completed .lux-stepper-large-mobile-nav-item-number-container {
   }
@@ -810,7 +810,7 @@ lux-stepper-large {
 
     .lux-stepper-large-mobile-nav-item-complete {
       color: luxcommon.$lux-stepper-large-completed-fc;
-      font-size: 18px;
+      font-size: 1.125rem;
     }
   }
 

@@ -104,10 +104,10 @@ $listmargin: calc(luxcommon.$outline-width + 1px);
     }
     mat-card-title,
     h2 {
-      font-size: 16px;
+      font-size: 1rem;
     }
     mat-card-subtitle.mat-card-subtitle {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
     .lux-master-header-content-container-ac {
       flex: 1 1 100%;
@@ -123,10 +123,10 @@ $listmargin: calc(luxcommon.$outline-width + 1px);
     }
     mat-card-title,
     h2 {
-      font-size: 16px;
+      font-size: 1rem;
     }
     mat-card-subtitle.mat-card-subtitle {
-      font-size: 14px;
+      font-size: 0.875rem;
     }
   }
 
@@ -256,7 +256,7 @@ $listmargin: calc(luxcommon.$outline-width + 1px);
           }
         }
         .back-to-master-label {
-          font-size: 16px;
+          font-size: 1rem;
           color: map.get(luxpalette.$lux-palette-primary, 500);
         }
       }
