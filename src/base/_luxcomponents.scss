@@ -322,7 +322,7 @@ lux-file-progress {
         min-height: 40px;
 
         mat-icon {
-          font-size: 30px !important;
+          font-size: 1.875rem !important;
         }
       }
     }
@@ -339,7 +339,7 @@ lux-file-progress {
 
 .file-dialog {
   div.mat-dialog-title.lux-dialog-title {
-    font-size: 28px;
+    font-size: 1.75rem;
     font-weight: normal;
     margin-bottom: 0;
   }
@@ -470,6 +470,10 @@ mat-tooltip-component .mat-tooltip {
  */
 mat-expansion-panel.mat-expansion-panel:not([class*="mat-elevation-z"]) {
   @include luxelevations.lux-elevation-z2;
+  .mat-expansion-panel-header,
+  .mat-expansion-panel-body {
+    font-size: 1rem;
+  }
 }
 
 /*
@@ -531,7 +535,7 @@ lux-stepper-large {
   justify-content: flex-start;
   align-items: center;
 
-  font-size: 22px;
+  font-size: 1.375rem;
   line-height: 1.5;
 
   &.lux-active:not(.lux-disabled) {
@@ -638,9 +642,9 @@ lux-stepper-large {
 
     .lux-stepper-large-nav-item-complete {
       color: luxcommon.$lux-stepper-large-completed-fc;
-      font-size: 23px;
-      height: 23px;
-      width: 23px;
+      font-size: 1.4375rem;
+      height: 1.4375em;
+      width: 1.4375em;
     }
   }
 }
