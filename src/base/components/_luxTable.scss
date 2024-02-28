@@ -35,10 +35,10 @@ lux-table {
 
     td,
     th {
-      padding: 8px 16px;
+      padding: 0.5em 1em;
     }
     th {
-      padding-top: 16px;
+      padding-top: 1em;
     }
     tr.mat-header-row {
       height: auto;
@@ -47,13 +47,14 @@ lux-table {
     th.mat-header-cell,
     td.mat-cell {
       border: none;
+      font-size: 1rem;
     }
     td.mat-footer-cell {
       border: none;
       border-top: 1px solid luxcommon.$app-border-color;
-      font-size: 15px;
+      font-size: 0.9375rem;
       color: luxcommon.$dark-primary-text;
-      padding-bottom: 16px;
+      padding-bottom: 1em;
     }
 
     .lux-table-filter {
@@ -90,17 +91,17 @@ lux-table {
         }
         .lux-header-title,
         .lux-moved-header-title {
-          font-size: 12px;
-          margin-top: 4px;
+          font-size: 0.75rem;
+          margin-top: 0.25em;
 
           &:first-of-type {
-            margin-top: 8px;
+            margin-top: 0.5em;
           }
         }
       }
 
       thead th {
-        font-size: 16px;
+        font-size: 1rem;
         color: luxcommon.$dark-primary-text;
         font-weight: 700;
       }
@@ -125,7 +126,10 @@ lux-table {
         display: none;
       }
     }
-
+    .mat-paginator,
+    .mat-paginator-page-size .mat-select-trigger {
+      font-size: 0.75rem;
+    }
     .lux-table-overlay {
       -webkit-transition: opacity 1s;
       -moz-transition: opacity 1s;

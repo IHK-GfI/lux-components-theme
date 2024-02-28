@@ -325,7 +325,7 @@ mat-card lux-tabs {
     padding: 0px 10px 10px 10px;
 
     th {
-      font-size: 18px;
+      font-size: 1.125rem;
       color: map.get(luxpalette.$lux-palette_primary, 500);
     }
 
@@ -342,7 +342,7 @@ mat-card lux-tabs {
 
       .mat-calendar-body-cell-content.mat-focus-indicator {
         border-radius: 2px;
-        font-size: 18px;
+        font-size: 1.125rem;
         background-color: $light-blue;
         color: map.get(luxpalette.$lux-palette_primary, 500);
 
@@ -377,7 +377,7 @@ mat-card lux-tabs {
 
   button,
   .mat-icon-button {
-    font-size: 18px;
+    font-size: 1.125rem;
     color: map.get(luxpalette.$lux-palette_primary, 500);
 
     .mat-button-focus-overlay {
@@ -726,7 +726,7 @@ lux-file-list {
     .lux-menu-item,
     .lux-menu-trigger {
       lux-icon mat-icon.lux-icon {
-        font-size: 16px !important;
+        font-size: 0.875rem !important;
       }
     }
   }
