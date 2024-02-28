@@ -483,14 +483,12 @@ lux-form-control-wrapper .lux-form-control-wrapper {
 
   .lux-form-control-label-authentic {
     margin: 0 0 4px 0;
-    font-size: luxcommon.$form-control-font-size-small;
     height: 15px;
   }
 
   .lux-form-control-misc-authentic {
     margin: 4px 0 0 0;
     min-height: 17px;
-    font-size: luxcommon.$form-control-font-size-small;
     mat-hint {
       color: luxpalette.$lux-primary-color;
     }
