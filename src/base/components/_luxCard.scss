@@ -12,7 +12,6 @@ lux-card {
     mat-card,
     mat-card-content {
       flex: 1 1 auto;
-      font-size: 1rem;
     }
   }
 
@@ -25,6 +24,9 @@ lux-card {
 
     &:not([class*="mat-elevation-z"]) {
       @include luxelevations.lux-elevation-z0;
+    }
+    .mat-card-content {
+      font-size: 1rem;
     }
   }
 
