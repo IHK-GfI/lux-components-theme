@@ -79,10 +79,22 @@ lux-app-header-ac {
       }
     }
   }
+  lux-menu {
+    width: unset;
+    .lux-menu-extended {
+      overflow: visible;
+    }
+  }
 
+  .lux-app-header-top-bar-bg {
+    background-color: #fff;
+  }
+  .lux-centered {
+    margin: 0 auto;
+  }
   .lux-app-header-top-bar {
     padding: 8px 24px;
-    height: 64px;
+    min-height: 60px;
     font-size: 1rem;
     color: luxcommon.$dark-primary-text;
     background-color: #fff;
@@ -103,21 +115,16 @@ lux-app-header-ac {
         gap: 4px;
       }
     }
-
-    lux-menu {
-      width: unset;
-      .lux-menu-extended {
-        overflow: visible;
-      }
-    }
+  }
+  .lux-app-header-nav-bar-bg {
+    background-color: map.get(luxpalette.$lux-palette-primary, 50);
   }
 
   .lux-app-header-nav-bar {
     background-color: map.get(luxpalette.$lux-palette-primary, 50);
     padding: 4px 24px;
-    height: 44px;
-    overflow: hidden;
-    white-space: nowrap;
+    min-height: 44px;
+    box-sizing: border-box;
     z-index: 10000;
     display: grid;
     grid-template-columns: auto 1fr;
