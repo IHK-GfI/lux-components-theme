@@ -9,12 +9,16 @@
 
 $button-font-size: 22px;
 $light-green: #e4f1e4;
+$medium-green: #9ad7a3;
+$dark-green: #2e8533;
 $light-gray: #eff3f6;
 $light-blue: #e3ebf5;
-$dark-green: #2e8533;
+$slightly-blue: #ccd7e6;
+$medium-blue: #b0c4d6;
+$dark-blue: #335c85;
 
 body {
-  color: #003366;
+  color: luxpalette.$lux-primary-color;
   font-family: luxcommon.$app-font-family;
 }
 
@@ -37,11 +41,8 @@ h6 {
  * Theming for LUX-Card
  */
 lux-card {
-  .mat-card:not([class*="mat-elevation-z"]) {
-    @include luxelevations.lux-elevation-z1;
-  }
   .mat-card {
-    color: #003366;
+    color: luxpalette.$lux-primary-color;
   }
 }
 
@@ -49,7 +50,7 @@ lux-panel {
   & .mat-expansion-panel,
   .mat-expansion-panel-header-title,
   .mat-expansion-panel-header-description {
-    color: #003366;
+    color: luxpalette.$lux-primary-color;
   }
 }
 
@@ -101,6 +102,15 @@ lux-button button.lux-button {
     &.lux-stroked {
       color: luxcommon.$dark-disabled-text;
       border-color: luxcommon.$dark-disabled-text;
+    }
+  }
+
+  &.mat-flat-button:not(.mat-button-disabled, .mat-accent, .mat-warn, .mat-primary),
+  &.mat-raised-button:not(.mat-button-disabled, .mat-accent, .mat-warn, .mat-primary),
+  &.mat-stroked-button:not(.mat-button-disabled, .mat-accent, .mat-warn, .mat-primary) {
+    color: luxpalette.$lux-primary-color;
+    & lux-icon.lux-button-icon:not(.lux-button-icon-round) {
+      color: #000000;
     }
   }
 
@@ -239,7 +249,7 @@ lux-list lux-list-item lux-card {
   &:not(.lux-list-item-selected) {
     mat-card[class~="lux-cursor"]:not([class*="mat-elevation-z"]) {
       &:hover {
-        background: unset;
+        background: luxcommon.$lux-hover-color;
         border: 1px solid luxpalette.$lux-primary-color;
         background-color: #fff !important;
       }
@@ -467,20 +477,12 @@ lux-filter-form {
       margin: 3px;
     }
   }
-
-  lux-master-footer-ac {
-    margin: 0 3px 4px 3px;
-    border: none;
-    @include luxelevations.lux-elevation-z2;
-  }
 }
 
 /**
 * Theming für Lux-Formcontrols-AC
 */
 lux-form-control-wrapper .lux-form-control-wrapper {
-  margin: 2px 0px;
-
   .lux-form-control-label-authentic {
     margin: 0 0 4px 0;
     height: 15px;
@@ -495,7 +497,7 @@ lux-form-control-wrapper .lux-form-control-wrapper {
   }
 
   .lux-form-control-container-authentic {
-    padding: 10px 5px;
+    padding: 10px;
     line-height: 1;
     border-color: luxcommon.$form-border-color;
 
@@ -524,8 +526,8 @@ lux-form-control-wrapper .lux-form-control-wrapper {
       color: luxpalette.$lux-primary-color;
     }
     .lux-form-control-container-authentic:not(.lux-no-input-row) {
-      border-color: luxcommon.$lux-selected-border-color;
-      box-shadow: 0 0 0 2px luxcommon.$lux-selected-border-color, 0 0 4px 2px luxcommon.$lux-selected-border-color;
+      box-shadow: 0 0 0 2px $dark-green, 0 0 4px 2px $dark-green !important;
+      outline: 0;
     }
   }
 
@@ -535,7 +537,7 @@ lux-form-control-wrapper .lux-form-control-wrapper {
     }
     .lux-form-control-container-authentic:not(.lux-no-input-row) {
       border-color: luxpalette.$lux-warn-color;
-      box-shadow: 0 0 0 2px luxpalette.$lux-warn-color, 0 0 4px 2px luxpalette.$lux-warn-color;
+      box-shadow: 0 0 0 2px luxpalette.$lux-warn-color, 0 0 4px 2px luxpalette.$lux-warn-color !important;
     }
   }
 
