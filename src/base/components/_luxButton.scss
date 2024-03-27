@@ -101,7 +101,7 @@ lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-i
     }
 
     &:focus-visible {
-      @include luxfocus.focus-dark-mixin;
+      @include luxfocus.lux-button-focus;
     }
 
     &:not(.mat-fab):not(.mat-raised-button):not(.mat-flat-button),
@@ -137,6 +137,9 @@ lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-i
       &.mat-primary {
         background-color: color.adjust(map.get(luxpalette.$lux-palette_primary, 500), $lightness: 10%) !important;
       }
+    }
+    &.mat-fab.lux-button-rounded.lux-stroked:active {
+      box-shadow: unset;
     }
 
     &.mat-fab:focus-visible:not(:hover),
