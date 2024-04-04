@@ -21,6 +21,7 @@ $app-gradient-reverse: mustOverriden !default;
 $app-border-color: mustOverriden !default;
 $app-headline-font: mustOverriden !default;
 $app-font-family: mustOverriden !default;
+$app-border-radius: mustOverriden !default;
 
 // Form
 $form-border-color: mustOverriden !default;
@@ -56,6 +57,9 @@ $lux-stepper-large-nav-item-disabled-fg: mustOverriden !default;
 $lux-stepper-large-nav-item-disabled-bg: mustOverriden !default;
 $lux-stepper-large-nav-item-completed-fg: mustOverriden !default;
 $lux-stepper-large-nav-item-completed-bg: mustOverriden !default;
+
+// Overlay
+$lux-overlay-backdrop-color: mustOverriden !default;
 
 // Hintergrundfarben (z.B. Badge oder Progress)
 $componentBgColors: (
