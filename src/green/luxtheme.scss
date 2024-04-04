@@ -45,6 +45,7 @@
   $app-border-color: themeCommon.$app-border-color,
   $app-headline-font: themeCommon.$app-headline-font,
   $app-font-family: themeCommon.$app-font-family,
+  $app-border-radius: themeCommon.$app-border-radius,
 
   // Form
   $form-border-color: themeCommon.$form-border-color,
@@ -80,6 +81,9 @@
   $lux-stepper-large-nav-item-disabled-bg: themeCommon.$lux-stepper-large-nav-item-disabled-bg,
   $lux-stepper-large-nav-item-completed-fg: themeCommon.$lux-stepper-large-nav-item-completed-fg,
   $lux-stepper-large-nav-item-completed-bg: themeCommon.$lux-stepper-large-nav-item-completed-bg,
+
+  // Overlay
+  $lux-overlay-backdrop-color: themeCommon.$lux-overlay-backdrop-color,
 
   // Hintergrundfarben (z.B. Badge oder Progress)
   $componentBgColors: themeCommon.$componentBgColors,

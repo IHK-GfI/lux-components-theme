@@ -53,6 +53,7 @@ $app-data-bg: #ffffff;
 $app-gradient: linear-gradient(90deg, #ffffff 0%, #f8fbff 100%);
 $app-gradient-reverse: linear-gradient(270deg, #ffffff 0%, #f8fbff 100%);
 $app-border-color: rgba(black, 0.12);
+$app-border-radius: 4px;
 
 // Form
 $form-border-color: rgba(0, 0, 0, 0.38);
@@ -88,6 +89,9 @@ $lux-stepper-large-nav-item-disabled-fg: #003366;
 $lux-stepper-large-nav-item-disabled-bg: #eff3f6;
 $lux-stepper-large-nav-item-completed-fg: #2e8533;
 $lux-stepper-large-nav-item-completed-bg: #ffffff;
+
+// Overlay
+$lux-overlay-backdrop-color: rgba(0, 0, 0, 0.12);
 
 // Hintergrundfarben (z.B. Badge oder Progress)
 $componentBgColors: (

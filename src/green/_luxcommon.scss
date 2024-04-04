@@ -21,6 +21,7 @@ $app-gradient-reverse: linear-gradient(270deg, #ffffff 0%, #f8fbff 100%);
 $app-border-color: rgba(black, 0.12);
 $app-headline-font: Korb, Roboto, Helvetica Neue, sans-serif;
 $app-font-family: Roboto, Helvetica Neue, sans-serif;
+$app-border-radius: 4px;
 
 // Form
 $form-border-color: rgba(0, 0, 0, 0.42);
@@ -56,6 +57,9 @@ $lux-stepper-large-nav-item-disabled-fg: #003366;
 $lux-stepper-large-nav-item-disabled-bg: #eff3f6;
 $lux-stepper-large-nav-item-completed-fg: #ffffff;
 $lux-stepper-large-nav-item-completed-bg: #2e8533;
+
+// Overlay
+$lux-overlay-backdrop-color: rgba(0, 0, 0, 0.12);
 
 // Hintergrundfarben (z.B. Badge oder Progress)
 $componentBgColors: (
