@@ -1,3 +1,12 @@
+# Version 16.0.1
+
+## Bug Fixes
+
+- **lux-checkbox-ac**: Property "luxReadonly" funktioniert nicht. [Issue 466](https://github.com/IHK-GfI/lux-components/issues/466)
+- **lux-radio-ac**: Property "luxReadonly" funktioniert nicht. [Issue 466](https://github.com/IHK-GfI/lux-components/issues/466)
+- **lux-toggle-ac**: Property "luxReadonly" funktioniert nicht. [Issue 466](https://github.com/IHK-GfI/lux-components/issues/466)
+- **lux-slider-ac**: Property "luxReadonly" funktioniert nicht. [Issue 466](https://github.com/IHK-GfI/lux-components/issues/466)
+
 # Version 16.0.0
 
 ## New

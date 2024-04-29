@@ -140,6 +140,10 @@ lux-checkbox-ac {
       border-color: luxcommon.$dark-disabled-text;
     }
   }
+
+  &.lux-form-control-readonly {
+    pointer-events: none;
+  }
 }
 
 lux-datepicker-ac,
@@ -230,6 +234,10 @@ lux-toggle-ac {
       }
     }
   }
+
+  &.lux-form-control-readonly {
+    pointer-events: none;
+  }
 }
 
 /*
@@ -299,6 +307,10 @@ lux-radio-ac {
         border-color: luxcommon.$dark-disabled-text;
       }
     }
+  }
+
+  &.lux-form-control-readonly {
+    pointer-events: none;
   }
 }
 
@@ -409,5 +421,9 @@ lux-slider-ac {
         background-color: luxcommon.$dark-disabled-text;
       }
     }
+  }
+
+  &.lux-form-control-readonly {
+    pointer-events: none;
   }
 }
