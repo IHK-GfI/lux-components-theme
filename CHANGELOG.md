@@ -1,3 +1,9 @@
+# Version 16.0.2
+
+## New
+
+- **lux-stepper-large**: Barrierefreiheit Stepper (OZG): Transparenz ändern. [Issue 469](https://github.com/IHK-GfI/lux-components/issues/469)
+
 # Version 16.0.1
 
 ## Bug Fixes
