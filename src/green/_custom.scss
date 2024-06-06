@@ -34,7 +34,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: Korb, luxcommon.$app-font-family;
+  font-family: luxcommon.$app-font-family;
 }
 
 /*
@@ -60,6 +60,27 @@ lux-panel {
 }
 
 /*
+ * Theming for LUX-App-Header
+ */
+lux-app-header .lux-app-header  {
+  
+  .lux-header-title {
+    p, div, span {
+      font-weight: 400;
+      font-family: luxcommon.$app-button-font-family;
+    }
+  }
+
+  .lux-header-user {
+    p, div, span {
+      font-weight: 400;
+      font-family: luxcommon.$app-button-font-family;
+    }
+  }
+}
+
+
+/*
  * Theming for LUX-App-Footer
  */
 lux-app-footer {
@@ -70,6 +91,12 @@ lux-app-footer {
         button {
           &.lux-button {
             font-size: $button-font-size;
+
+            p,
+            div,
+            span {
+              font-family: luxcommon.$app-button-font-family;
+            }
           }
         }
       }
@@ -81,8 +108,14 @@ lux-app-footer {
  * Theming for LUX-Button
  */
 lux-button button.lux-button {
-  font-weight: normal !important;
-  font-family: luxcommon.$app-font-family;
+  font-weight: 400 !important;
+  font-family: luxcommon.$app-button-font-family;
+
+  p,
+  div,
+  span {
+    font-family: luxcommon.$app-button-font-family;
+  }
 
   &.mat-button,
   &.mat-raised-button,
@@ -174,6 +207,12 @@ lux-button button.lux-button {
  */
 .lux-menu-extended {
   > lux-button {
+    
+    &.lux-menu-item .lux-button-label {
+      font-weight: 400;
+      font-family: luxcommon.$app-button-font-family;
+    }
+
     button {
       padding-left: 16px;
       padding-right: 16px;
