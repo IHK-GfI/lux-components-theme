@@ -19,14 +19,14 @@ $app-data-bg: #ffffff;
 $app-gradient: linear-gradient(90deg, #ffffff 0%, #f8fbff 100%);
 $app-gradient-reverse: linear-gradient(270deg, #ffffff 0%, #f8fbff 100%);
 $app-border-color: rgba(black, 0.12);
-$app-headline-font: Korb, Roboto, Helvetica Neue, sans-serif;
-$app-font-family: Korb, Roboto, Helvetica Neue, sans-serif;
+$app-headline-font: Korb, "Blogger Sans", "Source Sans Pro", Arial, sans-serif;
+$app-font-family: "Source Sans Pro", Arial, sans-serif;
 $app-button-font-family: "Blogger Sans", $app-font-family;
 $app-border-radius: 4px;
 
 // Form
 $form-border-color: rgba(0, 0, 0, 0.42);
-$form-control-font-size: 0.9375rem; /* 15px */
+$form-control-font-size: 1rem;
 $form-control-buffer: 6px;
 
 // Button

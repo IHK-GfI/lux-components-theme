@@ -6,6 +6,7 @@
 
 - **lux-button**: Styleanpassungen für Buttons im Green-Theme. [Issue 470](https://github.com/IHK-GfI/lux-components/issues/470)
 - **lux-master-detial**: Mixed support Warnung "align-items: start". [Issue 73](https://github.com/IHK-GfI/lux-components/issues/73)
+- **green-theme**: Fontstack im Green-Theme anpassen. [Issue 481](https://github.com/IHK-GfI/lux-components/issues/481)
 
 ## Version 16.0.2
 
