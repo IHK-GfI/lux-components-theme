@@ -67,7 +67,7 @@ $listmargin: calc(luxcommon.$outline-width + 1px);
     z-index: 100;
     position: relative;
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     justify-content: center;
 
     lux-button.master-ac-toggle {
