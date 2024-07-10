@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 16.2.0
+
+### Bug Fixes
+
+- **lux-textbox**: Extra Zeile bei einer Textbox ohne Titel [Issue 488](https://github.com/IHK-GfI/lux-components/issues/488)
+
 ## Version 16.1.0
 
 ### New
