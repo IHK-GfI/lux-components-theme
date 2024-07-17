@@ -43,6 +43,13 @@
         "src/green"
       ],
       "extensions": "scss"
+    },
+    "build": {
+      "patterns": [
+        "src/base",
+        "src/public"
+      ],
+      "extensions": "scss"
     }
   }
 }
