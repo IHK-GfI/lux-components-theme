@@ -236,7 +236,7 @@ Html-Datei:
 Scss-Datei:
 
 ```
-lux-card.highlight ::ng-deep .mat-card {
+lux-card.highlight ::ng-deep .mat-mdc-card {
   color: var(--lux-theme-accent-400-contrast);
   background-color: var(--lux-theme-accent-400);
 }
