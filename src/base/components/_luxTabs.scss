@@ -11,18 +11,25 @@ lux-tabs {
     font-size: 1rem;
   }
 
+  .mdc-tab {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   mat-tab-group div[role="tab"] {
     font-size: 0.875rem;
     font-weight: 600;
+    letter-spacing: normal;
     min-height: unset !important;
-    &:not(.mat-tab-disabled) {
+    height: unset !important;
+    &:not(.mat-tab-disabled) .mdc-tab__text-label {
       color: map.get(luxpalette.$lux-palette_primary, 500);
       opacity: 1;
     }
   }
 
-  mat-tab-group.lux-tabs-no-divider mat-tab-header {
-    border-bottom: none;
+  mat-tab-group.lux-tabs-show-divider mat-tab-header {
+    border-bottom: 1px solid luxcommon.$app-border-color;
   }
 
   .lux-tab-title {
@@ -41,10 +48,6 @@ lux-tabs {
 
   .lux-label-lower {
     padding-top: 4px;
-  }
-
-  .lux-tabs-no-anim .mat-ink-bar {
-    transition: none !important;
   }
 
   .lux-notification-new {
@@ -67,9 +70,9 @@ lux-tabs {
   }
 
   // Anpassungen für kleine Screensizes
-  .mat-tab-label {
-    padding-left: 40px;
-    padding-right: 40px;
+  .mdc-tab__text-label {
+    padding-left: 48px;
+    padding-right: 48px;
     height: auto;
     position: relative;
 
@@ -88,7 +91,7 @@ lux-tabs {
     }
   }
 
-  .mat-tab-label.lux-tab-with-icon {
+  .mat-mdc-tab-label.lux-tab-with-icon {
     @include luxbreakpoints.sm {
       min-width: 125px;
       width: 125px;
@@ -181,18 +184,18 @@ lux-tabs {
 /** ########## HOVER / FOCUS ########## **/
 lux-tabs,
 mat-card lux-tabs {
-  mat-tab-group div[role="tab"]:not(.mat-tab-disabled) {
+  mat-tab-group div[role="tab"]:not(.mat-mdc-tab-disabled) {
     &:focus-visible {
       @include luxfocus.focus-dark-mixin-inline;
       border-radius: 4px;
     }
 
-    &:hover:not(.mat-tab-label-active) {
+    &:hover:not(.mdc-tab--active) {
       color: luxcommon.$lux-hover-color;
     }
   }
 
-  mat-ink-bar.mat-ink-bar {
+  .mdc-tab-indicator__content {
     background-color: map.get(luxpalette.$lux-palette_primary, 500) !important;
     height: 4px;
     border-radius: 4px;
