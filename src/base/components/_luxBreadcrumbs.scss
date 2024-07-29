@@ -1,0 +1,65 @@
+@use "../luxfocus";
+@use "../luxpalette";
+@use "../luxcommon";
+@use "sass:map";
+
+lux-breadcrumbs {
+  .lux-breadcrumbs {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 9px;
+    align-items: baseline;
+    overflow: auto;
+    max-width: 100%;
+  }
+
+  .lux-breadcrumbs-container {
+    padding: 0%;
+  }
+
+  .lux-breadcrumbs-item {
+    display: inline-flex;
+    font-family: luxcommon.$app-font-family;
+    font-size: 1.125rem;
+    font-weight: 500;
+    text-decoration: underline;
+    color: var(--lux-theme-primary-color);
+    list-style-type: none;
+    box-sizing: border-box;
+
+    :focus-visible {
+      @include luxfocus.focus-dark-mixin;
+      border-radius: 2px;
+    }
+
+    :hover {
+      color: luxcommon.$lux-hover-color;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    lux-icon mat-icon.mat-icon {
+      cursor: default;
+      :hover {
+        color: var(--lux-theme-primary-color);
+        cursor: default;
+      }
+    }
+
+    a {
+      padding: 2px 4px;
+      color: var(--lux-theme-primary-color);
+      margin-right: 6px;
+      white-space: nowrap;
+    }
+  }
+
+  .lux-breadcrumbs-current-item {
+    font-family: luxcommon.$app-font-family;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--lux-theme-primary-color);
+    list-style-type: none;
+  }
+}
