@@ -62,23 +62,25 @@ lux-panel {
 /*
  * Theming for LUX-App-Header
  */
-lux-app-header .lux-app-header  {
-  
+lux-app-header .lux-app-header {
   .lux-header-title {
-    p, div, span {
+    p,
+    div,
+    span {
       font-weight: 400;
       font-family: luxcommon.$app-button-font-family;
     }
   }
 
   .lux-header-user {
-    p, div, span {
+    p,
+    div,
+    span {
       font-weight: 400;
       font-family: luxcommon.$app-button-font-family;
     }
   }
 }
-
 
 /*
  * Theming for LUX-App-Footer
@@ -207,7 +209,6 @@ lux-button button.lux-button {
  */
 .lux-menu-extended {
   > lux-button {
-    
     &.lux-menu-item .lux-button-label {
       font-weight: 400;
       font-family: luxcommon.$app-button-font-family;
@@ -565,7 +566,9 @@ lux-form-control-wrapper .lux-form-control-wrapper {
       color: luxpalette.$lux-primary-color;
     }
     .lux-form-control-container-authentic:not(.lux-no-input-row) {
-      box-shadow: 0 0 0 2px $dark-green, 0 0 4px 2px $dark-green !important;
+      box-shadow:
+        0 0 0 2px $dark-green,
+        0 0 4px 2px $dark-green !important;
       outline: 0;
     }
   }
@@ -576,7 +579,9 @@ lux-form-control-wrapper .lux-form-control-wrapper {
     }
     .lux-form-control-container-authentic:not(.lux-no-input-row) {
       border-color: luxpalette.$lux-warn-color;
-      box-shadow: 0 0 0 2px luxpalette.$lux-warn-color, 0 0 4px 2px luxpalette.$lux-warn-color !important;
+      box-shadow:
+        0 0 0 2px luxpalette.$lux-warn-color,
+        0 0 4px 2px luxpalette.$lux-warn-color !important;
     }
   }
 
@@ -833,5 +838,33 @@ lux-message-box {
   }
   &.mat-elevation-z4 {
     @include luxelevations.lux-elevation-z4();
+  }
+}
+
+/*
+* Theming für Lux-Breadcrumb
+*/
+
+lux-breadcrumb {
+  .lux-breadcrumb-item {
+    :focus-visible {
+      box-shadow:
+        0 0 0 2px $dark-green,
+        0 0 4px 2px $dark-green !important;
+      outline: 0 !important;
+      border-radius: 2px;
+    }
+
+    :hover {
+      color: $dark-green;
+    }
+
+    lux-icon {
+      cursor: default;
+      :hover {
+        color: var(--lux-theme-primary-color);
+        cursor: default;
+      }
+    }
   }
 }
