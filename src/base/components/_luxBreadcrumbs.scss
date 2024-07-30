@@ -39,7 +39,7 @@ lux-breadcrumbs {
       cursor: pointer;
     }
 
-    lux-icon mat-icon.mat-icon {
+    lux-icon {
       cursor: default;
       :hover {
         color: var(--lux-theme-primary-color);

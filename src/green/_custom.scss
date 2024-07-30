@@ -858,5 +858,13 @@ lux-breadcrumbs {
     :hover {
       color: $dark-green;
     }
+
+    lux-icon {
+      cursor: default;
+      :hover {
+        color: var(--lux-theme-primary-color);
+        cursor: default;
+      }
+    }
   }
 }
