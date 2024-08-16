@@ -156,10 +156,6 @@ lux-datetimepicker-ac {
 .lux-datepicker-panel {
   .mat-calendar-header {
     button {
-      .mat-button-focus-overlay {
-        display: none;
-      }
-
       &:focus-visible {
         @include focus-dark-mixin;
       }
@@ -190,10 +186,6 @@ lux-datetimepicker-ac {
 .lux-datetimepicker-overlay {
   .mat-calendar-header {
     button {
-      .mat-button-focus-overlay {
-        display: none;
-      }
-
       &:focus-visible {
         @include focus-dark-mixin;
       }

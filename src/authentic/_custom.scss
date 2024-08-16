@@ -193,7 +193,9 @@ example-root {
     .example-component-list-item {
       line-height: normal;
       &.example-component-list-item-selected {
-        text-shadow: 0 0 0.65px #003366, 0 0 0.65px #003366;
+        text-shadow:
+          0 0 0.65px #003366,
+          0 0 0.65px #003366;
         line-height: normal;
         color: luxpalette.$lux-primary-color;
         border: none;
@@ -242,7 +244,7 @@ lux-button button.lux-button {
   letter-spacing: 1.25px;
 
   //Theming für den Text-Button
-  &.mat-button:not(.mat-button-disabled) {
+  &.mat-mdc-button:not([disabled]) {
     &:hover {
       color: luxcommon.$dark-secondary-text;
       background-color: transparent !important;
@@ -300,7 +302,7 @@ lux-button button.lux-button {
   }
 
   //Theming für den Stroked-Button
-  &.mat-stroked-button:not(.mat-button-disabled) {
+  &.mat-mdc-outlined-button:not([disabled]) {
     border-color: luxcommon.$dark-secondary-text;
 
     &:hover {
@@ -381,21 +383,29 @@ lux-button button.lux-button {
       }
     }
   }
-  &.mat-stroked-button.mat-button-disabled {
-    border-color: luxcommon.$dark-disabled-text;
+
+  &.mat-mdc-button:disabled,
+  &.mat-mdc-raised-button:disabled,
+  &.mat-mdc-fab:disabled,
+  &.mat-mdc-outlined-button:disabled,
+  &.mat-mdc-unelevated-button:disabled {
     color: luxcommon.$dark-disabled-text;
+    &.lux-stroked {
+      color: luxcommon.$dark-disabled-text;
+      border-color: luxcommon.$dark-disabled-text;
+    }
   }
 
   //Theming für den Raised-Button, Flat-Button, Fab(Rounded)-Button
-  &.mat-raised-button:not(.mat-button-disabled),
-  &.mat-flat-button:not(.mat-button-disabled),
-  &.mat-fab:not(.mat-button-disabled) {
+  &.mat-mdc-raised-button:not([disabled]),
+  &.mat-mdc-unelevated-button:not([disabled]),
+  &.mat-mdc-fab:not([disabled]) {
     &:hover {
       color: luxcommon.$dark-secondary-text;
       background-color: #ffffff !important;
       &.lux-stroked {
         color: map.get(luxpalette.$lux-palette-primary, 300);
-        background-color: transparent !important;
+        background-color: #ffffff !important;
       }
     }
 
@@ -422,7 +432,7 @@ lux-button button.lux-button {
         background-color: map.get(luxpalette.$lux-palette-primary, 300) !important;
         &.lux-stroked {
           color: map.get(luxpalette.$lux-palette-primary, 300);
-          background-color: transparent !important;
+          background-color: #ffffff !important;
         }
       }
       &:focus-visible:not(:hover) {
@@ -445,7 +455,14 @@ lux-button button.lux-button {
 
     &.mat-accent {
       color: luxcommon.$dark-primary-text;
-      &:hover {
+      &.lux-fab-rounded-default:hover {
+        background-color: #ffffff !important;
+        &.lux-stroked {
+          color: luxcommon.$dark-secondary-text;
+          background-color: #ffffff !important;
+        }
+      }
+      &:not(.lux-fab-rounded-default):hover {
         background-color: map.get(luxpalette.$lux-palette-accent, 300) !important;
         &.lux-stroked {
           color: luxcommon.$dark-secondary-text;
@@ -496,24 +513,9 @@ lux-button button.lux-button {
     }
   }
 
-  &.mat-raised-button.mat-button-disabled,
-  &.mat-flat-button.mat-button-disabled,
-  &.mat-fab.mat-button-disabled {
-    color: luxcommon.$dark-disabled-text;
-    background-color: luxcommon.$dark-disabled-text !important;
-    &.lux-stroked {
-      color: luxcommon.$dark-disabled-text;
-      border-color: luxcommon.$dark-disabled-text;
-      background-color: transparent !important;
-    }
-  }
-  &.mat-button.mat-button-disabled {
-    color: luxcommon.$dark-disabled-text;
-  }
-
   //Mat-Fab soll in Authentic flat sein
-  &.mat-fab,
-  &.mat-fab:not(.mat-button-disabled):active {
+  &.mat-mdc-fab,
+  &.mat-mdc-fab:not([disabled]):active {
     @include luxelevations.lux-elevation-z0;
   }
 }
@@ -706,7 +708,7 @@ lux-stepper-large {
 }
 
 lux-file-upload {
-  .lux-file-upload-view-item-delete-button button.lux-button.mat-button {
+  .lux-file-upload-view-item-delete-button button.lux-button.mat-mdc-button {
     color: luxpalette.$lux-primary-color;
 
     &:hover {
