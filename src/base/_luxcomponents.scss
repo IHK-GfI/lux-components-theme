@@ -339,7 +339,7 @@ lux-file-progress {
 }
 
 .file-dialog {
-  div.mat-dialog-title.lux-dialog-title {
+  div.mat-mdc-dialog-title.lux-dialog-title {
     font-size: 1.75rem;
     font-weight: normal;
     margin-bottom: 0;
@@ -732,6 +732,7 @@ lux-stepper-large {
   padding: 0;
   background: luxcommon.$app-data-bg;
 }
+
 .lux-stepper-large-mobile-nav-close-button-container {
   display: flex;
   flex-direction: row;
