@@ -31,30 +31,18 @@ lux-message-box {
         // da im Theme authentic der Schatten entfernt wurde, muss eine Weiße Messagebox eine Border erhalten.
         border: 1px solid luxpalette.$lux-primary-color;
         box-sizing: border-box;
-        & button.mat-fab.lux-button-rounded.lux-icon-button:not([disabled]) {
+        & button:not([disabled]).lux-button-rounded.mat-accent.lux-fab-rounded-default:not([class*="mat-elevation-z"]) {
           color: luxpalette.$lux-primary-color;
-          &:hover {
-            color: #fff;
-          }
-        }
-      }
-
-      &:not(.lux-bg-color-white) {
-        & button:not([disabled]):hover {
-          .mat-icon-no-color {
-            color: #fff;
-          }
         }
       }
 
       & lux-button {
-        button.mat-fab.lux-icon-button.lux-button-rounded:not([class*="mat-elevation-z"]) {
+        button:not([disabled]).lux-button-rounded.mat-accent.lux-fab-rounded-default:not([class*="mat-elevation-z"]) {
           color: #fff;
           background-color: transparent;
-          height: 36px;
-          width: 36px;
           @include luxelevations.lux-elevation-z0();
         }
+
         .mat-mdc-button-ripple {
           display: none;
         }
@@ -96,14 +84,16 @@ lux-message-box {
         border-radius: 4px;
       }
 
-      & button:not([disabled]):focus-visible {
-        @include luxfocus.focus-dark-mixin;
-        background-color: transparent !important;
-      }
+      & lux-button button.lux-button.mat-mdc-fab:not([disabled]).mat-accent.lux-fab-rounded-default {
+        &:hover {
+          color: #ffffff;
+          background-color: luxpalette.$lux-primary-color !important;
+        }
 
-      & button:not([disabled]):hover {
-        @include luxfocus.lux-hovered-mixin;
-        border-radius: 50%;
+        &:focus-visible {
+          @include luxfocus.focus-bright-mixin;
+          background-color: transparent !important;
+        }
       }
     }
 
@@ -113,16 +103,16 @@ lux-message-box {
         border-radius: 4px;
       }
 
-      & button:not([disabled]):focus-visible {
-        @include luxfocus.focus-bright-mixin;
-        background-color: transparent !important;
-      }
+      & lux-button button.lux-button.mat-mdc-fab:not([disabled]).mat-accent.lux-fab-rounded-default {
+        &:hover {
+          color: white;
+          background-color: rgba(1, 1, 1, 0.2) !important;
+        }
 
-      & button:not([disabled]):hover {
-        @include luxfocus.lux-hovered-mixin;
-        border-radius: 50%;
-        color: luxpalette.$lux-primary-color;
-        background-color: rgba(1, 1, 1, 0.2) !important;
+        &:focus-visible {
+          @include luxfocus.focus-bright-mixin;
+          background-color: transparent !important;
+        }
       }
     }
   }
