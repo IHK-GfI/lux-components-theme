@@ -740,7 +740,7 @@ lux-lookup-combobox-ac {
   & > .mat-autocomplete-panel:not([class*="mat-elevation-z"]),
   .mat-datepicker-content,
   .mat-select-panel:not([class*="mat-elevation-z"]),
-  .mat-menu-panel {
+  .mat-mdc-menu-panel {
     @include luxelevations.lux-elevation-z4;
   }
 }
