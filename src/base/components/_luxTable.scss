@@ -8,9 +8,16 @@ lux-table {
   display: flex;
   height: 100%;
 
-  table.mat-table {
+  th.mat-mdc-header-cell:first-of-type,
+  td.mat-mdc-cell:first-of-type,
+  td.mat-mdc-footer-cell:first-of-type {
+    padding-left: 24px;
+  }
+
+  table.mat-mdc-table {
     font-family: luxcommon.$app-font-family;
   }
+
   .lux-row-selected {
     background-color: luxcommon.$lux-selected-bg-color;
   }
@@ -37,19 +44,22 @@ lux-table {
     th {
       padding: 0.5em 1em;
     }
+
     th {
       padding-top: 1em;
     }
-    tr.mat-header-row {
+
+    tr.mat-mdc-header-row {
       height: auto;
     }
 
-    th.mat-header-cell,
-    td.mat-cell {
+    th.mat-mdc-header-cell,
+    td.mat-mdc-cell {
       border: none;
       font-size: 1rem;
     }
-    td.mat-footer-cell {
+
+    td.mat-mdc-footer-cell {
       border: none;
       border-top: 1px solid luxcommon.$app-border-color;
       font-size: 0.9375rem;
@@ -67,28 +77,36 @@ lux-table {
       overflow: auto;
       height: 100%;
       width: 100%;
-      border: 1px solid luxcommon.$app-border-color;
       border-radius: 4px;
+
+      &:not(.lux-hide-borders) {
+        border: 1px solid luxcommon.$app-border-color;
+      }
 
       table {
         width: 100%;
         border-spacing: 0 !important;
+
         td .lux-form-control-wrapper {
           margin: 0;
+
           .lux-form-control-container-authentic {
             padding: 0.25em 0.5em; // bei den Form-Controls in einer Tabellen-Zelle wird die Höhe reduziert
+
             &.lux-no-input-row {
               padding: 0em;
             }
           }
         }
+
         tbody tr:last-of-type td {
           border-bottom: none;
         }
 
-        .mat-footer-row > td {
+        .mat-mdc-footer-row > td {
           border-top: 1px solid rgba(0, 0, 0, 0.12);
         }
+
         .lux-header-title,
         .lux-moved-header-title {
           font-size: 0.75rem;
@@ -106,10 +124,11 @@ lux-table {
         font-weight: 700;
       }
 
-      .mat-row:nth-child(odd) {
+      .mat-mdc-row:nth-child(odd) {
         background-color: map.get(luxpalette.$lux-palette_primary, 50);
       }
-      .mat-row:nth-child(even) {
+
+      .mat-mdc-row:nth-child(even) {
         background-color: #ffffff;
       }
 
@@ -126,10 +145,12 @@ lux-table {
         display: none;
       }
     }
-    .mat-paginator,
-    .mat-paginator-page-size .mat-select-trigger {
+
+    .mat-mdc-paginator,
+    .mat-mdc-paginator-page-size .mat-mdc-select-trigger {
       font-size: 0.75rem;
     }
+
     .lux-table-overlay {
       -webkit-transition: opacity 1s;
       -moz-transition: opacity 1s;
@@ -152,12 +173,13 @@ lux-table {
     .lux-hide {
       display: none !important;
     }
+
     .lux-multiselect-th,
     .lux-multiselect-td,
     .lux-multiselect-tf {
-      max-width: 70px;
-      min-width: 70px;
-      width: 70px;
+      max-width: 110px;
+      min-width: 110px;
+      width: 110px;
     }
 
     .lux-multiselect-th {
@@ -197,7 +219,8 @@ lux-table {
         cursor: pointer;
       }
     }
-    lux-checkbox-ac .mat-checkbox-inner-container {
+
+    lux-checkbox-ac .mat-mdc-checkbox-inner-container {
       margin: 0px;
     }
 
