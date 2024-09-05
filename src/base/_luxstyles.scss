@@ -227,6 +227,7 @@ h6 {
     flex-direction: column;
     gap: 16px;
   }
+
   &.row {
     flex-direction: row;
     gap: 16px;
@@ -241,10 +242,12 @@ h6 {
 .lux-simple-form {
   margin: 4px 0;
   display: flex;
+
   &.column {
     flex-direction: column;
     gap: 16px;
   }
+
   &.row {
     flex-direction: row;
     gap: 16px;
@@ -266,7 +269,7 @@ div {
   font-family: global.$app-font-family;
 }
 
-.mat-dialog-container {
+.mat-mdc-dialog-container {
   background-color: luxcommon.$app-content-bg !important;
 }
 
@@ -289,6 +292,7 @@ lux-card.lux-card-grow {
     min-width: 0;
   }
 }
+
 // Demo
 
 .lux-container {
@@ -297,12 +301,15 @@ lux-card.lux-card-grow {
   width: 100%;
   max-width: 1400px;
   box-sizing: border-box;
+
   @include luxbreakpoints.xs {
     max-width: 590px;
   }
+
   @include luxbreakpoints.sm {
     max-width: 910px;
   }
+
   @include luxbreakpoints.md {
     max-width: 1200px;
   }
@@ -314,6 +321,7 @@ lux-card.lux-card-grow {
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
+
   @include luxbreakpoints.xs {
     margin: 0 4px;
   }
