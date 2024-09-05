@@ -66,10 +66,6 @@ lux-app-header {
               min-width: 45px;
               max-height: 45px !important;
               min-height: 45px !important;
-              .mat-button-wrapper {
-                display: inline-flex;
-                height: 100%;
-              }
             }
 
             &.lux-button-with-label button {
@@ -100,23 +96,23 @@ lux-app-header {
             font-weight: normal !important;
           }
 
-          &:not(.mat-accent):not(.mat-warn):not(.mat-primary):not(.mat-button-disabled) {
+          &:not(.mat-accent):not(.mat-warn):not(.mat-primary):not([disabled]) {
             color: map.get(luxpalette.$lux-palette-primary, 500);
           }
 
-          &:not(.mat-accent):not(.mat-warn):not(.mat-primary).mat-button-disabled {
+          &:not(.mat-accent):not(.mat-warn):not(.mat-primary):disabled {
             color: luxcommon.$dark-disabled-text;
           }
 
-          &.mat-accent:not(.mat-button-disabled) {
+          &.mat-accent:not([disabled]) {
             color: map.get(luxpalette.$lux-palette_accent, A100);
           }
 
-          &.mat-warn:not(.mat-button-disabled) {
+          &.mat-warn:not([disabled]) {
             color: map.get(luxpalette.$lux-palette_warn, A100);
           }
 
-          &.mat-primary:not(.mat-button-disabled) {
+          &.mat-primary:not([disabled]) {
             color: map.get(luxpalette.$lux-palette_primary, A100);
           }
 
@@ -191,10 +187,6 @@ lux-app-header {
       cursor: pointer;
       padding-right: 8px;
       padding-left: 8px;
-
-      .mat-button-wrapper > span {
-        display: inline-block;
-      }
     }
 
     .lux-side-nav-trigger-active {
@@ -315,31 +307,11 @@ $sideNavZIndex: 11000;
   }
 }
 
-// Anpassungen an den (ausgeklappten) Menus im Header
-.lux-right-nav-menu,
-.lux-side-nav .lux-side-nav-content {
-  lux-button,
-  .lux-menu-item,
-  .lux-action-nav-menu lux-button {
-    .mat-button-wrapper {
-      font-weight: normal !important;
-      font-size: 1rem;
-    }
-  }
-}
-
 // Anpassungen für die Mobile Ansicht
 .lux-header-menu-mobile {
   .lux-menu-trigger {
     padding: 0 4px;
     margin: 0;
-
-    .mat-button-wrapper {
-      display: inherit;
-      lux-icon {
-        align-items: center;
-      }
-    }
 
     button {
       padding: 0 6px;
@@ -434,10 +406,6 @@ lux-app-header {
         color: map.get(luxpalette.$lux-palette_primary, 500) !important;
       }
     }
-  }
-
-  .lux-menu-trigger-default .mat-button-wrapper {
-    display: block;
   }
 }
 /** ########## Side-Nav ########## **/

@@ -15,6 +15,15 @@ lux-button button.lux-button {
   font-weight: 600;
   height: luxcommon.$button-height;
 
+  &.mdc-button {
+    padding: 0 16px;
+    letter-spacing: 1.25px;
+  }
+
+  &.mat-mdc-button.mat-unthemed {
+    color: map.get(luxpalette.$lux-palette_primary, 500);
+  }
+
   .lux-button-content-container {
     display: flex;
     justify-content: center;
@@ -23,17 +32,17 @@ lux-button button.lux-button {
     flex-wrap: nowrap;
   }
 
-  &.mat-button.mat-button-disabled,
-  &.mat-raised-button.mat-button-disabled,
-  &.mat-flat-button.mat-button-disabled,
-  &.mat-stroked-button.mat-button-disabled,
-  &.mat-raised-button.mat-button-disabled:not([class*="mat-elevation-z"]),
-  &.mat-fab.mat-button-disabled {
+  &.mat-mdc-button:disabled,
+  &.mat-mdc-raised-button:disabled,
+  &.mat-mdc-raised-button:disabled:not([class*="mat-elevation-z"]),
+  &.mat-mdc-unelevated-button:disabled,
+  &.mat-mdc-outlined-button:disabled,
+  &.mat-mdc-fab:disabled {
     color: luxcommon.$dark-disabled-text;
     @include luxelevations.lux-elevation-z0;
   }
 
-  &.mat-raised-button:not([class*="mat-elevation-z"]) {
+  &.mat-mdc-raised-button:not([class*="mat-elevation-z"]) {
     @include luxelevations.lux-elevation-z2;
   }
 
@@ -42,13 +51,6 @@ lux-button button.lux-button {
     width: luxcommon.$button-fav-height;
 
     @include luxelevations.lux-elevation-z2;
-
-    .mat-button-wrapper {
-      padding: 0;
-      height: 100%;
-      display: inline-flex;
-      align-items: center;
-    }
 
     lux-icon.lux-button-icon-round {
       line-height: 1;
@@ -94,18 +96,32 @@ lux-button button.lux-button {
 /*
  * Focus / Hover / Disabled
  */
-lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-item-btn, .nav-menu-trigger-ac, .lux-filter-menu-trigger) {
+lux-button {
   button:not([disabled]) {
-    .mat-button-focus-overlay {
-      display: none;
+    .mat-mdc-button-persistent-ripple::before {
+      background-color: transparent;
+    }
+
+    &.mat-mdc-fab:active,
+    &.mat-mdc-fab:focus {
+      box-shadow: none;
+    }
+
+    &.lux-button-rounded.mat-accent.lux-fab-rounded-default {
+      background-color: white;
+    }
+
+    &.lux-button-rounded.lux-stroked.mat-accent.lux-fab-stroked-default {
+      background-color: white;
+      border-color: rgba(0, 0, 0, 0.2);
     }
 
     &:focus-visible {
       @include luxfocus.lux-button-focus;
     }
 
-    &:not(.mat-fab):not(.mat-raised-button):not(.mat-flat-button),
-    &.mat-stroked-button {
+    &:not(.mat-mdc-fab):not(.mat-mdc-raised-button):not(.mat-mdc-unelevated-button),
+    &.mat-mdc-outlined-button {
       &:hover {
         background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%);
 
@@ -121,9 +137,9 @@ lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-i
       }
     }
 
-    &.mat-fab:hover,
-    &.mat-raised-button:hover,
-    &.mat-flat-button:hover {
+    &.mat-mdc-fab:hover,
+    &.mat-mdc-raised-button:hover,
+    &.mat-mdc-unelevated-button:hover {
       background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%) !important;
 
       &.mat-accent {
@@ -138,13 +154,13 @@ lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-i
         background-color: color.adjust(map.get(luxpalette.$lux-palette_primary, 500), $lightness: 10%) !important;
       }
     }
-    &.mat-fab.lux-button-rounded.lux-stroked:active {
+    &.mat-mdc-fab.lux-button-rounded.lux-stroked:active {
       box-shadow: unset;
     }
 
-    &.mat-fab:focus-visible:not(:hover),
-    &.mat-raised-button:focus-visible:not(:hover),
-    &.mat-flat-button:focus-visible:not(:hover) {
+    &.mat-mdc-fab:focus-visible:not(:hover),
+    &.mat-mdc-raised-button:focus-visible:not(:hover),
+    &.mat-mdc-unelevated-button:focus-visible:not(:hover) {
       background-color: white !important;
 
       &.mat-accent {
@@ -159,5 +175,9 @@ lux-button:not(.lang-select-trigger-ac, .user-menu-trigger-ac, .lux-action-nav-i
         background-color: color.adjust(map.get(luxpalette.$lux-palette_primary, 500), $lightness: 5%) !important;
       }
     }
+  }
+
+  button.mat-mdc-fab span.mdc-button__label {
+    display: inline-flex;
   }
 }

@@ -55,8 +55,7 @@ lux-message-box {
           width: 36px;
           @include luxelevations.lux-elevation-z0();
         }
-        .mat-button-ripple,
-        .mat-button-focus-overlay {
+        .mat-mdc-button-ripple {
           display: none;
         }
       }

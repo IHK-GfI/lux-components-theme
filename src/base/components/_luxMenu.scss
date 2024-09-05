@@ -46,7 +46,7 @@ lux-menu {
 }
 
 .lux-menu-trigger-default {
-  button.mat-button {
+  button.mat-mdc-button {
     color: map.get(luxpalette.$lux-palette_primary, 500);
   }
 }
