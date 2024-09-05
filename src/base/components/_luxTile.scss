@@ -19,10 +19,14 @@ lux-tile {
     color: map.get(luxpalette.$lux-palette_primary, 500);
   }
 
-  mat-card.mat-mdc-card {
-    padding: 0;
-    .mat-mdc-card-content {
-      margin: 0px;
+  mat-card {
+    padding: 16px;
+
+    &.mat-mdc-card {
+      padding: 0;
+      .mat-mdc-card-content {
+        margin: 0px;
+      }
     }
   }
 
