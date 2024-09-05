@@ -149,6 +149,10 @@ lux-table {
     .mat-mdc-paginator,
     .mat-mdc-paginator-page-size .mat-mdc-select-trigger {
       font-size: 0.75rem;
+
+      .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+        background-color: #ffffff;
+      }
     }
 
     .lux-table-overlay {
