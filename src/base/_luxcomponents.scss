@@ -374,16 +374,6 @@ lux-lookup-combobox-ac {
   }
 }
 
-/*
-* Stylings für für Elemente die im Mat-Menu-Panel im cdk-overlay-container liegen 
-*/
-.cdk-overlay-container {
-  // spezielles Styling für das neue User-Menu-Label
-  .lux-user-name-label.mat-menu-item[disabled] {
-    color: luxcommon.$dark-primary-text;
-  }
-}
-
 .spinner-padding {
   padding: 6px;
 }
