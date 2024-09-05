@@ -106,7 +106,7 @@ $listmargin: calc(luxcommon.$outline-width + 1px);
     h2 {
       font-size: 1rem;
     }
-    mat-card-subtitle.mat-card-subtitle {
+    mat-card-subtitle.mat-mdc-card-subtitle {
       font-size: 0.875rem;
     }
     .lux-master-header-content-container-ac {
@@ -118,14 +118,14 @@ $listmargin: calc(luxcommon.$outline-width + 1px);
   lux-filter-form .lux-filter-card,
   .detail-header-container .lux-detail-header-ac,
   .lux-master-view-ac lux-list-item {
-    mat-card.mat-card {
+    mat-card.mat-mdc-card {
       padding: 12px;
     }
     mat-card-title,
     h2 {
       font-size: 1rem;
     }
-    mat-card-subtitle.mat-card-subtitle {
+    mat-card-subtitle.mat-mdc-card-subtitle {
       font-size: 0.875rem;
     }
   }
@@ -157,7 +157,7 @@ $listmargin: calc(luxcommon.$outline-width + 1px);
       * Die List-Items basieren auf einer Card, für die Masterliste werden hier die Schriftgrößen und der White-Space verkleinert
       */
 
-      mat-card.mat-card {
+      mat-card.mat-mdc-card {
         margin: 0px;
 
         lux-list-item-content :last-child {
@@ -214,7 +214,7 @@ $listmargin: calc(luxcommon.$outline-width + 1px);
     }
 
     .lux-detail-header-ac {
-      mat-card.mat-card.lux-card {
+      mat-card.mat-mdc-card.lux-card {
         border: none;
       }
     }
@@ -228,7 +228,7 @@ $listmargin: calc(luxcommon.$outline-width + 1px);
       border: none;
       background-color: unset;
       .lux-detail-header-ac {
-        mat-card.mat-card.lux-card {
+        mat-card.mat-mdc-card.lux-card {
           border: 2px solid luxpalette.$lux-primary-color;
         }
       }

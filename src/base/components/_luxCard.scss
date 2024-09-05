@@ -16,7 +16,7 @@ lux-card {
   }
 
   // Umstylen der Mat-Card
-  .mat-card.lux-card {
+  .mat-mdc-card.lux-card {
     border: 1px solid luxcommon.$app-border-color;
     background-color: #fff;
     display: flex;
@@ -25,7 +25,8 @@ lux-card {
     &:not([class*="mat-elevation-z"]) {
       @include luxelevations.lux-elevation-z0;
     }
-    .mat-card-content {
+    .mat-mdc-card-content {
+      padding: 16px 0 0 0;
       font-size: 1rem;
     }
   }
@@ -97,10 +98,17 @@ lux-card {
     background: luxcommon.$app-data-bg;
   }
 
-  mat-card-actions.lux-card-actions {
-    margin-right: 0;
-    margin-left: 0;
-    padding: luxcommon.$outline-width 0 0 0;
+  mat-card-actions {
+    &.mat-mdc-card-actions {
+      justify-content: flex-end;
+      min-height: 36px;
+    }
+
+    &.lux-card-actions {
+      margin-right: 0;
+      margin-left: 0;
+      padding: luxcommon.$outline-width 0 0 0;
+    }
   }
 
   /*
@@ -116,6 +124,7 @@ lux-card {
   // HOVER / FOCUS
 
   mat-card {
+    padding: 16px;
     &[class~="lux-cursor"]:hover {
       background-image: luxcommon.$app-gradient-reverse;
       background-color: #ffffff;
