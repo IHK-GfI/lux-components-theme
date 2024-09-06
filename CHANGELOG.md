@@ -1,5 +1,11 @@
 # Changelog
 
+## Version 16.3.0
+
+### New
+
+- **lux-breadcrumb**: Neue Komponente: Breadcrumb. [Issue 499](https://github.com/IHK-GfI/lux-components/issues/499)
+
 ## Version 16.2.0
 
 ### Bug Fixes
