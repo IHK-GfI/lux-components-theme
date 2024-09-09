@@ -9,7 +9,7 @@ lux-tile-ac {
   box-sizing: border-box;
   display: inline-block;
 
-  .mat-card.lux-tile-ac {
+  .mat-mdc-card.lux-tile-ac {
     box-sizing: border-box;
     display: flex;
     height: 100%;
@@ -40,7 +40,7 @@ lux-tile-ac {
         font-size: 1.25rem;
         margin: 0;
       }
-      mat-card-subtitle.mat-card-subtitle:not(:first-child) {
+      mat-card-subtitle.mat-mdc-card-subtitle:not(:first-child) {
         color: luxcommon.$dark-secondary-text;
         font-size: 0.875rem;
         font-weight: normal;
