@@ -106,12 +106,13 @@ $outline-bright: luxcommon.$outline-width luxcommon.$outline-style luxcommon.$ou
 
 /** ########## Chips ########## **/
 lux-chips-ac {
-  & .mat-standard-chip:focus-visible {
+  mat-chip-row.cdk-focused:not(.cdk-mouse-focused):not(.cdk-program-focused) {
     @include focus-dark-mixin;
   }
-  .mat-chip.mat-standard-chip:after {
-    //mat-overlay für focus deaktivieren
-    background-color: unset;
+
+  lux-icon:focus-visible mat-icon {
+    @include focus-dark-mixin;
+    border-radius: 15px;
   }
 }
 
@@ -246,42 +247,6 @@ lux-datetimepicker-ac {
         mask-repeat: no-repeat;
         mask-position: center;
         mask-size: cover;
-      }
-    }
-  }
-}
-
-.lux-select-panel-ac,
-.lux-select-panel-ac-multiple,
-.lux-autocomplete-panel-ac,
-.lux-autocomplete-panel-dense-ac,
-.lux-chips-ac-autocomplete-panel,
-.lux-chips-ac-autocomplete-panel-dense {
-  &.mat-select-panel mat-option,
-  &.mat-autocomplete-panel mat-option {
-    &.mat-selected.mat-option:not(.mat-option-disabled):not(:hover):not(.mat-active) {
-      color: map-get(luxpalette.$lux-palette_primary, 500);
-      background-color: #ffffff;
-      font-weight: 600;
-    }
-
-    // Der Focus bei mat-option wird über die Klasse .mat-active gesteuert
-    &.mat-option.mat-active:not(.cdk-mouse-focused) {
-      @include focus-dark-mixin-inline;
-      @include lux-option-highlight-mixin;
-      & .mat-option-text::after {
-        background-color: #fff;
-      }
-    }
-
-    &:hover:not(.invalid, .mat-option-disabled) {
-      @include lux-option-highlight-mixin;
-      border-radius: 0px !important;
-      .mat-pseudo-checkbox {
-        color: #ffffff;
-      }
-      & .mat-option-text::after {
-        background-color: #fff;
       }
     }
   }
