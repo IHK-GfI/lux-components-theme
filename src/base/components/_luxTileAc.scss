@@ -9,6 +9,14 @@ lux-tile-ac {
   box-sizing: border-box;
   display: inline-block;
 
+  mat-card {
+    padding: 16px;
+
+    &.mdc-card {
+      flex-direction: unset;
+    }
+  }
+
   .mat-mdc-card.lux-tile-ac {
     box-sizing: border-box;
     display: flex;
@@ -37,6 +45,7 @@ lux-tile-ac {
       mat-card-title.lux-tile-title {
         color: luxcommon.$dark-primary-text;
         font-family: luxcommon.$app-headline-font, luxcommon.$app-font-family;
+        line-height: 30px;
         font-size: 1.25rem;
         margin: 0;
       }
