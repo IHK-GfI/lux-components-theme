@@ -10,7 +10,7 @@ lux-menu {
   .lux-menu-extended,
   .lux-menu-trigger {
     > lux-button {
-      button {
+      button.mat-mdc-button {
         padding-left: 8px;
         padding-right: 8px;
         min-width: 36px;
@@ -29,6 +29,7 @@ lux-menu {
   > lux-button {
     margin-right: 8px;
     &.lux-menu-item .lux-button-label {
+      white-space: nowrap;
       font-weight: 400;
       letter-spacing: 1px;
       font-family: luxcommon.$app-font-family;
@@ -47,6 +48,7 @@ lux-menu {
 
 .lux-menu-trigger-default {
   button.mat-mdc-button {
+    white-space: nowrap;
     color: map.get(luxpalette.$lux-palette_primary, 500);
   }
 }
@@ -56,30 +58,31 @@ lux-menu {
   border: 2px solid luxpalette.$lux-primary-color;
   box-shadow: none !important;
 
+  .mat-mdc-menu-item-text {
+    display: flex;
+  }
+
   .lux-menu-item {
     font-size: 1rem;
     display: block;
     color: luxpalette.$lux-primary-color;
     margin-top: luxcommon.$outline-width;
     margin-bottom: luxcommon.$outline-width;
+    hyphens: auto;
+    word-break: break-all;
 
     .mat-icon-no-color {
       color: luxpalette.$lux-primary-color;
     }
 
-    &.with-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: flex-start;
-      flex-wrap: nowrap;
-      width: 100%;
-      max-width: 100%;
+    .lux-button-label {
+      hyphens: auto;
+      word-break: break-word;
     }
-    .lux-button-label.with-badge {
-      display: inline-block;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+    .lux-button-badge-container {
+      min-width: 38px;
+      vertical-align: middle;
+      align-self: center;
     }
     .lux-button-badge {
       color: #fff;
@@ -87,6 +90,7 @@ lux-menu {
       padding: 1px 4px;
       font-size: 11px;
       line-height: normal;
+      max-height: 16px;
       min-width: 15px;
       max-width: 38px;
       display: inline-block;
@@ -98,6 +102,7 @@ lux-menu {
     }
   }
   .lux-menu-item-icon {
+    align-self: center;
     vertical-align: middle;
     mat-icon {
       margin: 0;
