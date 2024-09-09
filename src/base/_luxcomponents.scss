@@ -14,6 +14,7 @@
 @use "components/luxIcon";
 @use "components/luxButton";
 @use "components/luxList";
+@use "components/luxProgressBar";
 @use "components/luxTabs";
 @use "components/luxStepper";
 @use "components/luxMenu";
@@ -379,34 +380,6 @@ lux-lookup-combobox-ac {
   // spezielles Styling für das neue User-Menu-Label
   .lux-user-name-label.mat-menu-item[disabled] {
     color: luxcommon.$dark-primary-text;
-  }
-}
-
-/*
- * Theming for LUX-Progress
- */
-lux-progress {
-  .mat-progress-bar-fill:after,
-  .mat-progress-spinner > svg > circle {
-    stroke: map.get(luxpalette.$lux-palette_primary, A400);
-    background: map.get(luxpalette.$lux-palette_primary, A400);
-  }
-
-  @each $colorName, $colorNameHex in luxcommon.$componentBgColors {
-    .lux-bg-color-#{"" + $colorName + ""} {
-      .mat-progress-bar-primary:after,
-      .mat-progress-bar-secondary:after {
-        background: $colorNameHex;
-      }
-    }
-  }
-
-  @each $colorName, $colorNameHex in luxcommon.$componentBgColors {
-    mat-progress-spinner.lux-bg-color-#{"" + $colorName + ""} {
-      circle {
-        stroke: $colorNameHex;
-      }
-    }
   }
 }
 
