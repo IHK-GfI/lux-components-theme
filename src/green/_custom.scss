@@ -119,20 +119,20 @@ lux-button button.lux-button {
     font-family: luxcommon.$app-button-font-family;
   }
 
-  &.mat-button,
-  &.mat-raised-button,
-  &.mat-flat-button,
-  &.mat-stroked-button {
+  &.mat-mdc-button,
+  &.mat-mdc-raised-button,
+  &.mat-mdc-unelevated-button,
+  &.mat-mdc-outlined-button {
     border-radius: 18px;
     height: luxcommon.$button-height;
     font-size: $button-font-size;
   }
 
-  &.mat-button.mat-button-disabled,
-  &.mat-raised-button.mat-button-disabled,
-  &.mat-fab.mat-button-disabled,
-  &.mat-stroked-button.mat-button-disabled,
-  &.mat-flat-button.mat-button-disabled {
+  &.mat-mdc-button:disabled,
+  &.mat-mdc-raised-button:disabled,
+  &.mat-mdc-fab:disabled,
+  &.mat-mdc-outlined-button:disabled,
+  &.mat-mdc-unelevated-button:disabled {
     color: luxcommon.$dark-disabled-text;
     &.lux-stroked {
       color: luxcommon.$dark-disabled-text;
@@ -140,18 +140,18 @@ lux-button button.lux-button {
     }
   }
 
-  &.mat-flat-button:not(.mat-button-disabled, .mat-accent, .mat-warn, .mat-primary),
-  &.mat-raised-button:not(.mat-button-disabled, .mat-accent, .mat-warn, .mat-primary),
-  &.mat-stroked-button:not(.mat-button-disabled, .mat-accent, .mat-warn, .mat-primary) {
+  &.mat-mdc-unelevated-button:not([disabled], .mat-accent, .mat-warn, .mat-primary),
+  &.mat-mdc-raised-button:not([disabled], .mat-accent, .mat-warn, .mat-primary),
+  &.mat-mdc-outlined-button:not([disabled], .mat-accent, .mat-warn, .mat-primary) {
     color: luxpalette.$lux-primary-color;
     & lux-icon.lux-button-icon:not(.lux-button-icon-round) {
       color: #000000;
     }
   }
 
-  &.mat-raised-button.mat-accent:not(.mat-button-disabled),
-  &.mat-flat-button.mat-accent:not(.mat-button-disabled),
-  &.mat-fab.mat-accent:not(.mat-button-disabled) {
+  &.mat-mdc-raised-button.mat-accent:not([disabled]),
+  &.mat-mdc-unelevated-button.mat-accent:not([disabled]),
+  &.mat-mdc-fab.mat-accent:not([disabled]) {
     color: map.get(luxpalette.$lux-palette-primary, 500);
     &.lux-stroked {
       color: luxpalette.$lux-accent-color;
@@ -168,7 +168,7 @@ lux-button button.lux-button {
     }
   }
 
-  &.mat-fab.lux-button-rounded {
+  &.mat-mdc-fab.lux-button-rounded {
     border-radius: 16px !important;
     height: luxcommon.$button-fav-height;
     width: luxcommon.$button-fav-height;
@@ -182,10 +182,10 @@ lux-button button.lux-button {
     }
     &.lux-stroked {
       border-color: luxcommon.$app-border-color !important;
-      &:hover:not(.mat-button-disabled) {
+      &:hover:not([disabled]) {
         background-color: color.adjust(luxcommon.$lux-hover-color, $lightness: -10%) !important;
       }
-      &:focus-visible:not(.mat-button-disabled, :hover) {
+      &:focus-visible:not([disabled], :hover) {
         background-color: transparent !important;
       }
       @include luxelevations.lux-elevation-z0;
@@ -430,10 +430,6 @@ mat-card lux-tabs {
     font-size: 1.125rem;
     color: map.get(luxpalette.$lux-palette_primary, 500);
 
-    .mat-button-focus-overlay {
-      display: none;
-    }
-
     &:focus {
       @include luxfocus.focus-dark-mixin;
     }
@@ -470,7 +466,7 @@ mat-card lux-tabs {
 lux-filter-form {
   lux-accordion {
     lux-menu {
-      .lux-menu-trigger button.mat-button {
+      .lux-menu-trigger button.mat-mdc-button {
         height: 45px;
       }
     }
@@ -705,7 +701,7 @@ lux-datetimepicker-ac {
         width: 18px;
       }
 
-      &.mat-button-disabled {
+      &:disabled {
         svg {
           color: luxcommon.$dark-disabled-text;
         }

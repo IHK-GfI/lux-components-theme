@@ -111,8 +111,8 @@ lux-filter-save-dialog {
 lux-filter-load-dialog {
   .filter-content {
     button,
-    button.lux-button.mat-button,
-    button.lux-button.mat-raised-button {
+    button.lux-button.mat-mdc-button,
+    button.lux-button.mat-mdc-raised-button {
       height: 25px;
       line-height: 25px;
     }
