@@ -17,12 +17,12 @@ lux-lookup-combobox-ac {
     // bisher noch nicht klar, warum das mat-select einen Pixel an Höhe mehr beansprucht, als es tatsächlich Hoch ist
     // daher wird hier die Höhe korrigiert, damit die Baseline eingehalten ist
 
-    .mat-select-arrow-wrapper {
+    .mat-mdc-select-arrow-wrapper {
       margin-left: 2px;
       height: 24px;
       width: 24px;
 
-      .mat-select-arrow {
+      .mat-mdc-select-arrow {
         border: none;
         width: 100%;
         height: 100%;
@@ -39,24 +39,24 @@ lux-lookup-combobox-ac {
       }
     }
 
-    &[aria-disabled="true"] .mat-select-arrow {
-      background-color: luxcommon.$dark-disabled-text;
-    }
-
-    &[aria-disabled="false"] .mat-select-arrow {
-      background-color: luxpalette.$lux-primary-color;
-    }
-
     &[aria-readonly="true"] {
-      .mat-select-arrow {
+      .mat-mdc-select-arrow {
         background-color: luxcommon.$dark-disabled-text;
       }
-      .mat-select-trigger {
+      .mat-mdc-select-trigger {
         cursor: text;
       }
     }
 
-    &[aria-readonly="false"] .mat-select-arrow {
+    &[aria-readonly="false"] .mat-mdc-select-arrow {
+      background-color: luxpalette.$lux-primary-color;
+    }
+
+    &[aria-disabled="true"] .mat-mdc-select-arrow {
+      background-color: luxcommon.$dark-disabled-text;
+    }
+
+    &[aria-disabled="false"] .mat-mdc-select-arrow {
       background-color: luxpalette.$lux-primary-color;
     }
   }
@@ -72,27 +72,13 @@ lux-lookup-combobox-ac {
   .mat-option {
     font-family: luxcommon.$app-font-family;
   }
-  .mat-autocomplete-panel.lux-autocomplete-panel-ac,
-  .mat-autocomplete-panel.lux-autocomplete-panel-dense-ac,
-  .mat-select-panel.lux-select-panel-ac,
-  .mat-select-panel.lux-select-panel-ac-multiple {
+  .mat-mdc-autocomplete-panel.lux-autocomplete-panel-ac,
+  .mat-mdc-autocomplete-panel.lux-autocomplete-panel-dense-ac,
+  .mat-mdc-select-panel.lux-select-panel-ac,
+  .mat-mdc-select-panel.lux-select-panel-ac-multiple {
     border: 2px solid luxpalette.$lux-primary-color;
     border-radius: 4px;
     box-shadow: none !important;
-
-    .mat-pseudo-checkbox {
-      color: luxpalette.$lux-primary-color;
-    }
-  }
-
-  .mat-autocomplete-panel.lux-autocomplete-panel-ac,
-  .mat-autocomplete-panel.lux-autocomplete-panel-dense-ac {
-    min-width: calc(100% + 14px) !important;
-    max-width: calc(100% + 14px) !important;
-    margin: 13px -9px 0px;
-  }
-  .mat-autocomplete-panel.lux-autocomplete-panel-dense-ac {
-    margin-top: 7px;
   }
 }
 
@@ -100,43 +86,46 @@ lux-lookup-combobox-ac {
 * Theming für Lux-Checkbox
 */
 lux-checkbox-ac {
+  .mdc-checkbox {
+    padding: 0;
+
+    .mdc-checkbox__background {
+      top: 0;
+      left: 0;
+    }
+  }
+
   label {
     font-family: luxcommon.$app-font-family;
     font-size: luxcommon.$form-control-font-size;
     color: luxcommon.$dark-primary-text;
     cursor: pointer;
-
-    .mat-checkbox-label {
-      -ms-word-break: break-word;
-      word-break: break-word;
-      white-space: normal;
-    }
   }
 
-  .mat-checkbox-ripple {
+  .mat-mdc-checkbox-ripple {
     display: none;
   }
-  .mat-checkbox-inner-container {
+  .mat-mdc-checkbox-inner-container {
     // die Checkbox soll größer sein, als von Material vorgegeben
     width: 1.25em;
     height: 1.25em;
     margin-top: 0.125em;
-    .mat-checkbox-frame {
+    .mat-mdc-checkbox-frame {
       border-color: luxpalette.$lux-primary-color;
     }
     //bei mehrzeiligen Labels soll die Checkbox oben und nicht zentriert angezeigt werden
     //Deswegen wird hier das Margin-top: auto überschrieben
     //da wir die Größe der Box geändert haben mussten wir das Margin ebenfalls anpassen
-    .mat-checkbox-frame {
+    .mat-mdc-checkbox-frame {
       border-color: luxpalette.$lux-primary-color;
     }
   }
 
-  & .mat-checkbox-disabled {
+  & .mat-mdc-checkbox-disabled {
     label {
       color: luxcommon.$dark-disabled-text;
     }
-    .mat-checkbox-inner-container .mat-checkbox-frame {
+    .mat-mdc-checkbox-inner-container .mat-mdc-checkbox-frame {
       border-color: luxcommon.$dark-disabled-text;
     }
   }
@@ -191,16 +180,18 @@ lux-datetimepicker-ac {
 * Theming für lux-Toggle
 */
 lux-toggle-ac {
-  .mat-slide-toggle {
+  .mat-mdc-slide-toggle {
+    .mdc-switch__ripple {
+      display: none;
+    }
+
     label {
       color: luxcommon.$dark-primary-text;
       font-family: luxcommon.$app-font-family;
     }
+
     &.mat-checked .mat-slide-toggle-bar {
       background-color: map-get(luxpalette.$lux-palette_primary, 50);
-    }
-    .mat-slide-toggle-thumb {
-      @include luxelevations.lux-elevation-z1;
     }
 
     &.mat-disabled {
@@ -222,14 +213,12 @@ lux-toggle-ac {
 
         .mat-slide-toggle-thumb {
           background-color: #666666;
-          // $dark-secondary-text als Hex ohne Transparenz
         }
       }
 
       &:not(.mat-checked) {
         .mat-slide-toggle-bar {
           background-color: luxcommon.$dark-disabled-text;
-          //Hintergrund zur Schriftfarbe anpassen
         }
       }
     }
@@ -244,66 +233,70 @@ lux-toggle-ac {
  * Theming for LUX-Radio
  */
 lux-radio-ac {
-  .mat-radio-container {
+  .mat-mdc-radio-button .mdc-radio {
+    padding: 0;
+  }
+
+  .mdc-radio__background {
     // damit ist der Focus-Indicator rund, wie bei Toggle-Thumb und Chips
     border-radius: 50%;
 
-    span.mat-radio-outer-circle {
+    span.mdc-radio__outer-circle {
       border-color: luxpalette.$lux-primary-color;
     }
   }
-  .mat-radio-label {
+  .mdc-label {
     color: luxcommon.$dark-primary-text;
     font-family: luxcommon.$app-font-family;
   }
 
-  .mat-radio-checked {
-    &.mat-radio-disabled label .mat-radio-container {
-      span.mat-radio-inner-circle {
+  .mat-mdc-radio-checked {
+    &.mat-radio-disabled label .mdc-radio__background {
+      span.mdc-radio__inner-circle {
         background-color: luxcommon.$dark-disabled-text;
       }
 
-      span.mat-radio-outer-circle {
+      span.mdc-radio__outer-circle {
         border-color: luxcommon.$dark-disabled-text;
       }
     }
   }
 
-  .mat-radio-group {
+  .mat-mdc-radio-group {
     display: flex;
     box-sizing: border-box;
-    gap: 0.75em;
     place-content: stretch flex-start;
     align-items: stretch;
 
     &.lux-horizontal {
-      row-gap: 0.75em;
+      gap: 0.75em;
       flex-direction: row;
       flex-flow: wrap;
       max-height: 100%;
     }
     &.lux-vertical {
+      gap: 0;
       flex-direction: column;
       max-width: 100%;
     }
 
-    .mat-radio-button {
+    .mat-mdc-radio-button {
       flex: 0 0 auto;
       box-sizing: border-box;
     }
   }
 
-  .mat-radio-disabled label.mat-radio-label {
-    .mat-radio-label-content {
+  .mdc-radio--disabled label.mdc-label {
+    .mdc-label-content {
       color: luxcommon.$dark-disabled-text;
     }
 
     .mat-radio-container {
-      span.mat-radio-inner-circle {
+      span.mdc-radio__inner-circle {
         background-color: luxcommon.$dark-disabled-text;
       }
 
-      span.mat-radio-outer-circle {
+      span.mdc-radio__outer-circle {
         border-color: luxcommon.$dark-disabled-text;
       }
     }
@@ -342,6 +335,60 @@ lux-textarea-ac text-area {
  * Theming für LUX-Chips
  */
 lux-chips-ac {
+  .mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) {
+    &.lux-chip-color-default {
+      background-color: var(--lux-theme-primary-500) !important;
+
+      .mat-mdc-chip-action-label {
+        color: white;
+      }
+
+      lux-icon {
+        color: white;
+        opacity: 1;
+      }
+    }
+
+    &.lux-chip-color-primary {
+      background-color: var(--lux-theme-primary-500) !important;
+
+      .mat-mdc-chip-action-label {
+        color: white;
+      }
+
+      lux-icon {
+        color: white;
+        opacity: 1;
+      }
+    }
+
+    &.lux-chip-color-accent {
+      background-color: var(--lux-theme-accent-500) !important;
+
+      .mat-mdc-chip-action-label {
+        color: white;
+      }
+
+      lux-icon {
+        color: white;
+        opacity: 1;
+      }
+    }
+
+    &.lux-chip-color-warn {
+      background-color: var(--lux-theme-warn-500) !important;
+
+      .mat-mdc-chip-action-label {
+        color: white;
+      }
+
+      lux-icon {
+        color: white;
+        opacity: 1;
+      }
+    }
+  }
+
   .lux-chips-autocomplete-icon {
     color: var(--lux-theme-primary-500);
     font-size: 1.5rem;
@@ -355,18 +402,6 @@ lux-chips-ac {
   }
   .lux-chips {
     mat-chip {
-      // Löschicon (luxSelected=true)
-      &.mat-chip-selected .mat-chip-remove {
-        color: luxcommon.$app-data-bg !important;
-        opacity: 1 !important;
-      }
-
-      // Löschicon (luxSelected=false)
-      &:not(.mat-chip-selected) .mat-chip-remove {
-        color: luxcommon.$app-data-bg !important;
-        opacity: 1 !important;
-      }
-
       &.mat-chip-disabled {
         background-color: luxcommon.$dark-disabled-text !important;
         color: luxcommon.$app-data-bg !important;
@@ -392,8 +427,8 @@ lux-chips-ac {
     box-shadow: none !important; // den Focus-indicator für das Inputausblenden
   }
 }
-.lux-chips-ac-autocomplete-panel.mat-autocomplete-panel,
-.lux-chips-ac-autocomplete-panel-dense.mat-autocomplete-panel {
+.lux-chips-ac-autocomplete-panel.mat-mdc-autocomplete-panel,
+.lux-chips-ac-autocomplete-panel-dense.mat-mdc-autocomplete-panel {
   margin-top: -18px;
   margin-left: 0;
   margin-right: 0;
@@ -402,7 +437,7 @@ lux-chips-ac {
   box-shadow: none !important;
   border: 2px solid luxpalette.$lux-primary-color;
 }
-.lux-chips-ac-autocomplete-panel-dense.mat-autocomplete-panel {
+.lux-chips-ac-autocomplete-panel-dense.mat-mdc-autocomplete-panel {
   margin-top: -18px;
 }
 
@@ -410,15 +445,34 @@ lux-chips-ac {
  * Theming for LUX-Slider
  */
 lux-slider-ac {
-  mat-slider.lux-slider-ac {
-    &.mat-slider-horizontal {
-      height: 1.5em;
-    }
-  }
-  .lux-show-thumb-label-always {
-    &.mat-slider-disabled {
-      .mat-slider-thumb-label {
-        background-color: luxcommon.$dark-disabled-text;
+  lux-form-control-wrapper .lux-form-control-wrapper .lux-form-control-container-authentic.lux-no-input-row {
+    padding-top: 20px;
+    padding-bottom: 4px;
+
+    mat-slider {
+      height: 15px;
+
+      input {
+        height: 15px;
+      }
+
+      .mat-mdc-slider-visual-thumb {
+        height: 15px;
+
+        .mat-ripple {
+          width: 0;
+          height: 0;
+        }
+      }
+
+      mat-slider-visual-thumb div.mdc-slider__value-indicator-container {
+        bottom: 22px;
+
+        .mdc-slider__value-indicator {
+          height: 20px;
+          padding-left: 4px;
+          padding-right: 4px;
+        }
       }
     }
   }

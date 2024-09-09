@@ -629,39 +629,8 @@ lux-radio-ac {
     height: auto;
   }
 
-  .mat-radio-outer-circle {
-    border: 1.5px solid map.get(luxpalette.$lux-palette_primary, 500);
-  }
-
-  .mat-radio-inner-circle {
-    // Checkmark-Symbol mit css gezeichnet, anstatt des inneren Kreises
-    border-radius: 2px;
-    background-color: transparent !important;
-    border-bottom: 5px solid white;
-    border-right: 5px solid white;
-    height: 32px;
-    width: 14px;
-    margin-top: -8px;
-    margin-left: 3px;
-  }
-
-  .mat-radio-checked {
-    .mat-radio-outer-circle {
-      background: map.get(luxpalette.$lux-palette_primary, 500);
-    }
-
-    &.mat-radio-disabled .mat-radio-outer-circle {
-      background: luxcommon.$dark-disabled-text;
-      border: none;
-    }
-  }
-
-  .mat-radio-checked .mat-radio-inner-circle {
-    transform: rotate(45deg) scale(0.4);
-  }
-
   .mat-radio-button {
-    .mat-radio-label-content {
+    .mdc-label {
       line-height: normal;
     }
     .mat-radio-ripple {
@@ -737,9 +706,9 @@ lux-lookup-combobox-ac {
  * wird noch für "Green" benötigt
  */
 .cdk-overlay-pane {
-  & > .mat-autocomplete-panel:not([class*="mat-elevation-z"]),
+  & > .mat-mdc-autocomplete-panel:not([class*="mat-elevation-z"]),
   .mat-datepicker-content,
-  .mat-select-panel:not([class*="mat-elevation-z"]),
+  .mat-mdc-select-panel:not([class*="mat-elevation-z"]),
   .mat-mdc-menu-panel {
     @include luxelevations.lux-elevation-z4;
   }

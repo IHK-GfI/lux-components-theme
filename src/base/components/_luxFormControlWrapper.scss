@@ -164,12 +164,15 @@ lux-form-control-wrapper {
             box-sizing: border-box;
           }
         }
-        .mat-error {
+        .mat-mdc-form-field-error {
           background-color: $light-red;
           border-radius: 4px;
           padding-right: 2px;
           color: map-get(luxpalette.$lux-palette_warn, 900) !important;
-          box-shadow: -18px 0px 0 0 $light-red, -18px -1px 0 0 $light-red, 0 -1px 0 0 $light-red;
+          box-shadow:
+            -18px 0px 0 0 $light-red,
+            -18px -1px 0 0 $light-red,
+            0 -1px 0 0 $light-red;
         }
       }
     }

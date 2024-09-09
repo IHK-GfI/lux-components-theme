@@ -13,6 +13,21 @@ lux-filter-form {
     padding: 8px 12px;
   }
 
+  // Filter-Chips anpassen
+  mat-chip-row.mat-mdc-standard-chip {
+    height: 24px;
+
+    span.mat-mdc-chip-action {
+      padding-left: 6px !important;
+    }
+
+    lux-icon {
+      margin: 0 !important;
+      padding-left: 4px !important;
+      padding-right: 4px !important;
+    }
+  }
+
   .filter-item {
     .mat-standard-chip {
       min-height: 24px;
