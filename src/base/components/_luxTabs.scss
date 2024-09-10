@@ -11,6 +11,10 @@ lux-tabs {
     font-size: 1rem;
   }
 
+  .mat-mdc-tab-label-container {
+    border: none;
+  }
+
   .mdc-tab {
     padding-left: 0;
     padding-right: 0;
@@ -187,17 +191,26 @@ mat-card lux-tabs {
   mat-tab-group div[role="tab"]:not(.mat-mdc-tab-disabled) {
     &:focus-visible {
       @include luxfocus.focus-dark-mixin-inline;
-      border-radius: 4px;
+      border-radius: luxcommon.$app-border-radius;
     }
 
-    &:hover:not(.mdc-tab--active) {
-      color: luxcommon.$lux-hover-color;
+    &:hover {
+      background-color: transparent;
+
+      &:not(.mdc-tab--active) .lux-tab-title,
+      &:not(.mdc-tab--active) lux-icon {
+        color: luxcommon.$lux-hover-color;
+      }
+    }
+
+    &:hover .mdc-tab__ripple::before {
+      background-color: transparent;
     }
   }
 
   .mdc-tab-indicator__content {
     background-color: map.get(luxpalette.$lux-palette_primary, 500) !important;
     height: 4px;
-    border-radius: 4px;
+    border-radius: luxcommon.$app-border-radius;
   }
 }

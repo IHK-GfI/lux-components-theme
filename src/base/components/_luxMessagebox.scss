@@ -78,20 +78,25 @@ lux-message-box {
       @include luxfocus.focus-dark-mixin;
     }
 
+    .mat-mdc-fab.mat-unthemed,
+    .mat-mdc-mini-fab.mat-unthemed {
+      background-color: transparent;
+    }
+
     & .lux-message-container.lux-bg-color-white {
       & .lux-message-text:focus-visible {
         @include luxfocus.focus-dark-mixin;
         border-radius: 4px;
       }
 
-      & lux-button button.lux-button.mat-mdc-fab:not([disabled]).mat-accent.lux-fab-rounded-default {
+      & lux-button button.lux-button.mat-mdc-fab:not([disabled]).lux-fab-rounded-default {
         &:hover {
           color: #ffffff;
           background-color: luxpalette.$lux-primary-color !important;
         }
 
         &:focus-visible {
-          @include luxfocus.focus-bright-mixin;
+          @include luxfocus.focus-dark-mixin;
           background-color: transparent !important;
         }
       }
@@ -103,7 +108,7 @@ lux-message-box {
         border-radius: 4px;
       }
 
-      & lux-button button.lux-button.mat-mdc-fab:not([disabled]).mat-accent.lux-fab-rounded-default {
+      & lux-button button.lux-button.mat-mdc-fab:not([disabled]).lux-fab-rounded-default {
         &:hover {
           color: white;
           background-color: rgba(1, 1, 1, 0.2) !important;
@@ -111,6 +116,7 @@ lux-message-box {
 
         &:focus-visible {
           @include luxfocus.focus-bright-mixin;
+          color: white;
           background-color: transparent !important;
         }
       }

@@ -3,8 +3,9 @@
 @use "../luxelevations";
 
 .cdk-overlay-container {
-  .mdc-snackbar__surface {
-    min-width: unset !important;
+  .mat-mdc-snack-bar-container .mat-mdc-snackbar-surface {
+    min-width: unset;
+    border-radius: 4px;
   }
 
   .mat-mdc-snack-bar-container.lux-snackbar {

@@ -214,16 +214,6 @@ lux-table {
       height: 0;
     }
 
-    .reset-icon {
-      display: inline-block;
-
-      &:hover {
-        border-radius: 50%;
-        background-color: luxcommon.$lux-hover-color;
-        cursor: pointer;
-      }
-    }
-
     lux-checkbox-ac .mat-mdc-checkbox-inner-container {
       margin: 0px;
     }

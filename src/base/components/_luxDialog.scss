@@ -5,6 +5,10 @@
 @use "../luxelevations";
 @use "../luxbreakpoints";
 
+.cdk-overlay-pane.mat-mdc-dialog-panel .mat-mdc-dialog-container {
+  border-radius: luxcommon.$app-border-radius;
+}
+
 lux-dialog-preset {
   height: 100%;
 }

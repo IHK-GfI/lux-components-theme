@@ -420,6 +420,16 @@ lux-card.lux-card-grow {
   overflow-x: auto;
 }
 
+.lux-reset-icon {
+  display: inline-block;
+
+  &:hover {
+    border-radius: 50%;
+    color: luxcommon.$lux-hover-color;
+    cursor: pointer;
+  }
+}
+
 /* <MARGINS / PADDINGS> */
 
 /*
@@ -561,15 +571,96 @@ lux-button.lux-uppercase {
   }
 }
 
+$notificationSizes: (18, 24, 30);
+
+$notificationSizeNames: ("small", "medium", "large");
+
+$notificationPositions1: ("before", "after");
+
+$notificationPositions2: ("above", "below");
+
+@each $position1 in $notificationPositions1 {
+  @each $position2 in $notificationPositions2 {
+    @each $notificationSize in $notificationSizes {
+      $i: index($notificationSizes, $notificationSize);
+      .lux-badge-notification {
+        &.mat-badge-#{$position1}.mat-badge-#{$position2} {
+          // Nicht überlappend
+          &.mat-badge-#{nth($notificationSizeNames, $i)} {
+            .mat-badge-content {
+              @if $position1 == "before" {
+                left: -#{$notificationSize}px;
+                right: unset;
+              } @else if $position1 == "after" {
+                left: unset;
+                right: -#{$notificationSize}px;
+              }
+
+              @if $position2 == "above" {
+                top: -#{calc($notificationSize / 2)}px;
+                bottom: unset;
+              } @else if $position2 == "below" {
+                top: unset;
+                bottom: -#{calc($notificationSize / 2)}px;
+              }
+            }
+
+            // Überlappend
+            &.mat-badge-overlap .mat-badge-content {
+              @if $position1 == "before" {
+                left: -#{calc($notificationSize / 2)}px;
+                right: unset;
+              } @else if $position1 == "after" {
+                left: unset;
+                right: -#{calc($notificationSize / 2)}px;
+              }
+
+              @if $position2 == "above" {
+                top: -#{calc($notificationSize / 2)}px;
+                bottom: unset;
+              } @else if $position2 == "below" {
+                top: unset;
+                bottom: -#{calc($notificationSize / 2)}px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 .lux-badge-notification {
+  &.mat-badge-small {
+    .mat-badge-content {
+      padding-top: 2px;
+      font-size: 9px;
+      width: #{nth($notificationSizes, 1)}px;
+      height: #{nth($notificationSizes, 1)}px;
+    }
+  }
+
+  &.mat-badge-medium {
+    .mat-badge-content {
+      padding-top: 4px;
+      font-size: 12px;
+      width: #{nth($notificationSizes, 2)}px;
+      height: #{nth($notificationSizes, 2)}px;
+    }
+  }
+
   &.mat-badge-large {
     .mat-badge-content {
+      padding-top: 5px;
       font-size: 15px;
+      width: #{nth($notificationSizes, 3)}px;
+      height: #{nth($notificationSizes, 3)}px;
     }
   }
 
   &.mat-badge .mat-badge-content {
-    border: 2px solid white;
+    border-radius: 50px;
+    border: 2px solid #ffffff;
   }
 
   &.mat-badge.lux-badge-no-border .mat-badge-content {

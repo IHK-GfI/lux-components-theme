@@ -110,19 +110,30 @@ lux-chips-ac {
     @include focus-dark-mixin;
   }
 
+  .mat-mdc-chip-focus-overlay {
+    transition: none;
+  }
+
   lux-icon:focus-visible mat-icon {
     @include focus-dark-mixin;
     border-radius: 15px;
+  }
+
+  .mat-mdc-chip-set-stacked {
+    .mat-mdc-chip {
+      width: auto !important;
+    }
+
+    .lux-chip-container {
+      width: 100%;
+    }
   }
 }
 
 /** ########## Form-Control ########## **/
 .lux-form-control-wrapper {
   &.lux-focused-authentic .cdk-keyboard-focused {
-    .mat-radio-container,
-    .mat-checkbox-inner-container,
-    .mat-slide-toggle-thumb {
-      position: relative;
+    .mdc-switch__track {
       @include focus-dark-mixin;
     }
   }
@@ -212,6 +223,26 @@ lux-datetimepicker-ac {
   }
 }
 
+/** ########## Autocomplete-AC ########## **/
+.lux-autocomplete-panel-ac {
+  mat-option {
+    &.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled),
+    &.mat-mdc-option:hover:not(.mdc-list-item--disabled),
+    &.mat-mdc-option:focus-visible:not(.mdc-list-item--disabled),
+    &.mat-mdc-option.mat-mdc-option-active:not(.mdc-list-item--disabled) {
+      background-color: luxcommon.$lux-hover-color;
+
+      .mdc-list-item__primary-text {
+        color: #ffffff;
+      }
+    }
+
+    &.mat-mdc-option.mat-mdc-option-active:not(.mdc-list-item--disabled) {
+      @include focus-dark-mixin-inline;
+    }
+  }
+}
+
 /** ########## Select-AC ########## **/
 @mixin lux-option-highlight-mixin {
   background-color: map-get(luxpalette.$lux-palette_primary, 300);
@@ -227,27 +258,46 @@ lux-datetimepicker-ac {
   }
 }
 
-.lux-select-panel-ac {
+.lux-select-panel-ac,
+.lux-select-panel-ac-multiple {
   mat-option {
-    &.mat-selected.mat-option:not(.mat-option-disabled) .mat-option-text {
-      position: relative;
-      &::after {
-        content: "";
-        position: absolute;
-        width: 18px;
-        height: 18px;
-        top: 14px;
-        margin: 0 6px;
-        background-color: luxpalette.$lux-primary-color;
-        -webkit-mask: url(luxicons.$checkmark);
-        -webkit-mask-repeat: no-repeat;
-        -webkit-mask-position: center;
-        -webkit-mask-size: cover;
-        mask: url(luxicons.$checkmark);
-        mask-repeat: no-repeat;
-        mask-position: center;
-        mask-size: cover;
+    &.mat-mdc-option-multiple:hover:not(.mdc-list-item--disabled),
+    &.mat-mdc-option-multiple:focus-visible:not(.mdc-list-item--disabled),
+    &.mat-mdc-option-multiple.mat-mdc-option-active:not(.mdc-list-item--disabled) {
+      background-color: luxcommon.$lux-hover-color;
+
+      .mat-pseudo-checkbox-full {
+        background-color: luxcommon.$lux-hover-color;
+        border-color: #ffffff;
+
+        &.mat-pseudo-checkbox-checked {
+          background-color: #ffffff;
+          &::after {
+            color: luxcommon.$lux-hover-color;
+          }
+        }
       }
+
+      .mdc-list-item__primary-text {
+        color: #ffffff;
+      }
+    }
+
+    &.mat-mdc-option-multiple.mat-mdc-option-active:not(.mdc-list-item--disabled) {
+      background-color: luxcommon.$lux-hover-color;
+      @include focus-dark-mixin-inline;
+    }
+
+    &.mat-mdc-option:hover:not(.mdc-list-item--disabled),
+    &.mat-mdc-option:focus-visible:not(.mdc-list-item--disabled),
+    &.mat-mdc-option.mat-mdc-option-active:not(.mdc-list-item--disabled) {
+      .mdc-list-item__primary-text {
+        color: #ffffff;
+      }
+    }
+
+    &.mat-mdc-option.mat-mdc-option-active:not(.mdc-list-item--disabled) {
+      @include focus-dark-mixin-inline;
     }
   }
 }
@@ -332,7 +382,7 @@ lux-stepper-large {
         a.lux-stepper-large-nav-item-label-link {
           cursor: text;
           &:hover {
-            color: unset;
+            color: luxpalette.$lux_primary-color;
           }
         }
       }
