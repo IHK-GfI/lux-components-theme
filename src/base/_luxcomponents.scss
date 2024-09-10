@@ -26,6 +26,7 @@
 @use "components/luxMessagebox";
 @use "components/luxErrorPage";
 @use "components/luxFilePreview";
+@use "components/luxToolTip";
 @use "components/luxTourHint";
 @use "components/luxBreadcrumb";
 @use "luxcommon";
@@ -56,6 +57,10 @@ lux-card {
 lux-divider {
   .mat-divider {
     background-color: luxcommon.$dark-dividers;
+    border-width: 1px;
+    &.mat-divider-vertical {
+      border-width: 1px;
+    }
   }
 }
 
@@ -127,6 +132,12 @@ lux-file-progress {
 /*
 * Theming für Lux-File-Upload
 */
+$fileUploadProgressSize: 8px;
+.mat-mdc-progress-bar.lux-file-upload-drop-container-progress {
+  --mdc-linear-progress-active-indicator-height: #{$fileUploadProgressSize};
+  --mdc-linear-progress-track-height: #{$fileUploadProgressSize};
+}
+
 .lux-file-upload-container {
   display: flex;
   flex-direction: column;
@@ -154,9 +165,8 @@ lux-file-progress {
       padding: 24px 48px;
     }
 
-    .lux-file-upload-drop-container-progress,
     .lux-file-upload-drop-container-no-progress {
-      height: 8px;
+      height: $fileUploadProgressSize;
     }
 
     &.lux-file-upload-drop-container-disabled {
@@ -433,6 +443,11 @@ mat-expansion-panel.mat-expansion-panel:not([class*="mat-elevation-z"]) {
   .mat-expansion-panel-body {
     font-size: 1rem;
   }
+}
+
+.mat-expansion-panel {
+  --mat-expansion-container-shape: #{luxcommon.$app-border-radius};
+  --mat-expansion-container-shape: #{luxcommon.$app-border-radius};
 }
 
 /*

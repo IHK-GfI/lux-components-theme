@@ -4,6 +4,10 @@
 @use "../luxelevations";
 @use "sass:map";
 
+.mat-mdc-card-outlined {
+  --mdc-outlined-card-container-shape: #{luxcommon.$app-border-radius};
+}
+
 lux-card {
   // Falls die lux-card in einem lux-grid verwendet wird und alle Cards einer Reihe dieselbe Höhe erhalten sollen
   // müssen mat-card und mat-card-content entsprechend angepasst werden.
@@ -18,6 +22,7 @@ lux-card {
   // Umstylen der Mat-Card
   .mat-mdc-card.lux-card {
     border: 1px solid luxcommon.$app-border-color;
+    border-radius: luxcommon.$app-border-radius;
     background-color: #fff;
     display: flex;
     box-sizing: border-box;
