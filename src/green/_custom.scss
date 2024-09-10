@@ -113,6 +113,10 @@ lux-button button.lux-button {
   font-weight: 400 !important;
   font-family: luxcommon.$app-button-font-family;
 
+  &.mdc-button {
+    letter-spacing: normal;
+  }
+
   p,
   div,
   span {
@@ -347,16 +351,25 @@ lux-stepper {
  */
 lux-tabs,
 mat-card lux-tabs {
-  mat-tab-group div[role="tab"]:not(.mat-tab-disabled) {
+  mat-tab-group div[role="tab"]:not(.mat-mdc-tab-disabled) {
     &.mat-tab-label-active {
       background-color: luxcommon.$lux-hover-color;
-      border-radius: 4px;
+      border-radius: luxcommon.$app-border-radius;
     }
 
-    &:hover:not(.mat-tab-label-active) {
-      color: luxpalette.$lux-primary-color;
+    &:hover {
       background-color: luxcommon.$lux-hover-color;
-      border-radius: 4px;
+      border-radius: luxcommon.$app-border-radius;
+
+      &:not(.mdc-tab--active) .lux-tab-title,
+      &:not(.mdc-tab--active) lux-icon {
+        color: luxpalette.$lux-primary-color;
+      }
+    }
+
+    &:hover .mdc-tab__ripple::before {
+      background-color: luxcommon.$lux-hover-color;
+      border-radius: luxcommon.$app-border-radius;
     }
   }
 

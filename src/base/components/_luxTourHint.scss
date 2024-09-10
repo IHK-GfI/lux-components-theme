@@ -1,4 +1,5 @@
 ﻿@use "../luxcommon";
+@use "../luxfocus";
 
 $arrowSize: 16px;
 
@@ -19,7 +20,10 @@ lux-tour-hint {
 
     display: flex;
 
-    box-shadow: 0px 11px 15px -7px rgba(0, 0, 0, 0.2), 0px 24px 38px 3px rgba(0, 0, 0, 0.14), 0px 9px 46px 8px rgba(0, 0, 0, 0.12);
+    box-shadow:
+      0px 11px 15px -7px rgba(0, 0, 0, 0.2),
+      0px 24px 38px 3px rgba(0, 0, 0, 0.14),
+      0px 9px 46px 8px rgba(0, 0, 0, 0.12);
     background: #fff;
 
     &:focus {
@@ -136,7 +140,18 @@ lux-tour-hint-preset {
       right: 8px;
 
       &:hover {
+        background-color: #fff !important;
+
+        mat-icon.mat-icon-no-color {
+          color: luxcommon.$lux-hover-color;
+        }
+
         cursor: pointer;
+      }
+
+      &:focus-visible {
+        @include luxfocus.focus-dark-mixin;
+        border-radius: 4px;
       }
     }
 

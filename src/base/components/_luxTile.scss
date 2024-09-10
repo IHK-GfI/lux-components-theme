@@ -1,5 +1,6 @@
 @use "sass:map";
 @use "../luxpalette";
+@use "../luxcommon";
 @use "../luxelevations";
 @use "../luxfocus";
 @use "@angular/material" as mat;
@@ -19,13 +20,18 @@ lux-tile {
     color: map.get(luxpalette.$lux-palette_primary, 500);
   }
 
-  mat-card {
+  .mat-mdc-card-outlined {
+    border: none;
+  }
+
+  mat-card.mat-mdc-card-outlined {
     padding: 16px;
 
     &.mat-mdc-card {
       padding: 0;
-      .mat-mdc-card-content {
-        margin: 0px;
+      mat-card-content.mat-mdc-card-content {
+        margin: 0;
+        padding: 0;
       }
     }
   }
@@ -143,6 +149,7 @@ lux-tile {
     &:hover {
       background-image: none !important;
       background-color: white !important;
+      border-radius: luxcommon.$app-border-radius;
       // farbiger Schatten beim Hover
       @include mat.elevation(2, $dark-green, 1);
 

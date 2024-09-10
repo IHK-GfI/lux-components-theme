@@ -243,6 +243,7 @@ lux-stepper {
   // HOVER / FOCUS / SELECTED
 
   mat-step-header {
+    --mat-stepper-header-hover-state-layer-shape: #{luxcommon.$app-border-radius};
     &:hover {
       background-color: transparent !important;
       border-radius: 0;
