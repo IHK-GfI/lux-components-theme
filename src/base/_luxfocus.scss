@@ -99,9 +99,19 @@ $outline-bright: luxcommon.$outline-width luxcommon.$outline-style luxcommon.$ou
   background-color: luxcommon.$lux-hover-color;
 }
 
+/** ########## Green ########## **/
 @mixin lux-hovered-mixin-green {
   background-color: #e3ebf5 !important;
   border-radius: 4px;
+}
+
+$dark-green: #2e8533;
+
+@mixin lux-focus-mixin-green {
+  box-shadow:
+    0 0 0 2px $dark-green,
+    0 0 8px 2px $dark-green !important;
+  outline: 0 !important;
 }
 
 /** ########## Chips ########## **/

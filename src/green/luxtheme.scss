@@ -92,7 +92,13 @@
   $componentFontColors: themeCommon.$componentFontColors,
 
   // Farben für einen dunklen Hintergrund (z.B. Snackbar).
-  $colorsForDarkBg: themeCommon.$colorsForDarkBg
+  $colorsForDarkBg: themeCommon.$colorsForDarkBg,
+
+  // Tile
+  $lux-tile-font-hover-color: themeCommon.$lux-tile-font-hover-color,
+  $lux-tile-icon-color: themeCommon.$lux-tile-icon-color,
+  $lux-tile-borderradius: themeCommon.$lux-tile-borderradius,
+  $lux-tile-bottom-line-color: themeCommon.$lux-tile-bottom-line-color
 );
 @use "../base/luxSvgIcons";
 @use "../base/luxelevations";
