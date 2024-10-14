@@ -125,7 +125,7 @@ lux-table {
       }
 
       .mat-mdc-row:nth-child(odd) {
-        background-color: map.get(luxpalette.$lux-palette_primary, 50);
+        background-color: #f0f3f6;
       }
 
       .mat-mdc-row:nth-child(even) {
@@ -228,6 +228,10 @@ lux-table {
   .lux-form-control-readonly-authentic {
     // damit die Events der eigentliche Checkbox nicht zusätzlich gezählt werden
     pointer-events: none;
+  }
+
+  .lux-element-align-top {
+    vertical-align: text-top;
   }
 }
 
