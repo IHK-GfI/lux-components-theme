@@ -38,6 +38,18 @@ h6 {
 }
 
 /*
+ * Theming for LUX-Slider
+ */
+lux-slider-ac {
+  lux-form-control-wrapper .lux-form-control-wrapper .lux-form-control-container-authentic {
+    &.lux-no-input-row {
+      padding-top: 12px;
+      padding-bottom: 4px;
+    }
+  }
+}
+
+/*
  * Theming for LUX-Card
  */
 lux-card {
@@ -545,6 +557,14 @@ lux-form-control-wrapper .lux-form-control-wrapper {
     }
   }
 
+  &.lux-dense-authentic {
+    .lux-form-control-container-authentic {
+      &.lux-no-input-row {
+        padding: 0.25em 0em;
+      }
+    }
+  }
+
   .lux-form-control-container-authentic {
     padding: 10px;
     line-height: 1;
@@ -560,7 +580,6 @@ lux-form-control-wrapper .lux-form-control-wrapper {
       font-size: luxcommon.$form-control-font-size;
       font-family: luxcommon.$app-font-family;
       padding: 8px 0;
-      min-height: 40px;
     }
   }
 
@@ -638,7 +657,6 @@ lux-checkbox-ac {
 */
 lux-radio-ac {
   & lux-form-control-wrapper .lux-form-control-wrapper .lux-form-control-container-authentic.lux-no-input-row {
-    padding: 10px 0;
     height: auto;
   }
 
