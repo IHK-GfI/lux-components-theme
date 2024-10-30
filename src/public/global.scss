@@ -12,6 +12,8 @@ $app-font-family:
   sans-serif !default;
 
 html body {
+  --mat-checkbox-label-text-font: #{$app-font-family};
+  --mat-switch-label-text-font: #{$app-font-family};
   --mat-stepper-container-text-font: #{$app-font-family};
   --mat-stepper-header-label-text-font: #{$app-font-family};
   --mat-expansion-header-text-font: #{$app-font-family};

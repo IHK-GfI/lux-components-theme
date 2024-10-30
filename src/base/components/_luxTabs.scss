@@ -111,7 +111,9 @@ lux-tabs {
   // luxCounter (z.B. 10) neben dem Tablabel auf normalen bis großen Auflösungen
   .lux-tab-group .lux-tab-title.lux-badge-notification {
     &.mat-badge.lux-badge-no-border .mat-badge-content {
-      top: -5px;
+      left: unset;
+      bottom: unset;
+      top: 6px;
       right: -30px;
     }
   }
@@ -120,7 +122,10 @@ lux-tabs {
   .lux-tab-group lux-icon.lux-badge-notification,
   .lux-tab-group lux-image.lux-badge-notification {
     &.mat-badge.lux-badge-no-border .mat-badge-content {
-      top: 5px;
+      left: unset;
+      bottom: unset;
+      top: 20px;
+      right: -22px;
     }
   }
   .lux-tab-header-image-right,
