@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 18.1.0
+
+### New
+
+- **tile**: Styles angepasst. [Issue 496](https://github.com/IHK-GfI/lux-components/issues/496)
+- **tabs**: Styling: Hintergrundfarbe bei luxShowBorder definieren. [Issue 520](https://github.com/IHK-GfI/lux-components/issues/520)
+- **table**: Der Inhalt der Zellen ist immer Zentriert ausgericht, bitte auch eine Option für "align-Top" anbieten. [Issue 533](https://github.com/IHK-GfI/lux-components/issues/533)
+
+### Bug Fixes
+
+- **allgemein**: Alte Material-Abhängigkeit 16.2.14 durch ^18.0.0 ersetzen. [Issue 94](https://github.com/IHK-GfI/lux-components/issues/94)
+
 ## Version 18.0.0
 
 ### New
