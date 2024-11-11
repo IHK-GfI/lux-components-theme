@@ -31,8 +31,15 @@ lux-card {
       @include luxelevations.lux-elevation-z0;
     }
     .mat-mdc-card-content {
-      padding: 16px 0 0 0;
       font-size: 1rem;
+      padding: 0;
+
+      .lux-card-content {
+        padding: 16px 0 0 0;
+        &:empty {
+          padding: 0;
+        }
+      }
     }
   }
 
@@ -81,8 +88,19 @@ lux-card {
     }
     .lux-card-info-container {
       margin-left: 10px;
-      grid-row: 1 / span 2;
       grid-column-start: 3;
+
+      &.lux-title.lux-subtitle {
+        grid-row: 1 / span 2;
+      }
+
+      &.lux-title:not(.lux-subtitle) {
+        grid-row: 1;
+      }
+
+      &.lux-subtitle:not(.lux-title) {
+        grid-row: 2;
+      }
     }
 
     .lux-card-title,
