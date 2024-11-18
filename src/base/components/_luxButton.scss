@@ -17,6 +17,11 @@ lux-button button.lux-button {
 
   &.mat-mdc-fab {
     border-radius: 50%;
+
+    .mat-mdc-button-touch-target {
+      width: 36px;
+      height: 36px;
+    }
   }
 
   &:not(.mat-mdc-fab) {
