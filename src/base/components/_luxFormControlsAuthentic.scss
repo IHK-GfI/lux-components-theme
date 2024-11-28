@@ -143,6 +143,11 @@ lux-checkbox-ac {
       top: 0;
       left: 0;
     }
+
+    .mat-mdc-checkbox-touch-target {
+      width: 24px;
+      height: 24px;
+    }
   }
 
   label {
@@ -428,6 +433,11 @@ lux-radio-ac {
 
   &.lux-form-control-readonly {
     pointer-events: none;
+  }
+
+  .mdc-radio .mat-mdc-radio-touch-target {
+    width: 24px;
+    height: 24px;
   }
 }
 
