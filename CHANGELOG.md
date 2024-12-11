@@ -1,5 +1,16 @@
 # Changelog
 
+## Version 18.2.0
+
+### New
+
+- **lux-app-footer**: Der footer soll optional nicht sticky sein. [Issue 534](https://github.com/IHK-GfI/lux-components/issues/534)
+
+### Bug Fixes
+
+- **lux-card**: LUX-Card content height fixen. [Issue 552](https://github.com/IHK-GfI/lux-components/issues/552)
+- **lux-radio-ac**: Hitboxen von Radio-Buttons sind in vertikaler Anordnung ungenau. [Issue 565](https://github.com/IHK-GfI/lux-components/issues/565)
+
 ## Version 18.1.0
 
 ### New
