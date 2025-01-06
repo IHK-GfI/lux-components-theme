@@ -450,17 +450,19 @@ mat-card lux-tabs {
   justify-content: space-between;
   padding: 10px 10px 18px 10px;
 
-  button,
-  .mat-icon-button {
-    font-size: 1.125rem;
-    color: map.get(luxpalette.$lux-palette_primary, 500);
-
-    &:focus {
-      @include luxfocus.focus-dark-mixin;
+  lux-button {
+    &.lux-datepicker-prev-month button.lux-button.mat-mdc-button {
+      padding: 0;
+      min-width: 24px;
     }
 
-    &:hover {
-      @include luxfocus.lux-hovered-mixin;
+    &.lux-datepicker-year button.lux-button.mat-mdc-button {
+      font-size: 1.125rem;
+    }
+
+    &.lux-datepicker-next-month button.lux-button.mat-mdc-button {
+      padding: 0;
+      min-width: 24px;
     }
   }
 }
