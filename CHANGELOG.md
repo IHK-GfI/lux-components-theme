@@ -1,5 +1,12 @@
 # Changelog
 
+## Version 18.3.0
+
+### Bug Fixes
+
+- **lux-message-box**: Falsche Farbe beim Close-Button. [Issue 557](https://github.com/IHK-GfI/lux-components/issues/557)
+- **lux-datepicker-ac**: Green Theme Bug. [Issue 567](https://github.com/IHK-GfI/lux-components/issues/567)
+
 ## Version 18.2.0
 
 ### New
