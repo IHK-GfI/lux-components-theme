@@ -79,6 +79,10 @@
   // Overlay
   $lux-overlay-backdrop-color: themeCommon.$lux-overlay-backdrop-color,
 
+  // Options in Panels (z.B. Select, AutoComplete und Menu)
+  $lux-panel-option-min-height: themeCommon.$lux-panel-option-min-height,
+  $lux-panel-option-padding: themeCommon.$lux-panel-option-padding,
+
   // Hintergrundfarben (z.B. Badge oder Progress)
   $componentBgColors: themeCommon.$componentBgColors,
 

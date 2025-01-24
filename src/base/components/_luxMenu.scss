@@ -5,6 +5,11 @@
 
 .mat-mdc-menu-panel {
   --mat-menu-container-shape: #{luxcommon.$app-border-radius};
+
+  .mat-mdc-menu-item-text {
+    min-height: #{luxcommon.$lux-panel-option-min-height};
+    padding: #{luxcommon.$lux-panel-option-padding};
+  }
 }
 
 lux-menu {

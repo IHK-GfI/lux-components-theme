@@ -18,6 +18,13 @@ div.mat-mdc-autocomplete-panel.lux-autocomplete-panel-ac {
       display: none;
     }
   }
+
+  .mat-mdc-option {
+    .mdc-list-item__primary-text {
+      min-height: #{luxcommon.$lux-panel-option-min-height};
+      padding: #{luxcommon.$lux-panel-option-padding};
+    }
+  }
 }
 
 /*
@@ -27,15 +34,31 @@ div.mat-mdc-autocomplete-panel.lux-autocomplete-panel-ac {
   --mat-full-pseudo-checkbox-selected-checkmark-color: #ffffff;
 }
 
-div.mat-mdc-select-panel.lux-select-panel-ac {
-  padding-top: 0;
-  padding-bottom: 0;
+div.mat-mdc-select-panel {
+  &.lux-select-panel-ac {
+    padding-top: 0;
+    padding-bottom: 0;
 
-  .mat-mdc-option {
-    --mat-option-selected-state-label-text-color: #ffffff;
-    --mat-option-selected-state-layer-color: #{luxcommon.$lux-hover-color};
-    --mat-option-focus-state-layer-color: #{luxcommon.$lux-hover-color};
-    --mat-option-hover-state-layer-color: #{luxcommon.$lux-hover-color};
+    .mat-mdc-option {
+      --mat-option-selected-state-label-text-color: #ffffff;
+      --mat-option-selected-state-layer-color: #{luxcommon.$lux-hover-color};
+      --mat-option-focus-state-layer-color: #{luxcommon.$lux-hover-color};
+      --mat-option-hover-state-layer-color: #{luxcommon.$lux-hover-color};
+
+      .mdc-list-item__primary-text {
+        min-height: #{luxcommon.$lux-panel-option-min-height};
+        padding: #{luxcommon.$lux-panel-option-padding};
+      }
+    }
+  }
+
+  &.lux-select-panel-ac-multiple {
+    .mat-mdc-option {
+      .mdc-list-item__primary-text {
+        min-height: #{luxcommon.$lux-panel-option-min-height};
+        padding: #{luxcommon.$lux-panel-option-padding};
+      }
+    }
   }
 }
 

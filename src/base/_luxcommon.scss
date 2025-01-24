@@ -61,6 +61,10 @@ $lux-stepper-large-nav-item-completed-bg: mustOverriden !default;
 // Overlay
 $lux-overlay-backdrop-color: mustOverriden !default;
 
+// Options in Panels (z.B. Select, AutoComplete und Menu)
+$lux-panel-option-min-height: mustOverriden !default;
+$lux-panel-option-padding: mustOverriden !default;
+
 // Hintergrundfarben (z.B. Badge oder Progress)
 $componentBgColors: (
   "red": mustOverriden,
