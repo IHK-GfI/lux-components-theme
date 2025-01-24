@@ -86,6 +86,10 @@ $lux-stepper-large-nav-item-completed-bg: #ffffff;
 // Overlay
 $lux-overlay-backdrop-color: rgba(0, 0, 0, 0.12);
 
+// Options in Panels (z.B. Select, AutoComplete und Menu)
+$lux-panel-option-min-height: 24px;
+$lux-panel-option-padding: 12px 0;
+
 // Hintergrundfarben (z.B. Badge oder Progress)
 $componentBgColors: (
   "red": luxpalette.$lux-warn-color,
