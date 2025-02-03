@@ -563,6 +563,24 @@ lux-stepper-large {
         color: luxcommon.$lux-stepper-large-nav-item-completed-fg;
         background-color: luxcommon.$lux-stepper-large-nav-item-completed-bg;
       }
+
+      a::after {
+        content: "";
+        position: absolute;
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin: 3px 10px 0px;
+        background-color: luxcommon.$lux-stepper-large-nav-item-active-bg;
+        -webkit-mask: url(luxicons.$warn-triangle);
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        -webkit-mask-size: cover;
+        mask: url(luxicons.$warn-triangle);
+        mask-repeat: no-repeat;
+        mask-position: center;
+        mask-size: cover;
+      }
     }
   }
 
