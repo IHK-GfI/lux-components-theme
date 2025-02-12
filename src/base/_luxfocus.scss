@@ -326,11 +326,6 @@ lux-panel {
       //background-color: white !important;
       @include focus-dark-mixin-inline;
     }
-
-    &:hover {
-      color: luxcommon.$lux-hover-color !important;
-      background-color: #fff !important;
-    }
   }
 }
 
