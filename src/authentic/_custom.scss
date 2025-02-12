@@ -102,6 +102,10 @@ lux-accordion {
       mask-position: center;
       mask-size: cover;
     }
+
+    &:hover::after {
+      background-color: map.get(luxpalette.$lux-palette-primary, 300);
+    }
   }
 
   mat-expansion-panel-header.mat-expansion-panel-header,
@@ -117,14 +121,68 @@ lux-accordion {
       font-weight: 500;
     }
 
-    &[aria-disabled="false"] {
-      background-color: map.get(luxpalette.$lux-palette-primary, 50);
+    &[aria-disabled="false"] .mat-expansion-panel-header-description {
       color: luxcommon.$dark-primary-text;
-      &:hover {
-        background-color: map.get(luxpalette.$lux-palette-primary, 50) !important;
-      }
+    }
+
+    &[aria-disabled="true"] {
+      background-color: white !important;
     }
   }
+
+  .mat-accordion.lux-primary {
+    mat-expansion-panel-header.mat-expansion-panel-header,
+    mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded {
+      background-color: map.get(luxpalette.$lux-palette-primary, 100);
+      @include mat.expansion-overrides(
+        (
+          header-hover-state-layer-color: map.get(luxpalette.$lux-palette-primary, 100)
+        )
+      );
+    }
+  }
+
+  .mat-accordion.lux-accent {
+    mat-expansion-panel-header.mat-expansion-panel-header,
+    mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded {
+      background-color: map.get(luxpalette.$lux-palette-accent, 100);
+      @include mat.expansion-overrides(
+        (
+          header-hover-state-layer-color: map.get(luxpalette.$lux-palette-accent, 100)
+        )
+      );
+    }
+  }
+
+  .mat-accordion.lux-warn {
+    mat-expansion-panel-header.mat-expansion-panel-header,
+    mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded {
+      background-color: map.get(luxpalette.$lux-palette-warn, 50);
+      @include mat.expansion-overrides(
+        (
+          header-hover-state-layer-color: map.get(luxpalette.$lux-palette-warn, 50)
+        )
+      );
+    }
+  }
+
+  .mat-accordion.lux-neutral {
+    mat-expansion-panel-header.mat-expansion-panel-header,
+    mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded {
+      background-color: white;
+      @include mat.expansion-overrides(
+        (
+          header-hover-state-layer-color: white
+        )
+      );
+    }
+  }
+
+  @include mat.expansion-overrides(
+    (
+      header-disabled-state-text-color: luxcommon.$dark-disabled-text
+    )
+  );
 }
 
 /**
