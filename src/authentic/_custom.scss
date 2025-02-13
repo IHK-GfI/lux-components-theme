@@ -183,6 +183,12 @@ lux-accordion {
       header-disabled-state-text-color: luxcommon.$dark-disabled-text
     )
   );
+  
+  lux-panel-content lux-card mat-card {
+    .lux-card-title {
+      line-height: normal;
+    }
+  }
 }
 
 /**
