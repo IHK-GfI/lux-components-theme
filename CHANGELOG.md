@@ -1,5 +1,17 @@
 # Changelog
 
+## Version 18.4.0
+
+### New
+
+- **lux-accordion**: Weitere Farben für Header/Toggleposition auch rechts. [Issue 556](https://github.com/IHK-GfI/lux-components/issues/556)
+- **lux-stepper-large**: die weiter/zurück-Buttons des Steppers sollen auf "aria-disabled" umgestellt werden. [Issue 521](https://github.com/IHK-GfI/lux-components/issues/521)
+
+### Bug Fixes
+
+- **lux-select-ac**: Abstände in Selects mit mehrzeiligen Inhalt schwer lesbar. [Issue 573](https://github.com/IHK-GfI/lux-components/issues/573)
+- **lux-accordion**: Lux-Card übernimmt line-height von Lux-Accordion (Scrollbar am Lux-Card Title)Komponenten. [Issue 558](https://github.com/IHK-GfI/lux-components/issues/558)
+
 ## Version 18.3.0
 
 ### Bug Fixes
