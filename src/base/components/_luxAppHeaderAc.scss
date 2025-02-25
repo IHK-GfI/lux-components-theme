@@ -165,6 +165,16 @@ lux-app-header-ac {
   button.lux-menu-item {
     margin: 0px;
 
+    &.lux-user-name-label {
+      opacity: 1;
+      color: map.get(luxpalette.$lux-palette-primary, 500);
+      background-color: #f0f3f6;
+
+      .lux-button-label {
+        font-weight: 600;
+      }
+    }
+
     &.lux-selected-item-ac {
       font-weight: 600;
       color: luxpalette.$lux-primary-color;
