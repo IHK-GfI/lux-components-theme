@@ -4,7 +4,7 @@
   "description": "",
   "private": false,
   "scripts": {
-    "build": "npm run clean && npm run build-theme-green && npm run build-theme-authentic",
+    "build": "node ./scripts/check-font-size.js && npm run clean && npm run build-theme-green && npm run build-theme-authentic",
     "clean": "del-cli --force ./prebuilt-themes/*.*",
     "clean-authentic": "del-cli --force ./prebuilt-themes/*authentic*.*",
     "clean-green": "del-cli --force ./prebuilt-themes/*green*.*",
