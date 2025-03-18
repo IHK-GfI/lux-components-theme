@@ -866,3 +866,42 @@ lux-breadcrumb {
     }
   }
 }
+
+/*
+ * Theming for LUX-Accordion
+ */
+lux-accordion {
+  .mat-accordion.lux-primary {
+    mat-expansion-panel-header.mat-expansion-panel-header,
+    mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded {
+      background-color: white;
+    }
+  }
+
+  .mat-accordion.lux-accent {
+    mat-expansion-panel-header.mat-expansion-panel-header,
+    mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded {
+      background-color: map.get(luxpalette.$lux-palette-accent, 100);
+    }
+  }
+
+  .mat-accordion.lux-warn {
+    mat-expansion-panel-header.mat-expansion-panel-header,
+    mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded {
+      background-color: map.get(luxpalette.$lux-palette-warn, 50);
+    }
+  }
+
+  .mat-accordion.lux-neutral {
+    mat-expansion-panel-header.mat-expansion-panel-header,
+    mat-expansion-panel-header.mat-expansion-panel-header.mat-expanded {
+      background-color: map.get(luxpalette.$lux-palette-primary, 100);
+    }
+  }
+}
+
+lux-panel-content lux-card mat-card {
+  .lux-card-title {
+    line-height: normal;
+  }
+}
