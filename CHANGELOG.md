@@ -1,5 +1,13 @@
 # Changelog
 
+## Version 18.5.0
+
+### Bug Fixes
+
+- **allgemein**: A11y - Textgrößen müssen anpassbar sein. [Issue 588](https://github.com/IHK-GfI/lux-components/issues/588)
+- **lux-app-header-ac**: Anzeige "Eingeloggter User" im User-Menu anpassen. [Issue 579](https://github.com/IHK-GfI/lux-components/issues/579)
+- **lux-accordion**: Property LuxTogglePosition wird nicht richtig übernommen. [Issue 584](https://github.com/IHK-GfI/lux-components/issues/584)
+
 ## Version 18.4.0
 
 ### New
